@@ -69,6 +69,7 @@ special={
 [layer_names]
 
 2d_physics/layer_1="Collision"
+2d_physics/layer_2="Weight"
 2d_physics/layer_3="Hurt"
 2d_physics/layer_4="Lift"
 2d_physics/layer_5="Interact"

@@ -18,11 +18,9 @@ func possess_target(target):
 		possessed = target
 		next_possession = null
 		set_collision_mask_bit(0, false)
-		set_collision_layer_bit(2, false)
 
 func stop_possession():
 	set_collision_mask_bit(0, true)
-	set_collision_layer_bit(2, true)
 	possessed = null
 	
 	if next_possession != null:
