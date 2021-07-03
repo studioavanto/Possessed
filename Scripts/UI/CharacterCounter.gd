@@ -1,7 +1,17 @@
 extends TextureRect
 
-func character_value_changes(value):
-	print(value)
+var portraits = [
+	preload("res://Resources/UI/life_thief.png"),
+	preload("res://Resources/UI/life_barbarian.png"),
+	preload("res://Resources/UI/life_thief.png"),
+	preload("res://Resources/UI/life_wizard.png"),
+]
 
-func character_portrait_changes(new_portrait):
-	print(new_portrait)
+var current_portrait = 0
+
+func change_value(value):
+	$TextureProgress.value = value
+
+func change_portrait(new_portrait):
+	if new_portrait != current_portrait:
+		$CharacterPortrait.texture = portraits[new_portrait]

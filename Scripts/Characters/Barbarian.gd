@@ -30,6 +30,9 @@ func stop_carrying():
 func process_special():
 	carry_nearby()
 
+func get_id():
+	return 1
+
 func _physics_process(delta):
 	._physics_process(delta)
 	
