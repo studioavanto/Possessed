@@ -45,6 +45,9 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact):
 func process_special():
 	pass
 
+func kill_character():
+	character_stage = CharacterStage.DEAD
+
 func _physics_process(_delta):
 	if character_stage == CharacterStage.CHILLIN :
 		._physics_process(_delta)
@@ -75,12 +78,15 @@ func _physics_process(_delta):
 		current_age += 1
 	
 	if current_age == max_age:
-		character_stage += 1
-		current_age = 0
+		if character_stage == CharacterStage.POSSESSED:
+			kill_character()
+		else:
+			character_stage += 1
+			current_age = 0
 	
 	jump = false
 	use_special = false
 	x_speed = 0.0
 
 func _on_HurtBox_area_entered(area):
-	pass # Replace with function body.
+	kill_character()

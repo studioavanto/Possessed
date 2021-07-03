@@ -27,4 +27,7 @@ tile_data = PoolIntArray( 131072, 0, 0, 196608, 0, 65536, 262144, 0, 65536, 2621
 position = Vector2( 751.687, 464.115 )
 
 [node name="PossessCharacter" parent="." instance=ExtResource( 4 )]
-position = Vector2( 148.015, 423.891 )
+position = Vector2( 433.686, 483.288 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 549.652, 491.773 )
