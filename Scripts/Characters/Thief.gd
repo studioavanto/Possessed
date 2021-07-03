@@ -5,7 +5,9 @@ func _ready():
 	pass # Replace with function body.
 
 func process_special():
-	pass
+	if can_dash:
+		character_state = CharacterState.DASHING
+		can_dash = false
 	
 func get_id():
 	return 2
