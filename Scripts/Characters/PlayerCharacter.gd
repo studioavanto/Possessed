@@ -6,6 +6,9 @@ export var move_speed = 200
 var possessed = null
 var next_possession = null
 
+func interact():
+	pass
+	
 signal character_value_changes(new_value)
 signal character_portrait_changes(new_portrait)
 
@@ -46,6 +49,14 @@ func process_input(jump, special, horizontal_move, interact):
 			position = lerp(position, possessed.position, 0.25)
 		else:
 			stop_possession()
+
+func _process(_delta):
+	if possessed != null:
+		emit_signal("character_portrait_changes", possessed.get_id())
+		emit_signal("character_value_changes", possessed.get_relative_age())
+	else:
+		emit_signal("character_portrait_changes", 0)
+		emit_signal("character_value_changes", 0)
 
 func _on_PossessingArea_area_entered(area):
 	if not area.get_parent().is_dead():

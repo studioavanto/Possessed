@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/Characters/PlayerCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/GameObjects/Characters/PossessCharacter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GameObjects/Objects/MapExit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameObjects/Objects/Spikes.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=7]
@@ -23,11 +22,8 @@ position = Vector2( 864.7, 289.653 )
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
 tile_data = PoolIntArray( 131072, 0, 0, 196608, 0, 65536, 262144, 0, 65536, 262152, 0, 196609, 262153, 0, 196610, 262154, 0, 3, 327680, 0, 65536, 327690, 0, 131073, 327691, 0, 196611, 327695, 0, 0, 393216, 0, 65536, 393231, 0, 65536, 458752, 0, 65536, 458765, 0, 8, 458766, 0, 10, 458767, 0, 65543, 524288, 0, 131073, 524289, 0, 196610, 524290, 0, 196610, 524291, 0, 196610, 524292, 0, 196610, 524293, 0, 196610, 524294, 0, 196610, 524295, 0, 196610, 524296, 0, 196610, 524297, 0, 196610, 524298, 0, 196610, 524299, 0, 196610, 524300, 0, 196610, 524301, 0, 196613, 524302, 0, 196617, 524303, 0, 196619 )
 
-[node name="Barbarian" parent="." instance=ExtResource( 7 )]
-position = Vector2( 751.687, 464.115 )
-
-[node name="PossessCharacter" parent="." instance=ExtResource( 4 )]
-position = Vector2( 433.686, 483.288 )
-
 [node name="Spikes2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 549.652, 491.773 )
+
+[node name="Barbarian" parent="." instance=ExtResource( 7 )]
+position = Vector2( 261.152, 469.145 )

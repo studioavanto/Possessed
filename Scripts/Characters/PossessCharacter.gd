@@ -42,6 +42,12 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact):
 
 	return true
 
+func get_id():
+	return -1
+	
+func get_relative_age():
+	return int(float(100 * current_age) / max_age)
+
 func process_special():
 	pass
 	
