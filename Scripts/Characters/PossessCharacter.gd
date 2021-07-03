@@ -46,20 +46,16 @@ func process_special():
 	pass
 
 func _physics_process(_delta):
-	
 	if character_stage == CharacterStage.CHILLIN :
 		._physics_process(_delta)
 		return
-	
+
 	if jump and jump_time == 0.0:
 		y_speed = -jump_start_speed 
 		jump_time += _delta
-	
 	elif jump and jump_time < max_jump_time:
 		y_speed += - jump_fall_reduction * _delta
 		jump_time += _delta
-	elif not jump:
-		jump_time = max_jump_time
 	
 	if(use_special):
 		process_special()
@@ -71,6 +67,7 @@ func _physics_process(_delta):
 	else:
 		y_speed = 0.0
 		jump_time = 0.0
+
 	if character_stage == CharacterStage.DEAD:
 		return
 	
@@ -84,3 +81,6 @@ func _physics_process(_delta):
 	jump = false
 	use_special = false
 	x_speed = 0.0
+
+func _on_HurtBox_area_entered(area):
+	pass # Replace with function body.
