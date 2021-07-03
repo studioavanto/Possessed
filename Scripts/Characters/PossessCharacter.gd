@@ -1,12 +1,12 @@
 extends "res://Scripts/Objects/Carryable.gd"
-export var fall_speed = 1000.0
 export var lifetime = 200
 export var jump_fall_reduction = 1000.0
-export var jump_start_speed = 500.0
-export var run_speed = 200
+export var jump_start_speed = 420.0
+export var run_speed = 12
 export var max_age = 1000
 export var max_jump_time = 0.3
 export var unload_time = 1.0
+export var acceleration = 75.0
 
 enum CharacterState { IDLE, RUNNING, JUMPING, UNLOADING, SPECIAL, DEATH }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
@@ -16,10 +16,10 @@ var use_special = false
 var use_interact = false
 var jump_time = 0.0
 var x_speed = 0.0
+var x_input_dir = 1.0
 var y_speed = 100
 var current_age = 0
 var unloading_timer = 0.0
-var facing = 1.0
 
 var character_state = CharacterState.IDLE
 var character_stage = CharacterStage.CHILLIN
@@ -40,12 +40,12 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact):
 
 	jump = n_jump
 	use_special = n_special
-	x_speed = n_horizontal_move
+	x_input_dir = n_horizontal_move
 	use_interact = n_interact
 	
-	if x_speed > 0.0:
+	if x_input_dir > 0.0:
 		facing = 1.0
-	elif x_speed < 0.0:
+	elif x_input_dir < 0.0:
 		facing = -1.0
 
 	return true
@@ -71,6 +71,20 @@ func _physics_process(_delta):
 		._physics_process(_delta)
 		return
 
+	if x_input_dir > 0.0:
+		x_speed = x_speed + facing * acceleration * _delta
+	elif x_input_dir < 0.0:
+		x_speed = x_speed + facing * acceleration * _delta
+	elif x_input_dir == 0.0 and abs(x_speed) <= 0.1*run_speed:
+		x_speed = 0.0
+	elif x_input_dir == 0.0 and x_speed > 0.0:
+		x_speed = x_speed - acceleration * _delta
+	elif x_input_dir == 0.0 and x_speed < 0.0:
+		x_speed = x_speed + acceleration * _delta
+
+	if abs(x_speed) > run_speed:
+		x_speed = run_speed*facing
+	
 	if jump and jump_time == 0.0:
 		y_speed = -jump_start_speed 
 		jump_time += _delta
@@ -115,7 +129,6 @@ func _physics_process(_delta):
 	
 	jump = false
 	use_special = false
-	x_speed = 0.0
 
 func _on_HurtBox_area_entered(area):
 	kill_character()

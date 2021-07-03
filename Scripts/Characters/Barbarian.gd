@@ -23,6 +23,13 @@ func start_carrying_target(target):
 		$CarryHitBox.disabled = false
 		set_collision_mask_bit(3, false)
 
+func throw_object():
+	set_collision_mask_bit(3, true)
+	$CarryHitBox.disabled = true
+	character_state = CharacterState.UNLOADING
+	carry_item.is_being_carried = false
+	carry_item.throw(Vector2(x_speed, y_speed))
+	
 func stop_carrying():
 	set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
@@ -34,7 +41,8 @@ func process_special():
 		print("carry item = null, attempting carry nearby")
 		carry_nearby()
 	else:
-		stop_carrying()
+		#stop_carrying()
+		throw_object()
 func get_id():
 	return 1
 
@@ -44,7 +52,7 @@ func _physics_process(_delta):
 	
 	if carry_item != null:
 		if(character_state == CharacterState.UNLOADING):
-			carry_item.position = position + Vector2(64,0.0) * facing
+			#carry_item.position = position + Vector2(64,0.0) * facing
 			carry_item = null
 		else:	
 			carry_item.position = position + carry_point_offset
