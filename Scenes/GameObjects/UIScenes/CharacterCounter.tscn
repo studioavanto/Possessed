@@ -27,3 +27,6 @@ margin_bottom = 40.0
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 2 )
 fill_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}

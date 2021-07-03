@@ -40,7 +40,9 @@ func load_new_map(new_map):
 	
 	var current_map = load(map_dict[new_map]).instance()
 	add_child(current_map)
-	$PlayerController.set_player_character(current_map.get_player_character())
+	var character_tmp = current_map.get_player_character()
+	$PlayerController.set_player_character(character_tmp)
+	#$UIContainer.connect_character_to_ui(characer_tmp)
 
 func get_gamestate():
 	return current_gamestate
