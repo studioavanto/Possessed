@@ -12,8 +12,8 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_CheckWeight_area_entered():
+func _on_CheckWeight_area_entered(area):
 	emit_signal("toggle_on")
 
-func _on_CheckWeight_area_exited():
+func _on_CheckWeight_area_exited(area):
 	emit_signal("toggle_off")

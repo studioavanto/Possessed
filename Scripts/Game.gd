@@ -38,7 +38,7 @@ func load_new_map(new_map):
 		# ADD SOME DELOADING STUFF HERE
 		pass
 	
-	var current_map = load(map_dict[new_map]).instance()
+	current_map = load(map_dict[new_map]).instance()
 	add_child(current_map)
 	var character_tmp = current_map.get_player_character()
 	$PlayerController.set_player_character(character_tmp)
