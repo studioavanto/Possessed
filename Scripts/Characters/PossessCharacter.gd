@@ -6,9 +6,10 @@ export var run_speed = 12
 export var max_age = 1000
 export var max_jump_time = 0.3
 export var unload_time = 1.0
+export var dash_time = 1.0
 export var acceleration = 75.0
 
-enum CharacterState { IDLE, RUNNING, JUMPING, UNLOADING, SPECIAL, DEATH }
+enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
 
 var jump = false
@@ -20,6 +21,7 @@ var x_input_dir = 1.0
 var y_speed = 100
 var current_age = 0
 var unloading_timer = 0.0
+var dash_timer = 0.0
 
 var character_state = CharacterState.IDLE
 var character_stage = CharacterStage.CHILLIN
@@ -104,6 +106,13 @@ func _physics_process(_delta):
 	
 	if unloading_timer > unload_time:
 		unloading_timer = 0.0
+		character_state = CharacterState.IDLE
+		
+	if character_state == CharacterState.DASHING:
+		dash_timer += _delta
+	
+	if dash_timer > dash_time:
+		dash_timer = 0.0
 		character_state = CharacterState.IDLE
 	
 	move_and_slide(Vector2(run_speed * x_speed, y_speed), Vector2(0, -1))
