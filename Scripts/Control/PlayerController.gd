@@ -17,7 +17,7 @@ func handle_inputs():
 	var interact = false
 	var horizontal_move = 0.0
 	
-	if Input.is_action_just_pressed("press_up"):
+	if Input.is_action_pressed("press_up"):
 		jump = true
 		
 	if Input.is_action_just_pressed("special"):

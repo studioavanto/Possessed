@@ -468,9 +468,11 @@ position = Vector2( 413.818, 404.387 )
 
 [node name="PossessCharacter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 107.97, 407.233 )
+max_age = 10000
 
 [node name="PossessCharacter2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 556.536, 181.556 )
+max_age = 10000
 
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
 tile_set = SubResource( 48 )
