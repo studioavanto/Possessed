@@ -15,8 +15,4 @@ script = ExtResource( 2 )
 [node name="PauseController" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 1.5, 1.5 )
-
 [node name="UIContainer" parent="." instance=ExtResource( 4 )]

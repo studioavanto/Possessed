@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-07af3189b0c19135cf67a570dd3f85aa.stex"
+path="res://.import/exit_door.png-1c82313a99d3291be9f35adb9da65a9d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Objects/icon.png"
-dest_files=[ "res://.import/icon.png-07af3189b0c19135cf67a570dd3f85aa.stex" ]
+source_file="res://Resources/Sprites/Objects/exit_door.png"
+dest_files=[ "res://.import/exit_door.png-1c82313a99d3291be9f35adb9da65a9d.stex" ]
 
 [params]
 
