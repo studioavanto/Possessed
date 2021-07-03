@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Characters/PossessCharacter.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Characters/Thief.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 104.005
@@ -15,10 +15,8 @@ extents = Vector2( 32.9563, 31.3708 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 23.2663, 28.6456 )
 
-[node name="PossessCharacter" type="KinematicBody2D"]
-collision_layer = 0
+[node name="Thief" type="KinematicBody2D"]
 script = ExtResource( 2 )
-max_age = 300
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 0, 0, 1 )
@@ -61,5 +59,3 @@ collision_mask = 16
 position = Vector2( 50, 0 )
 rotation = -0.000702262
 shape = SubResource( 5 )
-
-[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
