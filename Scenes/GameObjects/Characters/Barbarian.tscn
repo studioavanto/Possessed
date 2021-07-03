@@ -69,6 +69,22 @@ collision_mask = 8
 position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 2 )
 
+[node name="PickingArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickingArea"]
+position = Vector2( -1.25995, 6.29962 )
+shape = SubResource( 2 )
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2( -1.25995, 6.29962 )
+shape = SubResource( 2 )
+
 [node name="PossessArea" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 0
@@ -86,6 +102,7 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
+frame = 1
 speed_scale = 1.25
 playing = true
 

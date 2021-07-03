@@ -35,6 +35,7 @@ func possess_character():
 
 	character_stage = CharacterStage.POSSESSED
 	being_passive = false
+	$PickingArea.set_collision_layer_bit(3, false)
 	return true
 	
 func is_dead():
@@ -74,10 +75,10 @@ func kill_character():
 	character_stage = CharacterStage.DEAD
 
 func _physics_process(_delta):
-	if character_stage == CharacterStage.CHILLIN :
+	if character_stage == CharacterStage.CHILLIN or character_stage == CharacterStage.DEAD :
 		#._physics_process(_delta)
 		return
-		
+	
 	if character_state == CharacterState.DASHING:
 		dash_timer += _delta
 	
