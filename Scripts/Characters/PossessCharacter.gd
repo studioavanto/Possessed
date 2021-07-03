@@ -1,8 +1,8 @@
 extends KinematicBody2D
-export var fall_speed = 10.0
+export var fall_speed = 1000.0
 export var lifetime = 200
-export var jump_fall_reduction = 5.0
-export var jump_start_speed = 100.0
+export var jump_fall_reduction = 1000.0
+export var jump_start_speed = 500.0
 export var run_speed = 200
 export var max_age = 1000
 export var max_jump_time = 0.3
@@ -14,10 +14,9 @@ var jump = false
 var use_special = false
 var use_interact = false
 var jump_time = 0.0
-var move_x = 0.0
-var move_y = 100
+var x_speed = 0.0
+var y_speed = 100
 var current_age = 0
-var jump_speed = 0.0
 
 var character_state = CharacterState.IDLE
 var character_stage = CharacterStage.CHILLIN
@@ -38,7 +37,7 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact):
 
 	jump = n_jump
 	use_special = n_special
-	move_x = n_horizontal_move
+	x_speed = n_horizontal_move
 	use_interact = n_interact
 
 	return true
@@ -46,24 +45,22 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact):
 func _physics_process(_delta):
 	
 	if jump and jump_time == 0.0:
-		jump_speed = jump_start_speed + 100
-		move_y = -jump_speed 
+		y_speed = -jump_start_speed 
 		jump_time += _delta
+	
 	elif jump and jump_time < max_jump_time:
-		jump_speed = jump_speed + jump_fall_reduction
-		move_y = -jump_speed
-		jump_time = jump_time + _delta
+		y_speed += - jump_fall_reduction * _delta
+		jump_time += _delta
 	elif not jump:
 		jump_time = max_jump_time
 	
-	move_and_slide(Vector2(run_speed * move_x, move_y), Vector2(0, -1))
+	move_and_slide(Vector2(run_speed * x_speed, y_speed), Vector2(0, -1))
 	
 	if not is_on_floor():
-		move_y += fall_speed
+		y_speed += fall_speed * _delta
 	else:
-		move_y = 100
+		y_speed = 0.0
 		jump_time = 0.0
-		jump_speed = 0.0
 	if character_stage == CharacterStage.DEAD:
 		return
 	
@@ -76,4 +73,4 @@ func _physics_process(_delta):
 	
 	jump = false
 	use_special = false
-	move_x = 0.0
+	x_speed = 0.0
