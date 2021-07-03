@@ -6,6 +6,9 @@ export var move_speed = 200
 var possessed = null
 var next_possession = null
 
+func interact():
+	pass
+
 func possess_nearby():
 	for area in $PossessingArea.get_overlapping_areas():
 		possess_target(area.get_parent())
