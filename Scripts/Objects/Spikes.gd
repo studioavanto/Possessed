@@ -7,7 +7,11 @@ func toggle_spikes():
 	
 	if spikes_on:
 		$HurtBox.set_collision_layer_bit(2, true)
-		print('Spikes on')
 	else:
 		$HurtBox.set_collision_layer_bit(2, false)
-		print('Spikes off')
+
+func _on_Button_toggle_off():
+	toggle_spikes() # Replace with function body.
+
+func _on_Button_toggle_on():
+	toggle_spikes() # Replace with function body.

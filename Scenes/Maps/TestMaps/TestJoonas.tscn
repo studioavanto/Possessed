@@ -478,3 +478,6 @@ position = Vector2( 549.799, 217.232 )
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 tile_set = SubResource( 48 )
 tile_data = PoolIntArray( 262148, 0, 196609, 262149, 0, 196610, 262150, 0, 196610, 262151, 0, 196610, 262152, 0, 196610, 262153, 0, 196610, 262154, 0, 196611, 327693, 0, 196608, 458752, 0, 196609, 458753, 0, 196610, 458754, 0, 196610, 458755, 0, 196610, 458756, 0, 196610, 458757, 0, 196610, 458758, 0, 196610, 458759, 0, 196610, 458760, 0, 196610, 458761, 0, 196610, 458762, 0, 196610, 458763, 0, 196610, 458764, 0, 196610, 458765, 0, 196610, 458766, 0, 196610, 458767, 0, 196611 )
+
+[connection signal="toggle_off" from="Button" to="Spikes" method="_on_Button_toggle_off"]
+[connection signal="toggle_on" from="Button" to="Spikes" method="_on_Button_toggle_on"]
