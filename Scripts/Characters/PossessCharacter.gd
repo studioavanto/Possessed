@@ -44,7 +44,11 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact):
 
 func process_special():
 	pass
-
+	
+func process_interact():
+	for area in $InteractArea.get_overlapping_areas():
+		area.get_parent().interact()
+		
 func kill_character():
 	character_stage = CharacterStage.DEAD
 
@@ -62,6 +66,9 @@ func _physics_process(_delta):
 	
 	if(use_special):
 		process_special()
+		
+	if(use_interact):
+		process_interact()
 	
 	move_and_slide(Vector2(run_speed * x_speed, y_speed), Vector2(0, -1))
 	

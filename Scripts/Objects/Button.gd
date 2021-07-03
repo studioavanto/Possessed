@@ -1,6 +1,5 @@
 extends Node2D
 
-# Declare member variables here. Examples:
 signal toggle_on
 signal toggle_off
 
