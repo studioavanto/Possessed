@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/UI/life_barbarian.png" type="Texture" id=1]
+[ext_resource path="res://Resources/UI/life_full.png" type="Texture" id=2]
+[ext_resource path="res://Resources/UI/life_empty.png" type="Texture" id=3]
+[ext_resource path="res://Resources/UI/life_background.png" type="Texture" id=4]
+
+[node name="CharacterCounter" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPortrait" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+fill_mode = 4

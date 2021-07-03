@@ -27,6 +27,9 @@ func possess_character():
 func is_dead():
 	return (character_stage == CharacterStage.DEAD)
 
+func special_input():
+	return
+
 func process_input(n_jump, n_special, n_horizontal_move):
 	if character_stage == CharacterStage.DEAD:
 		return false
