@@ -458,6 +458,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/z_index = 0
 
 [node name="TestVille" type="Node2D"]
+position = Vector2( 5, 0 )
 script = ExtResource( 6 )
 
 [node name="icon" type="Sprite" parent="."]
@@ -467,14 +468,6 @@ texture = ExtResource( 1 )
 [node name="PlayerCharacter" parent="." instance=ExtResource( 2 )]
 position = Vector2( 413.818, 404.387 )
 
-[node name="PossessCharacter" parent="." instance=ExtResource( 3 )]
-position = Vector2( 107.97, 416.757 )
-max_age = 10000
-
-[node name="PossessCharacter2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 556.536, 181.556 )
-max_age = 10000
-
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
 tile_set = SubResource( 48 )
 tile_data = PoolIntArray( 393213, 0, 0, 458749, 0, 131073, 458750, 0, 3, 524286, 0, 131073, 524287, 0, 196610, 458752, 0, 196610, 458753, 0, 196610, 458754, 0, 196610, 458755, 0, 196610, 458756, 0, 196610, 458757, 0, 196610, 458758, 0, 196610, 458759, 0, 196610, 458760, 0, 196610, 458761, 0, 196610, 458762, 0, 196610, 458763, 0, 196610, 458764, 0, 196610, 458765, 0, 196610, 458766, 0, 196610, 458767, 0, 196611 )
@@ -482,3 +475,6 @@ tile_data = PoolIntArray( 393213, 0, 0, 458749, 0, 131073, 458750, 0, 3, 524286,
 [node name="Barbarian" parent="." instance=ExtResource( 7 )]
 position = Vector2( 734.967, 414.312 )
 max_age = 10000
+
+[node name="PossessCharacter" parent="." instance=ExtResource( 3 )]
+position = Vector2( 22.5894, 412.208 )

@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MapExit.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/GameObjects/Objects/Spikes.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=7]
 
 [node name="TestIlmo" type="Node2D"]
 script = ExtResource( 2 )
@@ -12,14 +12,8 @@ script = ExtResource( 2 )
 [node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]
 position = Vector2( 413.818, 404.387 )
 
-[node name="Spikes" parent="." instance=ExtResource( 6 )]
-position = Vector2( 864.7, 289.653 )
-
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
 tile_data = PoolIntArray( 131072, 0, 0, 196608, 0, 65536, 262144, 0, 65536, 327680, 0, 65536, 327695, 0, 0, 393216, 0, 65536, 393219, 0, 0, 393231, 0, 65536, 458752, 0, 65536, 458755, 0, 65536, 458765, 0, 8, 458766, 0, 10, 458767, 0, 65543, 524288, 0, 131073, 524289, 0, 196610, 524290, 0, 196610, 524291, 0, 131074, 524292, 0, 196610, 524293, 0, 196610, 524294, 0, 196610, 524295, 0, 196610, 524296, 0, 196610, 524297, 0, 196610, 524298, 0, 196610, 524299, 0, 196610, 524300, 0, 196610, 524301, 0, 196613, 524302, 0, 196617, 524303, 0, 196619 )
-
-[node name="Spikes2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 550.446, 528.283 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 520.431, 268.529 )
@@ -28,3 +22,6 @@ zoom = Vector2( 0.75, 0.75 )
 
 [node name="MapExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 741.853, 450.868 )
+
+[node name="Barbarian" parent="." instance=ExtResource( 7 )]
+position = Vector2( 303.578, 477.632 )
