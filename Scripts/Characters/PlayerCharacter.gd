@@ -34,14 +34,14 @@ func stop_possession():
 		# LOSE GAME IF NO POSSESS TARGET!
 		pass
 		
-func process_input(jump, special, horizontal_move, interact):
+func process_input(jump, special, horizontal_move, interact, holding_down):
 	if possessed == null:
 		if special:
 			possess_nearby()
 
 		move_and_slide(Vector2(move_speed * horizontal_move, fall_speed))
 	else:
-		if (possessed.process_input(jump, special, horizontal_move, interact)):
+		if (possessed.process_input(jump, special, horizontal_move, interact, holding_down)):
 			position = lerp(position, possessed.position, 0.25)
 		else:
 			stop_possession()

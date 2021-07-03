@@ -15,6 +15,7 @@ enum CharacterStage { CHILLIN, POSSESSED, DEAD }
 var jump = false
 var use_special = false
 var use_interact = false
+var holding_down = false
 var jump_time = 0.0
 var x_speed = 0.0
 var x_input_dir = 1.0
@@ -31,12 +32,13 @@ func possess_character():
 		return false
 
 	character_stage = CharacterStage.POSSESSED
+	being_passive = false
 	return true
 	
 func is_dead():
 	return (character_stage == CharacterStage.DEAD)
 
-func process_input(n_jump, n_special, n_horizontal_move, n_interact):
+func process_input(n_jump, n_special, n_horizontal_move, n_interact, n_holding_down):
 	if character_stage == CharacterStage.DEAD:
 		return false
 
@@ -44,6 +46,7 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact):
 	use_special = n_special
 	x_input_dir = n_horizontal_move
 	use_interact = n_interact
+	holding_down = n_holding_down
 	
 	if x_input_dir > 0.0:
 		facing = 1.0
@@ -70,7 +73,7 @@ func kill_character():
 
 func _physics_process(_delta):
 	if character_stage == CharacterStage.CHILLIN :
-		._physics_process(_delta)
+		#._physics_process(_delta)
 		return
 
 	if x_input_dir > 0.0:
