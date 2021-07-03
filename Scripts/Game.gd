@@ -41,8 +41,12 @@ func load_new_map(new_map):
 	current_map = load(map_dict[new_map]).instance()
 	add_child(current_map)
 	var character_tmp = current_map.get_player_character()
+	character_tmp.connect("map_exit", self, "go_to_next_map")
 	$PlayerController.set_player_character(character_tmp)
 	$UIContainer.connect_character_to_ui(character_tmp)
+
+func go_to_next_map():
+	get_tree().quit()
 
 func get_gamestate():
 	return current_gamestate

@@ -8,7 +8,6 @@ extents = Vector2( 31.1462, 31.5152 )
 
 [node name="MapExit" type="Sprite"]
 position = Vector2( -1.12246, 0.56123 )
-scale = Vector2( 2.824, 3.61323 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 

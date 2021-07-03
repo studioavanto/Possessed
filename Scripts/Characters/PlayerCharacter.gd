@@ -3,6 +3,8 @@ extends KinematicBody2D
 export var fall_speed = 100
 export var move_speed = 200
 
+signal map_exit
+
 var possessed = null
 var next_possession = null
 	
@@ -55,3 +57,6 @@ func _process(_delta):
 func _on_PossessingArea_area_entered(area):
 	if not area.get_parent().is_dead():
 		next_possession = area.get_parent()
+
+func _on_EndArea_area_entered(area):
+	emit_signal("map_exit")
