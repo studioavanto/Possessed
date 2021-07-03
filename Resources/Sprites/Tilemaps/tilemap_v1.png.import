@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tilemap_placeholder.png-657d535e7fe50846811912b993fdabac.stex"
+path="res://.import/tilemap_v1.png-2d5030baea7ab3042de96e873dda08b3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Tilemaps/tilemap_placeholder.png"
-dest_files=[ "res://.import/tilemap_placeholder.png-657d535e7fe50846811912b993fdabac.stex" ]
+source_file="res://Resources/Sprites/Tilemaps/tilemap_v1.png"
+dest_files=[ "res://.import/tilemap_v1.png-2d5030baea7ab3042de96e873dda08b3.stex" ]
 
 [params]
 
