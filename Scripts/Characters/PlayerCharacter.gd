@@ -6,6 +6,8 @@ export var move_speed = 200
 var possessed = null
 var next_possession = null
 
+func interact():
+	pass
 signal character_value_changes(new_value)
 signal character_portrait_changes(new_portrait)
 
