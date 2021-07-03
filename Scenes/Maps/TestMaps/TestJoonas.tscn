@@ -1,9 +1,10 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameObjects/Characters/PossessCharacter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_placeholder.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/GameObjects/Objects/Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GameObjects/Objects/Spikes.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameObjects/Characters/PlayerCharacter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=7]
 
@@ -459,10 +460,14 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="TestiHavQ" type="Node2D"]
 script = ExtResource( 7 )
 
+[node name="Button" parent="." instance=ExtResource( 4 )]
+position = Vector2( 293.997, 219.161 )
+
+[node name="Spikes" parent="." instance=ExtResource( 5 )]
+position = Vector2( 279.881, 406.53 )
+
 [node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
 position = Vector2( 413.818, 404.387 )
-fall_speed = null
-move_speed = null
 
 [node name="PossessCharacter" parent="." instance=ExtResource( 2 )]
 position = Vector2( 107.97, 407.233 )
@@ -473,6 +478,3 @@ position = Vector2( 549.799, 217.232 )
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 tile_set = SubResource( 48 )
 tile_data = PoolIntArray( 262148, 0, 196609, 262149, 0, 196610, 262150, 0, 196610, 262151, 0, 196610, 262152, 0, 196610, 262153, 0, 196610, 262154, 0, 196611, 327693, 0, 196608, 458752, 0, 196609, 458753, 0, 196610, 458754, 0, 196610, 458755, 0, 196610, 458756, 0, 196610, 458757, 0, 196610, 458758, 0, 196610, 458759, 0, 196610, 458760, 0, 196610, 458761, 0, 196610, 458762, 0, 196610, 458763, 0, 196610, 458764, 0, 196610, 458765, 0, 196610, 458766, 0, 196610, 458767, 0, 196611 )
-
-[node name="Node2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 292.066, 214.986 )

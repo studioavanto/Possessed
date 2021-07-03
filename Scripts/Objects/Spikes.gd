@@ -7,5 +7,7 @@ func toggle_spikes():
 	
 	if spikes_on:
 		$HurtBox.set_collision_layer_bit(2, true)
+		print('Spikes on')
 	else:
 		$HurtBox.set_collision_layer_bit(2, false)
+		print('Spikes off')
