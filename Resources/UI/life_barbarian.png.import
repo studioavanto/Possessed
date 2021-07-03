@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tilemap_placeholder.png-657d535e7fe50846811912b993fdabac.stex"
+path="res://.import/life_barbarian.png-702fee7f0e7d5dcbf12ef0e6eeaad192.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Tilemaps/tilemap_placeholder.png"
-dest_files=[ "res://.import/tilemap_placeholder.png-657d535e7fe50846811912b993fdabac.stex" ]
+source_file="res://Resources/UI/life_barbarian.png"
+dest_files=[ "res://.import/life_barbarian.png-702fee7f0e7d5dcbf12ef0e6eeaad192.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

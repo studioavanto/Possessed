@@ -1,17 +1,21 @@
 extends KinematicBody2D
-export var fall_speed = 10
+export var fall_speed = 1000.0
 export var lifetime = 200
-export var jump_speed = 400
+export var jump_fall_reduction = 1000.0
+export var jump_start_speed = 500.0
 export var run_speed = 200
 export var max_age = 1000
+export var max_jump_time = 0.3
 
 enum CharacterState { IDLE, RUNNING, JUMPING, SPECIAL, DEATH }
-enum CharacterStage { CHILLIN, YOUNG, OLD, DEAD }
+enum CharacterStage { CHILLIN, POSSESSED, DEAD }
 
 var jump = false
 var use_special = false
-var move_x = 0.0
-var move_y = 100
+var use_interact = false
+var jump_time = 0.0
+var x_speed = 0.0
+var y_speed = 100
 var current_age = 0
 
 var character_state = CharacterState.IDLE
@@ -21,7 +25,7 @@ func possess_character():
 	if character_stage == CharacterStage.DEAD:
 		return false
 
-	character_stage = CharacterStage.YOUNG
+	character_stage = CharacterStage.POSSESSED
 	return true
 	
 func is_dead():
@@ -33,21 +37,36 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact):
 
 	jump = n_jump
 	use_special = n_special
-	move_x = n_horizontal_move
+	x_speed = n_horizontal_move
+	use_interact = n_interact
 
 	return true
 
+func process_special():
+	pass
+
 func _physics_process(_delta):
-	if jump:
-		move_y = -jump_speed
 	
-	move_and_slide(Vector2(run_speed * move_x, move_y), Vector2(0, -1))
+	if jump and jump_time == 0.0:
+		y_speed = -jump_start_speed 
+		jump_time += _delta
+	
+	elif jump and jump_time < max_jump_time:
+		y_speed += - jump_fall_reduction * _delta
+		jump_time += _delta
+	elif not jump:
+		jump_time = max_jump_time
+	
+	if(use_special):
+		process_special()
+	
+	move_and_slide(Vector2(run_speed * x_speed, y_speed), Vector2(0, -1))
 	
 	if not is_on_floor():
-		move_y += fall_speed
+		y_speed += fall_speed * _delta
 	else:
-		move_y = 100
-	
+		y_speed = 0.0
+		jump_time = 0.0
 	if character_stage == CharacterStage.DEAD:
 		return
 	
@@ -60,4 +79,4 @@ func _physics_process(_delta):
 	
 	jump = false
 	use_special = false
-	move_x = 0.0
+	x_speed = 0.0

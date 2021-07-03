@@ -13,8 +13,7 @@ radius = 104.005
 extents = Vector2( 32.4076, 10 )
 
 [node name="PossessCharacter" type="KinematicBody2D"]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 0
 script = ExtResource( 2 )
 max_age = 300
 

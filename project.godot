@@ -66,6 +66,16 @@ special={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Collision"
+2d_physics/layer_2="Weight"
+2d_physics/layer_3="Hurt"
+2d_physics/layer_4="Lift"
+2d_physics/layer_5="Interact"
+2d_physics/layer_6="PossessionCheck"
+2d_physics/layer_7="MapExit"
+
 [physics]
 
 common/enable_pause_aware_picking=true
