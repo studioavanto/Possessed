@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends "res://Scripts/Objects/Carryable.gd"
 export var fall_speed = 1000.0
 export var lifetime = 200
 export var jump_fall_reduction = 1000.0
@@ -46,6 +46,10 @@ func process_special():
 	pass
 
 func _physics_process(_delta):
+	
+	if character_stage == CharacterStage.CHILLIN :
+		._physics_process(_delta)
+		return
 	
 	if jump and jump_time == 0.0:
 		y_speed = -jump_start_speed 
