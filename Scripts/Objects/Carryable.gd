@@ -1,13 +1,16 @@
 extends KinematicBody2D
 
-var is_being_carried = true
+var is_being_carried = false
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
 	pass # Replace with function body.
 
 func carry_target():
-	return is_being_carried
+	if is_being_carried:
+		return false
+	else:
+		return true
 
 func _physics_process(delta):
 	pass
