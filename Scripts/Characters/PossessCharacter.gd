@@ -42,6 +42,9 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact):
 
 	return true
 
+func process_special():
+	pass
+
 func _physics_process(_delta):
 	
 	if jump and jump_time == 0.0:
@@ -53,6 +56,9 @@ func _physics_process(_delta):
 		jump_time += _delta
 	elif not jump:
 		jump_time = max_jump_time
+	
+	if(use_special):
+		process_special()
 	
 	move_and_slide(Vector2(run_speed * x_speed, y_speed), Vector2(0, -1))
 	
