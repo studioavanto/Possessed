@@ -42,7 +42,7 @@ func load_new_map(new_map):
 	add_child(current_map)
 	var character_tmp = current_map.get_player_character()
 	$PlayerController.set_player_character(character_tmp)
-	#$UIContainer.connect_character_to_ui(characer_tmp)
+	$UIContainer.connect_character_to_ui(character_tmp)
 
 func get_gamestate():
 	return current_gamestate

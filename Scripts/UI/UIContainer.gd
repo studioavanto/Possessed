@@ -1,4 +1,5 @@
 extends CanvasLayer
 
 func connect_character_to_ui(character):
-	return
+	$CharacterCounter.connect("character_value_changes", character, "change_value")
+	$CharacterCounter.connect("character_portrait_changes", character, "change_portrait")
