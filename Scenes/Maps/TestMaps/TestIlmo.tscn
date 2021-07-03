@@ -24,8 +24,8 @@ zoom = Vector2( 0.75, 0.75 )
 [node name="MapExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 741.853, 450.868 )
 
-[node name="Barbarian" parent="." instance=ExtResource( 7 )]
-position = Vector2( 303.578, 477.632 )
-
 [node name="PlatformHorizontal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 470.697, 257.146 )
+
+[node name="Barbarian" parent="." instance=ExtResource( 7 )]
+position = Vector2( 296.894, 479.644 )
