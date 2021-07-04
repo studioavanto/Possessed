@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MapExit.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/GameObjects/Objects/BoxPhysics.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=5]
 
 [node name="Map1_1" type="Node2D"]
 script = ExtResource( 2 )
@@ -20,8 +20,9 @@ zoom = Vector2( 0.75, 0.75 )
 [node name="MapExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 741.853, 450.868 )
 
-[node name="Box" parent="." instance=ExtResource( 8 )]
-position = Vector2( 213.05, 491.118 )
-
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( 131087, 1, 0, 196623, 1, 65536, 262159, 1, 65536, 327695, 1, 65536, 393231, 1, 65536, 458767, 1, 65536, 589823, 1, 196609, 524288, 1, 196610, 524289, 1, 196610, 524290, 1, 196610, 524291, 1, 196610, 524292, 1, 196610, 524293, 1, 196610, 524294, 1, 196610, 524295, 1, 196610, 524296, 1, 196610, 524297, 1, 196610, 524298, 1, 196610, 524299, 1, 196610, 524300, 1, 196610, 524301, 1, 196610, 524302, 1, 196610, 524303, 1, 131075 )
+tile_data = PoolIntArray( 589821, 1, 196609, 589822, 1, 196610, 589823, 1, 196610, 524288, 1, 196610, 524289, 1, 196610, 524290, 1, 196610, 524291, 1, 196610, 524292, 1, 196610, 524293, 1, 196610, 524294, 1, 196610, 524295, 1, 196610, 524296, 1, 196610, 524297, 1, 196610, 524298, 1, 196610, 524299, 1, 196610, 524300, 1, 196610, 524301, 1, 196610, 524302, 1, 196610, 524303, 1, 196610, 524304, 1, 196610, 524305, 1, 196610, 524306, 1, 196611 )
+
+[node name="Barbarian" parent="." instance=ExtResource( 5 )]
+position = Vector2( 461.16, 473.906 )
+max_age = 14692
