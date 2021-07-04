@@ -28,7 +28,7 @@ func carry_target():
 
 func process_physics(delta):
 	if (is_being_carried == false):
-		var vect = move_and_slide(Vector2(x_speed, y_speed) * delta, Vector2(0, -1))
+		var vect = move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1))
 
 		if vect.x == 0.0:
 			x_speed = 0.0
