@@ -2,24 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-<<<<<<< HEAD:Resources/Sprites/Objects/grave_sprite.png.import
-path="res://.import/grave_sprite.png-025a30a09df36581f46f5fa1fd62938d.stex"
-=======
 path="res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex"
->>>>>>> cebd9801eb172bc28bf658d8afdfe636d8065f32:thief_dash.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:Resources/Sprites/Objects/grave_sprite.png.import
-source_file="res://Resources/Sprites/Objects/grave_sprite.png"
-dest_files=[ "res://.import/grave_sprite.png-025a30a09df36581f46f5fa1fd62938d.stex" ]
-=======
 source_file="res://thief_dash.png"
 dest_files=[ "res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex" ]
->>>>>>> cebd9801eb172bc28bf658d8afdfe636d8065f32:thief_dash.png.import
 
 [params]
 

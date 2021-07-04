@@ -1,4 +1,4 @@
-extends Sprite
+extends AnimatedSprite
 
 export var spikes_on = true
 

@@ -8,7 +8,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
-map = 1
+map = 10
 
 [node name="PlayerController" type="Node2D" parent="."]
 script = ExtResource( 2 )
