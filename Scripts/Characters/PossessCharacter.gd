@@ -74,7 +74,7 @@ func process_interact():
 		
 func kill_character():
 	character_stage = CharacterStage.DEAD
-	$AnimatedSprite.animation = "default"
+	$AnimatedSprite.animation = "death"
 
 func process_physics(delta):
 	if character_stage != CharacterStage.POSSESSED:
@@ -90,9 +90,6 @@ func process_physics(delta):
 			dash_timer = 0.0
 			y_speed = 0.0
 			character_state = CharacterState.IDLE
-			if current_age == max_age:
-				character_stage = CharacterStage.DEAD
-			
 		
 		move_and_slide(Vector2(dash_speed * facing, 0), Vector2(0, -1))
 		return
@@ -154,9 +151,10 @@ func process_physics(delta):
 		jump_time = 0.0
 		can_dash = true
 	
-	if current_age == max_age:
+	if current_age >= max_age:
 		if character_stage == CharacterStage.POSSESSED:
-			kill_character()
+			character_state = CharacterState.DEATH
+			#kill_character()
 		else:
 			character_stage += 1
 			current_age = 0
@@ -164,5 +162,13 @@ func process_physics(delta):
 	jump = false
 	use_special = false
 
+	if character_state == CharacterState.DEATH:
+		x_speed = 0.0
+		y_speed += fall_speed * delta
+		move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1))
+		if is_on_floor():
+			kill_character()
+
 func _on_HurtBox_area_entered(area):
-	kill_character()
+	character_state = CharacterState.DEATH
+	#kill_character()
