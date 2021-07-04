@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/Characters/PlayerCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/PlatformMoving.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameObjects/Characters/PossessCharacter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/GameObjects/Objects/BoxPhysics.tscn" type="PackedScene" id=8]
 
 [node name="TestIlmo" type="Node2D"]
 script = ExtResource( 2 )
@@ -15,7 +16,7 @@ script = ExtResource( 2 )
 position = Vector2( 413.818, 404.387 )
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( 131072, 0, 0, 196608, 0, 65536, 262144, 0, 65536, 327680, 0, 65536, 327695, 0, 0, 393216, 0, 65536, 393219, 0, 0, 393231, 0, 65536, 458752, 0, 65536, 458755, 0, 65536, 458765, 0, 8, 458766, 0, 10, 458767, 0, 65543, 524288, 0, 131073, 524289, 0, 196610, 524290, 0, 196610, 524291, 0, 131074, 524292, 0, 196610, 524293, 0, 196610, 524294, 0, 196610, 524295, 0, 196610, 524296, 0, 196610, 524297, 0, 196610, 524298, 0, 196610, 524299, 0, 196610, 524300, 0, 196610, 524301, 0, 196613, 524302, 0, 196617, 524303, 0, 196619 )
+tile_data = PoolIntArray( 131072, 0, 0, 196608, 0, 65536, 262144, 0, 65536, 327680, 0, 65536, 327695, 0, 0, 393216, 0, 65536, 393231, 0, 65536, 458752, 0, 65536, 458765, 0, 8, 458766, 0, 10, 458767, 0, 65543, 524288, 0, 131073, 524289, 0, 196610, 524290, 0, 196610, 524291, 0, 196610, 524292, 0, 196610, 524293, 0, 196610, 524294, 0, 196610, 524295, 0, 196610, 524296, 0, 196610, 524297, 0, 196610, 524298, 0, 196610, 524299, 0, 196610, 524300, 0, 196610, 524301, 0, 196613, 524302, 0, 196617, 524303, 0, 196619 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 520.431, 268.529 )
@@ -33,3 +34,6 @@ position = Vector2( 296.894, 479.644 )
 
 [node name="PossessCharacter" parent="." instance=ExtResource( 6 )]
 position = Vector2( 535.874, 468.653 )
+
+[node name="Box" parent="." instance=ExtResource( 8 )]
+position = Vector2( 213.05, 491.118 )
