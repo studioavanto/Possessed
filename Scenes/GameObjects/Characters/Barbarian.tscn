@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Resources/Sprites/Characters/barbarian_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Characters/Barbarian.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Sprites/Characters/grave_sprite.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Sprites/Objects/tag_possessed.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 13.1948, 17.9324 )
@@ -172,6 +173,34 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 24.2593, 30.4093 )
 
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 36 ) ],
+"loop": true,
+"name": "tagged",
+"speed": 5.0
+} ]
+
 [node name="Barbarian" type="KinematicBody2D"]
 collision_layer = 0
 script = ExtResource( 2 )
@@ -235,7 +264,9 @@ collision_mask = 4
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+z_index = 1
 frames = SubResource( 10 )
+frame = 1
 speed_scale = 2.0
 playing = true
 __meta__ = {
@@ -250,5 +281,9 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
 position = Vector2( 18.0109, -1.5892 )
 shape = SubResource( 11 )
+
+[node name="TaggedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 38 )
+playing = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
