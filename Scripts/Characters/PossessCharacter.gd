@@ -4,11 +4,11 @@ export var lifetime = 200
 export var jump_fall_reduction = 1000.0
 export var jump_start_speed = 420.0
 export var run_speed = 12
-export var max_age = 1000
+export var max_age = 1200
 export var max_jump_time = 0.3
 export var unload_time = 1.0
-export var dash_time = 1.0
-export var dash_speed = 180
+export var dash_time = 0.5
+export var dash_speed = 380
 export var acceleration = 75.0
 export var push_constant = 0.5
 
@@ -81,12 +81,18 @@ func process_physics(delta):
 		.process_physics(delta)
 		return
 	
+	current_age += 1
+	
 	if character_state == CharacterState.DASHING:
 		dash_timer += delta
 	
 		if dash_timer > dash_time:
 			dash_timer = 0.0
+			y_speed = 0.0
 			character_state = CharacterState.IDLE
+			if current_age == max_age:
+				character_stage = CharacterStage.DEAD
+			
 		
 		move_and_slide(Vector2(dash_speed * facing, 0), Vector2(0, -1))
 		return
@@ -147,8 +153,6 @@ func process_physics(delta):
 		y_speed = 1.0
 		jump_time = 0.0
 		can_dash = true
-
-	current_age += 1
 	
 	if current_age == max_age:
 		if character_stage == CharacterStage.POSSESSED:
