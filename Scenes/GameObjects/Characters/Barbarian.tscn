@@ -130,6 +130,7 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
+frame = 1
 speed_scale = 2.0
 playing = true
 __meta__ = {

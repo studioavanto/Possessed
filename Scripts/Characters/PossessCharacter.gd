@@ -75,6 +75,8 @@ func process_interact():
 func kill_character():
 	character_stage = CharacterStage.DEAD
 	$AnimatedSprite.animation = "death"
+	set_collision_layer_bit(0, true)
+	
 
 func process_physics(delta):
 	if character_stage != CharacterStage.POSSESSED:
