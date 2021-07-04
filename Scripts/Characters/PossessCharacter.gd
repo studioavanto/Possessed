@@ -12,7 +12,7 @@ export var dash_speed = 380
 export var acceleration = 75.0
 export var push_constant = 0.5
 
-enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH }
+enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH, CARRYING }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
 
 var jump = false
@@ -76,6 +76,8 @@ func kill_character():
 	character_stage = CharacterStage.DEAD
 	$AnimatedSprite.animation = "death"
 	set_collision_layer_bit(0, true)
+	$HitBox.disabled = true
+	$GraveHitBox.disabled = false
 	
 
 func process_physics(delta):
@@ -110,10 +112,16 @@ func process_physics(delta):
 	if abs(x_speed) > run_speed:
 		x_speed = run_speed * facing
 
-	if abs(x_speed) > 0.4 * run_speed:
-		$AnimatedSprite.animation = "run"
+	if character_state == CharacterState.CARRYING:
+		if abs(x_speed) > 0.4 * run_speed:
+			$AnimatedSprite.animation = "carry_run"
+		else:
+			$AnimatedSprite.animation = "carry_default"
 	else:
-		$AnimatedSprite.animation = "default"
+		if abs(x_speed) > 0.4 * run_speed:
+			$AnimatedSprite.animation = "run"
+		else:
+			$AnimatedSprite.animation = "default"
 
 	if jump and jump_time == 0.0:
 		y_speed = - jump_start_speed 
