@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Characters/Barbarian.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.217, 31.3823 )
+extents = Vector2( 23.5072, 29.4923 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 104.005
@@ -57,14 +57,15 @@ collision_layer = 0
 script = ExtResource( 2 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -1.33484 )
+position = Vector2( 1.05112, 1.81852 )
 shape = SubResource( 1 )
 
 [node name="CarryHitBox" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -64.7397 )
+position = Vector2( 1.05112, -56.9614 )
 shape = SubResource( 1 )
 
 [node name="CarryingArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 8
 
@@ -73,6 +74,7 @@ position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 2 )
 
 [node name="PickingArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 0
 
@@ -81,6 +83,7 @@ position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 16
 
@@ -89,6 +92,7 @@ position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 2 )
 
 [node name="PossessArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 32
 collision_mask = 0
 
@@ -97,6 +101,7 @@ position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 2 )
 
 [node name="HurtBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -105,11 +110,16 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
+animation = "run"
 frame = 1
-speed_scale = 1.25
+speed_scale = 2.0
 playing = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PushArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 128
 
