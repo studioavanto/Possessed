@@ -58,7 +58,6 @@ func from_pause_to_player():
 	
 func load_new_level():
 	# TODO REMOVE OLD MAP
-	
 	current_map = load(map_dict[current_map_id]).instance()
 	add_child(current_map)
 	var character_tmp = current_map.get_player_character()

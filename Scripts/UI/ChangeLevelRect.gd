@@ -36,6 +36,7 @@ func fade_in_scene(state, message=""):
 	if state == "intro":
 		# $ScreenTexture.texture = intro_scene
 		pass
+		
 	elif state == "monologue":
 		
 		$FadeInTween.interpolate_property(
@@ -50,6 +51,7 @@ func fade_in_scene(state, message=""):
 	
 	elif state == "level_name":
 		pass
+		
 	elif state == "end_screen":
 		# $ScreenTexture.texture = end_screen
 		pass

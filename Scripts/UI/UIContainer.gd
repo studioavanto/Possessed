@@ -42,7 +42,8 @@ func screen_fade_out_done():
 	if input_counter == 1:
 		$ChangeLevelRect.fade_in_scene("level_name", get_level_name(get_parent().current_map_id))
 	elif input_counter == 2:
-		get_parent().start_new_level()  # at proceed?
+		print('counter 2')
+		get_parent().start_new_level()
 
 func show_new_map(new_map):
 	print("show new map")
