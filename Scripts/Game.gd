@@ -12,8 +12,8 @@ var map_dict = {
 	MapEnum.TEST_VILLE: "res://Scenes/Maps/TestMaps/TestVille.tscn",
 	MapEnum.TEST_JOHANNES: "res://Scenes/Maps/TestMaps/TestJohannes.tscn",
 	MapEnum.TEST_JOONAS: "res://Scenes/Maps/TestMaps/TestJoonas.tscn",
-	MapEnum.MAP_1_1: "res://Scenes/Maps/PlaceholderMap.tscn",
-	MapEnum.MAP_1_2: "res://Scenes/Maps/PlaceholderMap.tscn",
+	MapEnum.MAP_1_1: "res://Scenes/Maps/Map1_1.tscn",
+	MapEnum.MAP_1_2: "res://Scenes/Maps/Map1_2.tscn",
 	MapEnum.MAP_1_3: "res://Scenes/Maps/PlaceholderMap.tscn",
 	MapEnum.MAP_1_4: "res://Scenes/Maps/PlaceholderMap.tscn"
 }

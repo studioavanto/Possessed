@@ -9,7 +9,7 @@ export var max_jump_time = 0.3
 export var unload_time = 1.0
 export var dash_time = 1.0
 export var dash_speed = 180
-export var acceleration = 10.0
+export var acceleration = 75.0
 export var push_constant = 0.5
 
 enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH }
@@ -74,6 +74,7 @@ func process_interact():
 		
 func kill_character():
 	character_stage = CharacterStage.DEAD
+	$AnimatedSprite.animation = "default"
 
 func process_physics(delta):
 	if character_stage != CharacterStage.POSSESSED:
@@ -97,12 +98,17 @@ func process_physics(delta):
 	elif x_input_dir == 0.0 and abs(x_speed) <= 0.1 * run_speed:
 		x_speed = 0.0
 	elif x_input_dir == 0.0 and x_speed > 0.0:
-		x_speed -= facing * acceleration * delta
+		x_speed -= acceleration * delta
 	elif x_input_dir == 0.0 and x_speed < 0.0:
-		x_speed -= facing * acceleration * delta
+		x_speed += acceleration * delta
 
 	if abs(x_speed) > run_speed:
 		x_speed = run_speed * facing
+
+	if abs(x_speed) > 0.4 * run_speed:
+		$AnimatedSprite.animation = "run"
+	else:
+		$AnimatedSprite.animation = "default"
 
 	if jump and jump_time == 0.0:
 		y_speed = - jump_start_speed 

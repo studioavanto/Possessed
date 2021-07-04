@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tilemap_v3.png-4b1242de72b2b08733a438d6c2a16f94.stex"
+path="res://.import/thief_run.png-fd166a997de202c57ef14ce6255c2a63.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Tilemaps/tilemap_v3.png"
-dest_files=[ "res://.import/tilemap_v3.png-4b1242de72b2b08733a438d6c2a16f94.stex" ]
+source_file="res://thief_run.png"
+dest_files=[ "res://.import/thief_run.png-fd166a997de202c57ef14ce6255c2a63.stex" ]
 
 [params]
 
