@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/projectile_spell_reference.png-0cb0072d851b509d639f8ac22d7f8d26.stex"
+path="res://.import/tilemap_v3_redstone.png-55d0e70a9d3a687fe88c81f0e63f4a26.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://projectile_spell_reference.png"
-dest_files=[ "res://.import/projectile_spell_reference.png-0cb0072d851b509d639f8ac22d7f8d26.stex" ]
+source_file="res://Resources/Sprites/Tilemaps/tilemap_v3_redstone.png"
+dest_files=[ "res://.import/tilemap_v3_redstone.png-55d0e70a9d3a687fe88c81f0e63f4a26.stex" ]
 
 [params]
 

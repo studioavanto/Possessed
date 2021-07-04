@@ -6,13 +6,10 @@
 [ext_resource path="res://Resources/Sprites/Characters/grave_sprite.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 104.005
+radius = 31.532
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32.4076, 10 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 32.9563, 31.3708 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 23.2663, 28.6456 )
@@ -92,11 +89,13 @@ extents = Vector2( 12.1494, 18.9629 )
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 17.7348, 23.3223 )
 
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 18.2849, 23.3073 )
+
 [node name="Thief" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="PossessArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 32
 collision_mask = 0
 
@@ -104,11 +103,11 @@ collision_mask = 0
 shape = SubResource( 1 )
 
 [node name="CarryArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarryArea"]
+position = Vector2( 2.77795, 6.74645 )
 shape = SubResource( 1 )
 
 [node name="Weight" type="Area2D" parent="."]
@@ -117,16 +116,9 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight"]
+visible = false
 position = Vector2( 0.155716, 21.5247 )
 shape = SubResource( 2 )
-
-[node name="HurtBox" type="Area2D" parent="."]
-visible = false
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-shape = SubResource( 3 )
 
 [node name="InteractArea" type="Area2D" parent="."]
 visible = false
@@ -134,6 +126,7 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+visible = false
 position = Vector2( 50, 0 )
 rotation = -0.000702262
 shape = SubResource( 4 )
@@ -144,20 +137,19 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickingArea"]
+visible = false
 position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 13 )
-animation = "death"
-frame = 2
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="PushArea" type="Area2D" parent="."]
-visible = false
 scale = Vector2( 1.19615, 0.930268 )
 collision_layer = 0
 collision_mask = 128
@@ -177,3 +169,13 @@ shape = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( 0.707108, 5.3033 )
+shape = SubResource( 20 )
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

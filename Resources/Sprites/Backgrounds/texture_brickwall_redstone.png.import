@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/projectile_spell.png-fbd0a3353624342b2511e095754a5d76.stex"
+path="res://.import/texture_brickwall_redstone.png-fcb9d68ef385ffd6326369ca23688d72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://projectile_spell.png"
-dest_files=[ "res://.import/projectile_spell.png-fbd0a3353624342b2511e095754a5d76.stex" ]
+source_file="res://Resources/Sprites/Backgrounds/texture_brickwall_redstone.png"
+dest_files=[ "res://.import/texture_brickwall_redstone.png-fcb9d68ef385ffd6326369ca23688d72.stex" ]
 
 [params]
 

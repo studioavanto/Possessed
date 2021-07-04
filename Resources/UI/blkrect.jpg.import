@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
-source_file="res://thief_dash.png"
-dest_files=[ "res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex" ]
-
+source_file="res://Resources/UI/blkrect.jpg"
 [params]
 
 compress/mode=0

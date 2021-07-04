@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/projectile_sprite.png-f208b35bb43e4da6723def0346d38f15.stex"
+path="res://.import/thief_dying.png-6aa3de1f75484817550d6767677a53cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://projectile_sprite.png"
-dest_files=[ "res://.import/projectile_sprite.png-f208b35bb43e4da6723def0346d38f15.stex" ]
+source_file="res://Resources/Sprites/Characters/thief_dying.png"
+dest_files=[ "res://.import/thief_dying.png-6aa3de1f75484817550d6767677a53cf.stex" ]
 
 [params]
 
