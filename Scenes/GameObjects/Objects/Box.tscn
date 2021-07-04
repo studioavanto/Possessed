@@ -11,6 +11,7 @@ extents = Vector2( 32.9178, 33.6036 )
 
 [node name="Box" type="KinematicBody2D"]
 script = ExtResource( 1 )
+collidable = true
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -1.33484 )

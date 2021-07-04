@@ -19,7 +19,7 @@ func start_carrying_target(target):
 		carry_item = target
 		character_state = CharacterState.CARRYING
 		$CarryHitBox.disabled = false
-		set_collision_mask_bit(3, false)
+		$CarryingArea.set_collision_mask_bit(3, false)
 
 func throw_object():
 	set_collision_mask_bit(3, true)
@@ -29,7 +29,7 @@ func throw_object():
 	carry_item.stop_being_carried()
 	
 func stop_carrying():
-	set_collision_mask_bit(3, true)
+	$CarryingArea.set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
 	character_state = CharacterState.UNLOADING
 	carry_item.stop_being_carried()
