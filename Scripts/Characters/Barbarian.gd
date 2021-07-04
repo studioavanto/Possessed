@@ -41,11 +41,17 @@ func process_special():
 			stop_carrying()
 		else:
 			throw_object()
+
 func get_id():
 	return 1
 
+func kill_character():
+	if carry_item != null:
+		stop_carrying()
+
+	.kill_character()
+
 func _physics_process(_delta):
-	
 	._physics_process(_delta)
 	
 	if carry_item != null:

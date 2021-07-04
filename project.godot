@@ -82,6 +82,7 @@ special={
 2d_physics/layer_5="Interact"
 2d_physics/layer_6="PossessionCheck"
 2d_physics/layer_7="MapExit"
+2d_physics/layer_8="Push"
 
 [physics]
 

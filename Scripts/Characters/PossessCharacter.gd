@@ -1,4 +1,5 @@
 extends "res://Scripts/Objects/Carryable.gd"
+
 export var lifetime = 200
 export var jump_fall_reduction = 1000.0
 export var jump_start_speed = 420.0
@@ -8,7 +9,8 @@ export var max_jump_time = 0.3
 export var unload_time = 1.0
 export var dash_time = 1.0
 export var dash_speed = 180
-export var acceleration = 75.0
+export var acceleration = 10.0
+export var push_constant = 0.5
 
 enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
@@ -18,9 +20,7 @@ var use_special = false
 var use_interact = false
 var holding_down = false
 var jump_time = 0.0
-var x_speed = 0.0
 var x_input_dir = 1.0
-var y_speed = 100
 var current_age = 0
 var unloading_timer = 0.0
 var dash_timer = 0.0
@@ -34,7 +34,6 @@ func possess_character():
 		return false
 
 	character_stage = CharacterStage.POSSESSED
-	being_passive = false
 	$PickingArea.set_collision_layer_bit(3, false)
 	return true
 	
@@ -51,10 +50,12 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact, n_holding_d
 	use_interact = n_interact
 	holding_down = n_holding_down
 	
-	if x_input_dir > 0.0:
+	if x_input_dir > 0.0 and facing == -1.0:
 		facing = 1.0
-	elif x_input_dir < 0.0:
+		scale.x = -1.0
+	elif x_input_dir < 0.0 and facing == 1.0:
 		facing = -1.0
+		scale.x = -1.0
 
 	return true
 
@@ -74,13 +75,13 @@ func process_interact():
 func kill_character():
 	character_stage = CharacterStage.DEAD
 
-func _physics_process(_delta):
-	if character_stage == CharacterStage.CHILLIN or character_stage == CharacterStage.DEAD :
-		#._physics_process(_delta)
+func process_physics(delta):
+	if character_stage != CharacterStage.POSSESSED:
+		.process_physics(delta)
 		return
 	
 	if character_state == CharacterState.DASHING:
-		dash_timer += _delta
+		dash_timer += delta
 	
 		if dash_timer > dash_time:
 			dash_timer = 0.0
@@ -90,25 +91,26 @@ func _physics_process(_delta):
 		return
 
 	if x_input_dir > 0.0:
-		x_speed = x_speed + facing * acceleration * _delta
+		x_speed += facing * acceleration * delta
 	elif x_input_dir < 0.0:
-		x_speed = x_speed + facing * acceleration * _delta
-	elif x_input_dir == 0.0 and abs(x_speed) <= 0.1*run_speed:
+		x_speed += facing * acceleration * delta
+	elif x_input_dir == 0.0 and abs(x_speed) <= 0.1 * run_speed:
 		x_speed = 0.0
 	elif x_input_dir == 0.0 and x_speed > 0.0:
-		x_speed = x_speed - acceleration * _delta
+		x_speed -= facing * acceleration * delta
 	elif x_input_dir == 0.0 and x_speed < 0.0:
-		x_speed = x_speed + acceleration * _delta
+		x_speed -= facing * acceleration * delta
 
 	if abs(x_speed) > run_speed:
-		x_speed = run_speed*facing
-	
+		x_speed = run_speed * facing
+
 	if jump and jump_time == 0.0:
-		y_speed = -jump_start_speed 
-		jump_time += _delta
+		y_speed = - jump_start_speed 
+		jump_time += delta
+		
 	elif jump and jump_time < max_jump_time:
-		y_speed += - jump_fall_reduction * _delta
-		jump_time += _delta
+		y_speed += - jump_fall_reduction * delta
+		jump_time += delta
 	
 	if(use_special):
 		process_special()
@@ -118,26 +120,29 @@ func _physics_process(_delta):
 	
 	if character_state == CharacterState.UNLOADING:
 		x_speed = 0.0
-		unloading_timer += _delta
+		unloading_timer += delta
 	
 	if unloading_timer > unload_time:
 		unloading_timer = 0.0
 		character_state = CharacterState.IDLE
 	
-	move_and_slide(Vector2(run_speed * x_speed, y_speed), Vector2(0, -1))
+	var speed_mod = 1.0
 	
+	for area in $PushArea.get_overlapping_areas(): 
+		if (position - area.get_parent().position).x * facing < 0:
+			speed_mod = push_constant
+			area.get_parent().move_and_slide(Vector2(speed_mod * run_speed * x_speed, 0.0), Vector2(0, -1))
+	
+	move_and_slide(Vector2(speed_mod * run_speed * x_speed, y_speed), Vector2(0, -1))
+
 	if not is_on_floor():
-		y_speed += fall_speed * _delta
+		y_speed += fall_speed * delta
 	else:
-		y_speed = 0.0
+		y_speed = 1.0
 		jump_time = 0.0
 		can_dash = true
 
-	if character_stage == CharacterStage.DEAD:
-		return
-	
-	if character_stage != CharacterStage.CHILLIN:
-		current_age += 1
+	current_age += 1
 	
 	if current_age == max_age:
 		if character_stage == CharacterStage.POSSESSED:
