@@ -1,0 +1,43 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+<<<<<<< HEAD:Resources/Sprites/Objects/grave_sprite.png.import
+path="res://.import/grave_sprite.png-025a30a09df36581f46f5fa1fd62938d.stex"
+=======
+path="res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex"
+>>>>>>> cebd9801eb172bc28bf658d8afdfe636d8065f32:thief_dash.png.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<< HEAD:Resources/Sprites/Objects/grave_sprite.png.import
+source_file="res://Resources/Sprites/Objects/grave_sprite.png"
+dest_files=[ "res://.import/grave_sprite.png-025a30a09df36581f46f5fa1fd62938d.stex" ]
+=======
+source_file="res://thief_dash.png"
+dest_files=[ "res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex" ]
+>>>>>>> cebd9801eb172bc28bf658d8afdfe636d8065f32:thief_dash.png.import
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
