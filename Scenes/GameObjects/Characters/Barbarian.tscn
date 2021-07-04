@@ -206,18 +206,15 @@ collision_layer = 0
 script = ExtResource( 2 )
 
 [node name="GraveHitBox" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -0.529724, 11.919 )
 shape = SubResource( 33 )
 disabled = true
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 1.61669, 0.90921 )
 shape = SubResource( 1 )
 
 [node name="CarryHitBox" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 1.51645, -54.8066 )
 shape = SubResource( 1 )
 
@@ -238,7 +235,6 @@ position = Vector2( 0.629927, 1.88989 )
 shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 16
 
@@ -251,12 +247,10 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossessArea"]
-visible = false
 position = Vector2( 0.944914, 3.77977 )
 shape = SubResource( 2 )
 
 [node name="HurtBox" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -266,7 +260,6 @@ shape = SubResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 z_index = 1
 frames = SubResource( 10 )
-frame = 1
 speed_scale = 2.0
 playing = true
 __meta__ = {
@@ -274,7 +267,6 @@ __meta__ = {
 }
 
 [node name="PushArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 128
 

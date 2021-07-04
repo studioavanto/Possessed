@@ -56,11 +56,11 @@ func _process(_delta):
 
 func _on_PossessingArea_area_entered(area):
 	if not area.get_parent().is_dead():
-		if next_possession != null:
-			next_possession.remove_tag()
-		
 		if possessed == area.get_parent():
 			return
+		
+		if next_possession != null:
+			next_possession.remove_tag()
 
 		next_possession = area.get_parent()
 		next_possession.tag_character()

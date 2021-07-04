@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var throw_speed = 500.0
 export var fall_speed = 1000.0
+export var collidable = false
 var is_being_carried = false
 var y_speed = 0.0
 var x_speed = 0.0
@@ -15,14 +16,16 @@ func throw(direction, thrower_facing):
 	position.y -= 10.0
 
 func stop_being_carried():
-	set_collision_layer_bit(0, true)
+	if collidable:
+		set_collision_layer_bit(0, true)
 	is_being_carried = false
 
 func carry_target():
 	if is_being_carried:
 		return false
 	else:
-		set_collision_layer_bit(0, false)
+		if collidable:
+			set_collision_layer_bit(0, false)
 		is_being_carried = true
 		return true
 
