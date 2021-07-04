@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grave_sprite.png-c8e81377e801bbffe3ffb635ff62013f.stex"
+path="res://.import/hissi1x1.png-7268ceaf805817be248f7d66a987fb52.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grave_sprite.png"
-dest_files=[ "res://.import/grave_sprite.png-c8e81377e801bbffe3ffb635ff62013f.stex" ]
+source_file="res://Resources/Sprites/Objects/hissi1x1.png"
+dest_files=[ "res://.import/hissi1x1.png-7268ceaf805817be248f7d66a987fb52.stex" ]
 
 [params]
 

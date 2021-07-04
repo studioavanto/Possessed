@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hissi2x1.png-3fdd3f410079b725b54c13b93aea1023.stex"
+path="res://.import/button_sprite.png-00316fdf360591f6ae6bfc094e430a00.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hissi2x1.png"
-dest_files=[ "res://.import/hissi2x1.png-3fdd3f410079b725b54c13b93aea1023.stex" ]
+source_file="res://Resources/Sprites/Objects/button_sprite.png"
+dest_files=[ "res://.import/button_sprite.png-00316fdf360591f6ae6bfc094e430a00.stex" ]
 
 [params]
 

@@ -11,7 +11,7 @@ func throw(direction, thrower_facing):
 	x_speed = direction.x + throw_speed * thrower_facing
 	y_speed = direction.y
 	
-	position.x += 20.0*thrower_facing
+	position.x += 20.0 * thrower_facing
 	position.y -= 10.0
 
 func stop_being_carried():
