@@ -3,18 +3,22 @@
 [ext_resource path="res://Resources/Sprites/Objects/exit_door.png" type="Texture" id=1]
 
 [sub_resource type="AtlasTexture" id=1]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 127, 128 )
 
 [sub_resource type="AtlasTexture" id=2]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 127, 128 )
 
 [sub_resource type="AtlasTexture" id=3]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 127, 0, 127, 128 )
 
 [sub_resource type="AtlasTexture" id=4]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 254, 0, 127, 128 )
 
@@ -32,7 +36,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 31.1462, 31.5152 )
+extents = Vector2( 6.53093, 31.5152 )
 
 [node name="MapExit" type="AnimatedSprite"]
 frames = SubResource( 5 )
@@ -42,4 +46,5 @@ collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapEnterHitbox"]
+position = Vector2( -1.78381, 32.7032 )
 shape = SubResource( 6 )
