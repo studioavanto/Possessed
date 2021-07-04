@@ -35,8 +35,10 @@ func _ready():
 	$CutsceneController.control_id = GameState.CONTROL_CUTSCENE
 	
 	if map != MapEnum.START_GAME:
-		load_new_map(map)
-	
+		current_map_id = map
+		load_new_level()
+		start_new_level()
+		
 	$CutsceneController.connect("proceed", $UIContainer,"proceed")
 
 func load_new_map(new_map):
