@@ -1,26 +1,50 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Objects/Button.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Sprites/Objects/button_sprite.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.1312, 31.6652 )
+extents = Vector2( 16, 8 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "pressed",
+"speed": 5.0
+} ]
 
 [node name="Button" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="ButtonSprite" type="Sprite" parent="."]
-position = Vector2( -0.824463, -0.419357 )
-texture = ExtResource( 2 )
-
 [node name="CheckWeight" type="Area2D" parent="."]
-position = Vector2( -130.448, 79.2575 )
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckWeight"]
-position = Vector2( 129.461, -79.1431 )
+position = Vector2( 0, 24 )
 shape = SubResource( 1 )
+
+[node name="ButtonSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="area_entered" from="CheckWeight" to="." method="_on_CheckWeight_area_entered"]
 [connection signal="area_exited" from="CheckWeight" to="." method="_on_CheckWeight_area_exited"]

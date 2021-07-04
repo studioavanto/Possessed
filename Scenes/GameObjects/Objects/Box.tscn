@@ -4,13 +4,14 @@
 [ext_resource path="res://Resources/Sprites/Objects/box_movable.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.217, 31.3823 )
+extents = Vector2( 28.645, 28.3653 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32.9178, 33.6036 )
 
 [node name="Box" type="KinematicBody2D"]
 script = ExtResource( 1 )
+collidable = true
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -1.33484 )
@@ -20,6 +21,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="PickingArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 136
 collision_mask = 0
 

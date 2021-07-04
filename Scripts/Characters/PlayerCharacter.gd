@@ -56,7 +56,14 @@ func _process(_delta):
 
 func _on_PossessingArea_area_entered(area):
 	if not area.get_parent().is_dead():
+		if possessed == area.get_parent():
+			return
+		
+		if next_possession != null:
+			next_possession.remove_tag()
+
 		next_possession = area.get_parent()
+		next_possession.tag_character()
 
 func _on_EndArea_area_entered(area):
 	emit_signal("map_exit")

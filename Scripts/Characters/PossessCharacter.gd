@@ -15,6 +15,7 @@ export var push_constant = 0.5
 enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH, CARRYING }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
 
+var tagged = false
 var jump = false
 var use_special = false
 var use_interact = false
@@ -35,8 +36,17 @@ func possess_character():
 
 	character_stage = CharacterStage.POSSESSED
 	$PickingArea.set_collision_layer_bit(3, false)
+	remove_tag()
 	return true
 	
+func tag_character():
+	tagged = true
+	$TaggedSprite.animation = "tagged"
+
+func remove_tag():
+	tagged = false
+	$TaggedSprite.animation = "default"
+
 func is_dead():
 	return (character_stage == CharacterStage.DEAD)
 
@@ -78,7 +88,6 @@ func kill_character():
 	set_collision_layer_bit(0, true)
 	$HitBox.disabled = true
 	$GraveHitBox.disabled = false
-	
 
 func process_physics(delta):
 	if character_stage != CharacterStage.POSSESSED:

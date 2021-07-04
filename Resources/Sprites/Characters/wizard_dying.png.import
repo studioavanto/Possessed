@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/projectile_spell.png-fbd0a3353624342b2511e095754a5d76.stex"
+path="res://.import/wizard_dying.png-826b3c56cc6b6b2bdb2ae4f7b4334d3d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://projectile_spell.png"
-dest_files=[ "res://.import/projectile_spell.png-fbd0a3353624342b2511e095754a5d76.stex" ]
+source_file="res://Resources/Sprites/Characters/wizard_dying.png"
+dest_files=[ "res://.import/wizard_dying.png-826b3c56cc6b6b2bdb2ae4f7b4334d3d.stex" ]
 
 [params]
 
