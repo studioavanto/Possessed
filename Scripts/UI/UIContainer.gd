@@ -15,7 +15,6 @@ func _ready():
 
 func proceed():
 	if can_proceed:
-		print("can proceed")
 		input_counter += 1
 		can_proceed = false
 		
@@ -31,14 +30,12 @@ func get_level_monologue(map_id):
 	return ["höhöö", "höhöhöhöhöhö"]
 	
 func screen_fade_in_done():
-	print('Fade in done')
 	if input_counter == 0:
 		get_parent().load_new_level()
 		
 	can_proceed = true
 	
 func screen_fade_out_done():
-	print("Fade out done")
 	if input_counter == 1:
 		$ChangeLevelRect.fade_in_scene("level_name", get_level_name(get_parent().current_map_id))
 	elif input_counter == 2:
@@ -46,7 +43,6 @@ func screen_fade_out_done():
 		get_parent().start_new_level()
 
 func show_new_map(new_map):
-	print("show new map")
 	can_proceed = false
 	input_counter = 0
 	$ChangeLevelRect.fade_in_scene("monologue", get_level_monologue(new_map))

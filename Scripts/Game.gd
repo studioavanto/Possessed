@@ -27,28 +27,40 @@ export (MapEnum) var map = MapEnum.START_GAME
 var current_gamestate = GameState.CONTROL_PLAYER
 var next_gamestate = GameState.CONTROL_NULL
 
+var current_map_resource = null
 var current_map = null
 var current_map_id = -1
+var normal_play = true
 
 func _ready():
 	$PauseController.control_id = GameState.CONTROL_PAUSE
 	$PlayerController.control_id = GameState.CONTROL_PLAYER
 	$CutsceneController.control_id = GameState.CONTROL_CUTSCENE
 	
+	$CutsceneController.connect("proceed", $UIContainer,"proceed")
+	
 	if map != MapEnum.START_GAME:
 		current_map_id = map
 		load_new_level()
 		start_new_level()
-		
-	$CutsceneController.connect("proceed", $UIContainer,"proceed")
+		normal_play = false
+	else:
+		current_map_id = MapEnum.MAP_1_1
+		load_new_map()
 
-func load_new_map(new_map):
+func reset_map():
+	load_new_level(true)
+	
+func load_new_map():
 	next_gamestate = GameState.CONTROL_CUTSCENE
-	$UIContainer.show_new_map(new_map)
-	current_map_id = new_map
+	$UIContainer.show_new_map(current_map_id)
 
 func go_to_next_map():
-	get_tree().quit()
+	if normal_play:
+		current_map_id += 1
+		load_new_map()
+	else:
+		get_tree().quit()
 
 func get_gamestate():
 	return current_gamestate
@@ -59,10 +71,16 @@ func from_player_to_pause():
 func from_pause_to_player():
 	next_gamestate = GameState.CONTROL_PLAYER
 	
-func load_new_level():
-	# TODO REMOVE OLD MAP
-	current_map = load(map_dict[current_map_id]).instance()
+func load_new_level(reset = false):
+	if current_map != null:
+		current_map.queue_free()
+	
+	if not reset:
+		current_map_resource = load(map_dict[current_map_id])
+
+	current_map = current_map_resource.instance()
 	add_child(current_map)
+	
 	var character_tmp = current_map.get_player_character()
 	character_tmp.connect("map_exit", self, "go_to_next_map")
 	$PlayerController.set_player_character(character_tmp)

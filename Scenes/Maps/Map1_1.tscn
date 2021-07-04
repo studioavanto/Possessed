@@ -13,11 +13,6 @@ script = ExtResource( 2 )
 [node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]
 position = Vector2( -37.354, 326.045 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 520.431, 268.529 )
-current = true
-zoom = Vector2( 0.85, 0.85 )
-
 [node name="MapExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1010.81, 328.729 )
 
