@@ -4,15 +4,15 @@ export var lifetime = 200
 export var jump_fall_reduction = 1000.0
 export var jump_start_speed = 420.0
 export var run_speed = 12
-export var max_age = 1000
+export var max_age = 1200
 export var max_jump_time = 0.3
 export var unload_time = 1.0
-export var dash_time = 1.0
-export var dash_speed = 180
+export var dash_time = 0.5
+export var dash_speed = 380
 export var acceleration = 75.0
 export var push_constant = 0.5
 
-enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH }
+enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH, CARRYING }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
 
 var jump = false
@@ -74,18 +74,25 @@ func process_interact():
 		
 func kill_character():
 	character_stage = CharacterStage.DEAD
-	$AnimatedSprite.animation = "default"
+	$AnimatedSprite.animation = "death"
+	set_collision_layer_bit(0, true)
+	$HitBox.disabled = true
+	$GraveHitBox.disabled = false
+	
 
 func process_physics(delta):
 	if character_stage != CharacterStage.POSSESSED:
 		.process_physics(delta)
 		return
 	
+	current_age += 1
+	
 	if character_state == CharacterState.DASHING:
 		dash_timer += delta
 	
 		if dash_timer > dash_time:
 			dash_timer = 0.0
+			y_speed = 0.0
 			character_state = CharacterState.IDLE
 		
 		move_and_slide(Vector2(dash_speed * facing, 0), Vector2(0, -1))
@@ -105,10 +112,16 @@ func process_physics(delta):
 	if abs(x_speed) > run_speed:
 		x_speed = run_speed * facing
 
-	if abs(x_speed) > 0.4 * run_speed:
-		$AnimatedSprite.animation = "run"
+	if character_state == CharacterState.CARRYING:
+		if abs(x_speed) > 0.4 * run_speed:
+			$AnimatedSprite.animation = "carry_run"
+		else:
+			$AnimatedSprite.animation = "carry_default"
 	else:
-		$AnimatedSprite.animation = "default"
+		if abs(x_speed) > 0.4 * run_speed:
+			$AnimatedSprite.animation = "run"
+		else:
+			$AnimatedSprite.animation = "default"
 
 	if jump and jump_time == 0.0:
 		y_speed = - jump_start_speed 
@@ -147,12 +160,11 @@ func process_physics(delta):
 		y_speed = 1.0
 		jump_time = 0.0
 		can_dash = true
-
-	current_age += 1
 	
-	if current_age == max_age:
+	if current_age >= max_age:
 		if character_stage == CharacterStage.POSSESSED:
-			kill_character()
+			character_state = CharacterState.DEATH
+			#kill_character()
 		else:
 			character_stage += 1
 			current_age = 0
@@ -160,5 +172,13 @@ func process_physics(delta):
 	jump = false
 	use_special = false
 
+	if character_state == CharacterState.DEATH:
+		x_speed = 0.0
+		y_speed += fall_speed * delta
+		move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1))
+		if is_on_floor():
+			kill_character()
+
 func _on_HurtBox_area_entered(area):
-	kill_character()
+	character_state = CharacterState.DEATH
+	#kill_character()

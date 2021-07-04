@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Resources/Sprites/Characters/projectile_sprite.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Characters/Projectile.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "destroy",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 9.96868
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 9.95667
+
+[node name="Projectile" type="KinematicBody2D"]
+collision_layer = 0
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+animation = "destroy"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 15.8919, -1.05946 )
+shape = SubResource( 5 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tween2" type="Tween" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 16.1568, -0.794594 )
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.15
+randomness = 0.25
+lifetime_randomness = 0.06
+direction = Vector2( 0, 0 )
+spread = 136.33
+gravity = Vector2( 0, 1 )
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+scale_amount = 4.0
+color = Color( 0.52549, 0.372549, 0.756863, 1 )
+hue_variation_random = 0.05
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2( 15.3622, -1.05946 )
+shape = SubResource( 6 )
+
+[connection signal="area_entered" from="InteractArea" to="." method="_on_InteractArea_area_entered"]

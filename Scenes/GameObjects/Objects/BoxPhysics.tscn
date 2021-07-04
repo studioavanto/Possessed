@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Resources/Sprites/Objects/icon.png" type="Texture" id=2]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends RigidBody2D
 
 export var throw_speed = 500.0
@@ -38,19 +38,19 @@ func carry_target():
 		return true
 "
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32.217, 31.3823 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 radius = 104.005
 
 [node name="Box" type="RigidBody2D"]
 angular_damp = 100.0
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -1.33484 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -61,4 +61,4 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickingArea"]
 position = Vector2( -1.25995, 6.29962 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )

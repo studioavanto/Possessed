@@ -5,10 +5,6 @@ signal toggle_off
 
 var flipped = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 func toggle_switch():
 	flipped = not flipped
 	
@@ -20,7 +16,3 @@ func toggle_switch():
 
 func interact():
 	toggle_switch()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

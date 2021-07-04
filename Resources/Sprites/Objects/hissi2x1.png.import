@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ghost_spritesheet.png-8effcfa86afce682719d48bfe2d8af5f.stex"
+path="res://.import/hissi2x1.png-d7543360d621ff902ab7f3326a2b1eef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Characters/ghost_spritesheet.png"
-dest_files=[ "res://.import/ghost_spritesheet.png-8effcfa86afce682719d48bfe2d8af5f.stex" ]
+source_file="res://Resources/Sprites/Objects/hissi2x1.png"
+dest_files=[ "res://.import/hissi2x1.png-d7543360d621ff902ab7f3326a2b1eef.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
