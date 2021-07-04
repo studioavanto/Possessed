@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex"
+path="res://.import/thief_dying.png-6aa3de1f75484817550d6767677a53cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://thief_dash.png"
-dest_files=[ "res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex" ]
+source_file="res://Resources/Sprites/Characters/thief_dying.png"
+dest_files=[ "res://.import/thief_dying.png-6aa3de1f75484817550d6767677a53cf.stex" ]
 
 [params]
 

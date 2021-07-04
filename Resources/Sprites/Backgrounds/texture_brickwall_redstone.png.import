@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex"
+path="res://.import/texture_brickwall_redstone.png-fcb9d68ef385ffd6326369ca23688d72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://thief_dash.png"
-dest_files=[ "res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex" ]
+source_file="res://Resources/Sprites/Backgrounds/texture_brickwall_redstone.png"
+dest_files=[ "res://.import/texture_brickwall_redstone.png-fcb9d68ef385ffd6326369ca23688d72.stex" ]
 
 [params]
 

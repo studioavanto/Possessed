@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex"
+path="res://.import/tilemap_v3_redstone.png-55d0e70a9d3a687fe88c81f0e63f4a26.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://thief_dash.png"
-dest_files=[ "res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex" ]
+source_file="res://Resources/Sprites/Tilemaps/tilemap_v3_redstone.png"
+dest_files=[ "res://.import/tilemap_v3_redstone.png-55d0e70a9d3a687fe88c81f0e63f4a26.stex" ]
 
 [params]
 

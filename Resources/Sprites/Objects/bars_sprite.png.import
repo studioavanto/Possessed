@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex"
+path="res://.import/bars_sprite.png-319b323b4f2d2871911bf3038979c325.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://thief_dash.png"
-dest_files=[ "res://.import/thief_dash.png-f50e17d2b76106c40e26fa599b1c4933.stex" ]
+source_file="res://Resources/Sprites/Objects/bars_sprite.png"
+dest_files=[ "res://.import/bars_sprite.png-319b323b4f2d2871911bf3038979c325.stex" ]
 
 [params]
 
