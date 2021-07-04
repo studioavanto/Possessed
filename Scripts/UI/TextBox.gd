@@ -1,11 +1,8 @@
 extends Polygon2D
 
-var dialog = ["Test text", "Second test text"]
-var page = 0
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$RichTextLabel.set_bbcode(dialog[page])
+	$RichTextLabel.set_bbcode("none")
 	$RichTextLabel.set_visible_characters(0)
 	$Timer.start()
 
@@ -16,9 +13,6 @@ func _on_Timer_timeout():
 	
 	if $RichTextLabel.get_visible_characters() > $RichTextLabel.get_total_character_count():
 		
-		if page < dialog.size():
 			
-			page += 1
-			
-			$RichTextLabel.set_bbcode(dialog[page])
-			$RichTextLabel.set_visible_characters(0)
+		$RichTextLabel.set_bbcode("placeholder")
+		$RichTextLabel.set_visible_characters(0)
