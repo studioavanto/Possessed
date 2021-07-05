@@ -11,6 +11,7 @@ export var dash_time = 0.5
 export var dash_speed = 380
 export var acceleration = 75.0
 export var push_constant = 0.5
+export var dash_cooldown_time = 1.0
 
 enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH, CARRYING }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
@@ -26,6 +27,7 @@ var current_age = 0
 var unloading_timer = 0.0
 var dash_timer = 0.0
 var can_dash = true
+var dash_cooldown = 0.0
 
 var character_state = CharacterState.IDLE
 var character_stage = CharacterStage.CHILLIN
@@ -103,6 +105,8 @@ func process_physics(delta):
 			dash_timer = 0.0
 			y_speed = 0.0
 			character_state = CharacterState.IDLE
+			dash_cooldown = dash_cooldown_time
+			can_dash = false
 		
 		move_and_slide(Vector2(dash_speed * facing, 0), Vector2(0, -1))
 		return
@@ -163,12 +167,17 @@ func process_physics(delta):
 	
 	move_and_slide(Vector2(speed_mod * run_speed * x_speed, y_speed), Vector2(0, -1))
 
+	if dash_cooldown > 0.0:
+		dash_cooldown -= delta
+
 	if not is_on_floor():
 		y_speed += fall_speed * delta
 	else:
 		y_speed = 1.0
 		jump_time = 0.0
-		can_dash = true
+		if dash_cooldown <= 0.0:
+			can_dash = true
+	
 	
 	if current_age >= max_age:
 		if character_stage == CharacterStage.POSSESSED:
