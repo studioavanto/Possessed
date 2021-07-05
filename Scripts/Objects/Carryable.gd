@@ -45,7 +45,7 @@ func stop_being_carried():
 	is_being_carried = false
 
 func carry_target():
-	if is_being_carried:
+	if is_being_carried or get_total_weight() > 1:
 		return false
 	else:
 		if collidable:

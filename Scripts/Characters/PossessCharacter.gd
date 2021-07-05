@@ -162,8 +162,11 @@ func process_physics(delta):
 	
 	for area in $PushArea.get_overlapping_areas(): 
 		if (position - area.get_parent().position).x * facing < 0:
-			speed_mod = push_constant
-			area.get_parent().move_and_slide(Vector2(speed_mod * run_speed * x_speed, 0.0), Vector2(0, -1))
+			if area.get_parent().get_total_weight() > 1:
+				speed_mod = 0.0
+			else:
+				speed_mod = push_constant
+				area.get_parent().move_and_slide(Vector2(speed_mod * run_speed * x_speed, 0.0), Vector2(0, -1))
 	
 	move_and_slide(Vector2(speed_mod * run_speed * x_speed, y_speed), Vector2(0, -1))
 
