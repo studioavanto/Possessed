@@ -27,7 +27,6 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="PickingArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 136
 collision_mask = 0
 
@@ -35,7 +34,6 @@ collision_mask = 0
 shape = SubResource( 2 )
 
 [node name="CheckWeightArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -44,7 +42,6 @@ position = Vector2( 0, -29.8518 )
 shape = SubResource( 3 )
 
 [node name="Weight" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 0
 

@@ -12,9 +12,3 @@ func process_special():
 func get_id():
 	return 2
 
-func _physics_process(_delta):
-	._physics_process(_delta)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

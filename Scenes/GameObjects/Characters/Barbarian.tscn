@@ -225,7 +225,6 @@ position = Vector2( 1.51645, -54.8066 )
 shape = SubResource( 2 )
 
 [node name="CarryingArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 8
 
@@ -234,7 +233,6 @@ position = Vector2( 31.183, 0.314993 )
 shape = SubResource( 3 )
 
 [node name="PickingArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 8
 collision_mask = 0
 
@@ -243,7 +241,6 @@ position = Vector2( 0.629927, 1.88989 )
 shape = SubResource( 4 )
 
 [node name="InteractArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 16
 
@@ -252,7 +249,6 @@ position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 4 )
 
 [node name="PossessArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 32
 collision_mask = 0
 
@@ -261,7 +257,6 @@ position = Vector2( 0.944914, 3.77977 )
 shape = SubResource( 4 )
 
 [node name="HurtBox" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -271,6 +266,8 @@ shape = SubResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 z_index = 1
 frames = SubResource( 33 )
+animation = "death"
+frame = 2
 speed_scale = 2.0
 playing = true
 __meta__ = {
@@ -278,7 +275,6 @@ __meta__ = {
 }
 
 [node name="PushArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 128
 
