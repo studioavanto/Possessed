@@ -5,4 +5,3 @@ func get_player_character():
 
 func set_pause(pause):
 	return
-
