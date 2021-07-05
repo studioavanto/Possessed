@@ -10,15 +10,14 @@
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=8]
 
 [node name="Map2_1" type="Node2D"]
+position = Vector2( 382.512, 276.575 )
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
 position = Vector2( -168.478, 500.669 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 520.431, 268.529 )
-current = true
-zoom = Vector2( 0.85, 0.85 )
 
 [node name="MapExit" parent="." instance=ExtResource( 3 )]
 position = Vector2( -122.406, 133.411 )
