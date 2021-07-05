@@ -9,15 +9,14 @@
 [ext_resource path="res://Scenes/GameObjects/Characters/Thief.tscn" type="PackedScene" id=7]
 
 [node name="Map1_2" type="Node2D"]
+position = Vector2( 382.536, 276.677 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]
 position = Vector2( -130.249, -12.5724 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 520.431, 268.529 )
-current = true
-zoom = Vector2( 0.85, 0.85 )
 
 [node name="MapExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1133.62, 585.018 )
