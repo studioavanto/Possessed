@@ -167,7 +167,6 @@ shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 14 )
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -203,6 +202,7 @@ position = Vector2( 0.707108, 5.3033 )
 shape = SubResource( 18 )
 
 [node name="TaggedSprite" type="AnimatedSprite" parent="."]
+z_index = -1
 frames = SubResource( 22 )
 playing = true
 
