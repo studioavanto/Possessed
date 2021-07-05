@@ -9,6 +9,29 @@ var x_speed = 0.0
 var facing = 1.0
 var has_space_above = true
 
+func get_total_weight():
+	var all_areas = get_weight_above()
+
+	var counted_areas = []
+	var total_weight = 0
+
+	for a in all_areas:
+		if not counted_areas.has(a):
+			total_weight += 1
+			counted_areas.append(a)
+	
+	return total_weight
+
+func get_weight_above():
+	var areas = []
+	
+	for a in $CheckWeightArea.get_overlapping_areas():
+		areas += a.get_parent().get_weight_above()
+
+	areas.append(get_instance_id())
+
+	return areas
+
 func throw(direction, thrower_facing):
 	x_speed = direction.x + throw_speed * thrower_facing
 	y_speed = direction.y
@@ -39,12 +62,12 @@ func process_physics(delta):
 
 		if is_on_floor():
 			x_speed = 0.0
-			y_speed = 0.0
+			y_speed = 1.0
 		else:
 			y_speed += fall_speed * delta
 	else:
 		x_speed = 0.0
-		y_speed = 0.0
+		y_speed = 1.0
 
 func _physics_process(delta):
 	var space_state = get_world_2d().direct_space_state
