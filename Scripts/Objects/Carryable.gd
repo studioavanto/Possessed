@@ -54,6 +54,13 @@ func carry_target():
 		return true
 
 func process_physics(delta):
+	var space_state = get_world_2d().direct_space_state
+	var raycast_collisions = space_state.intersect_ray(position+Vector2(0,0), position+Vector2(0,-64), [self])
+	if raycast_collisions.empty():
+		 has_space_above = true
+	else:
+		has_space_above = false
+	
 	if (is_being_carried == false):
 		var vect = move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1))
 
@@ -70,13 +77,6 @@ func process_physics(delta):
 		y_speed = 1.0
 
 func _physics_process(delta):
-	var space_state = get_world_2d().direct_space_state
-	var raycast_collisions = space_state.intersect_ray(position+Vector2(0,0), position+Vector2(0,-64), [self])
-	if raycast_collisions.empty():
-		 has_space_above = true
-	else:
-		has_space_above = false
-	
 	process_physics(delta)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

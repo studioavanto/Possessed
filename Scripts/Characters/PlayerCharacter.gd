@@ -38,8 +38,6 @@ func process_input(jump, special, horizontal_move, interact, holding_down):
 	if possessed == null:
 		if special:
 			possess_nearby()
-
-		move_and_slide(Vector2(move_speed * horizontal_move, fall_speed))
 	else:
 		if (possessed.process_input(jump, special, horizontal_move, interact, holding_down)):
 			position = lerp(position, possessed.position, 0.25)
