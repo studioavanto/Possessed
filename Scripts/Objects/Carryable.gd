@@ -7,6 +7,7 @@ var is_being_carried = false
 var y_speed = 0.0
 var x_speed = 0.0
 var facing = 1.0
+var has_space_above = true
 
 func throw(direction, thrower_facing):
 	x_speed = direction.x + throw_speed * thrower_facing
@@ -46,6 +47,13 @@ func process_physics(delta):
 		y_speed = 0.0
 
 func _physics_process(delta):
+	var space_state = get_world_2d().direct_space_state
+	var raycast_collisions = space_state.intersect_ray(position+Vector2(0,0), position+Vector2(0,-64), [self])
+	if raycast_collisions.empty():
+		 has_space_above = true
+	else:
+		has_space_above = false
+	
 	process_physics(delta)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

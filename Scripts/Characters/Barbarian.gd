@@ -35,9 +35,9 @@ func stop_carrying():
 	carry_item.stop_being_carried()
 
 func process_special():
-	if carry_item == null:
+	if carry_item == null and has_space_above:
 		carry_nearby()
-	else:
+	elif carry_item != null:
 		if holding_down:
 			stop_carrying()
 		else:
