@@ -1,0 +1,3 @@
+animaatio 4 framea sekunissa
+4fps
+kuvat numerojärjestyksessä
