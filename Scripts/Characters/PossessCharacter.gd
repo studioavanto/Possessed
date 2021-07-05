@@ -3,13 +3,13 @@ extends "res://Scripts/Objects/Carryable.gd"
 export var lifetime = 200
 export var jump_fall_reduction = 1000.0
 export var jump_start_speed = 420.0
-export var run_speed = 12
-export var max_age = 1200
+export var run_speed = 20
+export var max_age = 600
 export var max_jump_time = 0.3
 export var unload_time = 1.0
 export var dash_time = 0.5
 export var dash_speed = 380
-export var acceleration = 75.0
+export var acceleration = 150.0
 export var push_constant = 0.5
 export var dash_cooldown_time = 1.0
 
