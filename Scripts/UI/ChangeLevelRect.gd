@@ -81,7 +81,6 @@ func fade_in_scene(state, message=""):
 	
 	elif state == "level_name":
 		pass
-		
 #		$FadeInTween.interpolate_property(
 #		$TextBox,
 #		"modulate",
@@ -99,15 +98,6 @@ func fade_in_scene(state, message=""):
 	$FadeInTween.start()
 
 func fade_out_scene():
-	$FadeOutTween.interpolate_property(
-		$Monologue,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 0.0),
-		fade_timing,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
 	
 	$FadeOutTween.interpolate_property(
 		$ScreenTexture,
