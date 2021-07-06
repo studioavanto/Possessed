@@ -3,6 +3,9 @@ extends StaticBody2D
 export var door_on = true
 
 func toggle_door():
+	for area in $CheckCollisions.get_overlapping_areas():
+		return
+
 	door_on = not door_on
 	
 	if door_on:
@@ -16,4 +19,10 @@ func _on_Button_toggle_off():
 	toggle_door() 
 
 func _on_Button_toggle_on():
+	toggle_door()
+
+func _on_Switch_toggle_on():
+	toggle_door()
+
+func _on_Switch_toggle_off():
 	toggle_door()
