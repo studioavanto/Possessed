@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Resources/Sprites/Characters/thief_idle.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Characters/Thief.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Sprites/Characters/thief_run.png" type="Texture" id=3]
-[ext_resource path="res://Resources/Sprites/Objects/grave_sprite.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Sprites/Characters/thief_dying.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Sprites/Objects/tag_possessed.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Sprites/Characters/thief_dash.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 31.532
@@ -19,12 +20,19 @@ extents = Vector2( 23.2663, 28.6456 )
 radius = 104.005
 
 [sub_resource type="AtlasTexture" id=5]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
@@ -42,80 +50,109 @@ atlas = ExtResource( 4 )
 region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="SpriteFrames" id=18]
 animations = [ {
 "frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 28 ) ],
+"loop": false,
+"name": "dash",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": false,
 "name": "death",
-"speed": 2.0
+"speed": 12.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 3.62296, 19.7287 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 12.1494, 18.9629 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 17.7348, 23.3223 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 18.2849, 23.3073 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=22]
+[sub_resource type="SpriteFrames" id=26]
 animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 20 ) ],
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 24 ) ],
 "loop": true,
 "name": "tagged",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 17.3728, 6.91422 )
 
 [node name="Thief" type="KinematicBody2D"]
@@ -138,38 +175,32 @@ position = Vector2( 2.77795, 6.74645 )
 shape = SubResource( 1 )
 
 [node name="Weight" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight"]
-visible = false
 position = Vector2( 0.155716, 21.5247 )
 shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-visible = false
 position = Vector2( 50, 0 )
 rotation = -0.000702262
 shape = SubResource( 3 )
 
 [node name="PickingArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickingArea"]
-visible = false
 position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 14 )
+frames = SubResource( 18 )
 frame = 1
 playing = true
 __meta__ = {
@@ -183,16 +214,16 @@ collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
 position = Vector2( 14.0227, 11.0801 )
-shape = SubResource( 15 )
+shape = SubResource( 19 )
 
 [node name="GraveHitBox" type="CollisionShape2D" parent="."]
 position = Vector2( -0.508678, 9.62088 )
-shape = SubResource( 16 )
+shape = SubResource( 20 )
 disabled = true
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( 0.118381, 5.20633 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -203,11 +234,11 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 0.707108, 5.3033 )
-shape = SubResource( 18 )
+shape = SubResource( 22 )
 
 [node name="TaggedSprite" type="AnimatedSprite" parent="."]
 z_index = -1
-frames = SubResource( 22 )
+frames = SubResource( 26 )
 playing = true
 
 [node name="CheckWeightArea" type="Area2D" parent="."]
@@ -216,6 +247,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckWeightArea"]
 position = Vector2( 2.38379, -3.10037 )
-shape = SubResource( 23 )
+shape = SubResource( 27 )
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

@@ -115,7 +115,7 @@ func process_physics(delta):
 			character_state = CharacterState.IDLE
 			dash_cooldown = dash_cooldown_time
 			can_dash = false
-		
+			
 		move_and_slide(Vector2(dash_speed * facing, 0), Vector2(0, -1))
 		return
 
