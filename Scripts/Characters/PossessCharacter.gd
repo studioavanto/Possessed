@@ -7,11 +7,11 @@ export var run_speed = 20
 export var max_age = 600
 export var max_jump_time = 0.3
 export var unload_time = 1.0
-export var dash_time = 0.5
-export var dash_speed = 380
+export var dash_time = 0.25
+export var dash_speed = 700
 export var acceleration = 150.0
 export var push_constant = 0.5
-export var dash_cooldown_time = 1.0
+export var dash_cooldown_time = 0.05
 
 enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH, CARRYING }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
