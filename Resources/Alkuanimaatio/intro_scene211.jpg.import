@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/intro_scene211.jpg-416503ff1c35ffb8e51a7e2019e6a72e.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Resources/Alkuanimaatio/intro_scene211.jpg"
+dest_files=[ "res://.import/intro_scene211.jpg-416503ff1c35ffb8e51a7e2019e6a72e.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
