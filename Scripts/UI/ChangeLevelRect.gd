@@ -8,7 +8,8 @@ signal fade_out_completed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TextBox.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	$Monologue.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	$Sprite.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	$ScreenTexture.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	$FadeInTween.connect("tween_all_completed", self, "fade_in_completed")
 	$FadeOutTween.connect("tween_all_completed", self, "fade_out_completed")
@@ -21,7 +22,7 @@ func fade_out_completed():
 	
 func fade_out_active():
 	$FadeOutTween.interpolate_property(
-		$TextBox,
+		$Monologue,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 1.0),
 		Color(1.0, 1.0, 1.0, 0.0),
@@ -29,6 +30,17 @@ func fade_out_active():
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
 	)
+	
+	$FadeOutTween.interpolate_property(
+		$Sprite,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 1.0),
+		Color(1.0, 1.0, 1.0, 0.0),
+		fade_timing,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	
 	$FadeOutTween.start()
 
 func fade_in_scene(state, message=""):
@@ -48,16 +60,17 @@ func fade_in_scene(state, message=""):
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
 	)
-	
-	elif state == "level_name":
-		pass
-		
-	elif state == "end_screen":
-		# $ScreenTexture.texture = end_screen
-		pass
-		
-	$FadeInTween.interpolate_property(
-		$TextBox,
+		$FadeInTween.interpolate_property(
+		$Sprite,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 0.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		fade_timing,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+		$FadeInTween.interpolate_property(
+		$Monologue,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 0.0),
 		Color(1.0, 1.0, 1.0, 1.0),
@@ -66,11 +79,28 @@ func fade_in_scene(state, message=""):
 		Tween.EASE_IN
 	)
 	
+	elif state == "level_name":
+		pass
+		
+#		$FadeInTween.interpolate_property(
+#		$TextBox,
+#		"modulate",
+#		Color(1.0, 1.0, 1.0, 0.0),
+#		Color(1.0, 1.0, 1.0, 1.0),
+#		fade_timing,
+#		Tween.TRANS_LINEAR,
+#		Tween.EASE_IN
+#	)
+		
+	elif state == "end_screen":
+		# $ScreenTexture.texture = end_screen
+		pass
+	
 	$FadeInTween.start()
 
 func fade_out_scene():
 	$FadeOutTween.interpolate_property(
-		$TextBox,
+		$Monologue,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 1.0),
 		Color(1.0, 1.0, 1.0, 0.0),
@@ -88,4 +118,5 @@ func fade_out_scene():
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
 	)
+	
 	$FadeOutTween.start()

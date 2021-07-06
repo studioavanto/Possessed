@@ -1,21 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/UI/Monologue.gd" type="Script" id=1]
-[ext_resource path="res://Resources/UI/background_frame.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
 
-[node name="Polygon2D" type="TextureRect"]
-texture = ExtResource( 2 )
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 2 )
+
+[node name="MonologueLabel" type="RichTextLabel"]
+margin_left = 689.0
+margin_top = 64.0
+margin_right = 1863.0
+margin_bottom = 998.0
+rect_pivot_offset = Vector2( -1421.24, -107.377 )
+custom_fonts/normal_font = SubResource( 1 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 48.0
-margin_top = 144.0
-margin_right = 624.0
-margin_bottom = 240.0
-bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
