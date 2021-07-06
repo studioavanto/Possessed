@@ -170,7 +170,6 @@ shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 14 )
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -217,5 +216,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckWeightArea"]
 position = Vector2( 2.38379, -3.10037 )
 shape = SubResource( 23 )
+
+[node name="DropTimer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

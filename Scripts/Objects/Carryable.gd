@@ -8,6 +8,10 @@ var y_speed = 0.0
 var x_speed = 0.0
 var facing = 1.0
 var has_space_above = true
+var wait_to_drop = false
+
+func _ready():
+	$DropTimer.connect("timeout", self, "can_now_drop")
 
 func get_total_weight():
 	var all_areas = get_weight_above()
@@ -39,9 +43,14 @@ func throw(direction, thrower_facing):
 	position.x += 20.0 * thrower_facing
 	position.y -= 10.0
 
-func stop_being_carried():
+func stop_being_carried(character_dies = false):
+	if character_dies:
+		wait_to_drop = false
+		$DropTimer.start(0.1)
+
 	if collidable:
 		set_collision_layer_bit(0, true)
+
 	is_being_carried = false
 
 func carry_target():
@@ -76,9 +85,11 @@ func process_physics(delta):
 		x_speed = 0.0
 		y_speed = 1.0
 
-func _physics_process(delta):
-	process_physics(delta)
+func can_now_drop():
+	wait_to_drop = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _physics_process(delta):
+	if wait_to_drop:
+		return
+
+	process_physics(delta)
