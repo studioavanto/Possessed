@@ -34,8 +34,7 @@ func stop_possession():
 	if next_possession != null:
 		possess_target(next_possession)
 	else:
-		# LOSE GAME IF NO POSSESS TARGET!
-		pass
+		get_parent().reset_map()
 		
 func process_input(jump, special, horizontal_move, interact, holding_down):
 	if possessed == null:
