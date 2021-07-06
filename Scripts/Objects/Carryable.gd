@@ -9,10 +9,6 @@ var y_speed = 0.0
 var x_speed = 0.0
 var facing = 1.0
 var has_space_above = true
-var wait_to_drop = false
-
-#func _ready():
-	#$DropTimer.connect("timeout", self, "can_now_drop")
 
 func get_total_weight():
 	var all_areas = get_weight_above()
@@ -44,10 +40,7 @@ func throw(direction, thrower_facing):
 	position.x += 20.0 * thrower_facing
 	position.y -= 10.0
 
-func stop_being_carried(character_dies = false):
-	if character_dies:
-		wait_to_drop = false
-		#$DropTimer.start(0.1)
+func stop_being_carried():
 
 	if collidable:
 		set_collision_layer_bit(0, true)
@@ -64,12 +57,6 @@ func carry_target():
 		return true
 
 func process_physics(delta):
-	var space_state = get_world_2d().direct_space_state
-	var raycast_collisions = space_state.intersect_ray(position+Vector2(0,0), position+Vector2(0,-64), [self])
-	if raycast_collisions.empty():
-		 has_space_above = true
-	else:
-		has_space_above = false
 	
 	if (is_being_carried == false):
 		var vect = move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1))
@@ -86,11 +73,11 @@ func process_physics(delta):
 		x_speed = 0.0
 		y_speed = 1.0
 
-func can_now_drop():
-	wait_to_drop = false
-
 func _physics_process(delta):
-	if wait_to_drop:
-		return
-
+	var space_state = get_world_2d().direct_space_state
+	var raycast_collisions = space_state.intersect_ray(position+Vector2(0,0), position+Vector2(0,-64), [self])
+	if raycast_collisions.empty():
+		 has_space_above = true
+	else:
+		has_space_above = false
 	process_physics(delta)

@@ -15,6 +15,9 @@
 position = Vector2( 382.551, 276.693 )
 script = ExtResource( 8 )
 
+[node name="Wizard2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 409.449, 547.307 )
+
 [node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
 position = Vector2( 96, 616 )
 
@@ -50,6 +53,18 @@ points = PoolVector2Array( 0, 104, 0, -128 )
 
 [node name="Wizard" parent="." instance=ExtResource( 11 )]
 position = Vector2( 274.812, 610.788 )
+
+[node name="Wizard4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 537.449, 515.307 )
+
+[node name="Wizard3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 809.449, 523.307 )
+
+[node name="Wizard5" parent="." instance=ExtResource( 11 )]
+position = Vector2( -6.55099, 491.307 )
+
+[node name="Barbarian2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 345.449, 612.307 )
 
 [connection signal="toggle_off" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_off"]
 [connection signal="toggle_off" from="Button" to="Spikes" method="_on_Button_toggle_off"]

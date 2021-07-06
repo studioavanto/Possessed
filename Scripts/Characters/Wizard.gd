@@ -1,7 +1,7 @@
 extends "res://Scripts/Characters/PossessCharacter.gd"
 
 export var cast_spell_time = 0.2
-export var push_back = 10
+export var push_back = 20
 
 var can_cast_projectile = true
 onready var projectile = load("res://Scenes/GameObjects/Characters/Projectile.tscn")

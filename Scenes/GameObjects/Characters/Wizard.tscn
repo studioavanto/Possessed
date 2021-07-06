@@ -141,7 +141,6 @@ collision_layer = 0
 script = ExtResource( 3 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 1.05112, 1.81852 )
 shape = SubResource( 1 )
 
@@ -154,48 +153,39 @@ position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-visible = false
 position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 2 )
 
 [node name="PossessArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossessArea"]
-visible = false
 position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 2 )
 
 [node name="HurtBox" type="Area2D" parent="."]
-visible = false
 collision_layer = 256
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-visible = false
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 6.73477, 0 )
 frames = SubResource( 17 )
 speed_scale = 2.0
 playing = true
 
 [node name="PushArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
-visible = false
 position = Vector2( 18.0109, -1.5892 )
 shape = SubResource( 18 )
 
@@ -205,31 +195,28 @@ one_shot = true
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Glyph" type="Sprite" parent="."]
-visible = false
 position = Vector2( 8.74053, 1.85406 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 
 [node name="CheckWeightArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckWeightArea"]
-visible = false
 position = Vector2( -2.11893, -5.74908 )
 shape = SubResource( 19 )
 
 [node name="TaggedSprite" type="AnimatedSprite" parent="."]
-visible = false
 z_index = -1
 frames = SubResource( 23 )
 playing = true
 
 [node name="GraveHitBox" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -2.11892, 12.9785 )
 shape = SubResource( 24 )
 disabled = true
 
 [node name="DropTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

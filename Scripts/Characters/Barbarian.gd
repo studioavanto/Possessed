@@ -41,7 +41,7 @@ func stop_carrying():
 func drop_box_on_top():
 	$CarryingArea.set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
-	carry_item.stop_being_carried(true)
+	carry_item.stop_being_carried()
 	carry_item = null
 	
 func process_special():
