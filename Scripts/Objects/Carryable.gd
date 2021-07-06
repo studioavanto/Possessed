@@ -11,8 +11,8 @@ var facing = 1.0
 var has_space_above = true
 var wait_to_drop = false
 
-func _ready():
-	$DropTimer.connect("timeout", self, "can_now_drop")
+#func _ready():
+	#$DropTimer.connect("timeout", self, "can_now_drop")
 
 func get_total_weight():
 	var all_areas = get_weight_above()
@@ -47,7 +47,7 @@ func throw(direction, thrower_facing):
 func stop_being_carried(character_dies = false):
 	if character_dies:
 		wait_to_drop = false
-		$DropTimer.start(0.1)
+		#$DropTimer.start(0.1)
 
 	if collidable:
 		set_collision_layer_bit(0, true)
