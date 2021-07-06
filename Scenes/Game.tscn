@@ -25,7 +25,7 @@ script = ExtResource( 5 )
 [node name="UIContainer" parent="." instance=ExtResource( 4 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 815.639, 459.347 )
+position = Vector2( 960, 540 )
 current = true
 zoom = Vector2( 0.85, 0.85 )
 
