@@ -4,7 +4,10 @@
 [ext_resource path="res://Resources/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 45
+extra_spacing_top = 5
+extra_spacing_bottom = 5
+extra_spacing_char = 5
 font_data = ExtResource( 2 )
 
 [node name="MonologueLabel" type="RichTextLabel"]
@@ -20,6 +23,6 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.12
+wait_time = 0.1
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

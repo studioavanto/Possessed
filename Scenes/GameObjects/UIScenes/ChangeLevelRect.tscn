@@ -53,10 +53,11 @@ __meta__ = {
 }
 
 [node name="Monologue" parent="." instance=ExtResource( 5 )]
-margin_left = 651.0
-margin_top = 25.0
+margin_left = 734.0
+margin_top = 289.0
 margin_right = 1882.0
-margin_bottom = 1048.0
+margin_bottom = 792.0
+scroll_active = false
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 334.504, 723.894 )
@@ -66,6 +67,7 @@ frame = 1
 playing = true
 
 [node name="TextBox" parent="." instance=ExtResource( 3 )]
+visible = false
 margin_left = 360.0
 margin_top = 132.0
 margin_right = 1560.0
