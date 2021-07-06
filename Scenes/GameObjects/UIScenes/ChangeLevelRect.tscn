@@ -25,10 +25,10 @@ texture = null
 [node name="FadeOutTween" type="Tween" parent="."]
 
 [node name="ScreenTexture" type="TextureRect" parent="."]
-margin_left = 15.0
-margin_top = 21.0
-margin_right = 86.0
-margin_bottom = 61.0
+margin_left = 14.0
+margin_top = 20.0
+margin_right = 89.0
+margin_bottom = 62.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 5
