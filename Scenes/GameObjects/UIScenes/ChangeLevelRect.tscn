@@ -1,37 +1,64 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/UI/ChangeLevelRect.gd" type="Script" id=1]
 [ext_resource path="res://Resources/UI/background_frame.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/GameObjects/UIScenes/Monologue.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Sprites/Characters/ghost_spritesheet.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/GameObjects/UIScenes/Monologue.tscn" type="PackedScene" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
 
 [node name="ChangeLevelRect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -383.882
-margin_top = -680.212
-margin_right = -383.882
-margin_bottom = -680.212
-rect_scale = Vector2( 26.7087, 33.2237 )
+margin_right = 1920.0
+margin_bottom = 1080.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="TextBox" parent="." instance=ExtResource( 3 )]
-texture = null
 
 [node name="FadeInTween" type="Tween" parent="."]
 
 [node name="FadeOutTween" type="Tween" parent="."]
 
 [node name="ScreenTexture" type="TextureRect" parent="."]
-margin_left = 14.0
-margin_top = 20.0
-margin_right = 89.0
-margin_bottom = 62.0
+margin_left = -0.86045
+margin_top = -0.653068
+margin_right = 1920.0
+margin_bottom = 1080.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Monologue" parent="." instance=ExtResource( 5 )]
+margin_left = 651.0
+margin_top = 25.0
+margin_right = 1882.0
+margin_bottom = 1048.0
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 321.805, 736.593 )
+scale = Vector2( 30, 30 )
+frames = SubResource( 4 )
+playing = true

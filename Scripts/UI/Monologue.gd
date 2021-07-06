@@ -1,15 +1,13 @@
-extends TextureRect
+extends RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$RichTextLabel.set_bbcode("")
-	$RichTextLabel.set_visible_characters(0)
+	self.set_bbcode("This is all test stuff")
+	self.set_visible_characters(0)
 	$Timer.start()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-
 func _on_Timer_timeout():
-	$RichTextLabel.set_visible_characters($RichTextLabel.get_visible_characters()+1)
+	self.set_visible_characters(self.get_visible_characters()+1)
 	
-	if $RichTextLabel.get_visible_characters() > $RichTextLabel.get_total_character_count():
+	if self.get_visible_characters() > self.get_total_character_count():
 		$Timer.stop()
