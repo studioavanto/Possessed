@@ -19,3 +19,6 @@ func get_possessed_character_id():
 
 func reset_map():
 	get_parent().reset_map()
+
+func change_active_character(new_character):
+	get_parent().change_active_character(new_character)

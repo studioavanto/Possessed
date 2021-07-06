@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/objectfall.wav-e90dab2a4d18e0d83ce90cab81cbd534.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/Objects/objectfall.wav"
+dest_files=[ "res://.import/objectfall.wav-e90dab2a4d18e0d83ce90cab81cbd534.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

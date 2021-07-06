@@ -104,6 +104,9 @@ func start_new_level():
 func play_sound(sound_string):
 	$AudioEffectManager.play_sound(sound_string)
 
+func change_active_character(new_character):
+	$MusicManager.change_active_character(new_character)
+
 func _process(_delta):
 	if next_gamestate != GameState.CONTROL_NULL:
 		current_gamestate = next_gamestate

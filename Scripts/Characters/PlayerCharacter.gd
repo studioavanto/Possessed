@@ -27,15 +27,16 @@ func possess_target(target):
 	if target.possess_character():
 		possessed = target
 		next_possession = null
+		get_parent().change_active_character(possessed.get_id())
 
 func stop_possession():
 	possessed = null
-	
+	get_parent().change_active_character(-1)
 	if next_possession != null:
 		possess_target(next_possession)
 	else:
 		get_parent().reset_map()
-		
+
 func process_input(jump, special, horizontal_move, interact, holding_down):
 	if possessed == null:
 		if special:
