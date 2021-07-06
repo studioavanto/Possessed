@@ -257,7 +257,7 @@ position = Vector2( 0.944914, 3.77977 )
 shape = SubResource( 4 )
 
 [node name="HurtBox" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 256
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]

@@ -11,6 +11,11 @@ var next_possession = null
 signal character_value_changes(new_value)
 signal character_portrait_changes(new_portrait)
 
+func teleport_character(character):
+	var tmp_position = character.position
+	character.position = possessed.position
+	possessed.position = tmp_position
+
 func possess_nearby():
 	for area in $PossessingArea.get_overlapping_areas():
 		possess_target(area.get_parent())

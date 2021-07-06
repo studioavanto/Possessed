@@ -53,6 +53,9 @@ func _process(delta):
 		start_destroy_projectile()
 	
 func _on_InteractArea_area_entered(area):
+	if area.get_parent().get_instance_id() == get_parent().get_possessed_character_id():
+		return
+	
 	if area.get_collision_layer_bit(4):
 		area.get_parent().interact()
 		start_destroy_projectile()

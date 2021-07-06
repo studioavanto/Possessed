@@ -96,6 +96,13 @@ func process_physics(delta):
 		.process_physics(delta)
 		return
 	
+	if character_state == CharacterState.DEATH:
+		y_speed += fall_speed * delta
+		move_and_slide(Vector2(x_speed * run_speed, y_speed), Vector2(0, -1))
+		if is_on_floor():
+			kill_character()
+		return
+	
 	current_age += 1
 	
 	if character_state == CharacterState.DASHING:
@@ -122,7 +129,7 @@ func process_physics(delta):
 	elif x_input_dir == 0.0 and x_speed < 0.0:
 		x_speed += acceleration * delta
 
-	if abs(x_speed) > run_speed and facing * x_speed > 0:
+	if abs(x_speed) > run_speed and 0 < facing * x_speed:
 		x_speed = run_speed * facing
 
 	if character_state == CharacterState.CARRYING:
@@ -185,7 +192,6 @@ func process_physics(delta):
 	if current_age >= max_age:
 		if character_stage == CharacterStage.POSSESSED:
 			character_state = CharacterState.DEATH
-			#kill_character()
 		else:
 			character_stage += 1
 			current_age = 0
@@ -193,13 +199,8 @@ func process_physics(delta):
 	jump = false
 	use_special = false
 
-	if character_state == CharacterState.DEATH:
-		x_speed = 0.0
-		y_speed += fall_speed * delta
-		move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1))
-		if is_on_floor():
-			kill_character()
-
-func _on_HurtBox_area_entered(area):
-	character_state = CharacterState.DEATH
-	#kill_character()
+func _on_HurtBox_area_entered(area):	
+	if area.get_collision_mask_bit(2):
+		character_state = CharacterState.DEATH
+	elif area.get_collision_mask_bit(8):
+		get_parent().teleport_character(self)
