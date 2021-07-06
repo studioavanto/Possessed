@@ -9,14 +9,11 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/GameObjects/Objects/PlatformMoving.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/GameObjects/Objects/Door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/GameObjects/Characters/Wizard.tscn" type="PackedScene" id=11]
 
 [node name="Map2_2" type="Node2D"]
 position = Vector2( 382.551, 276.693 )
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
 position = Vector2( 96, 616 )
@@ -45,18 +42,16 @@ playing = true
 position = Vector2( 544, 616 )
 
 [node name="Barbarian" parent="." instance=ExtResource( 2 )]
-position = Vector2( 208, 608 )
+position = Vector2( 96, 614.3 )
 
 [node name="PlatformHorizontal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 904, 384 )
 points = PoolVector2Array( 0, 104, 0, -128 )
 
-[node name="Door" parent="." instance=ExtResource( 10 )]
-position = Vector2( 416, 616 )
+[node name="Wizard" parent="." instance=ExtResource( 11 )]
+position = Vector2( 274.812, 610.788 )
 
 [connection signal="toggle_off" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_off"]
-[connection signal="toggle_off" from="Button" to="Door" method="_on_Button_toggle_off"]
 [connection signal="toggle_off" from="Button" to="Spikes" method="_on_Button_toggle_off"]
 [connection signal="toggle_on" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_on"]
-[connection signal="toggle_on" from="Button" to="Door" method="_on_Button_toggle_on"]
 [connection signal="toggle_on" from="Button" to="Spikes" method="_on_Button_toggle_on"]
