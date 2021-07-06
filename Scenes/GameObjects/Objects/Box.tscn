@@ -1,19 +1,25 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Objects/Carryable.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Sprites/Objects/box_movable.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.0675, 28.7272 )
+extents = Vector2( 27.2749, 30.7575 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32.1698, 20.1815 )
+extents = Vector2( 37.377, 20.1815 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 30.9084, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 28.23, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 36.2545, 34.8985 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 31.1701, 26.0844 )
 
 [node name="Box" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -27,6 +33,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="PickingArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 136
 collision_mask = 0
 
@@ -34,6 +41,7 @@ collision_mask = 0
 shape = SubResource( 2 )
 
 [node name="CheckWeightArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -42,6 +50,7 @@ position = Vector2( 0, -29.8518 )
 shape = SubResource( 3 )
 
 [node name="Weight" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 0
 
@@ -50,3 +59,20 @@ position = Vector2( 0.155716, 21.5247 )
 shape = SubResource( 4 )
 
 [node name="DropTimer" type="Timer" parent="."]
+
+[node name="TeleportArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportArea"]
+shape = SubResource( 5 )
+
+[node name="IsSpaceAbove" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
+position = Vector2( 0.594589, -57.3792 )
+shape = SubResource( 6 )
+
+[connection signal="area_entered" from="TeleportArea" to="." method="teleport_object"]

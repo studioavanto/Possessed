@@ -24,4 +24,4 @@ position = Vector2( 741.853, 450.868 )
 position = Vector2( 105.606, 480.327 )
 
 [node name="Barbarian" parent="." instance=ExtResource( 7 )]
-position = Vector2( 336.029, 480.472 )
+position = Vector2( 270.616, 471.862 )

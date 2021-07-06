@@ -8,7 +8,6 @@ var is_being_carried = false
 var y_speed = 0.0
 var x_speed = 0.0
 var facing = 1.0
-var has_space_above = true
 
 func get_total_weight():
 	var all_areas = get_weight_above()
@@ -41,14 +40,13 @@ func throw(direction, thrower_facing):
 	position.y -= 10.0
 
 func stop_being_carried():
-
 	if collidable:
 		set_collision_layer_bit(0, true)
 
 	is_being_carried = false
 
 func carry_target():
-	if is_being_carried or get_total_weight() > 1:
+	if is_being_carried or not has_space_above() or get_total_weight() > 1:
 		return false
 	else:
 		if collidable:
@@ -56,8 +54,10 @@ func carry_target():
 		is_being_carried = true
 		return true
 
+func has_space_above():
+	return $IsSpaceAbove.get_overlapping_areas().empty()
+
 func process_physics(delta):
-	
 	if (is_being_carried == false):
 		var vect = move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1))
 
@@ -74,10 +74,7 @@ func process_physics(delta):
 		y_speed = 1.0
 
 func _physics_process(delta):
-	var space_state = get_world_2d().direct_space_state
-	var raycast_collisions = space_state.intersect_ray(position+Vector2(0,0), position+Vector2(0,-64), [self])
-	if raycast_collisions.empty():
-		 has_space_above = true
-	else:
-		has_space_above = false
 	process_physics(delta)
+
+func teleport_object(area):
+	get_parent().teleport_character(self)

@@ -45,7 +45,7 @@ func drop_box_on_top():
 	carry_item = null
 	
 func process_special():
-	if carry_item == null and has_space_above:
+	if carry_item == null and has_space_above():
 		carry_nearby()
 	elif carry_item != null:
 		if holding_down:

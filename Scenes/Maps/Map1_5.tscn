@@ -34,13 +34,13 @@ __meta__ = {
 }
 
 [node name="Barbarian" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1191.24, 416.598 )
+position = Vector2( 1187.68, 416.598 )
 
 [node name="Thief" parent="." instance=ExtResource( 4 )]
 position = Vector2( 28.8818, 229.14 )
 
 [node name="Box" parent="." instance=ExtResource( 5 )]
-position = Vector2( 454.424, 224.027 )
+position = Vector2( 426.747, 228.529 )
 
 [node name="Box2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 797.51, 414.069 )
+position = Vector2( 799.143, 413.836 )
