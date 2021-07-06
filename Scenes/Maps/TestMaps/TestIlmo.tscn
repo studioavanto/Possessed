@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/Characters/PlayerCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=2]
@@ -6,22 +6,17 @@
 [ext_resource path="res://MapExit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GameObjects/Objects/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameObjects/Characters/Wizard.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/GameObjects/Objects/Box.tscn" type="PackedScene" id=8]
 
 [node name="TestIlmo" type="Node2D"]
 script = ExtResource( 2 )
+map_music_id = 0
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]
 position = Vector2( 330.974, 495.823 )
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
 tile_data = PoolIntArray( 131072, 0, 0, 196608, 0, 65536, 262144, 0, 65536, 327680, 0, 65536, 327695, 0, 0, 393216, 0, 65536, 393231, 0, 65536, 458752, 0, 65536, 458765, 0, 8, 458766, 0, 10, 458767, 0, 65543, 524288, 0, 131073, 524289, 0, 196610, 524290, 0, 196610, 524291, 0, 196610, 524292, 0, 196610, 524293, 0, 196610, 524294, 0, 196610, 524295, 0, 196610, 524296, 0, 196610, 524297, 0, 196610, 524298, 0, 196610, 524299, 0, 196610, 524300, 0, 196610, 524301, 0, 196613, 524302, 0, 196617, 524303, 0, 196619 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 520.431, 268.529 )
-current = true
-zoom = Vector2( 0.75, 0.75 )
 
 [node name="MapExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 741.853, 450.868 )
@@ -37,8 +32,5 @@ position = Vector2( 207.274, 406.58 )
 [node name="Box3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 624.686, 466.04 )
 
-[node name="Barbarian" parent="." instance=ExtResource( 7 )]
-position = Vector2( 541.165, 478.352 )
-
 [node name="Wizard" parent="." instance=ExtResource( 6 )]
-position = Vector2( 290.242, 466.649 )
+position = Vector2( 339, 463.081 )

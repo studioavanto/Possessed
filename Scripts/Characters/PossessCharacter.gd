@@ -90,6 +90,7 @@ func kill_character():
 	$HitBox.disabled = true
 	$GraveHitBox.disabled = false
 	set_collision_layer_bit(0, true)
+	$HurtBox.set_collision_layer_bit(8, false)
 
 func process_physics(delta):
 	if character_stage != CharacterStage.POSSESSED:
@@ -153,13 +154,9 @@ func process_physics(delta):
 	
 	if(use_special):
 		process_special()
-		
+
 	if(use_interact):
 		process_interact()
-	
-	if character_state == CharacterState.UNLOADING:
-		x_speed = 0.0
-		unloading_timer += delta
 	
 	if unloading_timer > unload_time:
 		unloading_timer = 0.0

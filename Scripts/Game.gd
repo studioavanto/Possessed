@@ -90,6 +90,10 @@ func load_new_level(reset = false):
 func start_new_level():
 	current_map.set_pause(false)
 	next_gamestate = GameState.CONTROL_PLAYER
+	$MusicManager.change_song(current_map.map_music_id)
+
+func play_sound(sound_string):
+	$AudioEffectManager.play_sound(sound_string)
 
 func _process(_delta):
 	if next_gamestate != GameState.CONTROL_NULL:

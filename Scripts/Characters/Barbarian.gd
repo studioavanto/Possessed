@@ -23,16 +23,16 @@ func start_carrying_target(target):
 func throw_object():
 	$CarryingArea.set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
-	character_state = CharacterState.UNLOADING
 	carry_item.throw(Vector2(x_speed, y_speed), facing)
 	carry_item.stop_being_carried()
 	carry_item = null
 
+
 func stop_carrying():
 	$CarryingArea.set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
-	character_state = CharacterState.UNLOADING
 	carry_item.stop_being_carried()
+	carry_item.position = position + Vector2(66,0.0) * facing
 	carry_item = null
 
 func process_special():
@@ -57,14 +57,4 @@ func process_physics(delta):
 	.process_physics(delta)
 
 	if carry_item != null:
-		if(character_state == CharacterState.UNLOADING and holding_down == false):
-			carry_item = null
-		elif character_state == CharacterState.UNLOADING:
-			carry_item.position = position + Vector2(66,0.0) * facing
-		else:
-			carry_item.position = position + carry_point_offset
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+		carry_item.position = position + carry_point_offset

@@ -18,6 +18,8 @@ func send_projectile():
 	can_cast_projectile = true
 	set_glyph_invisible()
 	x_speed -= push_back * facing
+	
+	get_parent().play_sound("test_sound")
 
 func set_glyph_invisible():
 	$Tween.interpolate_property(
