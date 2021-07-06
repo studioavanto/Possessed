@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var projectile_speed = 400
+var projectile_speed = 800
 var has_been_used = false
 var facing = 0
 
