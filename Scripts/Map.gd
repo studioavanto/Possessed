@@ -16,3 +16,4 @@ func teleport_character(character):
 
 func get_possessed_character_id():
 	return $PlayerCharacter.possessed.get_instance_id()
+
