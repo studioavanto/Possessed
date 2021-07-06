@@ -56,13 +56,13 @@ func reset_map():
 	
 func load_new_map():
 	next_gamestate = GameState.CONTROL_CUTSCENE
-	
 	$UIContainer.show_new_map(current_map_id)
 
 func go_to_next_map():
 	if current_map_id == last_map:
 		next_gamestate = GameState.CONTROL_CUTSCENE
 		$UIContainer.fade_in_end_sreen()
+		
 
 	if normal_play:
 		current_map_id += 1

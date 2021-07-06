@@ -13,7 +13,10 @@ func _ready():
 	$TextBox.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	$FadeInTween.connect("tween_all_completed", self, "fade_in_completed")
 	$FadeOutTween.connect("tween_all_completed", self, "fade_out_completed")
-	
+
+func set_transparent():
+	$ScreenTexture.modulate = Color(0.0, 0.0, 0.0, 0.0)
+
 func fade_in_completed():
 	emit_signal("fade_in_completed")
 	

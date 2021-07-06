@@ -38,6 +38,7 @@ func _ready():
 
 func set_transparent():
 	$TextureScreen.modulate = Color(0.0, 0.0, 0.0, 0.0)
+	$ChangeLevelRect.set_transparent()
 
 func fade_in_start_screen():
 	$Tween.interpolate_property(
@@ -103,6 +104,7 @@ func fade_out_intro():
 	$Tween.start()
 
 func fade_in_end_sreen():
+	current_phase = GamePhase.END
 	$TextureScreen.texture = load("res://Resources/UI/EndScreen.png")
 	$Tween.interpolate_property(
 		$TextureScreen,
