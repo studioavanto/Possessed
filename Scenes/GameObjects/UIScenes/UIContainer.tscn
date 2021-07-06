@@ -19,3 +19,5 @@ margin_bottom = 275.176
 stretch_mode = 3
 
 [node name="ChangeLevelRect" parent="." instance=ExtResource( 3 )]
+margin_right = 0.0
+margin_bottom = 0.0
