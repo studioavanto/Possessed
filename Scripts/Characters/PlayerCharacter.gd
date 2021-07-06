@@ -27,10 +27,8 @@ func possess_target(target):
 	if target.possess_character():
 		possessed = target
 		next_possession = null
-		set_collision_mask_bit(0, false)
 
 func stop_possession():
-	set_collision_mask_bit(0, true)
 	possessed = null
 	
 	if next_possession != null:

@@ -91,6 +91,10 @@ func kill_character():
 	$GraveHitBox.disabled = false
 	set_collision_layer_bit(0, true)
 	$HurtBox.set_collision_layer_bit(8, false)
+	
+	if facing == -1.0:
+		facing = 1.0
+		scale.x = -1.0
 
 func process_physics(delta):
 	if character_stage != CharacterStage.POSSESSED:

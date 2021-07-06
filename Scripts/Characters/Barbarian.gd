@@ -29,7 +29,6 @@ func throw_object():
 	carry_item.stop_being_carried()
 	carry_item = null
 
-
 func stop_carrying():
 	$AnimatedSprite.animation = "default"
 	$CarryingArea.set_collision_mask_bit(3, true)
@@ -39,6 +38,12 @@ func stop_carrying():
 	carry_item.position = position + Vector2(66,0.0) * facing
 	carry_item = null
 
+func drop_box_on_top():
+	$CarryingArea.set_collision_mask_bit(3, true)
+	$CarryHitBox.disabled = true
+	carry_item.stop_being_carried(true)
+	carry_item = null
+	
 func process_special():
 	if carry_item == null and has_space_above:
 		carry_nearby()
@@ -53,7 +58,7 @@ func get_id():
 
 func kill_character():
 	if carry_item != null:
-		stop_carrying()
+		drop_box_on_top()
 
 	.kill_character()
 
