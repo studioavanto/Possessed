@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-export var throw_speed = 500.0
-export var fall_speed = 1000.0
+export var throw_speed = 700.0
+export var fall_speed = 2000.0
 export var collidable = false
 var is_being_carried = false
 var y_speed = 0.0

@@ -1,17 +1,17 @@
 extends "res://Scripts/Objects/Carryable.gd"
 
 export var lifetime = 200
-export var jump_fall_reduction = 1000.0
+export var jump_fall_reduction = 2000.0
 export var jump_start_speed = 420.0
 export var run_speed = 20
 export var max_age = 600
 export var max_jump_time = 0.3
 export var unload_time = 1.0
-export var dash_time = 0.5
-export var dash_speed = 380
+export var dash_time = 0.25
+export var dash_speed = 700
 export var acceleration = 150.0
 export var push_constant = 0.5
-export var dash_cooldown_time = 1.0
+export var dash_cooldown_time = 0.05
 
 enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH, CARRYING }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
@@ -115,7 +115,7 @@ func process_physics(delta):
 			character_state = CharacterState.IDLE
 			dash_cooldown = dash_cooldown_time
 			can_dash = false
-		
+			
 		move_and_slide(Vector2(dash_speed * facing, 0), Vector2(0, -1))
 		return
 
