@@ -24,7 +24,7 @@ var map_dict = {
 enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
 export (MapEnum) var map = MapEnum.START_GAME
 
-var current_gamestate = GameState.CONTROL_PLAYER
+var current_gamestate = GameState.CONTROL_CUTSCENE
 var next_gamestate = GameState.CONTROL_NULL
 
 var current_map_resource = null
@@ -40,13 +40,15 @@ func _ready():
 	$CutsceneController.connect("proceed", $UIContainer,"proceed")
 	
 	if map != MapEnum.START_GAME:
+		$UIContainer.set_transparent()
 		current_map_id = map
 		load_new_level()
 		start_new_level()
 		normal_play = false
+		current_gamestate = GameState.CONTROL_PLAYER
 	else:
 		current_map_id = MapEnum.MAP_1_1
-		load_new_map()
+		$UIContainer.fade_in_start_screen()
 
 func reset_map():
 	load_new_level(true)
