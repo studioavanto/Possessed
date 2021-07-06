@@ -201,7 +201,7 @@ func process_physics(delta):
 	use_special = false
 
 func _on_HurtBox_area_entered(area):	
-	if area.get_collision_mask_bit(2):
+	if area.get_collision_layer_bit(2):
 		character_state = CharacterState.DEATH
 	elif area.get_collision_mask_bit(8):
 		get_parent().teleport_character(self)

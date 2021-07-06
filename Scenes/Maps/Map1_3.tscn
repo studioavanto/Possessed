@@ -11,7 +11,7 @@
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=9]
 
 [node name="Map1_3" type="Node2D"]
-position = Vector2( 382.471, 276.612 )
+position = Vector2( 383.265, 276.612 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
