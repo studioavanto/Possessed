@@ -1,6 +1,7 @@
 extends "res://Scripts/Characters/PossessCharacter.gd"
 
 export var cast_spell_time = 0.2
+export var push_back = 40
 
 var can_cast_projectile = true
 onready var projectile = load("res://Scenes/GameObjects/Characters/Projectile.tscn")
@@ -16,6 +17,7 @@ func send_projectile():
 	new_proj.position = position
 	can_cast_projectile = true
 	set_glyph_invisible()
+	x_speed -= push_back * facing
 
 func set_glyph_invisible():
 	$Tween.interpolate_property(

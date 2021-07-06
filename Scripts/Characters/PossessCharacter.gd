@@ -122,7 +122,7 @@ func process_physics(delta):
 	elif x_input_dir == 0.0 and x_speed < 0.0:
 		x_speed += acceleration * delta
 
-	if abs(x_speed) > run_speed:
+	if abs(x_speed) > run_speed and facing * x_speed > 0:
 		x_speed = run_speed * facing
 
 	if character_state == CharacterState.CARRYING:
