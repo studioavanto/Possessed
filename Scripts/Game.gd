@@ -23,6 +23,7 @@ var map_dict = {
 
 enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
 export (MapEnum) var map = MapEnum.START_GAME
+export (MapEnum) var last_map = MapEnum.MAP_2_2
 
 var current_gamestate = GameState.CONTROL_CUTSCENE
 var next_gamestate = GameState.CONTROL_NULL
@@ -55,9 +56,14 @@ func reset_map():
 	
 func load_new_map():
 	next_gamestate = GameState.CONTROL_CUTSCENE
+	
 	$UIContainer.show_new_map(current_map_id)
 
 func go_to_next_map():
+	if current_map_id == last_map:
+		next_gamestate = GameState.CONTROL_CUTSCENE
+		$UIContainer.fade_in_end_sreen()
+
 	if normal_play:
 		current_map_id += 1
 		load_new_map()
