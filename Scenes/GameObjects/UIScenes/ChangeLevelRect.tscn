@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/UI/ChangeLevelRect.gd" type="Script" id=1]
 [ext_resource path="res://Resources/UI/background_frame.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/GameObjects/UIScenes/TextBox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Resources/Sprites/Characters/ghost_spritesheet.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/GameObjects/UIScenes/Monologue.tscn" type="PackedScene" id=5]
 
@@ -28,8 +29,8 @@ animations = [ {
 [node name="ChangeLevelRect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_right = -8.0
+margin_bottom = 9.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -58,8 +59,14 @@ margin_right = 1882.0
 margin_bottom = 1048.0
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 321.805, 736.593 )
+position = Vector2( 334.504, 723.894 )
 scale = Vector2( 30, 30 )
 frames = SubResource( 4 )
 frame = 1
 playing = true
+
+[node name="TextBox" parent="." instance=ExtResource( 3 )]
+margin_left = 360.0
+margin_top = 132.0
+margin_right = 1560.0
+margin_bottom = 452.0

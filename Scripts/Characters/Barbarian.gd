@@ -21,15 +21,19 @@ func start_carrying_target(target):
 		$CarryingArea.set_collision_mask_bit(3, false)
 
 func throw_object():
+	$AnimatedSprite.animation = "default"
 	$CarryingArea.set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
+	character_state = CharacterState.IDLE
 	carry_item.throw(Vector2(x_speed, y_speed), facing)
 	carry_item.stop_being_carried()
 	carry_item = null
 
 func stop_carrying():
+	$AnimatedSprite.animation = "default"
 	$CarryingArea.set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
+	character_state = CharacterState.IDLE
 	carry_item.stop_being_carried()
 	carry_item.position = position + Vector2(66,0.0) * facing
 	carry_item = null

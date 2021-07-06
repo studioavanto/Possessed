@@ -8,6 +8,7 @@ func process_special():
 	if can_dash:
 		character_state = CharacterState.DASHING
 		can_dash = false
+		$AnimatedSprite.animation = "dash"
 	
 func get_id():
 	return 2
