@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/UI/Monologue.gd" type="Script" id=1]
+[ext_resource path="res://Resources/UI/background_frame.png" type="Texture" id=2]
+
+[node name="Polygon2D" type="TextureRect"]
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 48.0
+margin_top = 144.0
+margin_right = 624.0
+margin_bottom = 240.0
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.12
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
