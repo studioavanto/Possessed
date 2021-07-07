@@ -28,6 +28,3 @@ position = Vector2( 577.446, 263.297 )
 scale = Vector2( 0.85, 0.85 )
 z_index = -1
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}

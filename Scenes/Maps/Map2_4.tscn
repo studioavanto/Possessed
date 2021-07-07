@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/Sprites/Backgrounds/texture_brickwall.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=2]
-[ext_resource path="res://MapExit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GameObjects/Objects/MapExit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GameObjects/Characters/Thief.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GameObjects/Objects/Spikes.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameObjects/Characters/PlayerCharacter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/GameObjects/Characters/Wizard.tscn" type="PackedScene" id=9]
 
 [node name="Map2_4" type="Node2D"]
 position = Vector2( 382.512, 276.575 )
@@ -15,14 +17,12 @@ script = ExtResource( 8 )
 [node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
 position = Vector2( -97.3301, -30.8613 )
 
-[node name="MapExit" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1027.02, 452.056 )
-
 [node name="TileMap" parent="." instance=ExtResource( 7 )]
-tile_data = PoolIntArray( -196613, 1, 8, -196612, 1, 10, -196611, 1, 10, -196610, 1, 10, -196609, 1, 10, -262144, 1, 10, -262143, 1, 10, -262142, 1, 10, -262141, 1, 10, -262140, 1, 10, -262139, 1, 10, -262138, 1, 10, -262137, 1, 10, -262136, 1, 10, -262135, 1, 10, -262134, 1, 10, -262133, 1, 10, -262132, 1, 10, -262131, 1, 10, -262130, 1, 10, -262129, 1, 10, -262128, 1, 10, -262127, 1, 10, -262126, 1, 10, -262125, 1, 10, -262124, 1, 11, -131077, 1, 65544, -131076, 1, 131078, -131075, 1, 196617, -131074, 1, 196617, -131073, 1, 196617, -196608, 1, 196617, -196607, 1, 196617, -196606, 1, 196617, -196605, 1, 196617, -196604, 1, 196617, -196603, 1, 196617, -196602, 1, 196617, -196601, 1, 196617, -196600, 1, 196617, -196599, 1, 196617, -196598, 1, 196617, -196597, 1, 196617, -196596, 1, 196617, -196595, 1, 196617, -196594, 1, 196617, -196593, 1, 196617, -196592, 1, 196617, -196591, 1, 196617, -196590, 1, 196617, -196589, 1, 131077, -196588, 1, 131083, -65541, 1, 65544, -65540, 1, 131083, -131053, 1, 65544, -131052, 1, 131083, -5, 1, 65544, -4, 1, 131083, -65522, 1, 196609, -65521, 1, 196611, -65517, 1, 65544, -65516, 1, 131083, 65531, 1, 65544, 65532, 1, 131083, 65534, 1, 196609, 65535, 1, 196610, 0, 1, 196610, 1, 1, 196611, 6, 1, 196609, 7, 1, 196610, 8, 1, 196610, 9, 1, 196611, 19, 1, 65544, 20, 1, 131083, 131067, 1, 65544, 131068, 1, 131083, 65552, 1, 196609, 65553, 1, 196611, 65555, 1, 65544, 65556, 1, 131083, 196603, 1, 65544, 196604, 1, 131083, 131091, 1, 65544, 131092, 1, 131083, 262139, 1, 65544, 262140, 1, 131083, 196627, 1, 65544, 196628, 1, 131083, 327675, 1, 65544, 327676, 1, 131083, 327679, 1, 196609, 262144, 1, 196611, 262158, 1, 196609, 262159, 1, 196610, 262160, 1, 196610, 262161, 1, 196611, 262163, 1, 65544, 262164, 1, 131083, 393211, 1, 65544, 393212, 1, 131083, 327699, 1, 65544, 327700, 1, 131083, 458747, 1, 65544, 458748, 1, 131083, 393223, 1, 196609, 393224, 1, 196611, 393235, 1, 65544, 393236, 1, 131083, 524283, 1, 65544, 524284, 1, 131083, 458771, 1, 65544, 458772, 1, 131083, 589819, 1, 65544, 589820, 1, 131083, 524303, 1, 196609, 524304, 1, 196611, 524307, 1, 65544, 524308, 1, 131083, 655355, 1, 65544, 655356, 1, 131083, 589843, 1, 65544, 589844, 1, 131083, 720891, 1, 65544, 720892, 1, 131083, 655379, 1, 65544, 655380, 1, 131083, 786427, 1, 196616, 786428, 1, 196619, 720915, 1, 196616, 720916, 1, 196619 )
+tile_data = PoolIntArray( -196612, 1, 8, -196611, 1, 10, -196610, 1, 10, -196609, 1, 10, -262144, 1, 10, -262143, 1, 10, -262142, 1, 10, -262141, 1, 10, -262140, 1, 10, -262139, 1, 10, -262138, 1, 10, -262137, 1, 10, -262136, 1, 10, -262135, 1, 10, -262134, 1, 10, -262133, 1, 10, -262132, 1, 10, -262131, 1, 10, -262130, 1, 10, -262129, 1, 10, -262128, 1, 10, -262127, 1, 10, -262126, 1, 10, -262125, 1, 10, -262124, 1, 10, -262123, 1, 11, -131076, 1, 131076, -131075, 1, 196617, -131074, 1, 196617, -131073, 1, 196617, -196608, 1, 196617, -196607, 1, 196617, -196606, 1, 196617, -196605, 1, 196617, -196604, 1, 196617, -196603, 1, 196617, -196602, 1, 196617, -196601, 1, 196617, -196600, 1, 196617, -196599, 1, 196617, -196598, 1, 196617, -196597, 1, 196617, -196596, 1, 196617, -196595, 1, 196617, -196594, 1, 196617, -196593, 1, 196617, -196592, 1, 196617, -196591, 1, 196617, -196590, 1, 196617, -196589, 1, 196617, -196588, 1, 196617, -196587, 1, 131079, -65540, 1, 65536, -131051, 1, 65536, -4, 1, 65536, -65515, 1, 65536, 65532, 1, 65536, 65534, 1, 196609, 65535, 1, 196610, 0, 1, 196610, 1, 1, 196611, 6, 1, 196609, 7, 1, 196610, 8, 1, 196610, 9, 1, 196611, 15, 1, 196609, 16, 1, 196610, 17, 1, 196611, 21, 1, 65536, 131068, 1, 65536, 65557, 1, 65536, 196604, 1, 65536, 131090, 1, 196609, 131091, 1, 196611, 131093, 1, 65536, 262140, 1, 65536, 196615, 1, 196609, 196616, 1, 196611, 196629, 1, 65536, 327676, 1, 65536, 327679, 1, 196609, 262144, 1, 196611, 262159, 1, 196609, 262160, 1, 196611, 262165, 1, 65536, 393212, 1, 65536, 327701, 1, 65536, 458748, 1, 65536, 393237, 1, 65536, 524284, 1, 65536, 458768, 1, 8, 458769, 1, 6, 458770, 1, 196610, 458771, 1, 196610, 458772, 1, 196610, 458773, 1, 65539, 589820, 1, 65536, 589823, 1, 196609, 524288, 1, 196611, 524295, 1, 196609, 524296, 1, 196611, 524304, 1, 196616, 524305, 1, 196619, 524309, 1, 65536, 655356, 1, 65536, 589845, 1, 65536, 720892, 1, 65536, 655378, 1, 8, 655379, 1, 10, 655380, 1, 10, 655381, 1, 65543, 786428, 1, 131073, 786429, 1, 196610, 786430, 1, 196610, 786431, 1, 196610, 720896, 1, 196610, 720897, 1, 196610, 720898, 1, 196610, 720899, 1, 196610, 720900, 1, 196610, 720901, 1, 196610, 720902, 1, 196610, 720903, 1, 196610, 720904, 1, 196610, 720905, 1, 196610, 720906, 1, 196610, 720907, 1, 196610, 720908, 1, 196610, 720909, 1, 196610, 720910, 1, 196610, 720911, 1, 196610, 720912, 1, 196610, 720913, 1, 196610, 720914, 1, 196613, 720915, 1, 196617, 720916, 1, 196617, 720917, 1, 196619 )
 
 [node name="texture_brickwall" type="Sprite" parent="."]
-position = Vector2( 577.446, 263.297 )
+position = Vector2( 540, 270 )
+scale = Vector2( 0.85, 0.85 )
 z_index = -1
 texture = ExtResource( 1 )
 __meta__ = {
@@ -33,37 +33,48 @@ __meta__ = {
 position = Vector2( -100.269, -30.31 )
 
 [node name="Spikes" parent="." instance=ExtResource( 5 )]
-position = Vector2( -96, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -158.512, 674.354 )
 
 [node name="Spikes2" parent="." instance=ExtResource( 5 )]
-position = Vector2( -32, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -30.512, 674.354 )
 
 [node name="Spikes3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 160, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 161.488, 674.354 )
 
 [node name="Spikes4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 224, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 225.488, 674.354 )
 
 [node name="Spikes5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 288, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 289.488, 674.354 )
 
 [node name="Spikes6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 352, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 353.488, 674.354 )
 
 [node name="Spikes7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 864, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 865.488, 674.354 )
 
 [node name="Spikes8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 672, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 673.488, 674.354 )
 
 [node name="Spikes9" parent="." instance=ExtResource( 5 )]
-position = Vector2( 736, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 737.488, 674.354 )
 
 [node name="Spikes10" parent="." instance=ExtResource( 5 )]
-position = Vector2( 800, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 801.488, 674.354 )
 
 [node name="Spikes11" parent="." instance=ExtResource( 5 )]
-position = Vector2( 928, 616 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 929.488, 674.354 )
 
 [node name="Barbarian2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 93.5707, -28.5711 )
@@ -75,7 +86,56 @@ position = Vector2( 604.034, -29.3603 )
 position = Vector2( 991.797, 228.089 )
 
 [node name="Barbarian5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 503.385, 355.225 )
+position = Vector2( 505.488, 163.425 )
 
 [node name="Barbarian6" parent="." instance=ExtResource( 2 )]
-position = Vector2( -6.21677, 227.03 )
+position = Vector2( 1.48801, 227.425 )
+
+[node name="Spikes12" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 993.488, 674.354 )
+
+[node name="Spikes13" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1057.49, 674.354 )
+
+[node name="MapExit" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1273.49, 581.393 )
+
+[node name="Spikes14" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -94.512, 674.354 )
+
+[node name="Spikes15" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 417.488, 674.354 )
+
+[node name="Spikes16" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 481.488, 674.354 )
+
+[node name="Spikes17" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 545.488, 674.354 )
+
+[node name="Spikes18" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 609.488, 674.354 )
+
+[node name="Spikes19" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 33.488, 674.354 )
+
+[node name="Spikes20" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 97.488, 674.354 )
+
+[node name="Wizard" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1001.49, -28.575 )
+
+[node name="Thief" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1.48801, 483.425 )
+
+[node name="Spikes21" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0.0196078, 0, 0, 1 )
+position = Vector2( 1121.49, 675.425 )
