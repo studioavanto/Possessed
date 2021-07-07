@@ -4,7 +4,9 @@ enum GameState { CONTROL_PLAYER, CONTROL_PAUSE, CONTROL_NULL, CONTROL_CUTSCENE }
 enum MapEnum { 
 	START_GAME,
 	TEST_ILMO, TEST_VILLE, TEST_JOONAS, TEST_JOHANNES, 
-	MAP_1_1, MAP_1_2, MAP_1_3, MAP_1_4, MAP_1_5, MAP_2_1, MAP_2_2, MAP_2_3, MAP_2_4, MAP_2_5, MAP_3_1, MAP_3_2, MAP_3_3, MAP_3_4, MAP_3_5, MAP_4_1, MAP_4_2, MAP_4_3, MAP_4_4, MAP_4_5,
+	MAP_1_1, MAP_1_2, MAP_1_3, MAP_1_4, MAP_1_5, MAP_2_1, 
+	MAP_2_2, MAP_2_3, MAP_2_4, MAP_2_5, MAP_3_1, MAP_3_2, 
+	MAP_3_3, MAP_3_4, MAP_3_5, MAP_4_1, MAP_4_2, MAP_4_3, MAP_4_4, MAP_4_5
 	}
 
 var map_dict = {
@@ -31,7 +33,7 @@ var map_dict = {
 	MapEnum.MAP_4_2: "res://Scenes/Maps/TestJohannes.tscn",
 	MapEnum.MAP_4_3: "res://Scenes/Maps/TestJohannes.tscn",
 	MapEnum.MAP_4_4: "res://Scenes/Maps/TestJohannes.tscn",
-	MapEnum.MAP_4_5: "res://Scenes/Maps/TestJohannes.tscn",
+	MapEnum.MAP_4_5: "res://Scenes/Maps/TestJohannes.tscn"
 }
 
 enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
