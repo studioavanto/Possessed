@@ -1,7 +1,7 @@
 extends "res://Scripts/Characters/PossessCharacter.gd"
 
 export var carry_point_offset = Vector2(0,-64.0)
-export var yeet_and_jump = true
+export var yeet_and_jump = false
 
 var carry_item = null
 
