@@ -5,10 +5,15 @@ export var yeet_and_jump = true
 
 var carry_item = null
 
-
 func _ready():
 	$CarryHitBox.disabled = true
 
+func can_character_jump():
+	if yeet_and_jump or get_total_weight() == 1:
+		return true
+	
+	return false
+	
 func carry_nearby():
 	for area in $CarryingArea.get_overlapping_areas():
 		start_carrying_target(area.get_parent())
@@ -66,6 +71,9 @@ func kill_character():
 
 func process_physics(delta):
 	.process_physics(delta)
+
+	if y_speed < 0 and not can_character_jump():
+		y_speed = 0
 
 	if carry_item != null:
 		carry_item.position = position + carry_point_offset
