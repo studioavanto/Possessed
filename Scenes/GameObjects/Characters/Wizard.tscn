@@ -11,10 +11,10 @@
 extents = Vector2( 23.5072, 29.4923 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 41.9847
+radius = 37.9328
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 32.9563, 31.3708 )
+extents = Vector2( 22.0426, 31.3708 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
@@ -94,7 +94,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 24.2593, 30.4093 )
+extents = Vector2( 7.67969, 26.628 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 18.4322, 6.91422 )
@@ -149,7 +149,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickingArea"]
-position = Vector2( -1.25995, 6.29962 )
+position = Vector2( 1.05112, 0 )
 shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
@@ -165,7 +165,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossessArea"]
-position = Vector2( -1.25995, 6.29962 )
+position = Vector2( 1.05112, 0 )
 shape = SubResource( 2 )
 
 [node name="HurtBox" type="Area2D" parent="."]
@@ -173,6 +173,7 @@ collision_layer = 256
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( 0, 1.81852 )
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -180,8 +181,12 @@ position = Vector2( 6.73477, 0 )
 frames = SubResource( 17 )
 speed_scale = 2.0
 playing = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PushArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 128
 
