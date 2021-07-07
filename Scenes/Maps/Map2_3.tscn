@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Sprites/Backgrounds/texture_brickwall.png" type="Texture" id=1]
+[ext_resource path="res://MapExit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GameObjects/Characters/PlayerCharacter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Map.gd" type="Script" id=8]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 3
+
+[node name="Map2_3" type="Node2D"]
+position = Vector2( 382.551, 276.693 )
+script = ExtResource( 8 )
+
+[node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
+position = Vector2( 24.0812, 37.6534 )
+
+[node name="MapExit" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1210.97, 4.91577 )
+
+[node name="TileMap" parent="." instance=ExtResource( 7 )]
+tile_data = PoolIntArray(  )
+
+[node name="texture_brickwall" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 577.446, 263.297 )
+scale = Vector2( 0.85, 0.85 )
+z_index = -1
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
