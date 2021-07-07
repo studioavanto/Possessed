@@ -88,7 +88,7 @@ position = Vector2( 33.449, 611.307 )
 position = Vector2( 1185.45, 611.307 )
 
 [node name="Spikes16" parent="." instance=ExtResource( 12 )]
-position = Vector2( 33.449, 643.307 )
+position = Vector2( 32.5132, 635.818 )
 
 [connection signal="toggle_off" from="Button" to="Door" method="_on_Button_toggle_off"]
 [connection signal="toggle_on" from="Button" to="Door" method="_on_Button_toggle_on"]
