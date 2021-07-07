@@ -1,15 +1,16 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Objects/MapExit.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Sprites/Objects/exit_door.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Sprites/Objects/exit_stairs_sprite.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.1462, 31.5152 )
+extents = Vector2( 4.42597, 9.22036 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 127, 128 )
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
@@ -38,7 +39,6 @@ animations = [ {
 
 [node name="MapExit" type="Sprite"]
 position = Vector2( -1.12246, 0.56123 )
-texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="MapEnterHitbox" type="Area2D" parent="."]
@@ -46,8 +46,8 @@ collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapEnterHitbox"]
+position = Vector2( 0, 8.32444 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MapEnterHitbox"]
 frames = SubResource( 6 )
-animation = "level exit"
