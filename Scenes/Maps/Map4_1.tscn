@@ -9,7 +9,7 @@
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 3
 
-[node name="Map4_1" type="Node2D"]
+[node name="Map3_3" type="Node2D"]
 position = Vector2( 382.551, 276.693 )
 script = ExtResource( 1 )
 
