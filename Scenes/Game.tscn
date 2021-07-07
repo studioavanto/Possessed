@@ -10,7 +10,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
-map = 12
+map = 1
 
 [node name="PlayerController" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -31,3 +31,6 @@ zoom = Vector2( 0.85, 0.85 )
 [node name="MusicManager" parent="." instance=ExtResource( 6 )]
 
 [node name="AudioEffectManager" parent="." instance=ExtResource( 7 )]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.686275, 0.647059, 0.647059, 1 )

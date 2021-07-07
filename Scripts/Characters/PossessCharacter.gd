@@ -176,7 +176,10 @@ func process_physics(delta):
 				speed_mod = push_constant
 				area.get_parent().move_and_slide(Vector2(speed_mod * run_speed * x_speed, 0.0), Vector2(0, -1))
 	
-	move_and_slide(Vector2(speed_mod * run_speed * x_speed, y_speed), Vector2(0, -1))
+	var vec = move_and_slide(Vector2(speed_mod * run_speed * x_speed, y_speed), Vector2(0, -1))
+
+	if vec.y == 0.0:
+		y_speed = 0.0
 
 	if dash_cooldown > 0.0:
 		dash_cooldown -= delta

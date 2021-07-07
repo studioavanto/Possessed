@@ -1,8 +1,10 @@
 extends "res://Scripts/Characters/PossessCharacter.gd"
 
 export var carry_point_offset = Vector2(0,-64.0)
+export var yeet_and_jump = true
 
 var carry_item = null
+
 
 func _ready():
 	$CarryHitBox.disabled = true
