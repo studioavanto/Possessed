@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wizard_teleport.ogg-12557d919aa7616c159fea1dd01f39c1.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Characters/wizard_teleport.ogg"
+dest_files=[ "res://.import/wizard_teleport.ogg-12557d919aa7616c159fea1dd01f39c1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

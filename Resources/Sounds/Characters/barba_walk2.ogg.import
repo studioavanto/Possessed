@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/barba_walk2.ogg-847887be9036cdc53a770376cd95e2b2.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Characters/barba_walk2.ogg"
+dest_files=[ "res://.import/barba_walk2.ogg-847887be9036cdc53a770376cd95e2b2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

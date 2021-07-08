@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mark_as_possessed.ogg-eac39cc783c743d2e221740bfb4f6f6a.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/UI/mark_as_possessed.ogg"
+dest_files=[ "res://.import/mark_as_possessed.ogg-eac39cc783c743d2e221740bfb4f6f6a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

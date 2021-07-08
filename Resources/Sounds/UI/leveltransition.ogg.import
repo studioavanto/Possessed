@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/leveltransition.ogg-953ad2fde141a6a9120a10d780d25198.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/UI/leveltransition.ogg"
+dest_files=[ "res://.import/leveltransition.ogg-953ad2fde141a6a9120a10d780d25198.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

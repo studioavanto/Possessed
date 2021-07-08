@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wizard_cast.ogg-6f227cf2cdc9fd1f0d44631e074ae82a.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Characters/wizard_cast.ogg"
+dest_files=[ "res://.import/wizard_cast.ogg-6f227cf2cdc9fd1f0d44631e074ae82a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

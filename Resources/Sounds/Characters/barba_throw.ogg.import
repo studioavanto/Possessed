@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/barba_throw.ogg-f5fec3d7329cc87e16aebdac789bf3ad.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Characters/barba_throw.ogg"
+dest_files=[ "res://.import/barba_throw.ogg-f5fec3d7329cc87e16aebdac789bf3ad.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

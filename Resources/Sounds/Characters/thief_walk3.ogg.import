@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thief_walk3.ogg-db1dbe160c3eeb59b8c494276e6502fa.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Characters/thief_walk3.ogg"
+dest_files=[ "res://.import/thief_walk3.ogg-db1dbe160c3eeb59b8c494276e6502fa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

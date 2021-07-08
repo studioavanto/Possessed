@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wizard_walk1.ogg-393e329478cc0617c24867321e5d6578.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Characters/wizard_walk1.ogg"
+dest_files=[ "res://.import/wizard_walk1.ogg-393e329478cc0617c24867321e5d6578.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
