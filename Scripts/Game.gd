@@ -32,7 +32,7 @@ var map_dict = {
 	MapEnum.MAP_4_1: "res://Scenes/Maps/TestJohannes.tscn",
 	MapEnum.MAP_4_2: "res://Scenes/Maps/Map4_2.tscn",
 	MapEnum.MAP_4_3: "res://Scenes/Maps/TestJohannes.tscn",
-	MapEnum.MAP_4_4: "res://Scenes/Maps/TestJohannes.tscn",
+	MapEnum.MAP_4_4: "res://Scenes/Maps/Map4_4.tscn",
 	MapEnum.MAP_4_5: "res://Scenes/Maps/TestJohannes.tscn"
 }
 
