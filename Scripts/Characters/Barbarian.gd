@@ -26,6 +26,7 @@ func start_carrying_target(target):
 		character_state = CharacterState.CARRYING
 		$CarryHitBox.disabled = false
 		$CarryingArea.set_collision_mask_bit(3, false)
+		$CharacterAudio.play_sound("pickup")
 
 func throw_object():
 	$AnimatedSprite.animation = "default"
@@ -35,6 +36,7 @@ func throw_object():
 	carry_item.throw(Vector2(x_speed, y_speed), facing)
 	carry_item.stop_being_carried()
 	carry_item = null
+	$CharacterAudio.play_sound("throw")
 
 func stop_carrying():
 	$AnimatedSprite.animation = "default"

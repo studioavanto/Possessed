@@ -46,48 +46,49 @@ func fade_out_active():
 	
 	$FadeOutTween.start()
 
-func fade_in_scene(state, message=""):
+func fade_in_scene(state, message="", first = false):
 		
 	if state == "monologue":
-		
+		if not first:
+			$FadeInTween.interpolate_property(
+				$ScreenTexture,
+				"modulate",
+				Color(1.0, 1.0, 1.0, 0.0),
+				Color(1.0, 1.0, 1.0, 1.0),
+				fade_timing,
+				Tween.TRANS_LINEAR,
+				Tween.EASE_IN
+			)
+
 		$FadeInTween.interpolate_property(
-		$ScreenTexture,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 0.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		fade_timing,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
+			$Sprite,
+			"modulate",
+			Color(1.0, 1.0, 1.0, 0.0),
+			Color(1.0, 1.0, 1.0, 1.0),
+			fade_timing,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN
+		)
 		$FadeInTween.interpolate_property(
-		$Sprite,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 0.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		fade_timing,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
-		$FadeInTween.interpolate_property(
-		$Monologue,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 0.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		fade_timing,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
+			$Monologue,
+			"modulate",
+			Color(1.0, 1.0, 1.0, 0.0),
+			Color(1.0, 1.0, 1.0, 1.0),
+			fade_timing,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN
+		)
 	
 	elif state == "level_name":
 		$FadeInTween.interpolate_property(
-		$TextBox,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 0.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		fade_timing,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
+			$TextBox,
+			"modulate",
+			Color(1.0, 1.0, 1.0, 0.0),
+			Color(1.0, 1.0, 1.0, 1.0),
+			fade_timing,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN
+		)
 	
 	$FadeInTween.start()
 

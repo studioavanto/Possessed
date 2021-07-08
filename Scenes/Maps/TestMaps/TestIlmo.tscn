@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=2]
+[gd_scene load_steps=163 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/Characters/PlayerCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Resources/Sprites/Lights/light_source.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/GameObjects/Objects/Box.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/GameObjects/Objects/PlatformMoving.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/GameObjects/Characters/Thief.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/GameObjects/Characters/Wizard.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/GameObjects/Objects/Spikes.tscn" type="PackedScene" id=15]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 9 )
@@ -1100,7 +1103,6 @@ tile_data = PoolIntArray( -196613, 1, 8, -196612, 1, 10, -196611, 1, 10, -196610
 [node name="Barbarian" parent="." instance=ExtResource( 7 )]
 position = Vector2( -14.5526, 348.371 )
 max_age = 14692
-yeet_and_jump = false
 
 [node name="texture_brickwall" type="Sprite" parent="."]
 position = Vector2( 518.386, 253.416 )
@@ -1126,3 +1128,15 @@ points = PoolVector2Array( 322.275, 24.9734, -153.408, 22.595 )
 
 [node name="Box2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 498.43, 218.257 )
+
+[node name="Wizard" parent="." instance=ExtResource( 14 )]
+position = Vector2( 194.937, 334.5 )
+
+[node name="Thief" parent="." instance=ExtResource( 13 )]
+position = Vector2( 586.937, 204.5 )
+
+[node name="Barbarian2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 790.937, 347.5 )
+
+[node name="Spikes" parent="." instance=ExtResource( 15 )]
+position = Vector2( -127.063, 356.5 )

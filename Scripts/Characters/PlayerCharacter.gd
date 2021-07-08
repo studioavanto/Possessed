@@ -15,6 +15,7 @@ func teleport_character(character):
 	var tmp_position = character.position
 	character.position = possessed.position
 	possessed.position = tmp_position
+	get_parent().play_sound("teleport")
 
 func possess_nearby():
 	for area in $PossessingArea.get_overlapping_areas():
@@ -28,6 +29,7 @@ func possess_target(target):
 		possessed = target
 		next_possession = null
 		get_parent().change_active_character(possessed.get_id())
+		get_parent().play_sound("warp_to_host")
 
 func stop_possession():
 	possessed = null
@@ -35,7 +37,9 @@ func stop_possession():
 	if next_possession != null:
 		possess_target(next_possession)
 	else:
+		get_parent().play_sound("game_over")
 		get_parent().reset_map()
+		
 
 func process_input(jump, special, horizontal_move, interact, holding_down):
 	if possessed == null:
@@ -43,7 +47,7 @@ func process_input(jump, special, horizontal_move, interact, holding_down):
 			possess_nearby()
 	else:
 		if (possessed.process_input(jump, special, horizontal_move, interact, holding_down)):
-			position = lerp(position, possessed.position, 0.25)
+			position = lerp(position, possessed.position, 0.35)
 		else:
 			stop_possession()
 
@@ -60,11 +64,16 @@ func _on_PossessingArea_area_entered(area):
 		if possessed == area.get_parent():
 			return
 		
+		if next_possession == area.get_parent():
+			return
+		
 		if next_possession != null:
 			next_possession.remove_tag()
 
 		next_possession = area.get_parent()
 		next_possession.tag_character()
+		if not get_parent().is_paused():
+			get_parent().play_sound("mark_as_possessed")
 
 func _on_EndArea_area_entered(area):
 	emit_signal("map_exit")

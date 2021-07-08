@@ -91,6 +91,7 @@ func kill_character():
 	$GraveHitBox.disabled = false
 	set_collision_layer_bit(0, true)
 	$HurtBox.set_collision_layer_bit(8, false)
+	$CharacterAudio.play_sound("death")
 	
 	if facing == -1.0:
 		facing = 1.0
@@ -149,6 +150,7 @@ func process_physics(delta):
 			$AnimatedSprite.animation = "default"
 
 	if jump and jump_time == 0.0:
+		$CharacterAudio.play_sound("jump")
 		y_speed = - jump_start_speed 
 		jump_time += delta
 		
@@ -177,6 +179,9 @@ func process_physics(delta):
 				area.get_parent().move_and_slide(Vector2(speed_mod * run_speed * x_speed, 0.0), Vector2(0, -1))
 	
 	var vec = move_and_slide(Vector2(speed_mod * run_speed * x_speed, y_speed), Vector2(0, -1))
+
+	if is_on_floor() and abs(x_input_dir) > 0:
+		$CharacterAudio.play_footstep()
 
 	if vec.y == 0.0:
 		y_speed = 0.0

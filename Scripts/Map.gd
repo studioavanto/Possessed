@@ -2,11 +2,16 @@ extends Node
 
 export var map_music_id = -1
 
+var map_paused = true
+
 func get_player_character():
 	return $PlayerCharacter
 
+func is_paused():
+	return map_paused
+
 func set_pause(pause):
-	return
+	map_paused = pause
 
 func play_sound(sound_string):
 	get_parent().play_sound(sound_string)
