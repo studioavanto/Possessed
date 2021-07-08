@@ -11,5 +11,5 @@ dest_files=[ "res://.import/wizard_walk4.ogg-cf119fcc98f84853425cc08d33d561ae.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

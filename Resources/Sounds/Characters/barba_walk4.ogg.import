@@ -11,5 +11,5 @@ dest_files=[ "res://.import/barba_walk4.ogg-6ec54cd59a82c422f37060b5c8710cbc.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

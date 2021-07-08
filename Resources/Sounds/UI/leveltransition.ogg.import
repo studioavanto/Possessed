@@ -11,5 +11,5 @@ dest_files=[ "res://.import/leveltransition.ogg-953ad2fde141a6a9120a10d780d25198
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

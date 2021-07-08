@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/boksirikki.ogg-b4e1f9adf839f171d262fa3faa9042c6.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Objects/boksirikki.ogg"
+dest_files=[ "res://.import/boksirikki.ogg-b4e1f9adf839f171d262fa3faa9042c6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

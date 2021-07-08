@@ -11,5 +11,5 @@ dest_files=[ "res://.import/thief_dash.ogg-4d6b2ffc03253e7d6f8920bd551d11c5.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

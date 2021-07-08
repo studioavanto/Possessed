@@ -11,5 +11,5 @@ dest_files=[ "res://.import/warp_to_host.ogg-bceb2e0e66207f2fc084fd1295596943.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ansapiikki.ogg-05682d8e115292e66953ac872ee7613d.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Objects/ansapiikki.ogg"
+dest_files=[ "res://.import/ansapiikki.ogg-05682d8e115292e66953ac872ee7613d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

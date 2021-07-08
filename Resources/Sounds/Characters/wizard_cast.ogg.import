@@ -11,5 +11,5 @@ dest_files=[ "res://.import/wizard_cast.ogg-6f227cf2cdc9fd1f0d44631e074ae82a.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

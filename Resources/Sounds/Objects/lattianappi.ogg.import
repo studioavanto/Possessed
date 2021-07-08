@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lattianappi.ogg-937d36ca9d7d7fc7684f1e52bf270f42.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Objects/lattianappi.ogg"
+dest_files=[ "res://.import/lattianappi.ogg-937d36ca9d7d7fc7684f1e52bf270f42.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

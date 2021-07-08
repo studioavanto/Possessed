@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/boksiraahaus.ogg-cc7d238316453d13eaf8b747a4c4444c.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Objects/boksiraahaus.ogg"
+dest_files=[ "res://.import/boksiraahaus.ogg-cc7d238316453d13eaf8b747a4c4444c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

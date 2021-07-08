@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mark_as_possessed.ogg-eac39cc783c743d2e221740bfb4f6f
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/thief_walk4.ogg-a636fcc8c20f06eddfe6611adabd5ed6.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

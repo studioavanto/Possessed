@@ -11,5 +11,5 @@ dest_files=[ "res://.import/wizard_death.ogg-1ea0d355a0e56f993a6dee61fd9b4911.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
