@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_v2.png" type="Texture" id=8]
 [ext_resource path="res://Resources/Sprites/Objects/exit_door.png" type="Texture" id=9]
-[ext_resource path="res://Resources/Sprites/Lights/light_source.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/GameObjects/Objects/Box.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/GameObjects/Objects/PlatformMoving.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/GameObjects/Characters/Thief.tscn" type="PackedScene" id=13]
@@ -1109,15 +1109,11 @@ position = Vector2( 518.386, 253.416 )
 z_index = -1
 texture = ExtResource( 6 )
 
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 403.141, 221.193 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 10 )
-color = Color( 0.788235, 0.788235, 0.788235, 1 )
-shadow_color = Color( 0, 0, 0, 0.956863 )
-shadow_gradient_length = 20.0
-shadow_filter = 3
-shadow_filter_smooth = 14.5
+[node name="Light2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 140.326, 311.174 )
+color = Color( 1, 1, 1, 1 )
+flicker_amount = 4.0
+flicker_base = 0.3
 
 [node name="Box" parent="." instance=ExtResource( 11 )]
 position = Vector2( 199.703, 69.7846 )
