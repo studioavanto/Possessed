@@ -12,9 +12,9 @@ signal character_value_changes(new_value)
 signal character_portrait_changes(new_portrait)
 
 func teleport_character(character):
-	var tmp_position = character.position
-	character.position = possessed.position
-	possessed.position = tmp_position
+	possessed.trigger_teleport(character.position)
+	character.trigger_teleport(possessed.position)
+	
 	get_parent().play_sound("teleport")
 
 func possess_nearby():

@@ -32,6 +32,9 @@ var dash_cooldown = 0.0
 var character_state = CharacterState.IDLE
 var character_stage = CharacterStage.CHILLIN
 
+func get_character_sprite():
+	return $AnimatedSprite
+
 func possess_character():
 	if character_stage == CharacterStage.DEAD:
 		return false
@@ -212,4 +215,5 @@ func _on_HurtBox_area_entered(area):
 	if area.get_collision_layer_bit(2):
 		character_state = CharacterState.DEATH
 	elif area.get_collision_mask_bit(8):
+		area.get_parent().start_destroy_projectile()
 		get_parent().teleport_character(self)

@@ -9,6 +9,43 @@ var y_speed = 0.0
 var x_speed = 0.0
 var facing = 1.0
 
+var teleport_location = null
+var teleport_timing = 0.1
+
+func _ready():
+	$TeleportTimer.connect("timeout", self, "teleport_happens")
+
+func get_character_sprite():
+	return $Sprite
+
+func teleport_happens():
+	position = teleport_location
+	$CPUParticles2D.emitting = true
+	$TeleportTween.interpolate_property(
+		get_character_sprite(),
+		"modulate",
+		Color(1.0, 1.0, 1.0, 1.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		teleport_timing,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	$TeleportTween.start()
+
+func trigger_teleport(new_location):
+	teleport_location = new_location
+	$TeleportTimer.start(teleport_timing)
+	$TeleportTween.interpolate_property(
+		get_character_sprite(),
+		"modulate",
+		Color(1.0, 1.0, 1.0, 1.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		teleport_timing,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	$TeleportTween.start()
+
 func get_total_weight():
 	var all_areas = get_weight_above()
 
@@ -77,4 +114,5 @@ func _physics_process(delta):
 	process_physics(delta)
 
 func teleport_object(area):
+	area.get_parent().start_destroy_projectile()
 	get_parent().teleport_character(self)

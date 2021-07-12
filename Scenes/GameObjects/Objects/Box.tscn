@@ -75,4 +75,27 @@ collision_layer = 0
 position = Vector2( 0.594589, -57.3792 )
 shape = SubResource( 6 )
 
+[node name="TeleportTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+speed_scale = 1.26
+explosiveness = 0.19
+randomness = 0.31
+lifetime_randomness = 0.11
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 30.0
+linear_accel = -10.0
+scale_amount = 6.0
+scale_amount_random = 0.1
+color = Color( 0.756863, 0.223529, 0.815686, 1 )
+
+[node name="TeleportTween" type="Tween" parent="."]
+
 [connection signal="area_entered" from="TeleportArea" to="." method="teleport_object"]
