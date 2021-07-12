@@ -8,8 +8,9 @@
 [ext_resource path="res://Resources/Sprites/Characters/wizard_dying.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Sounds/WizardAudio.gd" type="Script" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 23.5072, 29.4923 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 18.0909
+height = 17.9894
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 37.9328
@@ -26,55 +27,55 @@ atlas = ExtResource( 1 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 2 )
 region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 2 )
 region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 256, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 320, 0, 64, 64 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 384, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 2 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 2 )
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 6 )
 region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 384, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
@@ -83,15 +84,15 @@ animations = [ {
 "name": "default",
 "speed": 1.5
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
-"loop": false,
-"name": "death",
-"speed": 6.0
-}, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "run",
 "speed": 4.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": false,
+"name": "death",
+"speed": 6.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=18]
@@ -142,10 +143,11 @@ collision_layer = 0
 script = ExtResource( 3 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2( 1.05112, 1.81852 )
+position = Vector2( -0.630673, 0.977623 )
 shape = SubResource( 1 )
 
 [node name="PickingArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 0
 
@@ -154,6 +156,7 @@ position = Vector2( 1.05112, 0 )
 shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 16
 
@@ -162,6 +165,7 @@ position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 2 )
 
 [node name="PossessArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 32
 collision_mask = 0
 
@@ -170,6 +174,7 @@ position = Vector2( 1.05112, 0 )
 shape = SubResource( 2 )
 
 [node name="HurtBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 256
 collision_mask = 4
 
@@ -180,6 +185,7 @@ shape = SubResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 6.73477, 0 )
 frames = SubResource( 17 )
+frame = 1
 speed_scale = 2.0
 playing = true
 __meta__ = {
@@ -206,6 +212,7 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 
 [node name="CheckWeightArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -226,6 +233,7 @@ disabled = true
 [node name="DropTimer" type="Timer" parent="."]
 
 [node name="IsSpaceAbove" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
@@ -233,6 +241,7 @@ position = Vector2( -0.994614, -51.2873 )
 shape = SubResource( 25 )
 
 [node name="Weight" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 0
 

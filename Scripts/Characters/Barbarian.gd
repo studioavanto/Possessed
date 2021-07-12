@@ -8,6 +8,9 @@ var carry_item = null
 func _ready():
 	$CarryHitBox.disabled = true
 
+func has_space_in_front():
+	return $IsSpaceInFront.get_overlapping_bodies().empty()
+
 func can_character_jump():
 	if yeet_and_jump or get_total_weight() == 1:
 		return true
@@ -57,7 +60,7 @@ func process_special():
 	if carry_item == null and has_space_above():
 		carry_nearby()
 	elif carry_item != null:
-		if holding_down:
+		if holding_down and has_space_in_front():
 			stop_carrying()
 		else:
 			throw_object()

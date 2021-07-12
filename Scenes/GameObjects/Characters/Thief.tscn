@@ -113,8 +113,9 @@ extents = Vector2( 3.62296, 19.7287 )
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 12.1494, 18.9629 )
 
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 17.7348, 23.3223 )
+[sub_resource type="CapsuleShape2D" id=30]
+radius = 16.5257
+height = 14.0167
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 18.2849, 23.3073 )
@@ -158,6 +159,7 @@ collision_layer = 0
 script = ExtResource( 2 )
 
 [node name="PossessArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 32
 collision_mask = 0
 
@@ -166,6 +168,7 @@ position = Vector2( 2.67733, 4.88219 )
 shape = SubResource( 1 )
 
 [node name="CarryArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 0
 
@@ -174,6 +177,7 @@ position = Vector2( 2.77795, 6.74645 )
 shape = SubResource( 1 )
 
 [node name="Weight" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 0
 
@@ -182,6 +186,7 @@ position = Vector2( 0.155716, 21.5247 )
 shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 16
 
@@ -191,6 +196,7 @@ rotation = -0.000702262
 shape = SubResource( 3 )
 
 [node name="PickingArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 0
 
@@ -200,13 +206,13 @@ shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 19 )
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="PushArea" type="Area2D" parent="."]
+visible = false
 scale = Vector2( 1.19615, 0.930268 )
 collision_layer = 0
 collision_mask = 128
@@ -222,12 +228,13 @@ disabled = true
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( 0.118381, 5.20633 )
-shape = SubResource( 22 )
+shape = SubResource( 30 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="HurtBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 256
 collision_mask = 4
 
@@ -241,6 +248,7 @@ frames = SubResource( 27 )
 playing = true
 
 [node name="CheckWeightArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -249,6 +257,7 @@ position = Vector2( 2.38379, -3.10037 )
 shape = SubResource( 28 )
 
 [node name="IsSpaceAbove" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]

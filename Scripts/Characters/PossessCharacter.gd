@@ -86,7 +86,10 @@ func process_special():
 func process_interact():
 	for area in $InteractArea.get_overlapping_areas():
 		area.get_parent().interact()
-		
+
+func zero_speed():
+	x_speed = 0.0
+
 func kill_character():
 	character_stage = CharacterStage.DEAD
 	$AnimatedSprite.animation = "death"
@@ -95,21 +98,23 @@ func kill_character():
 	set_collision_layer_bit(0, true)
 	$HurtBox.set_collision_layer_bit(8, false)
 	$CharacterAudio.play_sound("death")
-	
+	remove_tag()
+
 	if facing == -1.0:
 		facing = 1.0
 		scale.x = -1.0
 
 func process_physics(delta):
-	if character_stage != CharacterStage.POSSESSED:
-		.process_physics(delta)
-		return
-	
 	if character_state == CharacterState.DEATH:
 		y_speed += fall_speed * delta
 		move_and_slide(Vector2(x_speed * run_speed, y_speed), Vector2(0, -1))
 		if is_on_floor():
+			x_speed = 0.0
 			kill_character()
+		return
+	
+	if character_stage != CharacterStage.POSSESSED:
+		.process_physics(delta)
 		return
 	
 	current_age += 1
