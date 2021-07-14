@@ -17,6 +17,7 @@ blend_mode = 3
 [node name="Map2_3" type="Node2D"]
 position = Vector2( 382.551, 276.693 )
 script = ExtResource( 8 )
+map_music_id = 0
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
 position = Vector2( 804.227, -87.8108 )

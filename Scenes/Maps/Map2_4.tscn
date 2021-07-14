@@ -13,6 +13,7 @@
 [node name="Map2_4" type="Node2D"]
 position = Vector2( 382.512, 276.575 )
 script = ExtResource( 8 )
+map_music_id = 0
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
 position = Vector2( -97.3301, -30.8613 )

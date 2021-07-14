@@ -17,6 +17,7 @@ blend_mode = 3
 [node name="Map2_5" type="Node2D"]
 position = Vector2( 382.551, 276.693 )
 script = ExtResource( 8 )
+map_music_id = 0
 
 [node name="Spikes9" parent="." instance=ExtResource( 10 )]
 position = Vector2( 593.449, 723.307 )
