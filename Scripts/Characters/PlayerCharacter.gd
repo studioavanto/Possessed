@@ -77,5 +77,4 @@ func _on_PossessingArea_area_entered(area):
 			get_parent().play_sound("mark_as_possessed")
 
 func _on_EndArea_area_entered(area):
-	possessed.zero_speed()
 	emit_signal("map_exit")

@@ -27,55 +27,55 @@ atlas = ExtResource( 1 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
+flags = 4
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
+flags = 4
+atlas = ExtResource( 6 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
+flags = 4
+atlas = ExtResource( 6 )
 region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
+flags = 4
+atlas = ExtResource( 6 )
 region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 256, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 64, 0, 64, 64 )
+region = Rect2( 320, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 384, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 192, 0, 64, 64 )
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 256, 0, 64, 64 )
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 320, 0, 64, 64 )
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 384, 0, 64, 64 )
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
@@ -84,19 +84,19 @@ animations = [ {
 "name": "default",
 "speed": 1.5
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "run",
-"speed": 4.0
-}, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": false,
 "name": "death",
 "speed": 6.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "run",
+"speed": 4.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 7.67969, 26.628 )
+extents = Vector2( 5.98825, 23.393 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 18.4322, 6.91422 )
@@ -193,12 +193,11 @@ __meta__ = {
 }
 
 [node name="PushArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
-position = Vector2( 18.0109, -1.5892 )
+position = Vector2( 14.6397, 1.22012 )
 shape = SubResource( 18 )
 
 [node name="Timer" type="Timer" parent="."]

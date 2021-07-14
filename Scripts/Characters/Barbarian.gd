@@ -2,6 +2,9 @@ extends "res://Scripts/Characters/PossessCharacter.gd"
 
 export var carry_point_offset = Vector2(0,-64.0)
 export var yeet_and_jump = false
+export var throw_speed_x = 750
+export var throw_speed_y = -350
+export var carry_jump_start_speed = 100
 
 var carry_item = null
 
@@ -26,7 +29,6 @@ func carry_nearby():
 func start_carrying_target(target):
 	if target.carry_target():
 		carry_item = target
-		character_state = CharacterState.CARRYING
 		$CarryHitBox.disabled = false
 		$CarryingArea.set_collision_mask_bit(3, false)
 		$CharacterAudio.play_sound("pickup")
@@ -35,8 +37,7 @@ func throw_object():
 	$AnimatedSprite.animation = "default"
 	$CarryingArea.set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
-	character_state = CharacterState.IDLE
-	carry_item.throw(Vector2(x_speed, y_speed), facing)
+	carry_item.throw(Vector2(x_speed + throw_speed_x * facing, y_speed + throw_speed_y), facing)
 	carry_item.stop_being_carried()
 	carry_item = null
 	$CharacterAudio.play_sound("throw")
@@ -45,7 +46,6 @@ func stop_carrying():
 	$AnimatedSprite.animation = "default"
 	$CarryingArea.set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
-	character_state = CharacterState.IDLE
 	carry_item.stop_being_carried()
 	carry_item.position = position + Vector2(66,0.0) * facing
 	carry_item = null
@@ -65,6 +65,15 @@ func process_special():
 		else:
 			throw_object()
 
+func play_animation(new_animation):
+	if carry_item != null:
+		if character_state == CharacterState.IDLE:
+			.play_animation("carry_default")
+		elif character_state == CharacterState.RUNNING:
+			.play_animation("carry_run")
+	else:
+		.play_animation(new_animation)
+
 func get_id():
 	return 1
 
@@ -74,11 +83,14 @@ func kill_character():
 
 	.kill_character()
 
+func get_jump_start_speed():
+	if carry_item == null:
+		return -jump_start_speed
+	else:
+		return -carry_jump_start_speed
+
 func process_physics(delta):
 	.process_physics(delta)
-
-	if y_speed < 0 and not can_character_jump():
-		y_speed = 0
 
 	if carry_item != null:
 		carry_item.position = position + carry_point_offset

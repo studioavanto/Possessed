@@ -3,17 +3,16 @@ extends "res://Scripts/Objects/Carryable.gd"
 export var lifetime = 200
 export var jump_fall_reduction = 2550.0
 export var jump_start_speed = 380.0
-export var run_speed = 17
+export var run_speed = 300
 export var max_age = 600
 export var max_jump_time = 0.35
 export var unload_time = 1.0
-export var dash_time = 0.25
-export var dash_speed = 700
-export var acceleration = 150.0
+export var acceleration = 1500.0
+export var drag = 2500.0
 export var push_constant = 0.5
 export var dash_cooldown_time = 0.05
 
-enum CharacterState { IDLE, RUNNING, JUMPING, DASHING, UNLOADING, SPECIAL, DEATH, CARRYING }
+enum CharacterState { IDLE, RUNNING, JUMPING, SPECIAL, DEATH }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
 
 var tagged = false
@@ -22,12 +21,10 @@ var use_special = false
 var use_interact = false
 var holding_down = false
 var jump_time = 0.0
-var x_input_dir = 1.0
+var x_input_dir = 0.0
 var current_age = 0
 var unloading_timer = 0.0
-var dash_timer = 0.0
-var can_dash = true
-var dash_cooldown = 0.0
+var facing = 1.0
 
 var character_state = CharacterState.IDLE
 var character_stage = CharacterStage.CHILLIN
@@ -55,6 +52,12 @@ func remove_tag():
 func is_dead():
 	return (character_stage == CharacterStage.DEAD)
 
+func carry_target():
+	if is_dead():
+		return false
+	
+	return .carry_target()
+
 func process_input(n_jump, n_special, n_horizontal_move, n_interact, n_holding_down):
 	if character_stage == CharacterStage.DEAD:
 		return false
@@ -65,13 +68,6 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact, n_holding_d
 	use_interact = n_interact
 	holding_down = n_holding_down
 	
-	if x_input_dir > 0.0 and facing == -1.0:
-		facing = 1.0
-		scale.x = -1.0
-	elif x_input_dir < 0.0 and facing == 1.0:
-		facing = -1.0
-		scale.x = -1.0
-
 	return true
 
 func get_id():
@@ -82,13 +78,38 @@ func get_relative_age():
 
 func process_special():
 	pass
-	
+
+func special_physics_process():
+	pass
+
+func unique_physics_modifiers():
+	pass
+
+func set_character_animations():
+	if CharacterStage.DEAD != character_stage:
+		match character_state:
+			CharacterState.IDLE:
+				play_animation("default")
+			CharacterState.RUNNING:
+				play_animation("run")
+			CharacterState.JUMPING:
+				if y_speed > 0.0:
+					play_animation("jump_down")
+				else:
+					play_animation("jump_up")
+			CharacterState.SPECIAL:
+				play_animation("special")
+
+func play_animation(new_animation):
+	if $AnimatedSprite.animation != new_animation:
+		$AnimatedSprite.animation = new_animation
+
+func character_is_on_floor_after_move():
+	pass
+
 func process_interact():
 	for area in $InteractArea.get_overlapping_areas():
 		area.get_parent().interact()
-
-func zero_speed():
-	x_speed = 0.0
 
 func kill_character():
 	character_stage = CharacterStage.DEAD
@@ -104,78 +125,7 @@ func kill_character():
 		facing = 1.0
 		scale.x = -1.0
 
-func process_physics(delta):
-	if character_state == CharacterState.DEATH:
-		y_speed += fall_speed * delta
-		move_and_slide(Vector2(x_speed * run_speed, y_speed), Vector2(0, -1))
-		if is_on_floor():
-			x_speed = 0.0
-			kill_character()
-		return
-	
-	if character_stage != CharacterStage.POSSESSED:
-		.process_physics(delta)
-		return
-	
-	current_age += 1
-	
-	if character_state == CharacterState.DASHING:
-		dash_timer += delta
-	
-		if dash_timer > dash_time:
-			dash_timer = 0.0
-			y_speed = 0.0
-			character_state = CharacterState.IDLE
-			dash_cooldown = dash_cooldown_time
-			can_dash = false
-			
-		move_and_slide(Vector2(dash_speed * facing, 0), Vector2(0, -1))
-		return
-
-	if x_input_dir > 0.0:
-		x_speed += facing * acceleration * delta
-	elif x_input_dir < 0.0:
-		x_speed += facing * acceleration * delta
-	elif x_input_dir == 0.0 and abs(x_speed) <= 0.1 * run_speed:
-		x_speed = 0.0
-	elif x_input_dir == 0.0 and x_speed > 0.0:
-		x_speed -= acceleration * delta
-	elif x_input_dir == 0.0 and x_speed < 0.0:
-		x_speed += acceleration * delta
-
-	if abs(x_speed) > run_speed and 0 < facing * x_speed:
-		x_speed = run_speed * facing
-
-	if character_state == CharacterState.CARRYING:
-		if abs(x_speed) > 0.4 * run_speed:
-			$AnimatedSprite.animation = "carry_run"
-		else:
-			$AnimatedSprite.animation = "carry_default"
-	else:
-		if abs(x_speed) > 0.4 * run_speed:
-			$AnimatedSprite.animation = "run"
-		else:
-			$AnimatedSprite.animation = "default"
-
-	if jump and jump_time == 0.0:
-		$CharacterAudio.play_sound("jump")
-		y_speed = - jump_start_speed 
-		jump_time += delta
-		
-	elif jump and jump_time < max_jump_time:
-		y_speed += - jump_fall_reduction * delta
-		jump_time += delta
-	
-	if(use_special):
-		process_special()
-
-	if(use_interact):
-		process_interact()
-	
-	if unloading_timer > unload_time:
-		unloading_timer = 0.0
-		character_state = CharacterState.IDLE
-	
+func push_on_front():
 	var speed_mod = 1.0
 	
 	for area in $PushArea.get_overlapping_areas(): 
@@ -184,37 +134,156 @@ func process_physics(delta):
 				speed_mod = 0.0
 			else:
 				speed_mod = push_constant
-				area.get_parent().move_and_slide(Vector2(speed_mod * run_speed * x_speed, 0.0), Vector2(0, -1))
+				area.get_parent().move_and_slide(Vector2(speed_mod * x_speed, 0.0), Vector2(0, -1))
 	
-	var vec = move_and_slide(Vector2(speed_mod * run_speed * x_speed, y_speed), Vector2(0, -1))
+	return speed_mod
+
+func get_jump_start_speed():
+	return -jump_start_speed
+
+func swap_facing():
+	if x_input_dir > 0.0 and facing == -1:
+		scale.x = -1.0
+		facing = 1
+	elif x_input_dir < 0.0 and facing == 1:
+		scale.x = -1.0
+		facing = -1
+
+func process_physics(delta):
+	# The purpose to process physics is to 
+	# 1. Set character state properly
+	# 2. Use character state to infer character dynamics
+	# 3. Set character animation state
+
+	if character_stage == CharacterStage.DEAD:
+		return
+	
+	if is_being_carried:
+		.process_physics(delta)
+		return
+	
+	match character_state:
+		CharacterState.IDLE:
+			if jump:
+				$CharacterAudio.play_sound("jump")
+				character_state = CharacterState.JUMPING
+			elif abs(x_input_dir) > 0.5:
+				character_state = CharacterState.RUNNING
+			
+			if use_special:
+				process_special()
+			elif use_interact:
+				process_interact()
+
+		CharacterState.RUNNING:
+			if jump:
+				$CharacterAudio.play_sound("jump")
+				character_state = CharacterState.JUMPING
+			elif abs(x_input_dir) < 0.05:
+				character_state = CharacterState.IDLE
+			
+			if use_special:
+				process_special()
+			elif use_interact:
+				process_interact()
+
+		CharacterState.JUMPING:
+			if use_special:
+				process_special()
+			elif use_interact:
+				process_interact()
+		CharacterState.SPECIAL:
+			if use_special:
+				process_special()
+
+	swap_facing()
+	
+	# Update Character dynamics
+	match character_state:
+		CharacterState.IDLE:
+			if abs(x_speed) <= 0.1 * run_speed:
+				x_speed = 0.0
+			else:
+				x_speed -= sign(x_speed) * drag * delta
+				
+			y_speed = 100.0
+
+		CharacterState.RUNNING:
+			x_speed += facing * acceleration * delta
+			
+			if abs(x_speed) > run_speed and 0 < facing * x_speed:
+				x_speed = run_speed * facing
+			
+			y_speed = 100.0
+
+		CharacterState.JUMPING:
+			if abs(x_input_dir) > 0.05:
+				x_speed += facing * acceleration * delta
+			
+				if abs(x_speed) > run_speed and 0 < facing * x_speed:
+					x_speed = run_speed * facing
+			else:
+				if abs(x_speed) <= 0.1 * run_speed:
+					x_speed = 0.0
+				else:
+					x_speed -= sign(x_speed) * drag * delta
+
+			if jump_time == 0.0:
+				y_speed = get_jump_start_speed() 
+				jump_time += delta
+
+			elif jump and jump_time < max_jump_time:
+				y_speed += fall_speed * delta - jump_fall_reduction * delta
+				jump_time += delta
+			else:
+				y_speed += fall_speed * delta
+
+		CharacterState.DEATH:
+			y_speed += fall_speed * delta
+
+		CharacterState.SPECIAL:
+			special_physics_process()
+	
+	unique_physics_modifiers()
+	
+	var speed_mod = push_on_front()
+	var vec = move_and_slide(Vector2(speed_mod * x_speed, y_speed), Vector2(0, -1))
+	
+	if vec.y == 0.0:
+		y_speed = 100.0
+	
+	if is_on_floor():
+		character_is_on_floor_after_move()
+		if character_state == CharacterState.JUMPING:
+			character_state = CharacterState.IDLE
+			jump_time = 0.0
+
+			if character_stage == CharacterStage.CHILLIN:
+				x_speed = 200 * facing
+
+		elif character_state == CharacterState.DEATH:
+			x_speed = 0.0
+			kill_character()
+
+	elif not is_on_floor() and [CharacterState.IDLE, CharacterState.RUNNING].has(character_state):
+		character_state = CharacterState.JUMPING
+		jump_time = max_jump_time
+	
+	set_character_animations()
 
 	if is_on_floor() and abs(x_input_dir) > 0:
 		$CharacterAudio.play_footstep()
-
-	if vec.y == 0.0:
-		y_speed = 0.0
-
-	if dash_cooldown > 0.0:
-		dash_cooldown -= delta
-
-	if not is_on_floor():
-		y_speed += fall_speed * delta
-	else:
-		y_speed = 1.0
-		jump_time = 0.0
-		if dash_cooldown <= 0.0:
-			can_dash = true
 	
-	
-	if current_age >= max_age:
-		if character_stage == CharacterStage.POSSESSED:
+	if character_stage == CharacterStage.POSSESSED:
+		current_age += 1
+		if current_age >= max_age:
 			character_state = CharacterState.DEATH
-		else:
-			character_stage += 1
-			current_age = 0
-	
+
 	jump = false
 	use_special = false
+	x_input_dir = 0.0
+	use_interact = false
+	holding_down = false
 
 func _on_HurtBox_area_entered(area):	
 	if area.get_collision_layer_bit(2):

@@ -1,13 +1,10 @@
 extends KinematicBody2D
 
-export var throw_speed = 750.0
-export var throw_speed_y = 250.0
 export var fall_speed = 2750.0
 export var collidable = false
 var is_being_carried = false
 var y_speed = 0.0
 var x_speed = 0.0
-var facing = 1.0
 
 var teleport_location = null
 var teleport_timing = 0.1
@@ -70,8 +67,8 @@ func get_weight_above():
 	return areas
 
 func throw(direction, thrower_facing):
-	x_speed = direction.x + throw_speed * thrower_facing
-	y_speed = direction.y - throw_speed_y
+	x_speed = direction.x
+	y_speed = direction.y
 	
 	position.x += 20.0 * thrower_facing
 	position.y -= 10.0
