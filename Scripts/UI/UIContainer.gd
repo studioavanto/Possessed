@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-var monologue = []
-var level_name = []
 var input_counter = 0
 var can_proceed = true
 var first_not_done = true
@@ -175,10 +173,10 @@ func proceed():
 			get_tree().quit()
 
 func get_level_name(map_id):
-	return ["hahaa", "hahaaaaa"]
+	return $LevelTitles.level_titles[map_id]
 	
 func get_level_monologue(map_id):
-	return ["höhöö", "höhöhöhöhöhö"]
+	return $LevelMonologue.level_monologue[map_id]
 	
 func screen_fade_in_done():
 	if input_counter == 0:

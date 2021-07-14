@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Resources/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Resources/UI/text_box.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/UI/TextBox.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -15,6 +16,7 @@ margin_right = 1200.0
 margin_bottom = 320.0
 rect_pivot_offset = Vector2( -2249.57, -1118.55 )
 texture = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -25,7 +27,6 @@ margin_top = 25.8846
 margin_right = 1174.41
 margin_bottom = 285.885
 custom_fonts/normal_font = SubResource( 1 )
-text = "Level Title Here . . ."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

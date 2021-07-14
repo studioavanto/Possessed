@@ -53,6 +53,8 @@ func _ready():
 	$PlayerController.control_id = GameState.CONTROL_PLAYER
 	$CutsceneController.control_id = GameState.CONTROL_CUTSCENE
 	
+	# $UIContainer.set_map_enums(MapEnum)
+	
 	$CutsceneController.connect("proceed", $UIContainer,"proceed")
 	
 	if map != MapEnum.START_GAME:
@@ -86,6 +88,9 @@ func go_to_next_map():
 
 func get_gamestate():
 	return current_gamestate
+	
+func get_map_id():
+	return current_map_id
 
 func from_player_to_pause():
 	next_gamestate = GameState.CONTROL_PAUSE
