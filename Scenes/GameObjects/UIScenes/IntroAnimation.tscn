@@ -161,7 +161,7 @@ animations = [ {
 
 [node name="IntroAnimation" type="AnimatedSprite"]
 modulate = Color( 0, 0, 0, 0 )
-position = Vector2( 960, 540 )
+position = Vector2( 953.65, 282.841 )
 scale = Vector2( 1.4, 1.4 )
 frames = SubResource( 1 )
 animation = "Intro1"

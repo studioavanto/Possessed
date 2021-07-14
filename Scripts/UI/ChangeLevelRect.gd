@@ -10,7 +10,7 @@ signal fade_out_completed
 func _ready():
 	$Monologue.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	$Sprite.modulate = Color(1.0, 1.0, 1.0, 0.0)
-	$LevelTitleBox.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	$LevelTitle.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	$TextureRect.modulate = Color(1.0, 1.0, 1.0, 0.0)  # The final level change texture
 	$FadeInTween.connect("tween_all_completed", self, "fade_in_completed")
 	$FadeOutTween.connect("tween_all_completed", self, "fade_out_completed")
@@ -20,7 +20,6 @@ func set_transparent():
 	$TextureRect.modulate = Color(0.0, 0.0, 0.0, 0.0)
 
 func fade_in_completed():
-	$Monologue/Timer.start()
 	emit_signal("fade_in_completed")
 	
 func fade_out_completed():
@@ -56,6 +55,7 @@ func fade_in_scene(state, message="", first = false):
 	if state == "monologue":
 		
 		$Monologue.set_bbcode(message)
+		$Monologue/Timer.start()
 		
 		if not first:
 			$FadeInTween.interpolate_property(
@@ -89,10 +89,10 @@ func fade_in_scene(state, message="", first = false):
 	
 	elif state == "level_name":
 		
-		$LevelTitleBox.set_text(message)
+		$LevelTitle.set_text(message)
 		
 		$FadeInTween.interpolate_property(
-			$LevelTitleBox,
+			$LevelTitle,
 			"modulate",
 			Color(1.0, 1.0, 1.0, 0.0),
 			Color(1.0, 1.0, 1.0, 1.0),
@@ -116,7 +116,7 @@ func fade_out_scene():
 	)
 	
 	$FadeOutTween.interpolate_property(
-		$LevelTitleBox,
+		$LevelTitle,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 1.0),
 		Color(1.0, 1.0, 1.0, 0.0),

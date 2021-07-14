@@ -8,8 +8,13 @@ func _ready():
 
 func _on_Timer_timeout():
 	self.set_visible_characters(self.get_visible_characters()+1)
+	print(get_bbcode())
 	
-	# TODO: get last character, play appropriate sound
-	
-	if self.get_visible_characters() > self.get_total_character_count():
+	if self.get_visible_characters() >= self.get_total_character_count():
 		$Timer.stop()
+	else:
+		var revealed_character = self.get_bbcode()[self.get_visible_characters() - 1]
+		if revealed_character in $AudioStreamPlayer.audio_effects.keys():
+			$AudioStreamPlayer.play_sound(revealed_character)
+		elif revealed_character in $AudioStreamPlayer.consonants:
+			pass

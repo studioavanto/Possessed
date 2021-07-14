@@ -74,7 +74,7 @@ scale = Vector2( 30, 30 )
 frames = SubResource( 4 )
 playing = true
 
-[node name="LevelTitleBox" parent="." instance=ExtResource( 3 )]
+[node name="LevelTitle" parent="." instance=ExtResource( 3 )]
 margin_left = 360.0
 margin_top = 132.0
 margin_right = 1560.0

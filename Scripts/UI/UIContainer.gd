@@ -61,6 +61,7 @@ func _ready():
 	$ChangeLevelRect.connect("fade_out_completed", self, "screen_fade_out_done")
 	$Tween.connect("tween_all_completed", self, "tween_completed")
 	$FadeOutBlack.connect("tween_all_completed", self, "fade_out_complete")
+	$TextBox.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	intro_animation = load("res://Scenes/GameObjects/UIScenes/IntroAnimation.tscn").instance()
 	add_child(intro_animation)
 	intro_animation.playing = false
@@ -106,6 +107,7 @@ func start_intro():
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
 	)
+	
 	$Tween.start()
 
 func fade_in_intro():
@@ -118,7 +120,19 @@ func fade_in_intro():
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
 	)
+	
+	$Tween.interpolate_property(
+		$TextBox,
+		"modulate",
+		Color(0.0, 0.0, 0.0, 1.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	
 	$Tween.start()
+	$TextBox/RichTextLabel/Timer.start()
 	intro_animation.playing = true
 
 func fade_out_intro():
@@ -131,6 +145,17 @@ func fade_out_intro():
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
 	)
+	
+	$Tween.interpolate_property(
+		$TextBox,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 1.0),
+		Color(1.0, 1.0, 1.0, 0.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	
 	$Tween.start()
 
 func fade_in_end_sreen():
