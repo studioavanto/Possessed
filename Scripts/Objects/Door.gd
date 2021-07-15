@@ -26,3 +26,11 @@ func _on_Switch_toggle_on():
 
 func _on_Switch_toggle_off():
 	toggle_door()
+
+
+func _on_Button2_toggle_off():
+	pass # Replace with function body.
+
+
+func _on_Button2_toggle_on():
+	pass # Replace with function body.
