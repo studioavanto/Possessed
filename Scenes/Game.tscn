@@ -11,7 +11,7 @@
 [node name="Game" type="Node2D"]
 position = Vector2( 0, 1 )
 script = ExtResource( 1 )
-map = 15
+map = 12
 last_map = 24
 
 [node name="PlayerController" type="Node2D" parent="."]
