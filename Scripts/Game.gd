@@ -76,6 +76,7 @@ func load_new_map():
 	$UIContainer.show_new_map(current_map_id)
 
 func go_to_next_map():
+	$MusicManager.change_active_character(-1)
 	if current_map_id == last_map:
 		next_gamestate = GameState.CONTROL_CUTSCENE
 		$UIContainer.fade_in_end_sreen()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/indyrick_BARBA.ogg-9163b0e3e3ba41349127e1213c9542ba.oggstr"
+
+[deps]
+
+source_file="res://Resources/Music/indyrick_BARBA.ogg"
+dest_files=[ "res://.import/indyrick_BARBA.ogg-9163b0e3e3ba41349127e1213c9542ba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

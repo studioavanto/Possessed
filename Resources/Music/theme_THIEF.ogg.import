@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/theme_THIEF.ogg-32704274cb2136c29f3f5b3a48ebf0e4.oggstr"
+
+[deps]
+
+source_file="res://Resources/Music/theme_THIEF.ogg"
+dest_files=[ "res://.import/theme_THIEF.ogg-32704274cb2136c29f3f5b3a48ebf0e4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/whimsy_THIEF.ogg-182483f397eb9edf915a95956b53acfd.oggstr"
+
+[deps]
+
+source_file="res://Resources/Music/whimsy_THIEF.ogg"
+dest_files=[ "res://.import/whimsy_THIEF.ogg-182483f397eb9edf915a95956b53acfd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

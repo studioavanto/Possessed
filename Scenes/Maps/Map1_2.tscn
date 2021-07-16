@@ -14,6 +14,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+map_music_id = 1
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]
 position = Vector2( -130.249, -12.5724 )
