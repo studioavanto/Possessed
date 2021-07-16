@@ -10,6 +10,7 @@
 [node name="Map1_1" type="Node2D"]
 position = Vector2( 595.448, 314.907 )
 script = ExtResource( 2 )
+map_music_id = 0
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]
 position = Vector2( -37.354, 326.045 )

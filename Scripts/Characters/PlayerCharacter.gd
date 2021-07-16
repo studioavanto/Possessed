@@ -37,6 +37,7 @@ func stop_possession():
 	if next_possession != null:
 		possess_target(next_possession)
 	else:
+		get_parent().change_active_character(-1)
 		get_parent().play_sound("game_over")
 		get_parent().reset_map()
 		

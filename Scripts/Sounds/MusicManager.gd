@@ -2,18 +2,30 @@ extends Node
 
 onready var songs = [
 	preload("res://Resources/Music/taikameibi_BG.ogg"),
+	preload("res://Resources/Music/indyrick_BG.ogg"),
+	preload("res://Resources/Music/theme_BG.ogg"),
+	preload("res://Resources/Music/whimsy_BG.ogg"),
 ]
 
 onready var wizard_clips = [
-	preload("res://Resources/Music/taikameibi_velho.ogg"),
+	preload("res://Resources/Music/taikameibi_VELHO.ogg"),
+	preload("res://Resources/Music/indyrick_VELHO.ogg"),
+	preload("res://Resources/Music/theme_VELHO.ogg"),
+	preload("res://Resources/Music/whimsy_VELHO.ogg"),
 ]
 
 onready var barbarian_clips = [
 	preload("res://Resources/Music/taikameibi_barba.ogg"),
+	preload("res://Resources/Music/indyrick_BARBA.ogg"),
+	preload("res://Resources/Music/theme_BARBA.ogg"),
+	preload("res://Resources/Music/whimsy_BARBA.ogg"),
 ]
 
 onready var thief_clips = [
-	preload("res://Resources/Music/taikameibi_thief.ogg"),
+	preload("res://Resources/Music/taikameibi_THIEF.ogg"),
+	preload("res://Resources/Music/indyrick_THIEF.ogg"),
+	preload("res://Resources/Music/theme_THIEF.ogg"),
+	preload("res://Resources/Music/whimsy_THIEF.ogg"),
 ]
 
 var active_song = -1
