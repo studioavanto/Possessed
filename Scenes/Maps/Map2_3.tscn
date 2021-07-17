@@ -64,7 +64,7 @@ position = Vector2( 1313.45, -100.693 )
 position = Vector2( 481.449, 675.307 )
 
 [node name="Thief2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 577.449, 483.791 )
+position = Vector2( 33.449, 483.307 )
 
 [connection signal="toggle_off" from="Button" to="Door" method="_on_Button_toggle_off"]
 [connection signal="toggle_on" from="Button" to="Door" method="_on_Button_toggle_on"]

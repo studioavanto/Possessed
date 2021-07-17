@@ -78,6 +78,7 @@ one_shot = true
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 20
+one_shot = true
 speed_scale = 1.26
 explosiveness = 0.19
 randomness = 0.31

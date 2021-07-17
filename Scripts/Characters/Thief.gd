@@ -1,8 +1,8 @@
 extends "res://Scripts/Characters/PossessCharacter.gd"
 
-export var dash_speed = 700
-export var dash_time = 0.5
-export var dash_cooldown = 1.0
+export var dash_speed = 800
+export var dash_time = 0.25
+export var dash_cooldown = 0.05
 
 var dash_recovery = false
 var can_dash = true
