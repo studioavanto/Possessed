@@ -4,3 +4,4 @@
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
+level_title = "1_5"

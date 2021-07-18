@@ -77,6 +77,7 @@ func load_new_map():
 	$UIContainer.fade_straight_to_next_map()
 
 func go_to_next_map():
+	$UIContainer.fade_out_level_title()
 	$MusicManager.change_active_character(-1)
 	if current_map_id == last_map:
 		next_gamestate = GameState.CONTROL_CUTSCENE
@@ -122,6 +123,7 @@ func load_new_level(reset = false):
 	
 	var character_tmp = current_map.get_player_character()
 	character_tmp.connect("map_exit", self, "go_to_next_map")
+	$UIContainer.set_level_name(current_map.level_title)
 	$PlayerController.set_player_character(character_tmp)
 	$UIContainer.connect_character_to_ui(character_tmp)
 	$CanvasModulate.color = current_map.map_overlay_color
@@ -131,6 +133,7 @@ func start_new_level():
 	current_map.set_pause(false)
 	next_gamestate = GameState.CONTROL_PLAYER
 	$MusicManager.change_song(current_map.map_music_id)
+	$UIContainer.fade_in_level_title()
 
 func play_sound(sound_string):
 	$AudioEffectManager.play_sound(sound_string)

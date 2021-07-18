@@ -2,6 +2,7 @@ extends Node
 
 export(String, MULTILINE) var map_end_text = ""
 export var map_music_id = -1
+export var level_title = "default"
 export(Color) var map_overlay_color
 
 var map_paused = true

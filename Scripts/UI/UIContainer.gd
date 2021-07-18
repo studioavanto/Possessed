@@ -249,3 +249,30 @@ func fade_map_text(map_text):
 	input_counter = 0
 	
 	$ChangeLevelRect.fade_in_scene("monologue", map_text)
+	
+func set_level_name(text):
+	$LevelTitle.set_text(text)
+
+func fade_in_level_title():
+	$TitleTween.interpolate_property(
+		$LevelTitle,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 0.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	$TitleTween.start()
+	
+func fade_out_level_title():
+	$TitleTween.interpolate_property(
+		$LevelTitle,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 1.0),
+		Color(1.0, 1.0, 1.0, 0.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	$TitleTween.start()

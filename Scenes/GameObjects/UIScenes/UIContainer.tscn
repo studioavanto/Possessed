@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/GameObjects/UIScenes/ChangeLevelRect.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Resources/UI/possessed_logo-01.png" type="Texture" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/UI/LevelTitleDict.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/GameObjects/UIScenes/LevelTitle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/UI/MonologueDict.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/GameObjects/UIScenes/IntroTextBox.tscn" type="PackedScene" id=8]
 
@@ -28,6 +28,8 @@ margin_right = 0.0
 margin_bottom = 0.0
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="TitleTween" type="Tween" parent="."]
 
 [node name="TextureScreen" type="TextureRect" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -60,8 +62,8 @@ __meta__ = {
 
 [node name="FadeOutBlack" type="Tween" parent="."]
 
-[node name="LevelTitles" type="Node" parent="."]
-script = ExtResource( 6 )
-
 [node name="LevelMonologue" type="Node" parent="."]
 script = ExtResource( 7 )
+
+[node name="LevelTitle" parent="." instance=ExtResource( 6 )]
+modulate = Color( 1, 1, 1, 0 )
