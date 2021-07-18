@@ -16,7 +16,7 @@ extents = Vector2( 28.23, 10 )
 extents = Vector2( 36.2545, 34.8985 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 31.1701, 26.0844 )
+extents = Vector2( 14.8944, 19.6115 )
 
 [node name="Box" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -65,11 +65,11 @@ collision_mask = 0
 shape = SubResource( 4 )
 
 [node name="IsSpaceAbove" type="Area2D" parent="."]
-visible = false
+monitorable = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
-position = Vector2( 0.594589, -57.3792 )
+position = Vector2( -1.08908, -53.4506 )
 shape = SubResource( 5 )
 
 [node name="TeleportTimer" type="Timer" parent="."]

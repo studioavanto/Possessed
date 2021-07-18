@@ -15,6 +15,7 @@ func handle_inputs():
 	var jump = false
 	var special = false
 	var interact = false
+	var death = false
 	var holding_down = false
 	var horizontal_move = 0.0
 	
@@ -29,11 +30,14 @@ func handle_inputs():
 		
 	if Input.is_action_just_pressed("interact"):
 		interact = true
+		
+	if Input.is_action_just_pressed("get_older"):
+		death = true
 
 	if Input.is_action_just_pressed("reset"):
 		get_parent().reset_map()
 
 	horizontal_move = Input.get_action_strength("press_right") - Input.get_action_strength("press_left")
 	
-	player_character.process_input(jump, special, horizontal_move, interact, holding_down)
+	player_character.process_input(jump, special, horizontal_move, interact, holding_down, death)
 	

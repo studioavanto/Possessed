@@ -40,13 +40,14 @@ func stop_possession():
 		get_parent().change_active_character(-1)
 		get_parent().play_sound("game_over")
 		get_parent().reset_map()
-		
 
-func process_input(jump, special, horizontal_move, interact, holding_down):
+func process_input(jump, special, horizontal_move, interact, holding_down, death):
 	if possessed == null:
 		if special:
 			possess_nearby()
 	else:
+		if death:
+			possessed.kill_character()
 		if (possessed.process_input(jump, special, horizontal_move, interact, holding_down)):
 			position = lerp(position, possessed.position, 0.35)
 		else:

@@ -89,23 +89,22 @@ func carry_target():
 		return true
 
 func has_space_above():
-	return $IsSpaceAbove.get_overlapping_areas().empty()
+	print( $IsSpaceAbove.get_overlapping_bodies())
+	return $IsSpaceAbove.get_overlapping_bodies().empty()
 
 func process_physics(delta):
 	if (is_being_carried == false):
-		var vect = move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1))
-
-		if vect.x == 0.0:
-			x_speed = 0.0
-
 		if is_on_floor():
 			x_speed = 0.0
-			y_speed = 1.0
+			y_speed = 10.0
 		else:
 			y_speed += fall_speed * delta
 	else:
 		x_speed = 0.0
-		y_speed = 1.0
+		y_speed = 10.0
+	
+	if move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1)).x == 0.0:
+		x_speed = 0.0
 
 func _physics_process(delta):
 	process_physics(delta)

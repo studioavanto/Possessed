@@ -14,11 +14,8 @@ background_mode = 4
 [node name="Game" type="Node2D"]
 position = Vector2( 0, 1 )
 script = ExtResource( 1 )
-map = 12
 last_map = 24
-
-[node name="PlayerController" type="Node2D" parent="."]
-script = ExtResource( 2 )
+alt_maps_on = true
 
 [node name="PauseController" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -43,3 +40,6 @@ color = Color( 0.686275, 0.647059, 0.647059, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+
+[node name="PlayerController" type="Node2D" parent="."]
+script = ExtResource( 2 )

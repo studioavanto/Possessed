@@ -1,9 +1,9 @@
 extends "res://Scripts/Objects/Carryable.gd"
 
 export var lifetime = 200
-export var jump_fall_reduction = 2550.0
-export var jump_start_speed = 450.0
-export var run_speed = 300
+export var jump_fall_reduction = 710.0
+export var jump_start_speed = 747.0
+export var run_speed = 290
 export var max_age = 600
 export var max_jump_time = 0.25
 export var unload_time = 1.0
@@ -11,6 +11,7 @@ export var acceleration = 2000.0
 export var drag = 2500.0
 export var push_constant = 0.5
 export var dash_cooldown_time = 0.05
+export var terminal_velocity = 800
 
 enum CharacterState { IDLE, RUNNING, JUMPING, SPECIAL, DEATH }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
@@ -28,6 +29,18 @@ var facing = 1.0
 
 var character_state = CharacterState.IDLE
 var character_stage = CharacterStage.CHILLIN
+
+func get_air_drag():
+	if character_stage == CharacterStage.CHILLIN:
+		return 0.0
+	else:
+		return drag
+
+func get_max_speed():
+	if character_stage == CharacterStage.CHILLIN:
+		return run_speed * 10
+	else:
+		return run_speed
 
 func get_character_sprite():
 	return $AnimatedSprite
@@ -139,7 +152,10 @@ func push_on_front():
 	return speed_mod
 
 func get_jump_start_speed():
-	return -jump_start_speed
+	if character_stage == CharacterStage.CHILLIN:
+		return y_speed
+	else:
+		return -jump_start_speed
 
 func swap_facing():
 	if x_input_dir > 0.0 and facing == -1:
@@ -158,7 +174,7 @@ func process_physics(delta):
 	if character_stage == CharacterStage.DEAD:
 		return
 	
-	if is_being_carried:
+	if character_stage == CharacterStage.CHILLIN:
 		.process_physics(delta)
 		return
 	
@@ -211,7 +227,7 @@ func process_physics(delta):
 		CharacterState.RUNNING:
 			x_speed += facing * acceleration * delta
 			
-			if abs(x_speed) > run_speed and 0 < facing * x_speed:
+			if abs(x_speed) > get_max_speed() and 0 < facing * x_speed:
 				x_speed = run_speed * facing
 			
 			y_speed = 100.0
@@ -220,13 +236,13 @@ func process_physics(delta):
 			if abs(x_input_dir) > 0.05:
 				x_speed += facing * acceleration * delta
 			
-				if abs(x_speed) > run_speed and 0 < facing * x_speed:
+				if abs(x_speed) > get_max_speed() and 0 < facing * x_speed:
 					x_speed = run_speed * facing
 			else:
 				if abs(x_speed) <= 0.1 * run_speed:
 					x_speed = 0.0
 				else:
-					x_speed -= sign(x_speed) * drag * delta
+					x_speed -= sign(x_speed) * get_air_drag() * delta
 
 			if jump_time == 0.0:
 				y_speed = get_jump_start_speed() 
@@ -244,10 +260,13 @@ func process_physics(delta):
 		CharacterState.SPECIAL:
 			special_physics_process()
 	
-	unique_physics_modifiers()
+	if y_speed > terminal_velocity:
+		y_speed = terminal_velocity
 	
+	unique_physics_modifiers()
 	var speed_mod = push_on_front()
-	var vec = move_and_slide(Vector2(speed_mod * x_speed, y_speed), Vector2(0, -1))
+	move_and_slide(Vector2(speed_mod * x_speed, 0.0))
+	var vec = move_and_slide(Vector2(0.0, y_speed), Vector2(0, -1), true)	
 	
 	if vec.y == 0.0:
 		y_speed = 100.0

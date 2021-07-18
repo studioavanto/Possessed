@@ -36,9 +36,24 @@ var map_dict = {
 	MapEnum.MAP_4_5: "res://Scenes/Maps/TestJohannes.tscn"
 }
 
+var alt_maps = {
+	MapEnum.MAP_1_1: "res://Scenes/Maps/AltMaps/Map1_1.tscn",
+	MapEnum.MAP_1_2: "res://Scenes/Maps/AltMaps/Map1_2.tscn",
+	MapEnum.MAP_1_3: "res://Scenes/Maps/AltMaps/Map1_3.tscn",
+	MapEnum.MAP_1_4: "res://Scenes/Maps/AltMaps/Map1_4.tscn",
+	MapEnum.MAP_1_5: "res://Scenes/Maps/AltMaps/Map1_5.tscn",
+	MapEnum.MAP_2_1: "res://Scenes/Maps/AltMaps/Map1_6.tscn",
+	MapEnum.MAP_2_2: "res://Scenes/Maps/AltMaps/Map1_7.tscn",
+	MapEnum.MAP_2_3: "res://Scenes/Maps/AltMaps/Map1_8.tscn",
+	MapEnum.MAP_2_4: "res://Scenes/Maps/AltMaps/Map1_9.tscn",
+	MapEnum.MAP_2_5: "res://Scenes/Maps/AltMaps/Map1_10.tscn",
+	
+}
+
 enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
 export (MapEnum) var map = MapEnum.START_GAME
 export (MapEnum) var last_map = MapEnum.MAP_2_2
+export var alt_maps_on = false
 
 var current_gamestate = GameState.CONTROL_CUTSCENE
 var next_gamestate = GameState.CONTROL_NULL
@@ -98,13 +113,19 @@ func from_player_to_pause():
 
 func from_pause_to_player():
 	next_gamestate = GameState.CONTROL_PLAYER
-	
+
+func get_map_from_list(map_id):
+	if map_id < MapEnum.MAP_1_1 or not alt_maps_on:
+		return map_dict[map_id] 
+	else:
+		return alt_maps[map_id]
+
 func load_new_level(reset = false):
 	if current_map != null:
 		current_map.queue_free()
 	
 	if not reset:
-		current_map_resource = load(map_dict[current_map_id])
+		current_map_resource = load(get_map_from_list(current_map_id))
 
 	current_map = current_map_resource.instance()
 	add_child(current_map)
