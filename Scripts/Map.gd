@@ -1,5 +1,6 @@
 extends Node
 
+export(String, MULTILINE) var map_end_text = ""
 export var map_music_id = -1
 
 var map_paused = true

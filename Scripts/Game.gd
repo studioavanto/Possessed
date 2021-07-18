@@ -4,65 +4,45 @@ enum GameState { CONTROL_PLAYER, CONTROL_PAUSE, CONTROL_NULL, CONTROL_CUTSCENE }
 enum MapEnum { 
 	START_GAME,
 	TEST_ILMO, TEST_VILLE, TEST_JOONAS, TEST_JOHANNES, 
-	MAP_1_1, MAP_1_2, MAP_1_3, MAP_1_4, MAP_1_5, MAP_2_1, 
-	MAP_2_2, MAP_2_3, MAP_2_4, MAP_2_5, MAP_3_1, MAP_3_2, 
-	MAP_3_3, MAP_3_4, MAP_3_5, MAP_4_1, MAP_4_2, MAP_4_3, MAP_4_4, MAP_4_5
+	MAP_1_1, MAP_1_2, MAP_1_3, MAP_1_4, MAP_1_5, MAP_1_6, 
+	MAP_2_1, MAP_2_2, MAP_2_3, MAP_2_4, MAP_2_5, MAP_2_6, 
+	MAP_3_1, MAP_3_2, MAP_3_3, MAP_3_4, MAP_3_5, MAP_3_6, 
+	MAP_4_1, MAP_4_2, MAP_4_3, MAP_4_4, MAP_4_5, MAP_4_6, 
 	}
 
-var map_dict = {
+var final_map_dict = {
 	MapEnum.TEST_ILMO: "res://Scenes/Maps/TestMaps/TestIlmo.tscn",
 	MapEnum.TEST_VILLE: "res://Scenes/Maps/TestMaps/TestVille.tscn",
 	MapEnum.TEST_JOHANNES: "res://Scenes/Maps/TestMaps/TestJohannes.tscn",
 	MapEnum.TEST_JOONAS: "res://Scenes/Maps/TestMaps/TestJoonas.tscn",
-	MapEnum.MAP_1_1: "res://Scenes/Maps/Map1_1.tscn",
-	MapEnum.MAP_1_2: "res://Scenes/Maps/Map1_2.tscn",
-	MapEnum.MAP_1_3: "res://Scenes/Maps/Map1_3.tscn",
-	MapEnum.MAP_1_4: "res://Scenes/Maps/Map1_4.tscn",
-	MapEnum.MAP_1_5: "res://Scenes/Maps/Map1_5.tscn",
-	MapEnum.MAP_2_1: "res://Scenes/Maps/Map2_1.tscn",
-	MapEnum.MAP_2_2: "res://Scenes/Maps/Map2_2.tscn",
-	MapEnum.MAP_2_3: "res://Scenes/Maps/Map2_3.tscn",
-	MapEnum.MAP_2_4: "res://Scenes/Maps/Map2_4.tscn",
-	MapEnum.MAP_2_5: "res://Scenes/Maps/Map2_5.tscn",
-	MapEnum.MAP_3_1: "res://Scenes/Maps/Map3_1.tscn",
-	MapEnum.MAP_3_2: "res://Scenes/Maps/Map3_2.tscn",
-	MapEnum.MAP_3_3: "res://Scenes/Maps/Map3_3.tscn",
-	MapEnum.MAP_3_4: "res://Scenes/Maps/Map3_4.tscn",
-	MapEnum.MAP_3_5: "res://Scenes/Maps/TestJohannes.tscn",
-	MapEnum.MAP_4_1: "res://Scenes/Maps/Map4_1.tscn",
-	MapEnum.MAP_4_2: "res://Scenes/Maps/Map4_2.tscn",
-	MapEnum.MAP_4_3: "res://Scenes/Maps/TestJohannes.tscn",
-	MapEnum.MAP_4_4: "res://Scenes/Maps/Map4_4.tscn",
-	MapEnum.MAP_4_5: "res://Scenes/Maps/TestJohannes.tscn"
+	MapEnum.MAP_1_1: "res://Scenes/Maps/FinalMaps/Map1_1.tscn",
+	MapEnum.MAP_1_2: "res://Scenes/Maps/FinalMaps/Map1_2.tscn",
+	MapEnum.MAP_1_3: "res://Scenes/Maps/FinalMaps/Map1_3.tscn",
+	MapEnum.MAP_1_4: "res://Scenes/Maps/FinalMaps/Map1_4.tscn",
+	MapEnum.MAP_1_5: "res://Scenes/Maps/FinalMaps/Map1_5.tscn",
+	MapEnum.MAP_1_6: "res://Scenes/Maps/FinalMaps/Map1_6.tscn",
+	MapEnum.MAP_2_1: "res://Scenes/Maps/FinalMaps/Map2_1.tscn",
+	MapEnum.MAP_2_2: "res://Scenes/Maps/FinalMaps/Map2_2.tscn",
+	MapEnum.MAP_2_3: "res://Scenes/Maps/FinalMaps/Map2_3.tscn",
+	MapEnum.MAP_2_4: "res://Scenes/Maps/FinalMaps/Map2_4.tscn",
+	MapEnum.MAP_2_5: "res://Scenes/Maps/FinalMaps/Map2_5.tscn",
+	MapEnum.MAP_2_6: "res://Scenes/Maps/FinalMaps/Map2_6.tscn",
+	MapEnum.MAP_3_1: "res://Scenes/Maps/FinalMaps/Map3_1.tscn",
+	MapEnum.MAP_3_2: "res://Scenes/Maps/FinalMaps/Map3_2.tscn",
+	MapEnum.MAP_3_3: "res://Scenes/Maps/FinalMaps/Map3_3.tscn",
+	MapEnum.MAP_3_4: "res://Scenes/Maps/FinalMaps/Map3_4.tscn",
+	MapEnum.MAP_3_5: "res://Scenes/Maps/FinalMaps/Map3_5.tscn",
+	MapEnum.MAP_3_6: "res://Scenes/Maps/FinalMaps/Map3_6.tscn",
+	MapEnum.MAP_4_1: "res://Scenes/Maps/FinalMaps/Map4_1.tscn",
+	MapEnum.MAP_4_2: "res://Scenes/Maps/FinalMaps/Map4_2.tscn",
+	MapEnum.MAP_4_3: "res://Scenes/Maps/FinalMaps/Map4_3.tscn",
+	MapEnum.MAP_4_4: "res://Scenes/Maps/FinalMaps/Map4_4.tscn",
+	MapEnum.MAP_4_5: "res://Scenes/Maps/FinalMaps/Map4_5.tscn",
+	MapEnum.MAP_4_6: "res://Scenes/Maps/FinalMaps/Map4_6.tscn"
 }
 
-var alt_maps = {
-	MapEnum.MAP_1_1: "res://Scenes/Maps/AltMaps/Map1_1.tscn",
-	MapEnum.MAP_1_2: "res://Scenes/Maps/AltMaps/Map1_2.tscn",
-	MapEnum.MAP_1_3: "res://Scenes/Maps/AltMaps/Map1_3.tscn",
-	MapEnum.MAP_1_4: "res://Scenes/Maps/AltMaps/Map1_4.tscn",
-	MapEnum.MAP_1_5: "res://Scenes/Maps/AltMaps/Map1_5.tscn",
-	MapEnum.MAP_2_1: "res://Scenes/Maps/AltMaps/Map1_6.tscn",
-	MapEnum.MAP_2_2: "res://Scenes/Maps/AltMaps/Map1_7.tscn",
-	MapEnum.MAP_2_3: "res://Scenes/Maps/AltMaps/Map1_8.tscn",
-	MapEnum.MAP_2_4: "res://Scenes/Maps/AltMaps/Map1_9.tscn",
-	MapEnum.MAP_2_5: "res://Scenes/Maps/AltMaps/Map1_10.tscn",
-	MapEnum.MAP_3_1: "res://Scenes/Maps/AltMaps/Map2_1.tscn",
-	MapEnum.MAP_3_2: "res://Scenes/Maps/AltMaps/Map2_2.tscn",
-	MapEnum.MAP_3_3: "res://Scenes/Maps/AltMaps/Map2_3.tscn",
-	MapEnum.MAP_3_4: "res://Scenes/Maps/AltMaps/Map2_4.tscn",
-	MapEnum.MAP_3_5: "res://Scenes/Maps/AltMaps/Map2_5.tscn",
-	MapEnum.MAP_4_1: "res://Scenes/Maps/AltMaps/Map2_6.tscn",
-	MapEnum.MAP_4_2: "res://Scenes/Maps/AltMaps/Map2_7.tscn",
-	MapEnum.MAP_4_3: "res://Scenes/Maps/AltMaps/Map2_8.tscn",
-	MapEnum.MAP_4_4: "res://Scenes/Maps/AltMaps/Map2_9.tscn",
-	MapEnum.MAP_4_5: "res://Scenes/Maps/AltMaps/Map2_10.tscn",
-	
-}
-
-enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
 export (MapEnum) var map = MapEnum.START_GAME
-export (MapEnum) var last_map = MapEnum.MAP_2_2
+export (MapEnum) var last_map = MapEnum.MAP_4_6
 export var alt_maps_on = false
 
 var current_gamestate = GameState.CONTROL_CUTSCENE
@@ -125,10 +105,8 @@ func from_pause_to_player():
 	next_gamestate = GameState.CONTROL_PLAYER
 
 func get_map_from_list(map_id):
-	if map_id < MapEnum.MAP_1_1 or not alt_maps_on:
-		return map_dict[map_id] 
-	else:
-		return alt_maps[map_id]
+	print(map_id)
+	return final_map_dict[map_id]
 
 func load_new_level(reset = false):
 	if current_map != null:
