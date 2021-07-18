@@ -43,6 +43,7 @@ var final_map_dict = {
 
 export (MapEnum) var map = MapEnum.START_GAME
 export (MapEnum) var last_map = MapEnum.MAP_4_6
+export var first_song = 10
 
 var current_gamestate = GameState.CONTROL_CUTSCENE
 var next_gamestate = GameState.CONTROL_NULL
@@ -58,6 +59,7 @@ func _ready():
 	$CutsceneController.control_id = GameState.CONTROL_CUTSCENE
 
 	$CutsceneController.connect("proceed", $UIContainer,"proceed")
+	$MusicManager.change_song(10)
 	
 	if map != MapEnum.START_GAME:
 		$UIContainer.set_transparent()
@@ -76,13 +78,19 @@ func reset_map():
 func load_new_map():
 	$UIContainer.fade_straight_to_next_map()
 
+func start_first_song():
+	$MusicManager.change_song(first_song)
+
 func go_to_next_map():
 	$UIContainer.fade_out_level_title()
 	$MusicManager.change_active_character(-1)
+	$AudioEffectManager.play_sound("level_transition")
+	$MusicManager.change_song(current_map.map_music_id)
 	if current_map_id == last_map:
 		next_gamestate = GameState.CONTROL_CUTSCENE
 		$UIContainer.fade_in_end_screen()
-
+		$MusicManager.change_song(11)
+		
 	elif normal_play:
 		current_map_id += 1
 		if current_map.map_end_text == "":
@@ -132,8 +140,11 @@ func load_new_level(reset = false):
 func start_new_level():
 	current_map.set_pause(false)
 	next_gamestate = GameState.CONTROL_PLAYER
+<<<<<<< HEAD
 	$MusicManager.change_song(current_map.map_music_id)
 	$UIContainer.fade_in_level_title()
+=======
+>>>>>>> 1b30441177bb91c61e207cb6e15eabdd7bfd4fdd
 
 func play_sound(sound_string):
 	$AudioEffectManager.play_sound(sound_string)

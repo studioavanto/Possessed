@@ -47,3 +47,4 @@ environment = SubResource( 1 )
 
 [node name="PlayerController" type="Node2D" parent="."]
 script = ExtResource( 2 )
+

@@ -6,12 +6,13 @@ export var terminal_velocity = 800
 var is_being_carried = false
 var y_speed = 0.0
 var x_speed = 0.0
+var on_air = false
 
 var teleport_location = null
-var teleport_timing = 0.1
+var teleport_timing = 0.01
 
 func _ready():
-	$TeleportTimer.connect("timeout", self, "teleport_happens")
+	$TeleportTween.connect("tween_all_completed", self, "teleport_happens")
 
 func set_terminal_velocity():
 	if y_speed > terminal_velocity:
@@ -20,28 +21,35 @@ func set_terminal_velocity():
 func get_character_sprite():
 	return $Sprite
 
+func toggle_hitboxes(value):
+	$HitBox.disabled = not value
+
 func teleport_happens():
-	position = teleport_location
-	$CPUParticles2D.emitting = true
-	$TeleportTween.interpolate_property(
-		get_character_sprite(),
-		"modulate",
-		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		teleport_timing,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
-	$TeleportTween.start()
+	if teleport_location != null:
+		position = teleport_location
+		teleport_location = null
+		toggle_hitboxes(false)
+		$CPUParticles2D.emitting = true
+		$TeleportTween.interpolate_property(
+			get_character_sprite(),
+			"modulate",
+			Color(1.0, 1.0, 1.0, 0.0),
+			Color(1.0, 1.0, 1.0, 1.0),
+			teleport_timing,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN
+		)
+		$TeleportTween.start()
+	else:
+		toggle_hitboxes(true)
 
 func trigger_teleport(new_location):
 	teleport_location = new_location
-	$TeleportTimer.start(teleport_timing)
 	$TeleportTween.interpolate_property(
 		get_character_sprite(),
 		"modulate",
 		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 1.0),
+		Color(1.0, 1.0, 1.0, 0.0),
 		teleport_timing,
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
@@ -94,16 +102,18 @@ func carry_target():
 		return true
 
 func has_space_above():
-	print( $IsSpaceAbove.get_overlapping_bodies())
 	return $IsSpaceAbove.get_overlapping_bodies().empty()
 
 func process_physics(delta):
 	if (is_being_carried == false):
 		if is_on_floor():
+			if on_air and y_speed > terminal_velocity - 20:
+				on_air = false
 			x_speed = 0.0
 			y_speed = 10.0
 		else:
 			y_speed += fall_speed * delta
+			on_air = true
 	else:
 		x_speed = 0.0
 		y_speed = 10.0

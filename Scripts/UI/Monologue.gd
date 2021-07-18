@@ -19,4 +19,4 @@ func _on_Timer_timeout():
 		var revealed_character = self.get_bbcode()[self.get_visible_characters() - 1]
 		
 		if regex.search(revealed_character):
-			$AudioStreamPlayer.play_random_sound()
+			$MumbleAudio.play_random_sound()
