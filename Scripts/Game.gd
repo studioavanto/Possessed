@@ -43,7 +43,6 @@ var final_map_dict = {
 
 export (MapEnum) var map = MapEnum.START_GAME
 export (MapEnum) var last_map = MapEnum.MAP_4_6
-export var alt_maps_on = false
 
 var current_gamestate = GameState.CONTROL_CUTSCENE
 var next_gamestate = GameState.CONTROL_NULL
@@ -57,9 +56,7 @@ func _ready():
 	$PauseController.control_id = GameState.CONTROL_PAUSE
 	$PlayerController.control_id = GameState.CONTROL_PLAYER
 	$CutsceneController.control_id = GameState.CONTROL_CUTSCENE
-	
-	# $UIContainer.set_map_enums(MapEnum)
-	
+
 	$CutsceneController.connect("proceed", $UIContainer,"proceed")
 	
 	if map != MapEnum.START_GAME:
@@ -77,20 +74,26 @@ func reset_map():
 	$UIContainer.fade_out_death()
 
 func load_new_map():
-	next_gamestate = GameState.CONTROL_CUTSCENE
-	$UIContainer.show_new_map(current_map_id)
+	$UIContainer.fade_straight_to_next_map()
 
 func go_to_next_map():
 	$MusicManager.change_active_character(-1)
 	if current_map_id == last_map:
 		next_gamestate = GameState.CONTROL_CUTSCENE
-		$UIContainer.fade_in_end_sreen()
+		$UIContainer.fade_in_end_screen()
 
-	if normal_play:
+	elif normal_play:
 		current_map_id += 1
-		load_new_map()
+		if current_map.map_end_text == "":
+			load_new_map()
+		else:
+			load_map_text(current_map.map_end_text)
 	else:
 		get_tree().quit()
+
+func load_map_text(map_text):
+	next_gamestate = GameState.CONTROL_CUTSCENE
+	$UIContainer.fade_map_text(map_text)
 
 func get_gamestate():
 	return current_gamestate
@@ -105,7 +108,6 @@ func from_pause_to_player():
 	next_gamestate = GameState.CONTROL_PLAYER
 
 func get_map_from_list(map_id):
-	print(map_id)
 	return final_map_dict[map_id]
 
 func load_new_level(reset = false):
@@ -124,7 +126,7 @@ func load_new_level(reset = false):
 	$UIContainer.connect_character_to_ui(character_tmp)
 	$CanvasModulate.color = current_map.map_overlay_color
 	current_map.set_pause(true)
-	
+
 func start_new_level():
 	current_map.set_pause(false)
 	next_gamestate = GameState.CONTROL_PLAYER

@@ -5,9 +5,10 @@ var can_proceed = true
 var first_not_done = true
 
 var intro_animation = null
-var fade_speed = 0.5
+var fade_speed = 1.0
 
 var fade_out = false
+var fade_out_map = false
 
 enum GamePhase { START, INTRO, GAME, END }
 var current_phase = GamePhase.START
@@ -27,8 +28,12 @@ func fade_out_death():
 
 func fade_out_complete():
 	if not fade_out:
+		if fade_out_map:
+			get_parent().load_new_level()
+			
 		fade_out = true
 		get_parent().load_new_level(true)
+		
 		$FadeOutBlack.interpolate_property(
 			$BlackScreen,
 			"modulate",
@@ -38,17 +43,19 @@ func fade_out_complete():
 			Tween.TRANS_LINEAR,
 			Tween.EASE_IN
 		)
+		
 		$FadeOutBlack.start()
 
 func tween_completed():
 	if current_phase == GamePhase.START and input_counter == 1:
+		$ChangeLevelRect.swap_to_tiles()
 		current_phase = GamePhase.INTRO
 		input_counter = 0
 		proceed()
 
 	if current_phase == GamePhase.INTRO:
 		if input_counter == 2:
-			get_parent().load_new_map()
+			get_parent().start_new_level()
 			input_counter = 0
 			current_phase = GamePhase.GAME
 
@@ -136,6 +143,8 @@ func fade_in_intro():
 	intro_animation.playing = true
 
 func fade_out_intro():
+	$ChangeLevelRect.fade_out_scene(true)
+	
 	$Tween.interpolate_property(
 		intro_animation,
 		"modulate",
@@ -158,7 +167,7 @@ func fade_out_intro():
 	
 	$Tween.start()
 
-func fade_in_end_sreen():
+func fade_in_end_screen():
 	current_phase = GamePhase.END
 	$TextureScreen.texture = load("res://Resources/UI/EndScreen.png")
 	$Tween.interpolate_property(
@@ -177,6 +186,7 @@ func proceed():
 		GamePhase.START:
 			get_parent().play_sound("start_game")
 			fade_out_start_screen()
+			get_parent().load_new_map()
 			input_counter = 1
 		GamePhase.INTRO:
 			if input_counter == 0:
@@ -191,8 +201,6 @@ func proceed():
 				can_proceed = false
 				
 				if input_counter == 1:
-					$ChangeLevelRect.fade_out_active()
-				elif input_counter == 2:
 					$ChangeLevelRect.fade_out_scene()
 		GamePhase.END:
 			get_tree().quit()
@@ -206,19 +214,38 @@ func get_level_monologue(map_id):
 func screen_fade_in_done():
 	if input_counter == 0:
 		get_parent().load_new_level()
-		
+	
 	can_proceed = true
 	
 func screen_fade_out_done():
 	if input_counter == 1:
-		$ChangeLevelRect.fade_in_scene("level_name", get_level_name(get_parent().current_map_id))
-
-	elif input_counter == 2:
 		get_parent().start_new_level()
 
 func show_new_map(new_map):
 	can_proceed = false
 	input_counter = 0
 	$ChangeLevelRect.fade_in_scene("monologue", get_level_monologue(new_map), first_not_done)
+
 	if first_not_done:
 		first_not_done = false
+
+func fade_straight_to_next_map():
+	fade_out = false
+	fade_out_map = true
+
+	$FadeOutBlack.interpolate_property(
+		$BlackScreen,
+		"modulate",
+		Color(0.0, 0.0, 0.0, 0.0),
+		Color(0.0, 0.0, 0.0, 1.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	$FadeOutBlack.start()
+
+func fade_map_text(map_text):
+	can_proceed = false
+	input_counter = 0
+	
+	$ChangeLevelRect.fade_in_scene("monologue", map_text)

@@ -2,6 +2,7 @@ extends Control
 
 var fade_timing = 1.0
 var current_active = "None"
+var tile_texture = preload("res://Resources/UI/background_frame.png")
 
 signal fade_in_completed
 signal fade_out_completed
@@ -14,6 +15,9 @@ func _ready():
 	$TextureRect.modulate = Color(1.0, 1.0, 1.0, 0.0)  # The final level change texture
 	$FadeInTween.connect("tween_all_completed", self, "fade_in_completed")
 	$FadeOutTween.connect("tween_all_completed", self, "fade_out_completed")
+
+func swap_to_tiles():
+	$ScreenTexture.texture = tile_texture
 
 func set_transparent():
 	$ScreenTexture.modulate = Color(0.0, 0.0, 0.0, 0.0)
@@ -51,22 +55,20 @@ func fade_out_active():
 	$FadeOutTween.start()
 
 func fade_in_scene(state, message="", first = false):
-	
 	if state == "monologue":
 		
 		$Monologue.set_bbcode(message)
 		$Monologue/Timer.start()
-		
-		if not first:
-			$FadeInTween.interpolate_property(
-				$ScreenTexture,
-				"modulate",
-				Color(1.0, 1.0, 1.0, 0.0),
-				Color(1.0, 1.0, 1.0, 1.0),
-				fade_timing,
-				Tween.TRANS_LINEAR,
-				Tween.EASE_IN
-			)
+
+		$FadeInTween.interpolate_property(
+			$ScreenTexture,
+			"modulate",
+			Color(1.0, 1.0, 1.0, 0.0),
+			Color(1.0, 1.0, 1.0, 1.0),
+			fade_timing,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN
+		)
 
 		$FadeInTween.interpolate_property(
 			$Sprite,
@@ -103,20 +105,30 @@ func fade_in_scene(state, message="", first = false):
 	
 	$FadeInTween.start()
 
-func fade_out_scene():
-	
+func fade_out_scene(first = false):
+	if not first:
+		$FadeOutTween.interpolate_property(
+			$Monologue,
+			"modulate",
+			Color(1.0, 1.0, 1.0, 1.0),
+			Color(1.0, 1.0, 1.0, 0.0),
+			fade_timing,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN
+		)
+		
+		$FadeOutTween.interpolate_property(
+			$Sprite,
+			"modulate",
+			Color(1.0, 1.0, 1.0, 1.0),
+			Color(1.0, 1.0, 1.0, 0.0),
+			fade_timing,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN
+		)
+
 	$FadeOutTween.interpolate_property(
 		$ScreenTexture,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 0.0),
-		fade_timing,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
-	
-	$FadeOutTween.interpolate_property(
-		$LevelTitle,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 1.0),
 		Color(1.0, 1.0, 1.0, 0.0),

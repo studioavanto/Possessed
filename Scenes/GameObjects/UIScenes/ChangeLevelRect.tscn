@@ -71,7 +71,7 @@ scroll_active = false
 position = Vector2( 334.504, 723.894 )
 scale = Vector2( 30, 30 )
 frames = SubResource( 4 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="LevelTitle" parent="." instance=ExtResource( 3 )]
