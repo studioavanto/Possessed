@@ -122,6 +122,7 @@ func load_new_level(reset = false):
 	character_tmp.connect("map_exit", self, "go_to_next_map")
 	$PlayerController.set_player_character(character_tmp)
 	$UIContainer.connect_character_to_ui(character_tmp)
+	$CanvasModulate.color = current_map.map_overlay_color
 	current_map.set_pause(true)
 	
 func start_new_level():

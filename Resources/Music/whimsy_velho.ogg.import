@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/whimsy_velho.ogg-51da873770fd281dbf8f3840977bc15f.oggstr"
+
+[deps]
+
+source_file="res://Resources/Music/whimsy_velho.ogg"
+dest_files=[ "res://.import/whimsy_velho.ogg-51da873770fd281dbf8f3840977bc15f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

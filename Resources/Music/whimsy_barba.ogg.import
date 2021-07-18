@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/whimsy_barba.ogg-302f6f54429ea281265041b09580c0c2.oggstr"
+
+[deps]
+
+source_file="res://Resources/Music/whimsy_barba.ogg"
+dest_files=[ "res://.import/whimsy_barba.ogg-302f6f54429ea281265041b09580c0c2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -8,24 +8,24 @@ onready var songs = [
 ]
 
 onready var wizard_clips = [
-	preload("res://Resources/Music/taikameibi_VELHO.ogg"),
-	preload("res://Resources/Music/indyrick_VELHO.ogg"),
-	preload("res://Resources/Music/theme_VELHO.ogg"),
-	preload("res://Resources/Music/whimsy_VELHO.ogg"),
+	preload("res://Resources/Music/taikameibi_velho.ogg"),
+	preload("res://Resources/Music/indyrick_velho.ogg"),
+	preload("res://Resources/Music/theme_velho.ogg"),
+	preload("res://Resources/Music/whimsy_velho.ogg"),
 ]
 
 onready var barbarian_clips = [
 	preload("res://Resources/Music/taikameibi_barba.ogg"),
-	preload("res://Resources/Music/indyrick_BARBA.ogg"),
-	preload("res://Resources/Music/theme_BARBA.ogg"),
-	preload("res://Resources/Music/whimsy_BARBA.ogg"),
+	preload("res://Resources/Music/indyrick_barba.ogg"),
+	preload("res://Resources/Music/theme_barba.ogg"),
+	preload("res://Resources/Music/whimsy_barba.ogg"),
 ]
 
 onready var thief_clips = [
-	preload("res://Resources/Music/taikameibi_THIEF.ogg"),
-	preload("res://Resources/Music/indyrick_THIEF.ogg"),
-	preload("res://Resources/Music/theme_THIEF.ogg"),
-	preload("res://Resources/Music/whimsy_THIEF.ogg"),
+	preload("res://Resources/Music/taikameibi_thief.ogg"),
+	preload("res://Resources/Music/indyrick_thief.ogg"),
+	preload("res://Resources/Music/theme_thief.ogg"),
+	preload("res://Resources/Music/whimsy_thief.ogg"),
 ]
 
 var active_song = -1
