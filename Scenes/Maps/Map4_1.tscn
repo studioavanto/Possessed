@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Sprites/Backgrounds/texture_brickwall.png" type="Texture" id=2]
@@ -6,6 +6,13 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MapExit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/GameObjects/Objects/PlatformMoving.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/GameObjects/Objects/Spikes.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GameObjects/Objects/Button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/GameObjects/Characters/Thief.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/GameObjects/Characters/Wizard.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/GameObjects/Objects/Box.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 3
@@ -15,13 +22,13 @@ position = Vector2( 382.551, 276.693 )
 script = ExtResource( 1 )
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1033.45, 579.307 )
+position = Vector2( 1185.45, 531.307 )
 
 [node name="MapExit" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1289.45, 579.307 )
+position = Vector2( -62.551, 3.30701 )
 
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( -196613, 1, 8, -196612, 1, 10, -196611, 1, 10, -196610, 1, 10, -196609, 1, 10, -262144, 1, 10, -262143, 1, 10, -262142, 1, 10, -262141, 1, 10, -262140, 1, 10, -262139, 1, 10, -262138, 1, 10, -262137, 1, 10, -262136, 1, 10, -262135, 1, 10, -262134, 1, 10, -262133, 1, 10, -262132, 1, 10, -262131, 1, 10, -262130, 1, 10, -262129, 1, 10, -262128, 1, 10, -262127, 1, 10, -262126, 1, 10, -262125, 1, 10, -262124, 1, 10, -262123, 1, 10, -262122, 1, 11, -131077, 1, 65544, -131076, 1, 131078, -131075, 1, 196617, -131074, 1, 196617, -131073, 1, 196617, -196608, 1, 196617, -196607, 1, 131077, -196606, 1, 131081, -196605, 1, 131081, -196604, 1, 131081, -196603, 1, 131081, -196602, 1, 131081, -196601, 1, 131081, -196600, 1, 131081, -196599, 1, 131081, -196598, 1, 131081, -196597, 1, 131081, -196596, 1, 131081, -196595, 1, 131081, -196594, 1, 131081, -196593, 1, 131081, -196592, 1, 131078, -196591, 1, 196617, -196590, 1, 196617, -196589, 1, 196617, -196588, 1, 196617, -196587, 1, 131077, -196586, 1, 131083, -65541, 1, 65544, -65540, 1, 131083, -131071, 1, 65544, -131070, 1, 131081, -131069, 1, 131081, -131068, 1, 131081, -131067, 1, 131081, -131066, 1, 131081, -131065, 1, 131081, -131064, 1, 131081, -131063, 1, 131081, -131062, 1, 131081, -131061, 1, 131081, -131060, 1, 131081, -131059, 1, 131081, -131058, 1, 131081, -131057, 1, 131081, -131056, 1, 131083, -131051, 1, 65544, -131050, 1, 131083, -5, 1, 65544, -4, 1, 131083, -65535, 1, 196616, -65534, 1, 196617, -65533, 1, 196617, -65532, 1, 196617, -65531, 1, 196617, -65530, 1, 196617, -65529, 1, 196617, -65528, 1, 196617, -65527, 1, 196617, -65526, 1, 196617, -65525, 1, 196617, -65524, 1, 196617, -65523, 1, 196617, -65522, 1, 196617, -65521, 1, 196617, -65520, 1, 196619, -65515, 1, 65544, -65514, 1, 131083, 65531, 1, 65544, 65532, 1, 131083, 21, 1, 65544, 22, 1, 131083, 131067, 1, 65544, 131068, 1, 131083, 65554, 1, 196609, 65555, 1, 196611, 65557, 1, 65544, 65558, 1, 131083, 196603, 1, 65544, 196604, 1, 131083, 131093, 1, 65544, 131094, 1, 131083, 262139, 1, 65544, 262140, 1, 131083, 196629, 1, 65544, 196630, 1, 131083, 327675, 1, 65544, 327676, 1, 131083, 262165, 1, 65544, 262166, 1, 131083, 393211, 1, 65544, 393212, 1, 131083, 327701, 1, 65544, 327702, 1, 131083, 458747, 1, 65544, 458748, 1, 131083, 393237, 1, 65544, 393238, 1, 131083, 524283, 1, 65544, 524284, 1, 131083, 458773, 1, 65544, 458774, 1, 131083, 589819, 1, 65544, 589820, 1, 131083, 524309, 1, 65544, 524310, 1, 131083, 655355, 1, 65544, 655356, 1, 65547, 655357, 1, 196610, 655358, 1, 196610, 655359, 1, 196611, 589842, 1, 196609, 589843, 1, 196610, 589844, 1, 196610, 589845, 1, 131080, 589846, 1, 131083, 720891, 1, 65544, 720892, 1, 131083, 655381, 1, 65544, 655382, 1, 131083, 786427, 1, 65544, 786428, 1, 131083, 720917, 1, 65544, 720918, 1, 131083, 851963, 1, 196616, 851964, 1, 196614, 851965, 1, 196610, 851966, 1, 196610, 851967, 1, 196610, 786432, 1, 196610, 786433, 1, 196610, 786434, 1, 196610, 786435, 1, 196610, 786436, 1, 196610, 786437, 1, 196610, 786438, 1, 196610, 786439, 1, 196610, 786440, 1, 196610, 786441, 1, 196610, 786442, 1, 196610, 786443, 1, 196610, 786444, 1, 196610, 786445, 1, 196610, 786446, 1, 196610, 786447, 1, 196610, 786448, 1, 196610, 786449, 1, 196610, 786450, 1, 196610, 786451, 1, 196610, 786452, 1, 196610, 786453, 1, 196613, 786454, 1, 196619 )
 
 [node name="texture_brickwall" type="Sprite" parent="."]
 material = SubResource( 1 )
@@ -34,3 +41,208 @@ __meta__ = {
 }
 
 [node name="Cosmetics" parent="." instance=ExtResource( 6 )]
+
+[node name="PlatformHorizontal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 161.449, 699.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, 72, 0, -784 )
+platform_speed = 150
+
+[node name="PlatformHorizontal2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 225.449, 715.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, 56, 0, -800 )
+platform_speed = 150
+
+[node name="PlatformHorizontal3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 289.449, 731.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, 40, 0, -816 )
+platform_speed = 150
+
+[node name="PlatformHorizontal4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 993.449, 907.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, -136, 0, -992 )
+platform_speed = 150
+
+[node name="PlatformHorizontal5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 929.449, 891.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, -120, 0, -976 )
+platform_speed = 150
+
+[node name="PlatformHorizontal6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 865.449, 875.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, -104, 0, -960 )
+platform_speed = 150
+
+[node name="PlatformHorizontal7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 801.449, 859.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, -88, 0, -944 )
+platform_speed = 150
+
+[node name="PlatformHorizontal8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 737.449, 843.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, -72, 0, -928 )
+platform_speed = 150
+
+[node name="PlatformHorizontal9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 673.449, 827.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, -56, 0, -912 )
+platform_speed = 150
+
+[node name="PlatformHorizontal10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 609.449, 811.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, -40, 0, -896 )
+platform_speed = 150
+
+[node name="PlatformHorizontal11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 545.449, 795.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, -24, 0, -880 )
+platform_speed = 150
+
+[node name="PlatformHorizontal12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 481.449, 779.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, -8, 0, -864 )
+platform_speed = 150
+
+[node name="PlatformHorizontal13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 417.449, 763.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, 8, 0, -848 )
+platform_speed = 150
+
+[node name="PlatformHorizontal14" parent="." instance=ExtResource( 7 )]
+position = Vector2( 353.449, 747.307 )
+scale = Vector2( 0.5, 1 )
+z_index = -1
+points = PoolVector2Array( 0, 24, 0, -832 )
+platform_speed = 150
+
+[node name="Spikes" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 929.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes2" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 865.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes3" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 801.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes4" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 737.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes5" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 673.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes6" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 609.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes7" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 545.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes8" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 481.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes9" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 417.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes10" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 353.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes11" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 289.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes12" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 225.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes13" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 161.449, 27.307 )
+rotation = -3.14159
+
+[node name="Spikes14" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 993.449, 27.307 )
+rotation = -3.14159
+
+[node name="Barbarian" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1185.45, 548.307 )
+
+[node name="Spikes15" parent="." instance=ExtResource( 8 )]
+position = Vector2( 577.449, 739.307 )
+scale = Vector2( 33, 1 )
+
+[node name="Button" parent="." instance=ExtResource( 10 )]
+position = Vector2( -246.551, 547.307 )
+
+[node name="Wizard" parent="." instance=ExtResource( 12 )]
+position = Vector2( 545.449, 91.307 )
+
+[node name="Thief" parent="." instance=ExtResource( 11 )]
+position = Vector2( -158.551, 547.307 )
+
+[node name="Box" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1305.45, 547.307 )
+
+[node name="Barbarian2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1209.45, 36.307 )
+
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal8" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal9" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal10" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal14" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal13" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal12" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal11" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal7" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal2" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal4" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal3" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal5" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal6" method="_on_Button_toggle_off"]

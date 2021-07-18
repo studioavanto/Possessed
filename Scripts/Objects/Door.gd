@@ -34,3 +34,7 @@ func _on_Button2_toggle_off():
 
 func _on_Button2_toggle_on():
 	pass # Replace with function body.
+
+
+func _on_Button3_toggle_on():
+	pass # Replace with function body.
