@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var fall_speed = 2750.0
 export var collidable = false
+export var terminal_velocity = 800
 var is_being_carried = false
 var y_speed = 0.0
 var x_speed = 0.0
@@ -11,6 +12,10 @@ var teleport_timing = 0.1
 
 func _ready():
 	$TeleportTimer.connect("timeout", self, "teleport_happens")
+
+func set_terminal_velocity():
+	if y_speed > terminal_velocity:
+		y_speed = terminal_velocity
 
 func get_character_sprite():
 	return $Sprite
@@ -102,6 +107,8 @@ func process_physics(delta):
 	else:
 		x_speed = 0.0
 		y_speed = 10.0
+	
+	set_terminal_velocity()
 	
 	if move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1)).x == 0.0:
 		x_speed = 0.0

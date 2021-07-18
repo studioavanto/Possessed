@@ -10,12 +10,16 @@
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
+background_canvas_max_layer = 2
+glow_intensity = 4.0
+glow_bloom = 0.45
+adjustment_enabled = true
+adjustment_contrast = 1.1
 
 [node name="Game" type="Node2D"]
 position = Vector2( 0, 1 )
 script = ExtResource( 1 )
 last_map = 24
-alt_maps_on = true
 
 [node name="PauseController" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -36,7 +40,7 @@ zoom = Vector2( 0.85, 0.85 )
 silenced = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.686275, 0.647059, 0.647059, 1 )
+color = Color( 0.733333, 0.733333, 0.733333, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

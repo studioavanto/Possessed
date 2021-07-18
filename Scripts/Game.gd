@@ -47,6 +47,16 @@ var alt_maps = {
 	MapEnum.MAP_2_3: "res://Scenes/Maps/AltMaps/Map1_8.tscn",
 	MapEnum.MAP_2_4: "res://Scenes/Maps/AltMaps/Map1_9.tscn",
 	MapEnum.MAP_2_5: "res://Scenes/Maps/AltMaps/Map1_10.tscn",
+	MapEnum.MAP_3_1: "res://Scenes/Maps/AltMaps/Map2_1.tscn",
+	MapEnum.MAP_3_2: "res://Scenes/Maps/AltMaps/Map2_2.tscn",
+	MapEnum.MAP_3_3: "res://Scenes/Maps/AltMaps/Map2_3.tscn",
+	MapEnum.MAP_3_4: "res://Scenes/Maps/AltMaps/Map2_4.tscn",
+	MapEnum.MAP_3_5: "res://Scenes/Maps/AltMaps/Map2_5.tscn",
+	MapEnum.MAP_4_1: "res://Scenes/Maps/AltMaps/Map2_6.tscn",
+	MapEnum.MAP_4_2: "res://Scenes/Maps/AltMaps/Map2_7.tscn",
+	MapEnum.MAP_4_3: "res://Scenes/Maps/AltMaps/Map2_8.tscn",
+	MapEnum.MAP_4_4: "res://Scenes/Maps/AltMaps/Map2_9.tscn",
+	MapEnum.MAP_4_5: "res://Scenes/Maps/AltMaps/Map2_10.tscn",
 	
 }
 

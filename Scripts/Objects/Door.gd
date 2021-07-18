@@ -15,6 +15,12 @@ func toggle_door():
 		set_collision_layer_bit(0, false)
 		$AnimatedSprite.animation = "opening"
 
+func toggle_on():
+	toggle_door()
+	
+func toggle_off():
+	toggle_door()
+
 func _on_Button_toggle_off():
 	toggle_door() 
 
@@ -27,14 +33,3 @@ func _on_Switch_toggle_on():
 func _on_Switch_toggle_off():
 	toggle_door()
 
-
-func _on_Button2_toggle_off():
-	pass # Replace with function body.
-
-
-func _on_Button2_toggle_on():
-	pass # Replace with function body.
-
-
-func _on_Button3_toggle_on():
-	pass # Replace with function body.

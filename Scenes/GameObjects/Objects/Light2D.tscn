@@ -4,8 +4,8 @@
 [ext_resource path="res://Scripts/Objects/Light.gd" type="Script" id=2]
 
 [node name="Light2D" type="Light2D"]
-position = Vector2( 403.141, 221.193 )
 scale = Vector2( 2, 2 )
+z_index = -1
 texture = ExtResource( 1 )
 color = Color( 0.788235, 0.788235, 0.788235, 1 )
 shadow_color = Color( 0, 0, 0, 0.956863 )

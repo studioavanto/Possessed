@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/UI/ChangeLevelRect.gd" type="Script" id=1]
-[ext_resource path="res://Resources/UI/background_frame.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/GameObjects/UIScenes/TextBox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Resources/Sprites/Characters/ghost_spritesheet.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/GameObjects/UIScenes/Monologue.tscn" type="PackedScene" id=5]
@@ -54,7 +53,7 @@ margin_left = -0.86045
 margin_top = -0.653068
 margin_right = 1920.0
 margin_bottom = 1080.0
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -72,7 +71,7 @@ scroll_active = false
 position = Vector2( 334.504, 723.894 )
 scale = Vector2( 30, 30 )
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="LevelTitle" parent="." instance=ExtResource( 3 )]

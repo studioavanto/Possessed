@@ -11,7 +11,7 @@ export var acceleration = 2000.0
 export var drag = 2500.0
 export var push_constant = 0.5
 export var dash_cooldown_time = 0.05
-export var terminal_velocity = 800
+export var ledge_jump_timer = 0.1
 
 enum CharacterState { IDLE, RUNNING, JUMPING, SPECIAL, DEATH }
 enum CharacterStage { CHILLIN, POSSESSED, DEAD }
@@ -26,9 +26,23 @@ var x_input_dir = 0.0
 var current_age = 0
 var unloading_timer = 0.0
 var facing = 1.0
+var air_jump = false
 
 var character_state = CharacterState.IDLE
 var character_stage = CharacterStage.CHILLIN
+
+func _ready():
+	$JumpTimer.connect("timeout", self, "end_ledge_jump")
+
+func end_ledge_jump():
+	air_jump = false
+
+func start_air_timer():
+	air_jump = true
+	$JumpTimer.start(ledge_jump_timer)
+
+func set_possess_light(value):
+	$Light2D.enabled = value
 
 func get_air_drag():
 	if character_stage == CharacterStage.CHILLIN:
@@ -51,6 +65,7 @@ func possess_character():
 
 	character_stage = CharacterStage.POSSESSED
 	$PickingArea.set_collision_layer_bit(3, false)
+	set_possess_light(true)
 	remove_tag()
 	return true
 	
@@ -123,6 +138,9 @@ func character_is_on_floor_after_move():
 func process_interact():
 	for area in $InteractArea.get_overlapping_areas():
 		area.get_parent().interact()
+	
+func set_dying():
+	character_state = CharacterState.DEATH
 
 func kill_character():
 	character_stage = CharacterStage.DEAD
@@ -132,6 +150,7 @@ func kill_character():
 	set_collision_layer_bit(0, true)
 	$HurtBox.set_collision_layer_bit(8, false)
 	$CharacterAudio.play_sound("death")
+	set_possess_light(false)
 	remove_tag()
 
 	if facing == -1.0:
@@ -244,9 +263,10 @@ func process_physics(delta):
 				else:
 					x_speed -= sign(x_speed) * get_air_drag() * delta
 
-			if jump_time == 0.0:
+			if jump_time == 0.0 or (air_jump and jump):
 				y_speed = get_jump_start_speed() 
 				jump_time += delta
+				end_ledge_jump()
 
 			elif jump and jump_time < max_jump_time:
 				y_speed += fall_speed * delta - jump_fall_reduction * delta
@@ -260,8 +280,7 @@ func process_physics(delta):
 		CharacterState.SPECIAL:
 			special_physics_process()
 	
-	if y_speed > terminal_velocity:
-		y_speed = terminal_velocity
+	set_terminal_velocity()
 	
 	unique_physics_modifiers()
 	var speed_mod = push_on_front()
@@ -287,6 +306,7 @@ func process_physics(delta):
 	elif not is_on_floor() and [CharacterState.IDLE, CharacterState.RUNNING].has(character_state):
 		character_state = CharacterState.JUMPING
 		jump_time = max_jump_time
+		start_air_timer()
 	
 	set_character_animations()
 

@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var fall_speed = 100
 export var move_speed = 200
-
+export var possess_offset = Vector2(10, -23)
 signal map_exit
 
 var possessed = null
@@ -14,7 +14,7 @@ signal character_portrait_changes(new_portrait)
 func teleport_character(character):
 	possessed.trigger_teleport(character.position)
 	character.trigger_teleport(possessed.position)
-	
+	position = possessed.position
 	get_parent().play_sound("teleport")
 
 func possess_nearby():
@@ -30,6 +30,7 @@ func possess_target(target):
 		next_possession = null
 		get_parent().change_active_character(possessed.get_id())
 		get_parent().play_sound("warp_to_host")
+		position = possessed.position
 
 func stop_possession():
 	possessed = null
@@ -41,15 +42,18 @@ func stop_possession():
 		get_parent().play_sound("game_over")
 		get_parent().reset_map()
 
+func compute_offset():
+	return possessed.position + Vector2(-possessed.facing * possess_offset.x, possess_offset.y)
+
 func process_input(jump, special, horizontal_move, interact, holding_down, death):
 	if possessed == null:
 		if special:
 			possess_nearby()
 	else:
 		if death:
-			possessed.kill_character()
+			possessed.set_dying()
 		if (possessed.process_input(jump, special, horizontal_move, interact, holding_down)):
-			position = lerp(position, possessed.position, 0.35)
+			position = lerp(position, compute_offset(), 0.3)
 		else:
 			stop_possession()
 
