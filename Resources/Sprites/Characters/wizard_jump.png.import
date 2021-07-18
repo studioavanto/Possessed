@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-f24c2aec9bc52dd8331b6181dce46192.stex"
+path="res://.import/wizard_jump.png-2edcf8bd63764f3090be96708e27842a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Backgrounds/icon.png"
-dest_files=[ "res://.import/icon.png-f24c2aec9bc52dd8331b6181dce46192.stex" ]
+source_file="res://Resources/Sprites/Characters/wizard_jump.png"
+dest_files=[ "res://.import/wizard_jump.png-2edcf8bd63764f3090be96708e27842a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

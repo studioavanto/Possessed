@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-f24c2aec9bc52dd8331b6181dce46192.stex"
+path="res://.import/grave_finalframe.png-d661b6023aa529a87adb735212760253.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Backgrounds/icon.png"
-dest_files=[ "res://.import/icon.png-f24c2aec9bc52dd8331b6181dce46192.stex" ]
+source_file="res://Resources/Sprites/Objects/grave_finalframe.png"
+dest_files=[ "res://.import/grave_finalframe.png-d661b6023aa529a87adb735212760253.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
