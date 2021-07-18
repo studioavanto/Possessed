@@ -19,6 +19,7 @@ adjustment_contrast = 1.1
 [node name="Game" type="Node2D"]
 position = Vector2( 0, 1 )
 script = ExtResource( 1 )
+map = 1
 last_map = 7
 
 [node name="PauseController" type="Node2D" parent="."]
@@ -37,7 +38,6 @@ zoom = Vector2( 0.85, 0.85 )
 [node name="MusicManager" parent="." instance=ExtResource( 6 )]
 
 [node name="AudioEffectManager" parent="." instance=ExtResource( 7 )]
-silenced = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.733333, 0.733333, 0.733333, 1 )

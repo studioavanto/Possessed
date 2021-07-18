@@ -9,9 +9,8 @@ func _ready():
 	]
 	
 	audio_effects = {
-		"death": [ preload("res://Resources/Sounds/Characters/barba_death.ogg"), 0.0 ],
-		"jump": [ preload("res://Resources/Sounds/Characters/jump.ogg"), 0.0 ],
-		"throw": [ preload("res://Resources/Sounds/Characters/barba_throw.ogg"), 0.0 ],
-		"pickup": [ preload("res://Resources/Sounds/Characters/barba_pickup.ogg"), 0.0 ]
-		
+		"death": [ preload("res://Resources/Sounds/Characters/barba_death.ogg"), -5.0 ],
+		"jump": [ preload("res://Resources/Sounds/Characters/jump.ogg"), -5.0 ],
+		"throw": [ preload("res://Resources/Sounds/Characters/barba_throw.ogg"), -5.0 ],
+		"pickup": [ preload("res://Resources/Sounds/Characters/barba_pickup.ogg"), -7.0 ]
 	}

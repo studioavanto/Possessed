@@ -15,7 +15,7 @@ onready var consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n',
 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z']
 
 func _ready():
-	volume_db = 0.0
+	volume_db = -18.0
 
 func play_sound(sound_string):
 	if not audio_effects.keys().has(sound_string):

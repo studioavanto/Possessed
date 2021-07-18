@@ -26,7 +26,7 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.15
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MumbleAudio" type="AudioStreamPlayer" parent="."]
 script = ExtResource( 3 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

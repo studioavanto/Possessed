@@ -14,6 +14,8 @@ func toggle_door():
 	else:
 		set_collision_layer_bit(0, false)
 		$AnimatedSprite.animation = "opening"
+	
+	get_parent().play_sound("kalteri_ovi")
 
 func toggle_on():
 	toggle_door()

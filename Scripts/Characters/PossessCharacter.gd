@@ -312,7 +312,7 @@ func process_physics(delta):
 
 	if is_on_floor() and abs(x_input_dir) > 0:
 		$CharacterAudio.play_footstep()
-	
+
 	if character_stage == CharacterStage.POSSESSED:
 		current_age += 1
 		if current_age >= max_age:

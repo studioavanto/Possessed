@@ -631,6 +631,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
+map_music_id = 3
 map_overlay_color = Color( 0.945098, 0.0941176, 0.811765, 1 )
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 5 )]

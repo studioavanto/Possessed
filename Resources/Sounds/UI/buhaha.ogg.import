@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/buhaha.ogg-fca6a74c365effcbb22043ef93281869.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/UI/buhaha.ogg"
+dest_files=[ "res://.import/buhaha.ogg-fca6a74c365effcbb22043ef93281869.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

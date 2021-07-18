@@ -3,7 +3,7 @@ extends AudioStreamPlayer2D
 onready var audio_effects = {
 }
 
-var walk_db = 0.0
+var walk_db = -12.0
 var walk_counter = 0
 var step_is_playing = false
 
@@ -19,6 +19,7 @@ func footstep_has_played():
 func play_footstep():
 	if step_is_playing:
 		return
+
 	stop()
 	stream = walk_sounds[walk_counter]
 	volume_db = walk_db

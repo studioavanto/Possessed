@@ -33,6 +33,8 @@ func fade_out_complete():
 			
 		fade_out = true
 		get_parent().load_new_level(true)
+		if current_phase == GamePhase.GAME:
+			get_parent().start_new_level()
 		
 		$FadeOutBlack.interpolate_property(
 			$BlackScreen,
@@ -144,6 +146,7 @@ func fade_in_intro():
 
 func fade_out_intro():
 	$ChangeLevelRect.fade_out_scene(true)
+	intro_animation.playing = false
 	
 	$Tween.interpolate_property(
 		intro_animation,
@@ -185,6 +188,7 @@ func proceed():
 	match current_phase:
 		GamePhase.START:
 			get_parent().play_sound("start_game")
+			get_parent().start_first_song()
 			fade_out_start_screen()
 			get_parent().load_new_map()
 			input_counter = 1

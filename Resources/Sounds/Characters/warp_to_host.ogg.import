@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/warp_to_host.ogg-4d95b4f6050fb92c0ded30975766383d.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Characters/warp_to_host.ogg"
+dest_files=[ "res://.import/warp_to_host.ogg-4d95b4f6050fb92c0ded30975766383d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
