@@ -68,15 +68,15 @@ position = Vector2( 545.449, 675.307 )
 position = Vector2( 1049.45, 611.307 )
 
 [node name="Spikes13" parent="." instance=ExtResource( 12 )]
-position = Vector2( 337.449, 635.307 )
+position = Vector2( 337.449, 625.858 )
 scale = Vector2( 0.666667, 1 )
 
 [node name="Spikes14" parent="." instance=ExtResource( 12 )]
-position = Vector2( 241.449, 635.307 )
+position = Vector2( 241.449, 625.858 )
 scale = Vector2( 0.666667, 1 )
 
 [node name="Spikes15" parent="." instance=ExtResource( 12 )]
-position = Vector2( 289.449, 635.307 )
+position = Vector2( 289.449, 625.858 )
 
 [node name="Box" parent="." instance=ExtResource( 6 )]
 position = Vector2( 291.322, 601.809 )
