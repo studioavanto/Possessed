@@ -140,11 +140,8 @@ func load_new_level(reset = false):
 func start_new_level():
 	current_map.set_pause(false)
 	next_gamestate = GameState.CONTROL_PLAYER
-<<<<<<< HEAD
 	$MusicManager.change_song(current_map.map_music_id)
 	$UIContainer.fade_in_level_title()
-=======
->>>>>>> 1b30441177bb91c61e207cb6e15eabdd7bfd4fdd
 
 func play_sound(sound_string):
 	$AudioEffectManager.play_sound(sound_string)
