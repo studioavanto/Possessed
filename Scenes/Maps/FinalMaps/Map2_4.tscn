@@ -684,6 +684,7 @@ animations = [ {
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
+map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Thief" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1024, 224 )
