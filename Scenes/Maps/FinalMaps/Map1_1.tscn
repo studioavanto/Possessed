@@ -641,7 +641,7 @@ map_overlay_color = Color( 1, 1, 1, 1 )
 position = Vector2( 677.379, 614.167 )
 
 [node name="TileMap" parent="." instance=ExtResource( 6 )]
-modulate = Color( 0.34902, 0.768627, 1, 1 )
+modulate = Color( 0.45098, 0.415686, 0.890196, 1 )
 position = Vector2( 438.407, 282.843 )
 z_index = 1
 tile_set = SubResource( 3 )
@@ -651,6 +651,7 @@ tile_data = PoolIntArray( -196613, 1, 8, -196612, 1, 10, -196611, 1, 10, -196610
 position = Vector2( 675.934, 635.888 )
 
 [node name="World1_texture" type="Sprite" parent="."]
+modulate = Color( 0.831373, 0.690196, 1, 1 )
 position = Vector2( 956.793, 536.259 )
 z_index = -1
 texture = ExtResource( 3 )
@@ -659,7 +660,7 @@ __meta__ = {
 }
 
 [node name="MapExit2" parent="." instance=ExtResource( 2 )]
-modulate = Color( 0.588235, 0.8, 0.843137, 1 )
+modulate = Color( 0.815686, 0.792157, 1, 1 )
 position = Vector2( 1350.1, 606.185 )
 
 [node name="Fluff" type="Node2D" parent="."]
@@ -695,6 +696,7 @@ color = Color( 0.972549, 0.580392, 0.964706, 1 )
 energy = 1.1
 
 [node name="CosmeticsBG" parent="Fluff" instance=ExtResource( 5 )]
+modulate = Color( 0.929412, 0.921569, 1, 1 )
 tile_data = PoolIntArray( 1114202, 104, 0, 1376283, 97, 0, 1703977, 29, 0, 1703994, 29, 0, 1704011, 29, 0, 2490395, 25, 0, 2490399, 26, 0, 2490407, 27, 0, 2490415, 28, 0, 2490422, 24, 0, 2490444, 27, 0, 2490454, 28, 0, 2621468, 86, 0, 2621469, 84, 0, 2621471, 80, 0, 2621472, 2, 0, 2621473, 85, 0, 2621475, 23, 0, 2621489, 84, 0, 2621491, 3, 0, 2621493, 85, 0, 2621496, 111, 0, 2621498, 84, 0, 2621500, 80, 0, 2621502, 84, 0, 2621504, 84, 0, 2621505, 81, 0, 2621507, 86, 0, 2621508, 113, 0, 2621509, 116, 0, 2621510, 84, 0, 2621511, 2, 0, 2621512, 111, 0, 2621513, 110, 0, 2621515, 86, 0, 2621523, 80, 0, 2621529, 82, 0, 2621530, 79, 0 )
 
 [node name="CosmeticsFG" parent="Fluff" instance=ExtResource( 5 )]
@@ -703,5 +705,6 @@ z_index = 5
 tile_data = PoolIntArray( 4784416, 0, 0 )
 
 [node name="CosmeticsRev" parent="Fluff" instance=ExtResource( 5 )]
+modulate = Color( 0.929412, 0.921569, 1, 1 )
 scale = Vector2( -1, 1 )
 tile_data = PoolIntArray( 1900452, 97, 0, 2686884, 80, 0, 2686889, 81, 0, 2686900, 113, 0, 2686907, 112, 0, 2686913, 81, 0, 2686928, 84, 0, 2686941, 112, 0, 2686946, 80, 0, 2686947, 116, 0 )
