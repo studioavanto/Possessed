@@ -56,9 +56,6 @@ extents = Vector2( 31.3257, 13.6918 )
 frames = SubResource( 8 )
 animation = "retract"
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 4

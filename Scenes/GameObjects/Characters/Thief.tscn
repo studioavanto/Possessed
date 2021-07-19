@@ -160,10 +160,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 29 ) ],
-"loop": true,
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": false,
 "name": "tagged",
-"speed": 5.0
+"speed": 4.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=32]
@@ -266,6 +266,8 @@ position = Vector2( 0.707108, 5.3033 )
 shape = SubResource( 27 )
 
 [node name="TaggedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3.53552, -9.72272 )
+scale = Vector2( 0.6, 0.6 )
 z_index = -1
 frames = SubResource( 31 )
 playing = true
@@ -320,9 +322,11 @@ one_shot = true
 one_shot = true
 
 [node name="Light2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, 3.8891 )
 scale = Vector2( 1, 1 )
 enabled = false
-color = Color( 0.286275, 0.482353, 0.458824, 1 )
+texture_scale = 0.6
+color = Color( 0.364706, 0.568627, 0.545098, 1 )
 energy = 0.5
 flicker_base = 2.0
 
