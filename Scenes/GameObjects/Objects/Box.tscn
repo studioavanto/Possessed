@@ -42,6 +42,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckWeightArea"]
+visible = false
 position = Vector2( 0, -29.8518 )
 shape = SubResource( 2 )
 
@@ -51,6 +52,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight"]
+visible = false
 position = Vector2( 0.155716, 21.5247 )
 shape = SubResource( 3 )
 
@@ -62,13 +64,16 @@ collision_layer = 256
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportArea"]
+visible = false
 shape = SubResource( 4 )
 
 [node name="IsSpaceAbove" type="Area2D" parent="."]
+visible = false
 monitorable = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
+visible = false
 position = Vector2( -1.08908, -53.4506 )
 shape = SubResource( 5 )
 
@@ -97,6 +102,7 @@ color = Color( 0.756863, 0.223529, 0.815686, 1 )
 [node name="TeleportTween" type="Tween" parent="."]
 
 [node name="HitBox" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PoolVector2Array( -31, -32, 31, -32, 31, 27, 28, 30, -28, 30, -31, 27 )
 
 [connection signal="area_entered" from="TeleportArea" to="." method="teleport_object"]

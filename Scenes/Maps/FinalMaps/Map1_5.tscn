@@ -1522,7 +1522,6 @@ position = Vector2( 1115.69, 697.416 )
 frames = SubResource( 8 )
 
 [node name="Fluff" type="Node2D" parent="."]
-visible = false
 
 [node name="Light2D" parent="Fluff" instance=ExtResource( 13 )]
 position = Vector2( 960, 448 )
@@ -1540,14 +1539,14 @@ position = Vector2( 672, 512 )
 color = Color( 0.627451, 0.882353, 0.92549, 1 )
 energy = 1.5
 
+[node name="CosmeticsFG" parent="Fluff" instance=ExtResource( 12 )]
+z_index = 5
+tile_set = SubResource( 9 )
+
 [node name="CosmeticsBG" parent="Fluff" instance=ExtResource( 12 )]
 z_index = -1
 tile_set = SubResource( 9 )
 tile_data = PoolIntArray( 1900606, 52, 0, 2883646, 54, 0 )
-
-[node name="CosmeticsFG" parent="Fluff" instance=ExtResource( 12 )]
-z_index = 5
-tile_set = SubResource( 9 )
 
 [node name="MapExit2" parent="." instance=ExtResource( 5 )]
 modulate = Color( 0.580392, 0.894118, 0.972549, 1 )

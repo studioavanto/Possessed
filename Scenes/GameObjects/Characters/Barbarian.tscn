@@ -63,7 +63,6 @@ atlas = ExtResource( 1 )
 region = Rect2( 384, 320, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 64, 64 )
 
@@ -117,43 +116,43 @@ region = Rect2( 192, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 128, 64, 64 )
+region = Rect2( 0, 256, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 128, 64, 64 )
+region = Rect2( 64, 256, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 192, 64, 64 )
+region = Rect2( 0, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 192, 64, 64 )
+region = Rect2( 64, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 1 )
-region = Rect2( 128, 192, 64, 64 )
+region = Rect2( 0, 192, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 1 )
-region = Rect2( 192, 192, 64, 64 )
+region = Rect2( 64, 192, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 1 )
-region = Rect2( 256, 192, 64, 64 )
+region = Rect2( 128, 192, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 1 )
-region = Rect2( 320, 192, 64, 64 )
+region = Rect2( 192, 192, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 256, 64, 64 )
+region = Rect2( 256, 192, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 256, 64, 64 )
+region = Rect2( 320, 192, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
@@ -178,18 +177,18 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "carry_default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
 "loop": false,
 "name": "jump_up",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "carry_run",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 37 ), SubResource( 38 ) ],
-"loop": true,
-"name": "carry_default",
 "speed": 5.0
 } ]
 
@@ -197,17 +196,14 @@ animations = [ {
 extents = Vector2( 10.5706, 23.9923 )
 
 [sub_resource type="AtlasTexture" id=41]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=42]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=43]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 128, 0, 64, 64 )
 
@@ -241,6 +237,7 @@ collision_layer = 0
 script = ExtResource( 2 )
 
 [node name="GraveHitBox" type="CollisionShape2D" parent="."]
+visible = false
 modulate = Color( 0.470588, 0.0470588, 0.658824, 1 )
 position = Vector2( -0.706505, 0.605287 )
 shape = SubResource( 1 )
@@ -262,6 +259,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarryingArea"]
+visible = false
 position = Vector2( 31.183, 0.314993 )
 shape = SubResource( 4 )
 
@@ -271,6 +269,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickingArea"]
+visible = false
 position = Vector2( 0.629927, 1.88989 )
 shape = SubResource( 5 )
 
@@ -280,6 +279,7 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+visible = false
 position = Vector2( -1.25995, 6.29962 )
 shape = SubResource( 5 )
 
@@ -289,6 +289,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossessArea"]
+visible = false
 position = Vector2( 0.944914, 3.77977 )
 shape = SubResource( 5 )
 
@@ -298,6 +299,7 @@ collision_layer = 256
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+visible = false
 shape = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -313,6 +315,7 @@ collision_layer = 0
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
+visible = false
 position = Vector2( 11.3292, 1.30622 )
 shape = SubResource( 40 )
 
@@ -326,6 +329,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight"]
+visible = false
 position = Vector2( 0.155716, 21.5247 )
 shape = SubResource( 45 )
 
@@ -335,6 +339,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckWeightArea"]
+visible = false
 position = Vector2( 0.794594, -29.0572 )
 shape = SubResource( 46 )
 
@@ -342,6 +347,7 @@ shape = SubResource( 46 )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
+visible = false
 position = Vector2( 1.99767, -41.3841 )
 shape = SubResource( 47 )
 
@@ -352,6 +358,7 @@ monitorable = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceInFront"]
+visible = false
 position = Vector2( -38.9353, -58.5353 )
 shape = SubResource( 48 )
 
