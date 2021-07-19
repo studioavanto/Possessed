@@ -126,13 +126,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 13.1948, 32.5957 )
-
-[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 17.8377, 24.6789 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 14.5684, 10 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 15, 34 )
 
 [node name="Wizard" type="KinematicBody2D"]
 collision_layer = 0
@@ -223,13 +223,6 @@ z_index = -1
 frames = SubResource( 24 )
 playing = true
 
-[node name="GraveHitBox" type="CollisionShape2D" parent="."]
-visible = false
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 6.72047, -0.210426 )
-shape = SubResource( 25 )
-disabled = true
-
 [node name="DropTimer" type="Timer" parent="."]
 
 [node name="IsSpaceAbove" type="Area2D" parent="."]
@@ -238,7 +231,7 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
 position = Vector2( -0.994614, -51.2873 )
-shape = SubResource( 26 )
+shape = SubResource( 25 )
 
 [node name="Weight" type="Area2D" parent="."]
 visible = false
@@ -247,7 +240,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight"]
 position = Vector2( -3.55241, 21.2598 )
-shape = SubResource( 27 )
+shape = SubResource( 26 )
 
 [node name="CharacterAudio" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource( 7 )
@@ -285,5 +278,12 @@ enabled = false
 color = Color( 0.321569, 0.360784, 0.588235, 1 )
 energy = 0.5
 flicker_base = 2.0
+
+[node name="GraveHitBox" type="CollisionShape2D" parent="."]
+visible = false
+modulate = Color( 0.470588, 0.0470588, 0.658824, 1 )
+position = Vector2( 6.31385, 0 )
+shape = SubResource( 27 )
+disabled = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
