@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Resources/Sprites/Characters/wizard_idle.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/Characters/wizard_run.png" type="Texture" id=2]
@@ -9,136 +9,183 @@
 [ext_resource path="res://Scripts/Sounds/WizardAudio.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Resources/Sprites/Objects/grave_finalframe.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/GameObjects/ParticleEffects/EvilHalo.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 18.0909
 height = 17.9894
 
-[sub_resource type="CircleShape2D" id=28]
+[sub_resource type="CircleShape2D" id=2]
 radius = 24.3504
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 radius = 27.4591
 
-[sub_resource type="CircleShape2D" id=29]
+[sub_resource type="CircleShape2D" id=4]
 radius = 20.5409
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 17.069, 29.9754 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 64, 64 )
-
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 6 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 6 )
+atlas = ExtResource( 1 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 320, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 384, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 2 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 2 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=18]
+[sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.5
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": false,
 "name": "death",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "run",
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 5.98825, 23.393 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 18.4322, 6.91422 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=24]
+[sub_resource type="SpriteFrames" id=26]
 animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 22 ) ],
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 24 ) ],
 "loop": true,
 "name": "tagged",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 17.8377, 24.6789 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 14.5684, 10 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 15, 34 )
+
+[sub_resource type="Gradient" id=30]
+offsets = PoolRealArray( 0, 0.636103, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.32549, 0.0431372, 0.0431372, 1, 0.14902, 0.0313726, 0.329412, 0.545098 )
+
+[sub_resource type="GradientTexture" id=31]
+gradient = SubResource( 30 )
+
+[sub_resource type="Curve" id=32]
+min_value = -1.0
+_data = [ Vector2( 0, -0.0122825 ), 0.0, 0.0, 0, 0, Vector2( 0.244624, 0.0604448 ), 0.0, 0.0, 0, 0, Vector2( 0.5, -0.103191 ), 0.0, 0.0, 0, 0, Vector2( 0.752688, 0.0604448 ), 0.0, 0.0, 0, 0, Vector2( 1, -0.0668279 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=33]
+curve = SubResource( 32 )
+
+[sub_resource type="Curve" id=34]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.185484, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.647849, 0.821131 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -4.19429, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=35]
+curve = SubResource( 34 )
+
+[sub_resource type="ParticlesMaterial" id=36]
+emission_shape = 1
+emission_sphere_radius = 8.0
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, -10, 0 )
+initial_velocity = 1.0
+angular_velocity = 2.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+orbit_velocity_curve = SubResource( 33 )
+damping = 5.0
+scale_curve = SubResource( 35 )
+color_ramp = SubResource( 31 )
 
 [node name="Wizard" type="KinematicBody2D"]
 collision_layer = 0
@@ -156,7 +203,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickingArea"]
 position = Vector2( 0.629927, 1.88989 )
-shape = SubResource( 28 )
+shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
 visible = false
@@ -165,7 +212,7 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 position = Vector2( -1.25995, 6.29962 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="PossessArea" type="Area2D" parent="."]
 visible = false
@@ -174,7 +221,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossessArea"]
 position = Vector2( 0.593864, 0.977623 )
-shape = SubResource( 29 )
+shape = SubResource( 4 )
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false
@@ -183,11 +230,11 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 0, 0.977623 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 6.73477, 0 )
-frames = SubResource( 18 )
+frames = SubResource( 20 )
 speed_scale = 2.0
 playing = true
 
@@ -199,7 +246,7 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
 visible = false
 position = Vector2( 14.6397, 1.22012 )
-shape = SubResource( 19 )
+shape = SubResource( 21 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -218,11 +265,11 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckWeightArea"]
 position = Vector2( -2.11893, -5.74908 )
-shape = SubResource( 20 )
+shape = SubResource( 22 )
 
 [node name="TaggedSprite" type="AnimatedSprite" parent="."]
 z_index = -1
-frames = SubResource( 24 )
+frames = SubResource( 26 )
 playing = true
 
 [node name="DropTimer" type="Timer" parent="."]
@@ -233,7 +280,7 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
 position = Vector2( -0.994614, -51.2873 )
-shape = SubResource( 25 )
+shape = SubResource( 27 )
 
 [node name="Weight" type="Area2D" parent="."]
 visible = false
@@ -242,32 +289,13 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight"]
 position = Vector2( -3.55241, 21.2598 )
-shape = SubResource( 26 )
+shape = SubResource( 28 )
 
 [node name="CharacterAudio" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource( 7 )
 
 [node name="TeleportTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-emitting = false
-amount = 20
-one_shot = true
-speed_scale = 1.26
-explosiveness = 0.19
-randomness = 0.31
-lifetime_randomness = 0.11
-emission_shape = 1
-emission_sphere_radius = 4.0
-direction = Vector2( 0, 0 )
-spread = 180.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 30.0
-linear_accel = -10.0
-scale_amount = 6.0
-scale_amount_random = 0.1
-color = Color( 0.756863, 0.223529, 0.815686, 1 )
 
 [node name="TeleportTween" type="Tween" parent="."]
 
@@ -285,7 +313,11 @@ flicker_base = 2.0
 visible = false
 modulate = Color( 0.470588, 0.0470588, 0.658824, 1 )
 position = Vector2( 6.31385, 0 )
-shape = SubResource( 27 )
+shape = SubResource( 29 )
 disabled = true
+
+[node name="EvilHalo" parent="." instance=ExtResource( 10 )]
+emitting = false
+process_material = SubResource( 36 )
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
