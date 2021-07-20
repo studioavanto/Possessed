@@ -64,6 +64,7 @@ func possess_character():
 		return false
 
 	character_stage = CharacterStage.POSSESSED
+	$EvilHalo.emitting = true
 	$PickingArea.set_collision_layer_bit(3, false)
 	set_possess_light(true)
 	remove_tag()
@@ -145,6 +146,7 @@ func set_dying():
 func kill_character():
 	character_stage = CharacterStage.DEAD
 	$AnimatedSprite.animation = "death"
+	$EvilHalo.emitting = false
 	$HitBox.disabled = true
 	$GraveHitBox.disabled = false
 	set_collision_layer_bit(0, true)

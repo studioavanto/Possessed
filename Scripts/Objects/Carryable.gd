@@ -10,9 +10,12 @@ var on_air = false
 
 var teleport_location = null
 var teleport_timing = 0.01
+var teleport_particles = null
 
 func _ready():
 	$TeleportTween.connect("tween_all_completed", self, "teleport_happens")
+	teleport_particles = preload("res://Scenes/GameObjects/ParticleEffects/TeleportParticles.tscn").instance()
+	add_child(teleport_particles)
 
 func set_terminal_velocity():
 	if y_speed > terminal_velocity:
@@ -29,7 +32,8 @@ func teleport_happens():
 		position = teleport_location
 		teleport_location = null
 		toggle_hitboxes(false)
-		$CPUParticles2D.emitting = true
+		teleport_particles.emitting = true
+
 		$TeleportTween.interpolate_property(
 			get_character_sprite(),
 			"modulate",
