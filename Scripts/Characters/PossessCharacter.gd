@@ -2,7 +2,7 @@ extends "res://Scripts/Objects/Carryable.gd"
 
 export var lifetime = 200
 export var jump_fall_reduction = 710.0
-export var jump_start_speed = 747.0
+export var jump_start_speed = 755.0
 export var run_speed = 290
 export var max_age = 600
 export var max_jump_time = 0.25
@@ -264,8 +264,9 @@ func process_physics(delta):
 					x_speed -= sign(x_speed) * get_air_drag() * delta
 
 			if jump_time == 0.0 or (air_jump and jump):
-				y_speed = get_jump_start_speed() 
-				jump_time += delta
+				y_speed = get_jump_start_speed()
+				 
+				jump_time = delta
 				end_ledge_jump()
 
 			elif jump and jump_time < max_jump_time:

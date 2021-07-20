@@ -12,16 +12,16 @@
 [ext_resource path="res://Resources/Sprites/Characters/thief_jump.png" type="Texture" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 31.532
+radius = 20.5409
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32.4076, 10 )
+extents = Vector2( 16.9654, 8.50632 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 23.2663, 28.6456 )
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 37.6302
+[sub_resource type="CircleShape2D" id=34]
+radius = 24.3504
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
@@ -131,45 +131,45 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 3.62296, 19.7287 )
 
-[sub_resource type="CapsuleShape2D" id=26]
+[sub_resource type="CapsuleShape2D" id=25]
 radius = 16.5257
 height = 14.0167
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 18.2849, 23.3073 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 5 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=31]
+[sub_resource type="SpriteFrames" id=30]
 animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
 "loop": false,
 "name": "tagged",
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 17.3728, 6.91422 )
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 17.8377, 21.2356 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 15, 34 )
 
 [node name="Thief" type="KinematicBody2D"]
@@ -182,7 +182,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossessArea"]
-position = Vector2( 2.67733, 4.88219 )
+position = Vector2( 0.593864, 2.20345 )
 shape = SubResource( 1 )
 
 [node name="CarryArea" type="Area2D" parent="."]
@@ -191,7 +191,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarryArea"]
-position = Vector2( 2.77795, 6.74645 )
+position = Vector2( 1.5874, 6.74645 )
 shape = SubResource( 1 )
 
 [node name="Weight" type="Area2D" parent="."]
@@ -200,7 +200,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight"]
-position = Vector2( 0.155716, 21.5247 )
+position = Vector2( -2.44567, 20.5585 )
 shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
@@ -219,15 +219,13 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickingArea"]
-position = Vector2( 1.88985, 5.35468 )
-shape = SubResource( 4 )
+position = Vector2( 0.629927, 1.88989 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 23 )
+frame = 1
 playing = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="PushArea" type="Area2D" parent="."]
 visible = false
@@ -236,17 +234,13 @@ collision_layer = 0
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
-visible = false
 position = Vector2( 14.0227, 11.0801 )
 shape = SubResource( 24 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0.118381, 5.20633 )
-shape = SubResource( 26 )
-__meta__ = {
-"_edit_lock_": true
-}
+shape = SubResource( 25 )
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false
@@ -255,13 +249,13 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 0.707108, 5.3033 )
-shape = SubResource( 27 )
+shape = SubResource( 26 )
 
 [node name="TaggedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 3.53552, -9.72272 )
 scale = Vector2( 0.6, 0.6 )
 z_index = -1
-frames = SubResource( 31 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CheckWeightArea" type="Area2D" parent="."]
@@ -271,7 +265,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckWeightArea"]
 position = Vector2( 2.38379, -3.10037 )
-shape = SubResource( 32 )
+shape = SubResource( 31 )
 
 [node name="IsSpaceAbove" type="Area2D" parent="."]
 visible = false
@@ -279,7 +273,7 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
 position = Vector2( -0.464882, -39.898 )
-shape = SubResource( 33 )
+shape = SubResource( 32 )
 
 [node name="CharacterAudio" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource( 7 )
@@ -290,6 +284,7 @@ one_shot = true
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 20
+one_shot = true
 speed_scale = 1.26
 explosiveness = 0.19
 randomness = 0.31
@@ -325,7 +320,7 @@ flicker_base = 2.0
 [node name="GraveHitBox" type="CollisionShape2D" parent="."]
 visible = false
 modulate = Color( 0.470588, 0.0470588, 0.658824, 1 )
-shape = SubResource( 34 )
+shape = SubResource( 33 )
 disabled = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
