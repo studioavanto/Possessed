@@ -713,10 +713,3 @@ color = Color( 0.105882, 0.521569, 0.890196, 1 )
 [node name="Spikes" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1189.7, 1148.49 )
 scale = Vector2( 4, 1 )
-
-[connection signal="toggle_off" from="Button" to="Door" method="_on_Button_toggle_off"]
-[connection signal="toggle_off" from="Button" to="Door2" method="_on_Button_toggle_off"]
-[connection signal="toggle_on" from="Button" to="Door" method="_on_Button_toggle_on"]
-[connection signal="toggle_on" from="Button" to="Door2" method="_on_Button_toggle_on"]
-[connection signal="toggle_off" from="Button2" to="Door2" method="_on_Button2_toggle_off"]
-[connection signal="toggle_on" from="Button2" to="Door2" method="_on_Button2_toggle_on"]
