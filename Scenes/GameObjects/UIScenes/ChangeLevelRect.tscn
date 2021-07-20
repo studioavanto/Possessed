@@ -11,15 +11,15 @@ region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 4 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 3.0
@@ -67,7 +67,7 @@ margin_bottom = 792.0
 scroll_active = false
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 334.504, 723.894 )
-scale = Vector2( 30, 30 )
+position = Vector2( 414.685, 643.713 )
+scale = Vector2( 15, 15 )
 frames = SubResource( 4 )
 playing = true

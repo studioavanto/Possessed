@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Resources/Sprites/Characters/barbarian_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Characters/Barbarian.gd" type="Script" id=2]
@@ -21,7 +21,10 @@ radius = 36.0453
 height = 0.0
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 32.9513
+radius = 24.3504
+
+[sub_resource type="CircleShape2D" id=49]
+radius = 20.5409
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 32.9563, 31.3708 )
@@ -258,7 +261,6 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarryingArea"]
-visible = false
 position = Vector2( 31.183, 0.314993 )
 shape = SubResource( 4 )
 
@@ -268,7 +270,6 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickingArea"]
-visible = false
 position = Vector2( 0.629927, 1.88989 )
 shape = SubResource( 5 )
 
@@ -288,9 +289,8 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossessArea"]
-visible = false
-position = Vector2( 0.944914, 3.77977 )
-shape = SubResource( 5 )
+position = Vector2( 0.593864, -0.799937 )
+shape = SubResource( 49 )
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false
@@ -298,7 +298,6 @@ collision_layer = 256
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-visible = false
 shape = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -328,7 +327,6 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight"]
-visible = false
 position = Vector2( 0.155716, 21.5247 )
 shape = SubResource( 45 )
 
@@ -338,15 +336,14 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckWeightArea"]
-visible = false
 position = Vector2( 0.794594, -29.0572 )
 shape = SubResource( 46 )
 
 [node name="IsSpaceAbove" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
-visible = false
 position = Vector2( 1.99767, -41.3841 )
 shape = SubResource( 47 )
 
@@ -357,7 +354,6 @@ monitorable = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceInFront"]
-visible = false
 position = Vector2( -38.9353, -58.5353 )
 shape = SubResource( 48 )
 
