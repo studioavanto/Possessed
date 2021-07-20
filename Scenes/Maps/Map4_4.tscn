@@ -121,7 +121,7 @@ position = Vector2( 1313.45, 35.307 )
 [node name="Door" parent="." instance=ExtResource( 13 )]
 position = Vector2( 929.449, -28.693 )
 
-[connection signal="toggle_off" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_off"]
 [connection signal="toggle_off" from="Button" to="Door" method="_on_Button_toggle_off"]
-[connection signal="toggle_on" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_on"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_off"]
 [connection signal="toggle_on" from="Button" to="Door" method="_on_Button_toggle_on"]
+[connection signal="toggle_on" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_on"]
