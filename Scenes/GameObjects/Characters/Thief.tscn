@@ -225,9 +225,6 @@ shape = SubResource( 34 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 23 )
 playing = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="PushArea" type="Area2D" parent="."]
 visible = false
@@ -243,9 +240,6 @@ shape = SubResource( 24 )
 visible = false
 position = Vector2( 0.118381, 5.20633 )
 shape = SubResource( 25 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false
@@ -289,6 +283,7 @@ one_shot = true
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 20
+one_shot = true
 speed_scale = 1.26
 explosiveness = 0.19
 randomness = 0.31
