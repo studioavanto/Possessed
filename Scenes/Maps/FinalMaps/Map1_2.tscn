@@ -1211,7 +1211,7 @@ map_overlay_color = Color( 1, 1, 1, 1 )
 position = Vector2( 377.448, 625.97 )
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
-modulate = Color( 0.639216, 0.415686, 0.890196, 1 )
+modulate = Color( 0.643137, 0.396078, 1, 1 )
 position = Vector2( 452.22, 276.762 )
 z_index = 2
 tile_set = SubResource( 2 )
