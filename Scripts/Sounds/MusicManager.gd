@@ -202,4 +202,3 @@ func start_new_song():
 	$ThiefMusic.play()
 	$BarbarianMusic.play()
 	$WizardMusic.play()
-

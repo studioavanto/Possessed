@@ -12,3 +12,5 @@ shadow_gradient_length = 20.0
 shadow_filter = 3
 shadow_filter_smooth = 14.5
 script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]

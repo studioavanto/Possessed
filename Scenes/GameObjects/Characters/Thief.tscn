@@ -240,6 +240,7 @@ shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 23 )
+frame = 1
 playing = true
 
 [node name="PushArea" type="Area2D" parent="."]
@@ -306,8 +307,6 @@ one_shot = true
 
 [node name="Light2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( 0, 3.8891 )
-scale = Vector2( 1, 1 )
-enabled = false
 texture_scale = 0.6
 color = Color( 0.364706, 0.568627, 0.545098, 1 )
 energy = 0.5

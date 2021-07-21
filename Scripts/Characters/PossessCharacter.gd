@@ -28,11 +28,16 @@ var unloading_timer = 0.0
 var facing = 1.0
 var air_jump = false
 
+var blood_splatter_particles = null
+
 var character_state = CharacterState.IDLE
 var character_stage = CharacterStage.CHILLIN
 
 func _ready():
 	$JumpTimer.connect("timeout", self, "end_ledge_jump")
+	blood_splatter_particles = preload("res://Scenes/GameObjects/ParticleEffects/BloodSplatter.tscn").instance()
+	add_child(blood_splatter_particles)
+	$Light2D.max_alpha = 0.0
 
 func end_ledge_jump():
 	air_jump = false
@@ -42,7 +47,10 @@ func start_air_timer():
 	$JumpTimer.start(ledge_jump_timer)
 
 func set_possess_light(value):
-	$Light2D.enabled = value
+	if value:
+		$Light2D.fade_light_in()
+	else:
+		$Light2D.fade_light_out()
 
 func get_air_drag():
 	if character_stage == CharacterStage.CHILLIN:
@@ -333,6 +341,7 @@ func process_physics(delta):
 
 func _on_HurtBox_area_entered(area):	
 	if area.get_collision_layer_bit(2):
+		blood_splatter_particles.emitting = true
 		character_state = CharacterState.DEATH
 	elif area.get_collision_mask_bit(8):
 		area.get_parent().start_destroy_projectile()

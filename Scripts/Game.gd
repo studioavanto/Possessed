@@ -112,6 +112,10 @@ func _ready():
 	if saved_map == MapEnum.NO_SAVE:
 		load_game()
 	
+	if saved_map == MapEnum.OVERRIDE_SAVE:
+		save_game(MapEnum.NO_SAVE)
+		load_game()
+	
 	if map != MapEnum.START_GAME:
 		$UIContainer.set_transparent()
 		$UIContainer.set_phase_game()
