@@ -128,6 +128,8 @@ func process_physics(delta):
 		x_speed = 0.0
 
 func _physics_process(delta):
+	if get_parent().is_paused():
+		return
 	process_physics(delta)
 
 func teleport_object(area):

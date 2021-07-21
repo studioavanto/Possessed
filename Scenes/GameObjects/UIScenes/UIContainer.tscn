@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/UIScenes/CharacterCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/UI/UIContainer.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/GameObjects/UIScenes/LevelTitle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/UI/MonologueDict.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/GameObjects/UIScenes/IntroTextBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GameObjects/UIScenes/PauseScreen.tscn" type="PackedScene" id=9]
 
 [node name="UIContainer" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -67,3 +68,5 @@ script = ExtResource( 7 )
 
 [node name="LevelTitle" parent="." instance=ExtResource( 6 )]
 modulate = Color( 1, 1, 1, 0 )
+
+[node name="PauseScreen" parent="." instance=ExtResource( 9 )]

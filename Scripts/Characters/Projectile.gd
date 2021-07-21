@@ -44,6 +44,9 @@ func destroy_projectile():
 	queue_free()
 
 func _process(delta):
+	if get_parent().is_paused():
+		return
+		
 	if has_been_used:
 		return
 

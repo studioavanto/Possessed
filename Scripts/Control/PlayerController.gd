@@ -19,6 +19,10 @@ func handle_inputs():
 	var holding_down = false
 	var horizontal_move = 0.0
 	
+	if Input.is_action_just_pressed("pause"):
+		get_parent().from_player_to_pause()
+		return
+	
 	if Input.is_action_pressed("press_down"):
 		holding_down = true
 	

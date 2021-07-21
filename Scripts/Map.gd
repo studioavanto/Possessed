@@ -5,7 +5,7 @@ export var map_music_id = -1
 export var level_title = "default"
 export(Color) var map_overlay_color
 
-var map_paused = true
+var map_paused = false
 
 func get_player_character():
 	return $PlayerCharacter

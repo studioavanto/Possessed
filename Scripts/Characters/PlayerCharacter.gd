@@ -46,8 +46,11 @@ func compute_offset():
 	return possessed.position + Vector2(-possessed.facing * possess_offset.x, possess_offset.y)
 
 func process_input(jump, special, horizontal_move, interact, holding_down, death):
+	if get_parent().is_paused():
+		return
+
 	if possessed == null:
-		if special:
+		if jump or holding_down or horizontal_move != 0.0 or special or interact:
 			possess_nearby()
 	else:
 		if death:

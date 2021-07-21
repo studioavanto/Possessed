@@ -196,11 +196,7 @@ func process_physics(delta):
 
 	if character_stage == CharacterStage.DEAD:
 		return
-	
-	if character_stage == CharacterStage.CHILLIN:
-		.process_physics(delta)
-		return
-	
+
 	match character_state:
 		CharacterState.IDLE:
 			if jump:
@@ -289,11 +285,17 @@ func process_physics(delta):
 	
 	unique_physics_modifiers()
 	var speed_mod = push_on_front()
-	move_and_slide(Vector2(speed_mod * x_speed, 0.0))
-	var vec = move_and_slide(Vector2(0.0, y_speed), Vector2(0, -1), true)	
 	
-	if vec.y == 0.0:
-		y_speed = 100.0
+	var vec = move_and_slide(Vector2(speed_mod * x_speed, 0.0))
+
+	if vec.x == 0.0:
+		x_speed = 0.0
+	
+	if not is_being_carried:
+		vec = move_and_slide(Vector2(0.0, y_speed), Vector2(0, -1), true)	
+	
+		if vec.y == 0.0:
+			y_speed = 10.0
 	
 	if is_on_floor():
 		character_is_on_floor_after_move()

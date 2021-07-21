@@ -114,6 +114,7 @@ func _ready():
 	
 	if map != MapEnum.START_GAME:
 		$UIContainer.set_transparent()
+		$UIContainer.set_phase_game()
 		current_map_id = map
 		load_new_level()
 		start_new_level()
@@ -138,11 +139,9 @@ func continue_game():
 		if saved_map == MapEnum.NO_SAVE:
 			start_new_game()
 		else:
-			$UIContainer.set_transparent()
 			current_map_id = saved_map
-			load_new_level()
-			start_new_level()
-			$MusicManager.change_song(map_music[current_map_id])
+			$UIContainer.set_phase_game()
+			$UIContainer.fade_continue()
 			current_gamestate = GameState.CONTROL_PLAYER
 
 func save_game(map_id):
@@ -198,9 +197,13 @@ func get_map_id():
 
 func from_player_to_pause():
 	next_gamestate = GameState.CONTROL_PAUSE
-
+	current_map.set_pause(true)
+	$UIContainer.fade_in_pause_screen()
+	
 func from_pause_to_player():
 	next_gamestate = GameState.CONTROL_PLAYER
+	current_map.set_pause(false)
+	$UIContainer.fade_out_pause_screen()
 
 func get_map_from_list(map_id):
 	return final_map_dict[map_id]
@@ -225,9 +228,10 @@ func load_new_level(reset = false):
 	save_game(current_map_id)
 
 func start_new_level():
-	current_map.set_pause(false)
+	print("happens")
 	next_gamestate = GameState.CONTROL_PLAYER
-	$MusicManager.change_song(current_map.map_music_id)
+	current_map.set_pause(false)
+	$MusicManager.change_song(map_music[current_map_id])
 	$UIContainer.fade_in_level_title()
 
 func play_sound(sound_string):

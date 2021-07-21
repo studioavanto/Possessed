@@ -9,9 +9,13 @@ var fade_speed = 1.0
 
 var fade_out = false
 var fade_out_map = false
+var start_continue = false
 
 enum GamePhase { START, INTRO, GAME, END }
 var current_phase = GamePhase.START
+
+func set_phase_game():
+	current_phase = GamePhase.GAME
 
 func fade_out_death():
 	fade_out = false
@@ -27,12 +31,17 @@ func fade_out_death():
 	$FadeOutBlack.start()
 
 func fade_out_complete():
+	if start_continue:
+		set_transparent()
+		start_continue = false
+
 	if not fade_out:
 		if fade_out_map:
 			get_parent().load_new_level()
-			
+		else:
+			get_parent().load_new_level(true)
+
 		fade_out = true
-		get_parent().load_new_level(true)
 		if current_phase == GamePhase.GAME:
 			get_parent().start_new_level()
 		
@@ -248,6 +257,23 @@ func fade_straight_to_next_map():
 	)
 	$FadeOutBlack.start()
 
+func fade_continue():
+	fade_out = false
+	fade_out_map = true
+	start_continue = true
+
+	$FadeOutBlack.interpolate_property(
+		$BlackScreen,
+		"modulate",
+		Color(0.0, 0.0, 0.0, 0.0),
+		Color(0.0, 0.0, 0.0, 1.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	
+	$FadeOutBlack.start()
+
 func fade_map_text(map_text):
 	can_proceed = false
 	input_counter = 0
@@ -280,3 +306,9 @@ func fade_out_level_title():
 		Tween.EASE_IN
 	)
 	$TitleTween.start()
+
+func fade_in_pause_screen():
+	$PauseScreen.fade_in_pause_screen()
+
+func fade_out_pause_screen():
+	$PauseScreen.fade_out_pause_screen()

@@ -36,6 +36,9 @@ func toggle_platform():
 	stop = not stop
 
 func _physics_process(delta):
+	if get_parent().is_paused():
+		return
+
 	if wait or stop:
 		return
 

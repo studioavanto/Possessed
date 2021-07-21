@@ -17,8 +17,9 @@ adjustment_enabled = true
 adjustment_contrast = 1.1
 
 [node name="Game" type="Node2D"]
-position = Vector2( 0, 1 )
+position = Vector2( 1, 2 )
 script = ExtResource( 1 )
+map = 1
 last_map = 16
 
 [node name="PauseController" type="Node2D" parent="."]
@@ -26,6 +27,9 @@ script = ExtResource( 3 )
 
 [node name="CutsceneController" type="Node2D" parent="."]
 script = ExtResource( 5 )
+
+[node name="PlayerController" type="Node2D" parent="."]
+script = ExtResource( 2 )
 
 [node name="UIContainer" parent="." instance=ExtResource( 4 )]
 
@@ -44,6 +48,3 @@ color = Color( 0.733333, 0.733333, 0.733333, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
-
-[node name="PlayerController" type="Node2D" parent="."]
-script = ExtResource( 2 )
