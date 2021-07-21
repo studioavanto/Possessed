@@ -695,6 +695,8 @@ scale = Vector2( -1, 1 )
 
 [node name="World2_texture" type="Sprite" parent="."]
 modulate = Color( 0.615686, 0.611765, 0.784314, 1 )
+position = Vector2( 144, 81 )
+scale = Vector2( 0.85, 0.85 )
 z_index = -5
 texture = SubResource( 1 )
 centered = false

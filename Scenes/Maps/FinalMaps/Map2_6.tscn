@@ -634,7 +634,6 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 1/z_index = 0
 
 [sub_resource type="StreamTexture" id=4]
-flags = 4
 load_path = "res://.import/texture_brickwall.png-94209fad758ee7b2b0850e14c95024d6.stex"
 
 [node name="PlaceholderMap" type="Node2D"]
@@ -676,12 +675,16 @@ __meta__ = {
 
 [node name="World2b_texture" type="Sprite" parent="."]
 modulate = Color( 0.615686, 0.639216, 0.827451, 1 )
+position = Vector2( 144, 81 )
+scale = Vector2( 0.85, 0.85 )
 z_index = -5
 texture = ExtResource( 2 )
 centered = false
 
 [node name="World2b_texture2" type="Sprite" parent="."]
 modulate = Color( 0.909804, 0.909804, 0.909804, 1 )
+position = Vector2( 144, 81 )
+scale = Vector2( 0.85, 0.85 )
 z_index = -10
 texture = ExtResource( 1 )
 centered = false
