@@ -1,10 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/UI/PauseScreen.gd" type="Script" id=1]
 [ext_resource path="res://Resources/UI/pause_screen.png" type="Texture" id=2]
 
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void fragment() {
+	COLOR.rgb = mix(textureLod(SCREEN_TEXTURE, SCREEN_UV, 2.0).rgb, texture(TEXTURE, UV).rgb, 0.8);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
 [node name="PauseScreen" type="TextureRect"]
 modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 2 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 2 )

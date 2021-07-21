@@ -33,6 +33,7 @@ var character_stage = CharacterStage.CHILLIN
 
 func _ready():
 	$JumpTimer.connect("timeout", self, "end_ledge_jump")
+	$Light2D.max_alpha = 0.0
 
 func end_ledge_jump():
 	air_jump = false
@@ -42,7 +43,10 @@ func start_air_timer():
 	$JumpTimer.start(ledge_jump_timer)
 
 func set_possess_light(value):
-	$Light2D.enabled = value
+	if value:
+		$Light2D.fade_light_in()
+	else:
+		$Light2D.fade_light_out()
 
 func get_air_drag():
 	if character_stage == CharacterStage.CHILLIN:

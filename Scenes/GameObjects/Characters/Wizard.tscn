@@ -304,8 +304,6 @@ one_shot = true
 one_shot = true
 
 [node name="Light2D" parent="." instance=ExtResource( 8 )]
-scale = Vector2( 1, 1 )
-enabled = false
 color = Color( 0.321569, 0.360784, 0.588235, 1 )
 energy = 0.5
 flicker_base = 2.0
