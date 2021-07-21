@@ -729,7 +729,7 @@ tile_data = PoolIntArray( 393236, 536871004, 0, 655381, 1073741917, 0, 655382, 1
 [node name="Light2D15" parent="Fluff" instance=ExtResource( 13 )]
 position = Vector2( 341.295, 801.765 )
 texture_scale = 0.01
-color = Color( 1, 0.886275, 0.133333, 1 )
+color = Color( 1, 0.560784, 0.172549, 1 )
 energy = 2.0
 flicker_amount = 1.7
 flicker_base = 0.4
@@ -737,7 +737,7 @@ flicker_base = 0.4
 [node name="Light2D16" parent="Fluff" instance=ExtResource( 13 )]
 position = Vector2( 340.765, 802.03 )
 texture_scale = 0.35
-color = Color( 1, 0.886275, 0.133333, 1 )
+color = Color( 1, 0.560784, 0.172549, 1 )
 energy = 0.9
 flicker_amount = 1.7
 flicker_base = 0.4
