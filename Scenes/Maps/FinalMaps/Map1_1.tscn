@@ -715,10 +715,10 @@ z_index = -1
 tile_data = PoolIntArray( 1114140, 55, 0, 1114198, 55, 0, 1376284, 56, 0, 1376342, 56, 0, 1638428, 57, 0, 1638486, 57, 0, 1900572, 55, 0, 1900630, 55, 0, 2162716, 56, 0, 2162774, 56, 0, 2424860, 57, 0, 2424918, 57, 0, 2687004, 55, 0, 2687062, 55, 0 )
 
 [node name="Sparks" parent="Fluff" instance=ExtResource( 11 )]
-position = Vector2( 686.763, 445.515 )
+position = Vector2( 687.708, 442.05 )
 
 [node name="Sparks2" parent="Fluff" instance=ExtResource( 11 )]
-position = Vector2( 958.886, 445.703 )
+position = Vector2( 960.461, 443.183 )
 
 [node name="Sparks3" parent="Fluff" instance=ExtResource( 11 )]
-position = Vector2( 1231.42, 449.261 )
+position = Vector2( 1232.37, 442.646 )

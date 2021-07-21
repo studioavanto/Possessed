@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thief_dash_alt.ogg-7d400c5a70e5801ae045a0b710c405d6.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/Characters/thief_dash_alt.ogg"
+dest_files=[ "res://.import/thief_dash_alt.ogg-7d400c5a70e5801ae045a0b710c405d6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
