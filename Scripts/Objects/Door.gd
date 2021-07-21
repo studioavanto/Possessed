@@ -37,3 +37,11 @@ func _on_Switch_toggle_off():
 
 
 
+
+
+func _on_Button2_toggle_off():
+	pass # Replace with function body.
+
+
+func _on_Button2_toggle_on():
+	pass # Replace with function body.
