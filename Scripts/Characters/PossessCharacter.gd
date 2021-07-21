@@ -66,17 +66,19 @@ func possess_character():
 	character_stage = CharacterStage.POSSESSED
 	$EvilHalo.emitting = true
 	$PickingArea.set_collision_layer_bit(3, false)
-	set_possess_light(true)
 	remove_tag()
+	set_possess_light(true)
 	return true
 	
 func tag_character():
 	tagged = true
 	$TaggedSprite.animation = "tagged"
+	set_possess_light(true)
 
 func remove_tag():
 	tagged = false
 	$TaggedSprite.animation = "default"
+	set_possess_light(false)
 
 func is_dead():
 	return (character_stage == CharacterStage.DEAD)
