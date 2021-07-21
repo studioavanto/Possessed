@@ -1222,9 +1222,11 @@ position = Vector2( 409.158, 629.587 )
 
 [node name="World1_texture" type="Sprite" parent="."]
 modulate = Color( 0.831373, 0.690196, 1, 1 )
-position = Vector2( 956.793, 536.259 )
+position = Vector2( 144, 81 )
+scale = Vector2( 0.85, 0.85 )
 z_index = -1
 texture = ExtResource( 7 )
+centered = false
 __meta__ = {
 "_edit_lock_": true
 }

@@ -6367,9 +6367,11 @@ position = Vector2( 1534.02, 346.39 )
 
 [node name="World1_texture" type="Sprite" parent="."]
 modulate = Color( 0.823529, 0.592157, 1, 1 )
-position = Vector2( 960.134, 540.045 )
+position = Vector2( 144, 81 )
+scale = Vector2( 0.85, 0.85 )
 z_index = -2
 texture = ExtResource( 2 )
+centered = false
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 9 )]
 position = Vector2( 402.084, 543.156 )
