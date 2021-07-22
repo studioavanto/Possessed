@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://Resources/Sprites/Backgrounds/texture_brickwall.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_v3.png" type="Texture" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/MapExit.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/GameObjects/Characters/Wizard.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/GameObjects/Objects/Spikes.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Resources/Sprites/Backgrounds/bg_forest.png" type="Texture" id=15]
+[ext_resource path="res://Resources/Sprites/Backgrounds/texture_brickwall_cracked_alpha.png" type="Texture" id=16]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -20,7 +23,7 @@ region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
@@ -28,11 +31,11 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
@@ -40,7 +43,7 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -51,12 +54,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
-"name": "retract",
+"name": "ouchy",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
-"name": "ouchy",
+"name": "retract",
 "speed": 5.0
 } ]
 
@@ -961,6 +964,25 @@ blend_mode = 3
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
+map_overlay_color = Color( 1, 1, 1, 1 )
+
+[node name="Fluff" type="Node2D" parent="."]
+
+[node name="Cosmetics" parent="Fluff" instance=ExtResource( 14 )]
+modulate = Color( 0.796078, 1, 0.960784, 1 )
+cell_size = Vector2( 4, 4 )
+tile_data = PoolIntArray( 1966334, 1610612758, 0, 2162942, 536870934, 0, 6226225, -2147483607, 0, 6357107, 536870934, 0, 6357298, 22, 0, 6357343, 41, 0, 6422886, 77, 0, 6816095, 48, 0, 6881394, 536870912, 0, 7340383, 1073741872, 0 )
+
+[node name="CosmeticsFG" parent="Fluff" instance=ExtResource( 14 )]
+modulate = Color( 0.239216, 0.439216, 0.45098, 1 )
+z_index = 4
+cell_size = Vector2( 4, 4 )
+
+[node name="CosmeticsCracks" parent="Fluff" instance=ExtResource( 14 )]
+modulate = Color( 0.262745, 0.6, 0.607843, 1 )
+z_index = -1
+cell_size = Vector2( 4, 4 )
+tile_data = PoolIntArray( 1900788, 66, 0, 2425076, 66, 0 )
 
 [node name="Spikes9" parent="." instance=ExtResource( 13 )]
 position = Vector2( 977.187, 1112 )
@@ -971,11 +993,14 @@ frames = SubResource( 8 )
 position = Vector2( 578.238, 167.824 )
 
 [node name="TileMap" parent="." instance=ExtResource( 9 )]
+modulate = Color( 0.368627, 0.956863, 1, 1 )
 position = Vector2( 383.738, 255.806 )
+z_index = 5
 tile_set = SubResource( 103 )
 tile_data = PoolIntArray( -196614, 1, 8, -196613, 1, 10, -196612, 1, 10, -196611, 1, 10, -196610, 1, 10, -196609, 1, 10, -262144, 1, 10, -262143, 1, 10, -262142, 1, 10, -262141, 1, 10, -262140, 1, 10, -262139, 1, 10, -262138, 1, 10, -262137, 1, 10, -262136, 1, 10, -262135, 1, 10, -262134, 1, 10, -262133, 1, 10, -262132, 1, 10, -262131, 1, 10, -262130, 1, 10, -262129, 1, 10, -262128, 1, 10, -262127, 1, 10, -262126, 1, 10, -262125, 1, 10, -262124, 1, 10, -262123, 1, 10, -262122, 1, 10, -262121, 1, 11, -131078, 1, 65544, -131077, 1, 131081, -131076, 1, 131078, -131075, 1, 196617, -131074, 1, 196617, -131073, 1, 196617, -196608, 1, 196617, -196607, 1, 196617, -196606, 1, 196617, -196605, 1, 196617, -196604, 1, 196618, -196603, 1, 196617, -196602, 1, 196617, -196601, 1, 196617, -196600, 1, 131077, -196599, 1, 131078, -196598, 1, 196617, -196597, 1, 196617, -196596, 1, 196617, -196595, 1, 196618, -196594, 1, 196617, -196593, 1, 196617, -196592, 1, 196617, -196591, 1, 196617, -196590, 1, 196617, -196589, 1, 196617, -196588, 1, 196617, -196587, 1, 131077, -196586, 1, 131081, -196585, 1, 131083, -65542, 1, 65544, -65541, 1, 131081, -65540, 1, 131083, -131068, 1, 65536, -131064, 1, 65544, -131063, 1, 131083, -131059, 1, 65536, -131051, 1, 65544, -131050, 1, 131081, -131049, 1, 131083, -6, 1, 65544, -5, 1, 131081, -4, 1, 131083, -65535, 1, 8, -65534, 1, 10, -65533, 1, 10, -65532, 1, 65543, -65529, 1, 8, -65528, 1, 65541, -65527, 1, 65542, -65526, 1, 11, -65523, 1, 65540, -65522, 1, 10, -65521, 1, 10, -65520, 1, 11, -65515, 1, 65544, -65514, 1, 131081, -65513, 1, 131083, 65530, 1, 65544, 65531, 1, 131081, 65532, 1, 131083, 1, 1, 65544, 2, 1, 131081, 3, 1, 131081, 4, 1, 131083, 7, 1, 65544, 8, 1, 131081, 9, 1, 131081, 10, 1, 131083, 13, 1, 65544, 14, 1, 131081, 15, 1, 131081, 16, 1, 131083, 21, 1, 65544, 22, 1, 131081, 23, 1, 131083, 131066, 1, 65544, 131067, 1, 131081, 131068, 1, 131083, 65537, 1, 196616, 65538, 1, 131077, 65539, 1, 131078, 65540, 1, 196619, 65543, 1, 196616, 65544, 1, 196617, 65545, 1, 196617, 65546, 1, 196619, 65549, 1, 196616, 65550, 1, 131077, 65551, 1, 131078, 65552, 1, 196619, 65557, 1, 65544, 65558, 1, 131081, 65559, 1, 131083, 196602, 1, 65544, 196603, 1, 131081, 196604, 1, 131083, 131074, 1, 65544, 131075, 1, 131083, 131086, 1, 65544, 131087, 1, 131083, 131093, 1, 65544, 131094, 1, 131081, 131095, 1, 131083, 262138, 1, 65544, 262139, 1, 131081, 262140, 1, 131083, 196609, 1, 196609, 196610, 1, 196613, 196611, 1, 196614, 196612, 1, 196611, 196616, 1, 196609, 196617, 1, 196611, 196621, 1, 196609, 196622, 1, 196613, 196623, 1, 196614, 196624, 1, 196611, 196627, 1, 196609, 196628, 1, 196610, 196629, 1, 131080, 196630, 1, 131081, 196631, 1, 131083, 327674, 1, 65544, 327675, 1, 131081, 327676, 1, 131083, 262165, 1, 65544, 262166, 1, 131081, 262167, 1, 131083, 393210, 1, 65544, 393211, 1, 131081, 393212, 1, 131083, 327701, 1, 65544, 327702, 1, 131081, 327703, 1, 131083, 458746, 1, 65544, 458747, 1, 131081, 458748, 1, 65547, 458749, 1, 196610, 458750, 1, 196611, 393218, 1, 196609, 393219, 1, 196611, 393223, 1, 8, 393224, 1, 10, 393225, 1, 10, 393226, 1, 11, 393230, 1, 196609, 393231, 1, 196610, 393232, 1, 196610, 393233, 1, 196610, 393234, 1, 196610, 393235, 1, 196610, 393236, 1, 196610, 393237, 1, 131080, 393238, 1, 131081, 393239, 1, 131083, 524282, 1, 65544, 524283, 1, 131081, 524284, 1, 131083, 458759, 1, 131076, 458760, 1, 196617, 458761, 1, 196617, 458762, 1, 131079, 458773, 1, 65544, 458774, 1, 131081, 458775, 1, 131083, 589818, 1, 65544, 589819, 1, 131081, 589820, 1, 131083, 589823, 1, 196609, 524288, 1, 196611, 524295, 1, 131072, 524298, 1, 131072, 524309, 1, 65544, 524310, 1, 131081, 524311, 1, 131083, 655354, 1, 65544, 655355, 1, 131081, 655356, 1, 131083, 589845, 1, 65544, 589846, 1, 131081, 589847, 1, 131083, 720890, 1, 65544, 720891, 1, 131081, 720892, 1, 131083, 655361, 1, 196609, 655362, 1, 196610, 655363, 1, 196610, 655364, 1, 196611, 655368, 1, 196609, 655369, 1, 196611, 655373, 1, 196609, 655374, 1, 196610, 655375, 1, 196610, 655376, 1, 196611, 655381, 1, 65544, 655382, 1, 131081, 655383, 1, 131083, 786426, 1, 65544, 786427, 1, 131081, 786428, 1, 131083, 720917, 1, 65544, 720918, 1, 131081, 720919, 1, 131083, 851962, 1, 65544, 851963, 1, 131081, 851964, 1, 131083, 786453, 1, 65544, 786454, 1, 131081, 786455, 1, 131083, 917498, 1, 196616, 917499, 1, 196617, 917500, 1, 196619, 851989, 1, 196616, 851990, 1, 196617, 851991, 1, 196619, 1048573, 1, 196609, 1048574, 1, 196610, 1048575, 1, 196610, 983040, 1, 196610, 983041, 1, 196610, 983042, 1, 196610, 983043, 1, 196610, 983044, 1, 196610, 983045, 1, 196610, 983046, 1, 196610, 983047, 1, 196610, 983048, 1, 196610, 983049, 1, 196610, 983050, 1, 196610, 983051, 1, 196610, 983052, 1, 196610, 983053, 1, 196610, 983054, 1, 196610, 983055, 1, 196610, 983056, 1, 196610, 983057, 1, 196610, 983058, 1, 196610, 983059, 1, 196610, 983060, 1, 196611 )
 
 [node name="texture_brickwall" type="Sprite" parent="."]
+visible = false
 material = SubResource( 104 )
 z_index = -1
 texture = ExtResource( 1 )
@@ -985,6 +1010,7 @@ __meta__ = {
 }
 
 [node name="MapExit" parent="." instance=ExtResource( 11 )]
+modulate = Color( 0.643137, 0.894118, 0.980392, 1 )
 position = Vector2( 961.187, 835.113 )
 z_index = -1
 
@@ -995,59 +1021,87 @@ position = Vector2( 961.187, 419.113 )
 position = Vector2( 579.884, 163.113 )
 
 [node name="Box2" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 416, 736 )
 
 [node name="Wizard2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1345.78, 864.443 )
 
 [node name="Spikes" parent="." instance=ExtResource( 13 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 545.928, 539.113 )
 rotation = 3.14159
 frames = SubResource( 8 )
 
 [node name="Spikes2" parent="." instance=ExtResource( 13 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 609.187, 539.113 )
 rotation = 3.14159
 frames = SubResource( 8 )
 
 [node name="Spikes3" parent="." instance=ExtResource( 13 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 481.187, 539.113 )
 rotation = 3.14159
 frames = SubResource( 8 )
 
 [node name="Spikes4" parent="." instance=ExtResource( 13 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 673.187, 539.113 )
 rotation = 3.14159
 frames = SubResource( 8 )
 
 [node name="Spikes5" parent="." instance=ExtResource( 13 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 1313.93, 539.113 )
 rotation = 3.14159
 frames = SubResource( 8 )
 
 [node name="Spikes6" parent="." instance=ExtResource( 13 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 1377.19, 539.113 )
 rotation = 3.14159
 frames = SubResource( 8 )
 
 [node name="Spikes7" parent="." instance=ExtResource( 13 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 1249.19, 539.113 )
 rotation = 3.14159
 frames = SubResource( 8 )
 
 [node name="Spikes8" parent="." instance=ExtResource( 13 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 1441.19, 539.113 )
 rotation = 3.14159
 frames = SubResource( 8 )
 
 [node name="Box" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 1345.19, 611.113 )
 
 [node name="Box4" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 963.571, 611.113 )
 
 [node name="Barbarian" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1664, 608 )
 
 [node name="Box5" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
 position = Vector2( 1664, 416 )
+
+[node name="World2b_texture" type="Sprite" parent="."]
+modulate = Color( 0.54902, 0.843137, 0.866667, 1 )
+position = Vector2( 144, 81 )
+scale = Vector2( 0.85, 0.85 )
+z_index = -5
+texture = ExtResource( 16 )
+centered = false
+
+[node name="World2b_texture2" type="Sprite" parent="."]
+modulate = Color( 0.937255, 1, 0.956863, 1 )
+position = Vector2( 144, 81 )
+scale = Vector2( 0.85, 0.85 )
+z_index = -10
+texture = ExtResource( 15 )
+centered = false

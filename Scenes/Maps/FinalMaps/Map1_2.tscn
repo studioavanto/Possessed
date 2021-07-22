@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameObjects/Objects/MapExit.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Resources/Sprites/Objects/cosmetic_objects_spritesheet.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_pink.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -1304,3 +1305,19 @@ modulate = Color( 0.929412, 0.921569, 1, 1 )
 scale = Vector2( -1, 1 )
 cell_size = Vector2( 4, 4 )
 tile_data = PoolIntArray( 2293433, 104, 0, 2424762, 104, 0, 2359673, 104, 0, 2883455, 97, 0, 6291071, 97, 0, 7077664, 97, 0 )
+
+[node name="Sparks" parent="Fluff" instance=ExtResource( 12 )]
+position = Vector2( 649.98, 465.634 )
+
+[node name="Sparks2" parent="Fluff" instance=ExtResource( 12 )]
+position = Vector2( 1370.42, 529.202 )
+
+[node name="Sparks3" parent="Fluff" instance=ExtResource( 12 )]
+position = Vector2( 1037.21, 488.413 )
+
+[node name="Sparks4" parent="Fluff" instance=ExtResource( 12 )]
+position = Vector2( 1019.2, 488.942 )
+
+[node name="Sparks5" parent="Fluff" instance=ExtResource( 12 )]
+position = Vector2( 1000.66, 487.353 )
+scale = Vector2( -3, 3 )

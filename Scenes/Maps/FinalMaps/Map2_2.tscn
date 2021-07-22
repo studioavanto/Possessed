@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/Characters/PlayerCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/Box.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Resources/Sprites/Objects/cosmetic_objects_spritesheet.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_cyan.tscn" type="PackedScene" id=13]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/texture_brickwall.png-94209fad758ee7b2b0850e14c95024d6.stex"
@@ -3412,9 +3413,48 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 117/shapes = [  ]
 117/z_index = 0
 
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0, 0.0236686, 0.43787, 0.804734, 0.988539, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 1, 0.811765, 0.654902, 0, 0.905882, 1, 0.654902, 0.367589, 0.92116, 0.988294, 0.586072, 0.858673, 0.94157, 0.972656, 0.494118, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+
+[sub_resource type="Curve" id=9]
+min_value = -1.0
+_data = [ Vector2( 0, 0.121297 ), 0.0, 0.0, 0, 0, Vector2( 0.502688, -0.096885 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0863637 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
+
+[sub_resource type="Curve" id=11]
+_data = [ Vector2( 0, 0 ), 0.0, 7.23465, 0, 0, Vector2( 0.247312, 0.815194 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=12]
+curve = SubResource( 11 )
+
+[sub_resource type="ParticlesMaterial" id=13]
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 103.78
+gravity = Vector3( 0, -20, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.1
+angular_velocity = 4.0
+angular_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+orbit_velocity_curve = SubResource( 10 )
+linear_accel = 2.0
+radial_accel = 2.0
+radial_accel_random = 0.5
+scale_curve = SubResource( 12 )
+color_ramp = SubResource( 8 )
+
 [node name="PlaceholderMap" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 4 )
+level_title = "2-2 Happy feet"
 map_overlay_color = Color( 0.724442, 0.903118, 0.941406, 1 )
 
 [node name="MapExit2" parent="." instance=ExtResource( 3 )]
@@ -3525,3 +3565,15 @@ z_index = 1
 [node name="Thief2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 518.445, 354.609 )
 z_index = 1
+
+[node name="Sparks6" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1536.13, 212.833 )
+process_material = SubResource( 13 )
+
+[node name="Sparks7" parent="." instance=ExtResource( 13 )]
+position = Vector2( 759.1, 394.591 )
+process_material = SubResource( 13 )
+
+[node name="Sparks8" parent="." instance=ExtResource( 13 )]
+position = Vector2( 490.402, 261.597 )
+process_material = SubResource( 13 )

@@ -637,6 +637,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 script = ExtResource( 4 )
 map_end_text = "Test text stuff"
 map_music_id = 0
+level_title = "1-1 Baby steps"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 7 )]
@@ -722,11 +723,9 @@ visible = false
 position = Vector2( 687.708, 442.05 )
 
 [node name="Sparks" parent="Fluff" instance=ExtResource( 11 )]
-modulate = Color( 1, 1, 1, 0.392157 )
 position = Vector2( 687.708, 442.05 )
 
 [node name="Sparks2" parent="Fluff" instance=ExtResource( 11 )]
-modulate = Color( 1, 1, 1, 0.392157 )
 position = Vector2( 960.461, 443.183 )
 
 [node name="Sparks3" parent="Fluff" instance=ExtResource( 11 )]
