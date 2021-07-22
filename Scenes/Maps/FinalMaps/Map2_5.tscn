@@ -2032,7 +2032,7 @@ region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 9 )
@@ -2040,11 +2040,11 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 9 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 9 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 9 )
@@ -2052,7 +2052,7 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
@@ -2063,12 +2063,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "retract",
+"name": "ouchy",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
-"name": "ouchy",
+"name": "retract",
 "speed": 5.0
 } ]
 
@@ -2157,7 +2157,7 @@ texture = ExtResource( 16 )
 centered = false
 
 [node name="Cracked wall 2" type="Sprite" parent="."]
-modulate = Color( 0.615686, 0.639216, 0.827451, 1 )
+modulate = Color( 0.611765, 0.647059, 0.862745, 1 )
 position = Vector2( 144, 81 )
 scale = Vector2( 0.85, 0.85 )
 z_index = -5
@@ -2174,7 +2174,7 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="World2b_texture2" type="Sprite" parent="."]
-modulate = Color( 0.909804, 0.909804, 0.909804, 1 )
+modulate = Color( 0.92549, 0.921569, 1, 1 )
 position = Vector2( 144, 81 )
 scale = Vector2( 0.85, 0.85 )
 z_index = -10

@@ -6,6 +6,7 @@
 [node name="Light2D" type="Light2D"]
 z_index = -1
 texture = ExtResource( 1 )
+texture_scale = 2.0
 color = Color( 0.788235, 0.788235, 0.788235, 1 )
 shadow_color = Color( 0, 0, 0, 0.956863 )
 shadow_gradient_length = 20.0
