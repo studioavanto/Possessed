@@ -19,7 +19,7 @@ adjustment_contrast = 1.1
 [node name="Game" type="Node2D"]
 position = Vector2( 1, 2 )
 script = ExtResource( 1 )
-map = 24
+map = 25
 last_map = 16
 
 [node name="PauseController" type="Node2D" parent="."]
