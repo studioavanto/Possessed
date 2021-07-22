@@ -642,6 +642,7 @@ load_path = "res://.import/texture_brickwall.png-94209fad758ee7b2b0850e14c95024d
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
+level_title = "2-6 Pins and Needles"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Fluff" type="Node2D" parent="."]

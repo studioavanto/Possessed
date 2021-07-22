@@ -3454,7 +3454,7 @@ color_ramp = SubResource( 8 )
 [node name="PlaceholderMap" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 4 )
-level_title = "2-2 Happy feet"
+level_title = "2-2 Happy Feet"
 map_overlay_color = Color( 0.724442, 0.903118, 0.941406, 1 )
 
 [node name="MapExit2" parent="." instance=ExtResource( 3 )]

@@ -645,7 +645,7 @@ region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 9 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 9 )
@@ -653,11 +653,11 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 9 )
@@ -665,7 +665,7 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 9 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
@@ -676,12 +676,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": false,
-"name": "ouchy",
+"name": "retract",
 "speed": 8.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": false,
-"name": "retract",
+"name": "ouchy",
 "speed": 8.0
 } ]
 
@@ -725,7 +725,7 @@ color_ramp = SubResource( 14 )
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
-level_title = "2-1 Pumped up kicks"
+level_title = "2-1 Pumped Up Kicks"
 map_overlay_color = Color( 0.717647, 0.929412, 0.870588, 1 )
 
 [node name="MapExit2" parent="." instance=ExtResource( 6 )]

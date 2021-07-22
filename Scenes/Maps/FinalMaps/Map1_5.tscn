@@ -22,7 +22,7 @@ region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 11 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 11 )
@@ -30,11 +30,11 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 11 )
@@ -42,7 +42,7 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 11 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -53,12 +53,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": false,
-"name": "ouchy",
+"name": "retract",
 "speed": 8.0
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": false,
-"name": "retract",
+"name": "ouchy",
 "speed": 8.0
 } ]
 
@@ -3499,14 +3499,16 @@ color_ramp = SubResource( 15 )
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
 map_music_id = 4
-level_title = "1-5 Pins and needles"
+level_title = "1-5 Bridgebuilder"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Spikes" parent="." instance=ExtResource( 14 )]
+modulate = Color( 0.945098, 0.921569, 1, 1 )
 position = Vector2( 858.747, 697.18 )
 frames = SubResource( 8 )
 
 [node name="Spikes2" parent="." instance=ExtResource( 14 )]
+modulate = Color( 0.945098, 0.921569, 1, 1 )
 position = Vector2( 1115.69, 697.416 )
 frames = SubResource( 8 )
 
