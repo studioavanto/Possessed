@@ -635,7 +635,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 1/z_index = 0
 
-[node name="PlaceholderMap" type="Node2D"]
+[node name="PlaceholderMap2" type="Node2D"]
 script = ExtResource( 4 )
 level_title = "4-3 An Untimely Death"
 map_overlay_color = Color( 1, 1, 1, 1 )
