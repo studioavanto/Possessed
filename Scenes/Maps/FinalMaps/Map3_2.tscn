@@ -744,6 +744,30 @@ texture_scale = 0.6
 color = Color( 0.172549, 0.960784, 0.721569, 1 )
 energy = 0.5
 
+[node name="Light2D39" parent="Fluff" instance=ExtResource( 17 )]
+position = Vector2( 669.839, 330.018 )
+texture_scale = 1.3
+color = Color( 0.172549, 0.960784, 0.721569, 1 )
+energy = 0.8
+
+[node name="Light2D40" parent="Fluff" instance=ExtResource( 17 )]
+position = Vector2( 669.839, 330.018 )
+texture_scale = 0.7
+color = Color( 0.172549, 0.960784, 0.721569, 1 )
+energy = 0.5
+
+[node name="Light2D41" parent="Fluff" instance=ExtResource( 17 )]
+position = Vector2( 1150.25, 204.303 )
+texture_scale = 1.4
+color = Color( 0.172549, 0.960784, 0.721569, 1 )
+energy = 0.8
+
+[node name="Light2D42" parent="Fluff" instance=ExtResource( 17 )]
+position = Vector2( 1150.25, 204.303 )
+texture_scale = 0.65
+color = Color( 0.172549, 0.960784, 0.721569, 1 )
+energy = 0.5
+
 [node name="Light2D33" parent="Fluff" instance=ExtResource( 17 )]
 position = Vector2( 652, 988 )
 texture_scale = 1.5
@@ -784,7 +808,7 @@ energy = 0.5
 position = Vector2( 864, 544 )
 
 [node name="World2b_texture" type="Sprite" parent="."]
-modulate = Color( 0.54902, 0.843137, 0.866667, 1 )
+modulate = Color( 0.490196, 0.8, 0.823529, 1 )
 position = Vector2( 144, 81 )
 scale = Vector2( 0.85, 0.85 )
 z_index = -5
@@ -800,7 +824,7 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="MapExit2" parent="." instance=ExtResource( 6 )]
-modulate = Color( 0.643137, 0.894118, 0.980392, 1 )
+modulate = Color( 0.796078, 1, 0.960784, 1 )
 position = Vector2( 1506.72, 712 )
 z_index = -3
 
