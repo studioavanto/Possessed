@@ -87,11 +87,22 @@ func _ready():
 
 func set_transparent():
 	$TextureScreen.modulate = Color(0.0, 0.0, 0.0, 0.0)
+	$StartPrompt.modulate = Color(0.0, 0.0, 0.0, 0.0)
 	$ChangeLevelRect.set_transparent()
 
 func fade_in_start_screen():
 	$Tween.interpolate_property(
 		$TextureScreen,
+		"modulate",
+		Color(0.0, 0.0, 0.0, 1.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	
+	$Tween.interpolate_property(
+		$StartPrompt,
 		"modulate",
 		Color(0.0, 0.0, 0.0, 1.0),
 		Color(1.0, 1.0, 1.0, 1.0),
@@ -105,6 +116,16 @@ func fade_in_start_screen():
 func fade_out_start_screen():
 	$Tween.interpolate_property(
 		$TextureScreen,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 1.0),
+		Color(1.0, 1.0, 1.0, 0.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	
+	$Tween.interpolate_property(
+		$StartPrompt,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 1.0),
 		Color(1.0, 1.0, 1.0, 0.0),
