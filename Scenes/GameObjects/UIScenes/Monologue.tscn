@@ -24,7 +24,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 0.1
 
 [node name="MumbleAudio" type="AudioStreamPlayer" parent="."]
 script = ExtResource( 3 )

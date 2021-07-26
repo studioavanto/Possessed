@@ -232,7 +232,6 @@ func load_new_level(reset = false):
 	save_game(current_map_id)
 
 func start_new_level():
-	print("happens")
 	next_gamestate = GameState.CONTROL_PLAYER
 	current_map.set_pause(false)
 	$MusicManager.change_song(map_music[current_map_id])

@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_cyan.tscn" type="PackedScene" id=13]
 
 [sub_resource type="StreamTexture" id=1]
+flags = 4
 load_path = "res://.import/texture_brickwall.png-94209fad758ee7b2b0850e14c95024d6.stex"
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
@@ -3454,6 +3455,7 @@ color_ramp = SubResource( 8 )
 [node name="PlaceholderMap" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 4 )
+map_end_text = "An adventurer's life ghost by fast, so they come with immovable gravestones. I am no stranger to stepping on them to lift the spirits..."
 level_title = "2-2 Happy Feet"
 map_overlay_color = Color( 0.724442, 0.903118, 0.941406, 1 )
 

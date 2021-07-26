@@ -2,7 +2,7 @@ extends TextureRect
 
 var intro_boxes = [
 	"A timeworn treasure trove lies deep within a crumbling castle. After centuries, someone finally enters...", 
-	"Alas, the booty is cursed -- something sinister inhabits the urn!", 
+	"Alas, the booty is cursed - something sinister inhabits the urn!", 
 	"An eerie entity enthrals the adventurer... And begins its journey to freedom!"
 	]
 	

@@ -2,7 +2,8 @@ extends Control
 
 var fade_timing = 1.0
 var current_active = "None"
-var tile_texture = preload("res://Resources/UI/background_frame.png")
+# var tile_texture = preload("res://Resources/UI/background_frame.png")
+var tile_texture = preload("res://Resources/UI/map_transition.png")
 
 signal fade_in_completed
 signal fade_out_completed

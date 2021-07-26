@@ -1205,6 +1205,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
+map_end_text = "It seems these feeble beings can only handle my power for so long before giving up the ghost. These adventurers hardly compare to those in my day."
 map_music_id = 1
 level_title = "1-2 Hop On"
 map_overlay_color = Color( 1, 1, 1, 1 )

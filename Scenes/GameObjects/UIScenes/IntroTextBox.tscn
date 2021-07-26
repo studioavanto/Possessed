@@ -24,9 +24,9 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 120.0
+margin_left = 56.0
 margin_top = 48.0
-margin_right = 1080.0
+margin_right = 1144.0
 margin_bottom = 264.0
 custom_fonts/normal_font = SubResource( 1 )
 scroll_active = false
@@ -35,6 +35,6 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="RichTextLabel"]
-wait_time = 7.5
+wait_time = 7.8
 
 [connection signal="timeout" from="RichTextLabel/Timer" to="." method="_on_Timer_timeout"]

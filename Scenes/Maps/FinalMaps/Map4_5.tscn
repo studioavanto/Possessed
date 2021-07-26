@@ -1000,7 +1000,6 @@ stop = true
 
 [node name="Light2D" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1568, 256 )
-texture_scale = 1.0
 color = Color( 0.956863, 0.988235, 0.584314, 1 )
 energy = 1.2
 

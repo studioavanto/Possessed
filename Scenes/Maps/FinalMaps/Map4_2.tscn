@@ -637,7 +637,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="PlaceholderMap2" type="Node2D"]
 script = ExtResource( 4 )
-level_title = "Pattern"
+level_title = "4-2 Pattern"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Wizard" parent="." instance=ExtResource( 7 )]
