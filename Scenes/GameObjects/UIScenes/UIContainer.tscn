@@ -133,30 +133,34 @@ margin_right = 1673.54
 margin_bottom = 952.828
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "	    
-		[wave amp=50 freq=2]THANK YOU FOR PLAYING![/wave]
-		
-		
-		Mirella Baas
-		Niko Finnilä
-		Jonas Haverinen
-		Ville Jantunen
-		Johannes Metsälampi
-		Toomas Pentala
-		Ilmo Salmenperä
-		Joonas Tielinen"
-text = "	    
-		THANK YOU FOR PLAYING!
-		
-		
-		Mirella Baas
-		Niko Finnilä
-		Jonas Haverinen
-		Ville Jantunen
-		Johannes Metsälampi
-		Toomas Pentala
-		Ilmo Salmenperä
-		Joonas Tielinen"
+bbcode_text = "[center]
+[wave amp=50 freq=2]THANK YOU FOR PLAYING![/wave]
+
+
+Mirella Baas
+Niko Finnilä
+Jonas Haverinen
+Ville Jantunen
+Johannes Metsälampi
+Toomas Pentala
+Ilmo Salmenperä
+Joonas Tielinen
+
+Press space to end the game.[/center]"
+text = "
+THANK YOU FOR PLAYING!
+
+
+Mirella Baas
+Niko Finnilä
+Jonas Haverinen
+Ville Jantunen
+Johannes Metsälampi
+Toomas Pentala
+Ilmo Salmenperä
+Joonas Tielinen
+
+Press space to end the game."
 __meta__ = {
 "_edit_use_anchors_": false
 }
