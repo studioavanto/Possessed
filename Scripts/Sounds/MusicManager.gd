@@ -184,7 +184,6 @@ func start_new_song():
 		$AudioStreamPlayer.stream = other[active_song-10]
 		$AudioStreamPlayer.volume_db = get_current_vol()
 		$AudioStreamPlayer.play()
-		print("Play")
 		return
 
 	$AudioStreamPlayer.stop()

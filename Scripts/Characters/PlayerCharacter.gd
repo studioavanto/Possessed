@@ -27,7 +27,8 @@ func teleport_character(character):
 	if possessed != null:
 		possessed.trigger_teleport(character.position)
 		character.trigger_teleport(possessed.position)
-		position = possessed.position
+		can_interact = false
+		$TravelTimer.start()
 
 	get_parent().play_sound("teleport")
 
