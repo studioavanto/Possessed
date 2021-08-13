@@ -689,6 +689,7 @@ animations = [ {
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
+level_title = "B-1"
 
 [node name="World2b_texture" type="Sprite" parent="."]
 modulate = Color( 0.3517, 0.684836, 0.769531, 1 )

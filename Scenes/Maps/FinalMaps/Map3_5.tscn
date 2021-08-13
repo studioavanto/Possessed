@@ -2028,6 +2028,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
+level_title = "3-5 Call the Lift"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Fluff" type="Node2D" parent="."]
