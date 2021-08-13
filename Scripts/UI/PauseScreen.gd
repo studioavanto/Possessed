@@ -6,7 +6,7 @@ func fade_in_pause_screen():
 		"modulate",
 		Color(1.0, 1.0, 1.0, 0.0),
 		Color(1.0, 1.0, 1.0, 1.0),
-		0.5,
+		0.1,
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN_OUT
 	)
@@ -18,7 +18,7 @@ func fade_out_pause_screen():
 		"modulate",
 		Color(1.0, 1.0, 1.0, 1.0),
 		Color(1.0, 1.0, 1.0, 0.0),
-		0.5,
+		0.1,
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN_OUT
 	)
