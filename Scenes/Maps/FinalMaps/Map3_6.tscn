@@ -2073,7 +2073,7 @@ region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 16 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 16 )
@@ -2081,11 +2081,11 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 16 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 16 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 16 )
@@ -2093,7 +2093,7 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 16 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
@@ -2104,19 +2104,19 @@ animations = [ {
 }, {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "retract",
+"name": "ouchy",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
-"name": "ouchy",
+"name": "retract",
 "speed": 5.0
 } ]
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
 map_end_text = "I must say, I am using these tools' abilities more skillfully than they ever could. I may be an adventurer in spirit!"
-level_title = "3-6 They Split the Party"
+level_title = "[right]3-6 They Split the Party[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Fluff" type="Node2D" parent="."]
@@ -2301,7 +2301,7 @@ flicker_amount = 5.0
 flicker_base = 5.0
 
 [node name="Spikes" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1189.7, 1148.49 )
+position = Vector2( 1191.38, 1124.94 )
 scale = Vector2( 4, 1 )
 frames = SubResource( 12 )
 

@@ -259,7 +259,10 @@ func proceed():
 				if input_counter == 1:
 					$ChangeLevelRect.fade_out_scene()
 		GamePhase.END:
-			get_tree().quit()
+			if input_counter == 0:
+				fade_in_end_screen()
+			else:
+				get_tree().quit()
 
 func get_level_name(map_id):
 	return $LevelTitles.level_titles[map_id]
@@ -355,3 +358,8 @@ func fade_in_pause_screen():
 
 func fade_out_pause_screen():
 	$PauseScreen.fade_out_pause_screen()
+
+func set_final():
+	current_phase = GamePhase.END
+	input_counter = 0
+	

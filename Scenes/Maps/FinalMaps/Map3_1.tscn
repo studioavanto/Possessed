@@ -640,32 +640,39 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 1/z_index = 0
 
 [sub_resource type="AtlasTexture" id=4]
+flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
+flags = 4
 atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
+flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
+flags = 4
 atlas = ExtResource( 9 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
+flags = 4
 atlas = ExtResource( 9 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
+flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
+flags = 4
 atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
@@ -676,18 +683,18 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
-"name": "retract",
+"name": "ouchy",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
-"name": "ouchy",
+"name": "retract",
 "speed": 5.0
 } ]
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
-level_title = "3-1 Switcheroo"
+level_title = "[right]3-1 Switcheroo[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Fluff" type="Node2D" parent="."]

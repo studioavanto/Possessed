@@ -157,7 +157,7 @@ func save_game(map_id):
 func load_game():
 	var save_file = File.new()
 	
-	if save_file.file_exists("user://savegame.save"):
+	if not save_file.file_exists("user://savegame.save"):
 		save_game(MapEnum.NO_SAVE)
 		
 	save_file.open("user://savegame.save", File.READ)
@@ -181,7 +181,8 @@ func go_to_next_map():
 
 	if current_map_id == last_map:
 		next_gamestate = GameState.CONTROL_CUTSCENE
-		$UIContainer.fade_in_end_screen()
+		load_map_text(current_map.map_end_text)
+		$UIContainer.set_final()
 		$MusicManager.change_song(11)
 		
 	elif normal_play:
@@ -233,6 +234,7 @@ func load_new_level(reset = false):
 	$UIContainer.connect_character_to_ui(character_tmp)
 	$CanvasModulate.color = current_map.map_overlay_color
 	current_map.set_pause(true)
+	current_map.start_map()
 	save_game(current_map_id)
 
 func start_new_level():

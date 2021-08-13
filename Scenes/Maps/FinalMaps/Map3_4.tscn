@@ -678,7 +678,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
-level_title = "3-4 Buttoned Down"
+level_title = "[right]3-4 Buttoned Down[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Fluff" type="Node2D" parent="."]
@@ -758,11 +758,9 @@ tile_data = PoolIntArray( 0, 1, 8, 1, 1, 10, 2, 1, 10, 3, 1, 10, 4, 1, 10, 5, 1,
 [node name="PlayerCharacter" parent="." instance=ExtResource( 7 )]
 position = Vector2( 600, 400 )
 
-[node name="Spikes" parent="." instance=ExtResource( 13 )]
-position = Vector2( 608, 1144 )
-
 [node name="Spikes2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 672, 1144 )
+position = Vector2( 643.427, 1102.73 )
+scale = Vector2( 2.93464, 1 )
 
 [node name="Box" parent="." instance=ExtResource( 9 )]
 modulate = Color( 0.858824, 1, 0.968627, 1 )

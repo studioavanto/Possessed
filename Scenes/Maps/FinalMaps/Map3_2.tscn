@@ -725,7 +725,7 @@ animations = [ {
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
-level_title = "3-2 Teamwork"
+level_title = "[right]3-2 Teamwork[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Fluff" type="Node2D" parent="."]

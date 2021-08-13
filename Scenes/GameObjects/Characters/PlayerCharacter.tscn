@@ -60,7 +60,6 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
-frame = 3
 playing = true
 
 [node name="TravelTimer" type="Timer" parent="."]

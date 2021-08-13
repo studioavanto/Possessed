@@ -641,7 +641,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
 map_end_text = "I have it now! I shall  become an adventurer... Nay, many! I might even find one strong enough to house me for good. Or rather, bad! Ha! Ha! Ha!"
-level_title = "4-6 The Free Soul"
+level_title = "[right]4-6 The Free Soul[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="World2b_texture2" type="Sprite" parent="."]
