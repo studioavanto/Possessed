@@ -80,6 +80,8 @@ func _ready():
 	$Tween.connect("tween_all_completed", self, "tween_completed")
 	$FadeOutBlack.connect("tween_all_completed", self, "fade_out_complete")
 	$TextBox.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	$Credits.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	$CreditsLogo.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	intro_animation = load("res://Scenes/GameObjects/UIScenes/IntroAnimation.tscn").instance()
 	add_child(intro_animation)
 	intro_animation.playing = false
@@ -202,9 +204,27 @@ func fade_out_intro():
 
 func fade_in_end_screen():
 	current_phase = GamePhase.END
-	$TextureScreen.texture = load("res://Resources/UI/EndScreen.png")
+	$TextureScreen.texture = load("res://Resources/UI/intro_screen_2.png")
 	$Tween.interpolate_property(
 		$TextureScreen,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 0.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	$Tween.interpolate_property(
+		$Credits,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 0.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		fade_speed,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	$Tween.interpolate_property(
+		$CreditsLogo,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 0.0),
 		Color(1.0, 1.0, 1.0, 1.0),

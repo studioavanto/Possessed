@@ -70,4 +70,5 @@ scroll_active = false
 position = Vector2( 414.685, 643.713 )
 scale = Vector2( 15, 15 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
