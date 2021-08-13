@@ -12,7 +12,7 @@
 [ext_resource path="res://Resources/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scripts/UI/TitleSway.gd" type="Script" id=11]
 [ext_resource path="res://Resources/UI/pause.png" type="Texture" id=12]
-[ext_resource path="res://Scenes/GameObjects/UIScenes/StartPrompt.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/UI/StartPrompt.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
