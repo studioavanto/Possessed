@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_v3.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_v2.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Sprites/Backgrounds/bg_forest.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=4]
-[ext_resource path="res://Resources/Sprites/Backgrounds/texture_brickwall_cracked_alpha.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameObjects/Objects/MapExit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GameObjects/Characters/PlayerCharacter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/GameObjects/Objects/Box.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -636,14 +637,8 @@ script = ExtResource( 4 )
 level_title = "4-4 Fellow Chuckers"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
-[node name="World2b_texture" type="Sprite" parent="."]
-modulate = Color( 0.3517, 0.684836, 0.769531, 1 )
-z_index = -5
-texture = ExtResource( 5 )
-centered = false
-
 [node name="World2b_texture2" type="Sprite" parent="."]
-modulate = Color( 0.439216, 0.439216, 0.439216, 1 )
+modulate = Color( 0.835294, 0.835294, 0.835294, 1 )
 z_index = -10
 texture = ExtResource( 3 )
 centered = false
@@ -661,6 +656,10 @@ tile_data = PoolIntArray( 0, 1, 8, 1, 1, 10, 2, 1, 10, 3, 1, 10, 4, 1, 10, 5, 1,
 [node name="PlayerCharacter" parent="." instance=ExtResource( 7 )]
 position = Vector2( 346.805, 610.606 )
 
+[node name="Cosmetics" parent="." instance=ExtResource( 5 )]
+cell_size = Vector2( 4, 4 )
+tile_data = PoolIntArray( 1966233, 1610612777, 0, 2031743, -1610612695, 0, 2031807, 1610612778, 0, 2359392, 536870952, 0, 2621540, 536870952, 0, 3670181, 40, 0, 3735662, 40, 0, 3735951, 107, 0, 3735957, 108, 0, 3735978, 106, 0, 3801159, 536871014, 0, 3867024, 106, 0, 4128928, 40, 0, 5832872, 536871018, 0, 5832880, 536871019, 0, 5832885, 108, 0, 5833011, 107, 0, 5833016, 108, 0, 6422607, 41, 0, 6881361, 536871020, 0, 6881505, 536871018, 0, 6881663, 107, 0, 6881672, 108, 0, 7405705, 536870953, 0, 7733453, 536870952, 0, 7929985, 536871018, 0, 8061113, 105, 0, 8061115, 536870955, 0, 8061342, 43, 0, 8192208, 536870955, 0, 8192209, 536870955, 0, 8257718, 105, 0, 8257960, 1073741865, 0, 8323247, 1073741865, 0, 8323478, 43, 0, 8454495, 41, 0, 8978785, 536871020, 0, 9502799, 536870954, 0, 9503145, 536870953, 0, 10027115, 536871019, 0, 10027128, 536871020, 0, 10027375, 536871014, 0, 10027430, 108, 0, 10813805, 536870952, 0, 10879297, 536870952, 0, 11010404, 1610612777, 0, 11010419, 40, 0, 11206961, 40, 0, 11338096, 1073741865, 0, 11403578, 43, 0, 11469147, 536870955, 0, 11600014, 41, 0, 11600018, 78, 0, 12255379, 77, 0, 12648849, 42, 0, 12648850, 78, 0, 13172911, 101, 0, 13173092, 102, 0, 13238431, 102, 0 )
+
 [node name="Box" parent="." instance=ExtResource( 9 )]
 position = Vector2( 864, 417.838 )
 
@@ -675,3 +674,13 @@ position = Vector2( 344, 609 )
 
 [node name="Barbarian3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 672, 801 )
+
+[node name="Moonlight" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1031.23, 135.121 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture_scale = 15.0
+color = Color( 0.976471, 0.988235, 1, 1 )
+energy = 0.7
+flicker_amount = 5.0
+flicker_base = 5.0

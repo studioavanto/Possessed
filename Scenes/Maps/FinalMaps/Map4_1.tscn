@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Resources/Sprites/Backgrounds/texture_brickwall_cracked_alpha.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Sprites/Backgrounds/bg_forest.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_v3.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=4]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/GameObjects/Objects/Box.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/GameObjects/Characters/Thief.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Resources/Sprites/Objects/torch_holder.png" type="Texture" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -635,39 +637,32 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 1/z_index = 0
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
-flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
-flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
@@ -678,12 +673,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
-"name": "ouchy",
+"name": "retract",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
-"name": "retract",
+"name": "ouchy",
 "speed": 5.0
 } ]
 
@@ -692,14 +687,20 @@ script = ExtResource( 4 )
 level_title = "4-1 Choose Your Fighter"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
-[node name="World2b_texture" type="Sprite" parent="."]
-modulate = Color( 0.3517, 0.684836, 0.769531, 1 )
-z_index = -5
-texture = ExtResource( 1 )
-centered = false
+[node name="Moonlight" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1034.21, 132.915 )
+texture_scale = 15.0
+color = Color( 0.976471, 0.988235, 1, 1 )
+energy = 0.7
+flicker_amount = 5.0
+flicker_base = 5.0
+
+[node name="Cosmetics" parent="." instance=ExtResource( 1 )]
+cell_size = Vector2( 4, 4 )
+tile_data = PoolIntArray( 1966501, 536871017, 0, 2032033, -2147483607, 0, 2162799, 536870954, 0, 2621702, 536871027, 0, 3080385, 1610612814, 0, 3997806, 536871016, 0, 4784237, 536870960, 0, 4784245, 536870927, 0, 4784320, 536870927, 0, 5963824, 536870955, 0, 6225969, 536871017, 0, 6226057, 536870955, 0, 6226067, 536870952, 0, 6881568, 536871027, 0, 6881575, 536871020, 0, 7405745, 42, 0, 7864399, 536871027, 0, 7929934, 536871027, 0, 7929935, 536871027, 0, 7929960, 536871014, 0, 8061148, 1610612814, 0, 8257742, 536871016, 0, 8323287, 1610612814, 0, 8782179, 40, 0, 8978800, 536870952, 0, 9175415, 43, 0, 9175433, 536871017, 0, 9371737, 104, 0, 9371967, -1610612695, 0, 9372010, 40, 0, 9372039, 536871017, 0, 9503057, 78, 0, 10027353, 77, 0, 10223888, 1610612813, 0, 10289432, 1073741901, 0, 10354962, 1610612813, 0, 10420396, 105, 0, 10420400, 536870952, 0, 10551366, 536870990, 0, 10616891, 536870971, 0, 11075632, 536871020, 0, 11075647, 536871027, 0, 11075648, 536871027, 0, 11075649, 536871027, 0, 11075653, 536871027, 0, 11075790, 536870912, 0, 12648800, 536870990, 0, 12648873, 536870953, 0, 12714055, 536870920, 0, 13107390, 536870990, 0, 13172821, 536871018, 0, 13173095, 106, 0, 13238624, 536870989, 0, 13238695, 102, 0, 13631682, 536870989, 0, 14352776, 31, 0, 14614895, 536871016, 0, 14745715, 536870921, 0, 14745775, 536870954, 0, 14745801, 536870953, 0, 14942613, 536870990, 0, 15270000, 536871019, 0, 15270040, 108, 0, 15270294, 108, 0, 15270302, 536871019, 0, 15335551, 536870919, 0 )
 
 [node name="World2b_texture2" type="Sprite" parent="."]
-modulate = Color( 0.439216, 0.439216, 0.439216, 1 )
+modulate = Color( 0.835294, 0.835294, 0.835294, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 centered = false
@@ -804,3 +805,23 @@ frames = SubResource( 11 )
 [node name="Spikes12" parent="Spiketraps" instance=ExtResource( 10 )]
 position = Vector2( 1120, 936 )
 frames = SubResource( 11 )
+
+[node name="Light2D39" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1598.79, 902.854 )
+texture_scale = 1.3
+color = Color( 0.172549, 0.960784, 0.721569, 1 )
+energy = 0.6
+
+[node name="Light2D40" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1598.79, 902.854 )
+texture_scale = 0.7
+color = Color( 0.172549, 0.960784, 0.721569, 1 )
+energy = 0.3
+
+[node name="Torch_holder" type="Sprite" parent="."]
+modulate = Color( 0.858824, 1, 0.968627, 1 )
+position = Vector2( 1600.01, 931.984 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
