@@ -181,7 +181,8 @@ func go_to_next_map():
 
 	if current_map_id == last_map:
 		next_gamestate = GameState.CONTROL_CUTSCENE
-		$UIContainer.fade_in_end_screen()
+		load_map_text(current_map.map_end_text)
+		$UIContainer.set_final()
 		$MusicManager.change_song(11)
 		
 	elif normal_play:
