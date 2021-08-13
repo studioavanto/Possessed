@@ -261,6 +261,7 @@ func proceed():
 		GamePhase.END:
 			if input_counter == 0:
 				fade_in_end_screen()
+				input_counter += 1
 			else:
 				get_tree().quit()
 
