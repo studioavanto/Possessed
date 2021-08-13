@@ -82,6 +82,7 @@ func _ready():
 	$TextBox.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	$Credits.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	$CreditsLogo.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	$CreditsScreen.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	intro_animation = load("res://Scenes/GameObjects/UIScenes/IntroAnimation.tscn").instance()
 	add_child(intro_animation)
 	intro_animation.playing = false
@@ -206,7 +207,7 @@ func fade_in_end_screen():
 	current_phase = GamePhase.END
 	$TextureScreen.texture = load("res://Resources/UI/intro_screen_2.png")
 	$Tween.interpolate_property(
-		$TextureScreen,
+		$CreditsScreen,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 0.0),
 		Color(1.0, 1.0, 1.0, 1.0),
