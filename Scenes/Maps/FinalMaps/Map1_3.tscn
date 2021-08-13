@@ -660,7 +660,7 @@ position = Vector2( 1569.33, 411.095 )
 
 [node name="Box" parent="." instance=ExtResource( 9 )]
 modulate = Color( 1, 0.862745, 0.909804, 1 )
-position = Vector2( 1110.27, 629.238 )
+position = Vector2( 1125.1, 630.297 )
 
 [node name="Fluff" type="Node2D" parent="."]
 

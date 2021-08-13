@@ -157,7 +157,7 @@ func save_game(map_id):
 func load_game():
 	var save_file = File.new()
 	
-	if save_file.file_exists("user://savegame.save"):
+	if not save_file.file_exists("user://savegame.save"):
 		save_game(MapEnum.NO_SAVE)
 		
 	save_file.open("user://savegame.save", File.READ)
@@ -233,6 +233,7 @@ func load_new_level(reset = false):
 	$UIContainer.connect_character_to_ui(character_tmp)
 	$CanvasModulate.color = current_map.map_overlay_color
 	current_map.set_pause(true)
+	current_map.start_map()
 	save_game(current_map_id)
 
 func start_new_level():

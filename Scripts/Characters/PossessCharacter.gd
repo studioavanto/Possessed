@@ -178,8 +178,8 @@ func push_on_front():
 				speed_mod = 0.0
 			else:
 				speed_mod = push_constant
-				area.get_parent().move_and_slide(Vector2(speed_mod * x_speed, 0.0), Vector2(0, -1))
-	
+				area.get_parent().move_and_slide(Vector2(speed_mod * x_speed * 1.1, 0.0), Vector2(0, -1))
+
 	return speed_mod
 
 func get_jump_start_speed():

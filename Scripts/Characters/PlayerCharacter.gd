@@ -9,20 +9,25 @@ var possessed = null
 var next_possession = null
 var can_interact = true
 var facing = 1.0
-	
+var map_completed = false
+
 signal character_value_changes(new_value)
 signal character_portrait_changes(new_portrait)
 
 func _ready():
 	$TravelTimer.connect("timeout", self, "enable_interact")
 
+func start_map():
+	map_completed = false
+
 func enable_interact():
 	can_interact = true
 
 func teleport_character(character):
-	possessed.trigger_teleport(character.position)
-	character.trigger_teleport(possessed.position)
-	position = possessed.position
+	if possessed != null:
+		possessed.trigger_teleport(character.position)
+		character.trigger_teleport(possessed.position)
+		position = possessed.position
 
 	get_parent().play_sound("teleport")
 
@@ -41,6 +46,10 @@ func possess_target(target):
 		get_parent().play_sound("warp_to_host")
 		can_interact = false
 		$TravelTimer.start()
+	else:
+		get_parent().change_active_character(-1)
+		get_parent().play_sound("game_over")
+		get_parent().reset_map()
 
 func stop_possession():
 	possessed = null
@@ -62,6 +71,9 @@ func set_spirit_facing():
 
 func process_input(jump, special, horizontal_move, interact, holding_down, death):
 	if get_parent().is_paused():
+		return
+	
+	if map_completed:
 		return
 
 	if possessed == null:
@@ -108,3 +120,4 @@ func _on_EndArea_area_entered(area):
 		return
 	
 	emit_signal("map_exit")
+	map_completed = true
