@@ -4,20 +4,20 @@
 offsets = PoolRealArray( 0, 0.636103, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.32549, 0.0431372, 0.0431372, 1, 0.14902, 0.0313726, 0.329412, 0.545098 )
 
-[sub_resource type="GradientTexture" id=2]
+[sub_resource type="GradientTexture" id=8]
 gradient = SubResource( 1 )
 
 [sub_resource type="Curve" id=3]
 min_value = -1.0
 _data = [ Vector2( 0, -0.0122825 ), 0.0, 0.0, 0, 0, Vector2( 0.244624, 0.0604448 ), 0.0, 0.0, 0, 0, Vector2( 0.5, -0.103191 ), 0.0, 0.0, 0, 0, Vector2( 0.752688, 0.0604448 ), 0.0, 0.0, 0, 0, Vector2( 1, -0.0668279 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
+[sub_resource type="CurveTexture" id=9]
 curve = SubResource( 3 )
 
 [sub_resource type="Curve" id=5]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.185484, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.647849, 0.821131 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -4.19429, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=6]
+[sub_resource type="CurveTexture" id=10]
 curve = SubResource( 5 )
 
 [sub_resource type="ParticlesMaterial" id=7]
@@ -30,10 +30,10 @@ initial_velocity = 1.0
 angular_velocity = 2.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-orbit_velocity_curve = SubResource( 4 )
+orbit_velocity_curve = SubResource( 9 )
 damping = 5.0
-scale_curve = SubResource( 6 )
-color_ramp = SubResource( 2 )
+scale_curve = SubResource( 10 )
+color_ramp = SubResource( 8 )
 
 [node name="EvilHalo" type="Particles2D"]
 scale = Vector2( 3, 3 )
