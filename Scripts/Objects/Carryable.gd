@@ -125,7 +125,7 @@ func process_physics(delta):
 	set_terminal_velocity()
 	
 	if move_and_slide(Vector2(x_speed, y_speed), Vector2(0, -1)).x == 0.0:
-		x_speed = 0.0
+		x_speed = -sign(x_speed) * 4
 
 func _physics_process(delta):
 	if get_parent().is_paused():

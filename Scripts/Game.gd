@@ -156,6 +156,10 @@ func save_game(map_id):
 
 func load_game():
 	var save_file = File.new()
+	
+	if save_file.file_exists("user://savegame.save"):
+		save_game(MapEnum.NO_SAVE)
+		
 	save_file.open("user://savegame.save", File.READ)
 	saved_map = int(save_file.get_as_text())
 	save_file.close()

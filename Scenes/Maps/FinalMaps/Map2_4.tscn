@@ -2036,7 +2036,7 @@ region = Rect2( 0, 0, 64, 64 )
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
@@ -2046,12 +2046,12 @@ region = Rect2( 64, 0, 64, 64 )
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
@@ -2061,7 +2061,7 @@ region = Rect2( 64, 0, 64, 64 )
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -2072,12 +2072,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "ouchy",
+"name": "retract",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
-"name": "retract",
+"name": "ouchy",
 "speed": 5.0
 } ]
 

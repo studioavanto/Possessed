@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_v2.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/Backgrounds/treasuretrove_wall.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_cyan.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_pink.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Resources/UI/barbatutorial.png" type="Texture" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "cosmetic_objects_spritesheet.png 0"
@@ -6197,7 +6198,7 @@ region = Rect2( 0, 0, 64, 64 )
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
@@ -6207,12 +6208,12 @@ region = Rect2( 64, 0, 64, 64 )
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
@@ -6222,7 +6223,7 @@ region = Rect2( 64, 0, 64, 64 )
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
@@ -6233,12 +6234,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": false,
-"name": "ouchy",
+"name": "retract",
 "speed": 8.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": false,
-"name": "retract",
+"name": "ouchy",
 "speed": 8.0
 } ]
 
@@ -6409,6 +6410,10 @@ position = Vector2( 288.792, 525.272 )
 texture_scale = 0.4
 color = Color( 0.972549, 0.580392, 0.964706, 1 )
 energy = 0.4
+
+[node name="Tutorial" type="Sprite" parent="Fluff"]
+position = Vector2( 1574.51, 711.146 )
+texture = ExtResource( 17 )
 
 [node name="MapExit2" parent="." instance=ExtResource( 8 )]
 modulate = Color( 0.815686, 0.792157, 1, 1 )
