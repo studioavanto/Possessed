@@ -128,30 +128,26 @@ bbcode_text = "
 		[wave amp=50 freq=2]THANK YOU FOR PLAYING![/wave]
 		
 		
-		Bluh bluh bluh bluh
-		Glerp glerp
-		Horga borga
-		Hibidibi dibihibi
-		Twaaaaaaaaaaargh
-		Zorba doink
-		Ffffffff
-		Dededededededededede
-		Place Holder
-		Firstname Lastname"
+		Mirella Baas
+		Niko Finnilä
+		Jonas Haverinen
+		Ville Jantunen
+		Johannes Metsälampi
+		Toomas Pentala
+		Ilmo Salmenperä
+		Joonas Tielinen"
 text = "	    
 		THANK YOU FOR PLAYING!
 		
 		
-		Bluh bluh bluh bluh
-		Glerp glerp
-		Horga borga
-		Hibidibi dibihibi
-		Twaaaaaaaaaaargh
-		Zorba doink
-		Ffffffff
-		Dededededededededede
-		Place Holder
-		Firstname Lastname"
+		Mirella Baas
+		Niko Finnilä
+		Jonas Haverinen
+		Ville Jantunen
+		Johannes Metsälampi
+		Toomas Pentala
+		Ilmo Salmenperä
+		Joonas Tielinen"
 __meta__ = {
 "_edit_use_anchors_": false
 }
