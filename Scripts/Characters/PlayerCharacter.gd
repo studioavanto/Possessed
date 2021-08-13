@@ -7,14 +7,23 @@ signal map_exit
 
 var possessed = null
 var next_possession = null
+var can_interact = true
+var facing = 1.0
 	
 signal character_value_changes(new_value)
 signal character_portrait_changes(new_portrait)
+
+func _ready():
+	$TravelTimer.connect("timeout", self, "enable_interact")
+
+func enable_interact():
+	can_interact = true
 
 func teleport_character(character):
 	possessed.trigger_teleport(character.position)
 	character.trigger_teleport(possessed.position)
 	position = possessed.position
+
 	get_parent().play_sound("teleport")
 
 func possess_nearby():
@@ -30,7 +39,8 @@ func possess_target(target):
 		next_possession = null
 		get_parent().change_active_character(possessed.get_id())
 		get_parent().play_sound("warp_to_host")
-		position = possessed.position
+		can_interact = false
+		$TravelTimer.start()
 
 func stop_possession():
 	possessed = null
@@ -45,6 +55,11 @@ func stop_possession():
 func compute_offset():
 	return possessed.position + Vector2(-possessed.facing * possess_offset.x, possess_offset.y)
 
+func set_spirit_facing():
+	if facing != possessed.facing:
+		facing = possessed.facing
+		scale.x *= -1.0
+
 func process_input(jump, special, horizontal_move, interact, holding_down, death):
 	if get_parent().is_paused():
 		return
@@ -53,10 +68,11 @@ func process_input(jump, special, horizontal_move, interact, holding_down, death
 		if jump or holding_down or horizontal_move != 0.0 or special or interact:
 			possess_nearby()
 	else:
+		set_spirit_facing()
 		if death:
 			possessed.set_dying()
 		if (possessed.process_input(jump, special, horizontal_move, interact, holding_down)):
-			position = lerp(position, compute_offset(), 0.3)
+			position = lerp(position, compute_offset(), 0.15)
 		else:
 			stop_possession()
 
@@ -69,6 +85,9 @@ func _process(_delta):
 		emit_signal("character_value_changes", 0)
 
 func _on_PossessingArea_area_entered(area):
+	if not can_interact:
+		return
+
 	if not area.get_parent().is_dead():
 		if possessed == area.get_parent():
 			return
@@ -85,4 +104,7 @@ func _on_PossessingArea_area_entered(area):
 			get_parent().play_sound("mark_as_possessed")
 
 func _on_EndArea_area_entered(area):
+	if not can_interact:
+		return
+	
 	emit_signal("map_exit")
