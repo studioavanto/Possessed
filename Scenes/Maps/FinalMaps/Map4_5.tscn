@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=112 format=2]
 
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_v3.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/Backgrounds/bg_forest.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/PlatformMoving.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/GameObjects/Characters/Barbarian.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -924,7 +925,7 @@ position = Vector2( 1408, 417 )
 position = Vector2( 1504, 216 )
 
 [node name="TileMap" parent="." instance=ExtResource( 5 )]
-modulate = Color( 0.368627, 0.956863, 1, 1 )
+modulate = Color( 0.34902, 0.768627, 1, 1 )
 position = Vector2( 383.738, 255.806 )
 z_index = 5
 tile_set = SubResource( 95 )
@@ -946,6 +947,10 @@ centered = false
 
 [node name="Box" parent="." instance=ExtResource( 8 )]
 position = Vector2( 350.704, 736 )
+
+[node name="Cosmetics" parent="." instance=ExtResource( 16 )]
+cell_size = Vector2( 4, 4 )
+tile_data = PoolIntArray( 1441956, 40, 0, 1769632, 43, 0, 1900956, 1610612777, 0, 1966499, 40, 0, 2031698, 1073741926, 0, 2031704, 1073741925, 0, 3014755, 1073741901, 0, 3014757, 1073741901, 0, 3014763, 104, 0, 3080255, 536871016, 0, 3408018, 40, 0, 3473544, 40, 0, 3735695, 40, 0, 4063368, 1073741901, 0, 4259906, 13, 0, 4587871, 40, 0, 4784222, 15, 0, 4915568, 43, 0, 4981076, 105, 0, 4981117, 536871017, 0, 5046657, 1073741901, 0, 5046659, 1073741901, 0, 5112148, 1073741901, 0, 5112171, 43, 0, 5112193, 1073741901, 0, 5177686, 536871017, 0, 5177701, 105, 0, 5636177, 40, 0, 5832997, 106, 0, 5833001, 108, 0, 5963873, 536870952, 0, 6029379, 43, 0, 6094917, 1073741925, 0, 6160450, 1073741925, 0, 6160461, 1073741925, 0, 6226007, 40, 0, 6684876, 40, 0, 6816163, 1073741865, 0, 7012773, 1073741865, 0, 7078090, 43, 0, 7078188, 40, 0, 7143844, 1073741865, 0, 7143848, 105, 0, 7209382, 1073741901, 0, 7274921, 1610612777, 0, 7668047, 40, 0, 7799131, 536870952, 0, 7930147, 105, 0, 7995749, 1610612777, 0, 8061120, 40, 0, 8126757, 536871017, 0, 8126816, 536870952, 0, 8323218, 43, 0, 8323229, 1073741925, 0, 8323362, 1073741901, 0, 8978836, 108, 0, 9044380, 106, 0, 9306277, 1073741925, 0, 9371816, 1073741925, 0, 10027332, 536871018, 0, 10027336, 107, 0, 10027347, 536871020, 0, 10027359, 536871018, 0, 10027368, 536871020, 0, 10224021, 1073741901, 0, 10355089, 1073741866, 0, 10355091, 1073741901, 0, 10879300, 40, 0, 11403623, 1073741901, 0, 11469151, 1073741865, 0, 11600033, 9, 0, 11731117, 8, 0, 12058690, 14, 0, 12124225, 536871019, 0, 12124255, 15, 0, 12124350, 536871020, 0, 12124416, 107, 0, 12124420, 7, 0, 12124430, 15, 0, 12124447, 536871020, 0, 12124450, 536871019, 0, 12189874, 7, 0, 12976223, 40, 0, 13041948, 536870952, 0, 13172814, 536870952, 0, 13304097, 536870952, 0, 13369417, 536870952, 0, 13369605, 1073741901, 0, 13435050, 1073741925, 0, 13500483, 1073741925, 0, 13500512, 1073741925, 0, 13500591, 1073741925, 0, 13500680, 536870955, 0, 13500698, 1073741901, 0, 13566022, 1073741925, 0, 13566377, 104, 0 )
 
 [node name="Spikes" parent="." instance=ExtResource( 9 )]
 position = Vector2( 670, 424 )
@@ -998,11 +1003,30 @@ points = PoolVector2Array( 0, 16, -1576, 16 )
 platform_speed = 50
 stop = true
 
+[node name="Light2D2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1566.77, 253.554 )
+texture_scale = 1.2
+color = Color( 0.105882, 0.529412, 0.905882, 1 )
+energy = 0.8
+flicker_amount = 5.0
+flicker_base = 5.0
+
 [node name="Light2D" parent="." instance=ExtResource( 15 )]
+visible = false
 position = Vector2( 1568, 256 )
 color = Color( 0.956863, 0.988235, 0.584314, 1 )
 energy = 1.2
 
-[connection signal="toggle_off" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_off"]
+[node name="Moonlight" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1015.8, 184.059 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture_scale = 15.0
+color = Color( 0.976471, 0.988235, 1, 1 )
+energy = 0.7
+flicker_amount = 5.0
+flicker_base = 5.0
+
 [connection signal="toggle_off" from="Button" to="Light2D" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_off"]
 [connection signal="toggle_on" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_on"]

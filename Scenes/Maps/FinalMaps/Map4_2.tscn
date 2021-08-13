@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_v3.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/Tilemaps/tilemap_v2.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Sprites/Backgrounds/bg_forest.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=4]
-[ext_resource path="res://Resources/Sprites/Backgrounds/texture_brickwall_cracked_alpha.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameObjects/Objects/Box.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GameObjects/Characters/Wizard.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/GameObjects/Objects/MapExit.tscn" type="PackedScene" id=8]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/TileMap.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/GameObjects/Objects/Door.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/GameObjects/Objects/Spikes.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -640,25 +641,41 @@ script = ExtResource( 4 )
 level_title = "4-2 Weaving a Pattern"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
+[node name="Light2D2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 959.292, 504.999 )
+texture_scale = 1.2
+color = Color( 0.105882, 0.529412, 0.905882, 1 )
+energy = 0.8
+flicker_amount = 5.0
+flicker_base = 5.0
+
 [node name="Wizard" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1224, 416 )
 
-[node name="World2b_texture" type="Sprite" parent="."]
-modulate = Color( 0.3517, 0.684836, 0.769531, 1 )
-z_index = -5
-texture = ExtResource( 5 )
-centered = false
-
 [node name="World2b_texture2" type="Sprite" parent="."]
-modulate = Color( 0.439216, 0.439216, 0.439216, 1 )
+modulate = Color( 0.835294, 0.835294, 0.835294, 1 )
 z_index = -10
 texture = ExtResource( 3 )
 centered = false
+
+[node name="Moonlight" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1024.55, 130.508 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture_scale = 15.0
+color = Color( 0.976471, 0.988235, 1, 1 )
+energy = 0.7
+flicker_amount = 5.0
+flicker_base = 5.0
 
 [node name="MapExit2" parent="." instance=ExtResource( 8 )]
 modulate = Color( 0.643433, 0.893577, 0.980469, 1 )
 position = Vector2( 952, 200 )
 scale = Vector2( -1, 1 )
+
+[node name="Cosmetics" parent="." instance=ExtResource( 5 )]
+cell_size = Vector2( 4, 4 )
+tile_data = PoolIntArray( 2031662, 536871016, 0, 2687153, 107, 0, 3211508, 536870971, 0, 3735643, 101, 0, 3735744, 106, 0, 3735826, 106, 0, 3735830, 108, 0, 3735831, 115, 0, 3735938, 536871020, 0, 3801172, 536871014, 0, 3801180, 7, 0, 3801451, 536871014, 0, 4063657, 104, 0, 4653324, 536870952, 0, 4915584, 105, 0, 5111895, 43, 0, 5111993, 40, 0, 5112194, 105, 0, 5177619, 536870952, 0, 5177629, 536870955, 0, 6881443, 106, 0, 6881567, 536871027, 0, 6881568, 536871027, 0, 6881569, 536871027, 0, 6881570, 536871027, 0, 6881571, 536871027, 0, 6881572, 536871027, 0, 7274543, 1073741865, 0, 7799091, 1610612777, 0, 7929958, 107, 0, 7929963, 108, 0, 7929999, 536870952, 0, 7930102, 107, 0, 7930213, 102, 0, 7930218, 106, 0, 7930220, 536871027, 0, 7930221, 536871027, 0, 7930222, 536871027, 0, 7930223, 536871027, 0, 7930224, 536871027, 0, 7930225, 536871027, 0, 7930226, 536871027, 0, 7930227, 536871027, 0, 7930228, 536871027, 0, 7930229, 536871027, 0, 7930244, 108, 0, 8126773, 1610612777, 0, 8257689, 105, 0, 8257847, 1610612777, 0, 8323374, 536871016, 0, 8912975, 536870952, 0, 9109894, 1610612777, 0, 9240865, 40, 0, 9306500, 1610612777, 0, 9372031, -1610612695, 0, 9896043, 40, 0, 9896161, 40, 0, 10289265, 40, 0, 11075744, 536871027, 0, 11075745, 536871027, 0, 11075746, 536871027, 0, 11075747, 536871027, 0, 11075748, 536871027, 0, 11075749, 536871027, 0, 11075756, 77, 0, 11075757, 536871027, 0, 11075758, 536871027, 0, 11075767, 536871014, 0, 11075872, 536871027, 0, 11075895, 536871027, 0, 11075896, 536871027, 0, 11075903, 536871019, 0, 11206830, 77, 0, 11599972, 9, 0, 12124243, 89, 0, 12124250, 536871027, 0, 12124252, 536871027, 0, 12124253, 536870927, 0, 12124390, 101, 0, 12124397, 536871027, 0, 12124518, 536871027, 0, 12124532, 536871020, 0, 12124536, 15, 0, 12124537, 536871027, 0, 12124538, 536871027, 0, 12124539, 536871027, 0, 12124540, 536871027, 0, 12124541, 536871027, 0, 12124542, 536871027, 0, 12124543, 536871027, 0, 12124544, 536871027, 0, 12124545, 536871027, 0, 12124546, 536871027, 0, 12189807, 7, 0, 12189933, 536871027, 0, 12190060, 536871018, 0, 12451997, 40, 0, 13173115, 536870952, 0, 13238658, 1610612777, 0, 13566041, 104, 0, 13566177, -2147483607, 0, 13762606, 58, 0, 13959406, 536870952, 0, 14221357, 536870927, 0, 14221670, 536870952, 0, 14287204, 1073741865, 0, 14483698, 536870952, 0, 14549363, 1073741865, 0, 14614882, 536870952, 0, 14745664, 8, 0, 14746017, 42, 0, 15269949, 536870927, 0, 15270303, 15, 0, 15335484, 536871027, 0, 15335837, 536871027, 0, 15335838, 536871027, 0, 15335839, 536871027, 0 )
 
 [node name="TileMap" parent="." instance=ExtResource( 12 )]
 modulate = Color( 0.34902, 0.768627, 1, 1 )
@@ -686,22 +703,22 @@ position = Vector2( 960, 483 )
 targets = [ NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3"), NodePath("../Door4") ]
 
 [node name="Door" parent="." instance=ExtResource( 13 )]
-modulate = Color( 0.282353, 0.596078, 1, 1 )
+modulate = Color( 0.247059, 0.772549, 0.929412, 1 )
 position = Vector2( 864, 225 )
 scale = Vector2( 1, 1.05 )
 
 [node name="Door2" parent="." instance=ExtResource( 13 )]
-modulate = Color( 0.282353, 0.596078, 1, 1 )
+modulate = Color( 0.247059, 0.772549, 0.929412, 1 )
 position = Vector2( 1056, 225 )
 scale = Vector2( 1, 1.05 )
 
 [node name="Door3" parent="." instance=ExtResource( 13 )]
-modulate = Color( 0.282353, 0.596078, 1, 1 )
+modulate = Color( 0.247059, 0.772549, 0.929412, 1 )
 position = Vector2( 864, 160 )
 scale = Vector2( 1, -1.05 )
 
 [node name="Door4" parent="." instance=ExtResource( 13 )]
-modulate = Color( 0.282353, 0.596078, 1, 1 )
+modulate = Color( 0.247059, 0.772549, 0.929412, 1 )
 position = Vector2( 1056, 160 )
 scale = Vector2( 1, -1.05 )
 
