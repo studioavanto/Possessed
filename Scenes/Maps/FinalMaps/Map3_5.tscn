@@ -2159,8 +2159,8 @@ scale = Vector2( 0.9, 1 )
 position = Vector2( 544, 552 )
 
 [node name="Spikes11" parent="SPIKS" instance=ExtResource( 15 )]
-position = Vector2( 1472, 1128 )
-scale = Vector2( 8, 1 )
+position = Vector2( 1477.05, 1103.61 )
+scale = Vector2( 8.57812, 0.7635 )
 
 [node name="Spikes10" parent="SPIKS" instance=ExtResource( 15 )]
 position = Vector2( 608, 552 )
