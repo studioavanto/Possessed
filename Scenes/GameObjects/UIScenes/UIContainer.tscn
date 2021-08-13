@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/UIScenes/CharacterCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/UI/UIContainer.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Resources/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scripts/UI/TitleSway.gd" type="Script" id=11]
 [ext_resource path="res://Resources/UI/pause.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/GameObjects/UIScenes/StartPrompt.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -76,9 +77,13 @@ text = "
 	E - New game
   Space - Continue"
 scroll_active = false
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="StartPrompt"]
+wait_time = 0.9
 
 [node name="BlackScreen" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -102,3 +107,5 @@ modulate = Color( 1, 1, 1, 0 )
 
 [node name="PauseScreen" parent="." instance=ExtResource( 9 )]
 texture = ExtResource( 12 )
+
+[connection signal="timeout" from="StartPrompt/Timer" to="StartPrompt" method="_on_Timer_timeout"]

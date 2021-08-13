@@ -219,6 +219,7 @@ func proceed():
 		GamePhase.START:
 			get_parent().play_sound("start_game")
 			get_parent().start_first_song()
+			$StartPrompt/Timer.stop()
 			fade_out_start_screen()
 			get_parent().load_new_map()
 			input_counter = 1
