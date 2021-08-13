@@ -32,12 +32,14 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 orbit_velocity_curve = SubResource( 4 )
 damping = 5.0
+scale = 4.0
 scale_curve = SubResource( 6 )
 color_ramp = SubResource( 2 )
 
-[node name="EvilHalo" type="Particles2D"]
+[node name="EvilHaloSpirit" type="Particles2D"]
 scale = Vector2( 3, 3 )
 z_index = 2
-amount = 10
-lifetime = 2.0
+amount = 12
+lifetime = 0.75
+local_coords = false
 process_material = SubResource( 7 )
