@@ -644,7 +644,7 @@ load_path = "res://.import/texture_brickwall.png-94209fad758ee7b2b0850e14c95024d
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
 map_end_text = "Why, 'tis a wizard! Its transposition ray works wonders... As long as there is an opportune object to switch places with."
-level_title = "2-6 Pins and Needles"
+level_title = "[right]2-6 Pins and Needles[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Fluff" type="Node2D" parent="."]

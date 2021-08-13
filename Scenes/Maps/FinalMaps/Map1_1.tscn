@@ -634,7 +634,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 1/z_index = 0
 
-[node name="PlaceholderMap2" type="Node2D"]
+[node name="PlaceholderMap3" type="Node2D"]
 script = ExtResource( 4 )
 map_end_text = "At long last, a vessel! I was getting sick of that damned vase. Now, how did having legs work again...?"
 map_music_id = 0

@@ -915,7 +915,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
-level_title = "4-5 Public Transportation"
+level_title = "[right]4-5 Public Transportation[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Barbarian" parent="." instance=ExtResource( 14 )]
@@ -1027,6 +1027,6 @@ energy = 0.7
 flicker_amount = 5.0
 flicker_base = 5.0
 
-[connection signal="toggle_off" from="Button" to="Light2D" method="_on_Button_toggle_off"]
 [connection signal="toggle_off" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_off"]
+[connection signal="toggle_off" from="Button" to="Light2D" method="_on_Button_toggle_off"]
 [connection signal="toggle_on" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_on"]
