@@ -3507,7 +3507,7 @@ color_ramp = SubResource( 15 )
 script = ExtResource( 4 )
 map_end_text = "With limbs as beefy as these, I may even lift and fling things... Including these thickheads!"
 map_music_id = 4
-level_title = "1-5 Building Bridges"
+level_title = "[right]1-5 Building Bridges[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="Spikes" parent="." instance=ExtResource( 14 )]

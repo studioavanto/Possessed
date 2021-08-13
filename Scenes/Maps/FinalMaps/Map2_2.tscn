@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_cyan.tscn" type="PackedScene" id=13]
 
 [sub_resource type="StreamTexture" id=1]
+flags = 4
 load_path = "res://.import/texture_brickwall.png-94209fad758ee7b2b0850e14c95024d6.stex"
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
@@ -3454,7 +3455,7 @@ color_ramp = SubResource( 8 )
 [node name="PlaceholderMap" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 4 )
-level_title = "2-2 Happy Feet"
+level_title = "[right]2-2 Happy Feet[/right]"
 map_overlay_color = Color( 0.724442, 0.903118, 0.941406, 1 )
 
 [node name="MapExit2" parent="." instance=ExtResource( 3 )]

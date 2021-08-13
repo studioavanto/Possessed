@@ -634,7 +634,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="PlaceholderMap" type="Node2D"]
 script = ExtResource( 4 )
-level_title = "4-4 Fellow Chuckers"
+level_title = "[right]4-4 Fellow Chuckers[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="World2b_texture2" type="Sprite" parent="."]

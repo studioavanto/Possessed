@@ -638,7 +638,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 script = ExtResource( 4 )
 map_end_text = "At long last, a vessel! I was getting sick of that damned vase. Now, how did having legs work again...?"
 map_music_id = 0
-level_title = "1-1 Baby Steps"
+level_title = "[right]1-1 Baby Steps[/right]"
 map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 7 )]
