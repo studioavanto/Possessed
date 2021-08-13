@@ -15,7 +15,7 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/GameObjects/Objects/Door.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_cyan.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Resources/UI/thieftutorial.png" type="Texture" id=16]
+[ext_resource path="res://Resources/UI/Guide_Dash.png" type="Texture" id=16]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -894,7 +894,7 @@ position = Vector2( 1252.04, 161.721 )
 scale = Vector2( 1, -1 )
 
 [node name="Tutorial" type="Sprite" parent="Fluff"]
-position = Vector2( 1559.18, 441.25 )
+position = Vector2( 1565.85, 429.236 )
 texture = ExtResource( 16 )
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]

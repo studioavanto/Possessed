@@ -17,7 +17,7 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/Light2D.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_cyan.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Resources/UI/wizardtutorial.png" type="Texture" id=18]
+[ext_resource path="res://Resources/UI/Guide_Spell.png" type="Texture" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -768,7 +768,7 @@ color = Color( 0.172549, 0.960784, 0.721569, 1 )
 energy = 0.5
 
 [node name="Tutorial" type="Sprite" parent="Fluff"]
-position = Vector2( 942.397, 843.619 )
+position = Vector2( 967.624, 638.44 )
 texture = ExtResource( 18 )
 
 [node name="Cracked wall 1" type="Sprite" parent="."]
