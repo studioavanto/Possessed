@@ -16,7 +16,7 @@
 [ext_resource path="res://Scenes/GameObjects/Objects/Cosmetics.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_cyan.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_pink.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Resources/UI/barbatutorial.png" type="Texture" id=17]
+[ext_resource path="res://Resources/UI/Guide_PickThrowPutdown.png" type="Texture" id=17]
 
 [sub_resource type="TileSet" id=16]
 0/name = "cosmetic_objects_spritesheet.png 0"
@@ -6412,7 +6412,7 @@ color = Color( 0.972549, 0.580392, 0.964706, 1 )
 energy = 0.4
 
 [node name="Tutorial" type="Sprite" parent="Fluff"]
-position = Vector2( 1574.51, 711.146 )
+position = Vector2( 1132.68, 669.766 )
 texture = ExtResource( 17 )
 
 [node name="MapExit2" parent="." instance=ExtResource( 8 )]

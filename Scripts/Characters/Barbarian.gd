@@ -37,7 +37,7 @@ func throw_object():
 	$AnimatedSprite.animation = "default"
 	$CarryingArea.set_collision_mask_bit(3, true)
 	$CarryHitBox.disabled = true
-	carry_item.throw(Vector2(x_speed + throw_speed_x * facing, y_speed + throw_speed_y), facing)
+	carry_item.throw(Vector2(throw_speed_x * facing, throw_speed_y), facing)
 	carry_item.stop_being_carried()
 	carry_item = null
 	$CharacterAudio.play_sound("throw")
