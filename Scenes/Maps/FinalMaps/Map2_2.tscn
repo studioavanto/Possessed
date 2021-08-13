@@ -3455,7 +3455,7 @@ color_ramp = SubResource( 8 )
 [node name="PlaceholderMap" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 4 )
-map_end_text = "An adventurer's life ghost by fast, so they come with immovable gravestones. I am no stranger to stepping on them to lift the spirits..."
+map_end_text = "An adventurer's life ghost by fast, so they come with immovable gravestones. One could step on them to lift the spirits..."
 level_title = "2-2 Happy Feet"
 map_overlay_color = Color( 0.724442, 0.903118, 0.941406, 1 )
 
