@@ -646,6 +646,8 @@ map_overlay_color = Color( 1, 1, 1, 1 )
 
 [node name="World2b_texture2" type="Sprite" parent="."]
 modulate = Color( 0.835294, 0.835294, 0.835294, 1 )
+position = Vector2( 144, 81 )
+scale = Vector2( 0.85, 0.85 )
 z_index = -10
 texture = ExtResource( 3 )
 centered = false
@@ -730,6 +732,16 @@ position = Vector2( 867.564, 762.658 )
 texture_scale = 1.2
 color = Color( 0.105882, 0.529412, 0.905882, 1 )
 energy = 0.8
+flicker_amount = 5.0
+flicker_base = 5.0
+
+[node name="Moonlight" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1016.42, 179.746 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture_scale = 15.0
+color = Color( 0.976471, 0.988235, 1, 1 )
+energy = 0.7
 flicker_amount = 5.0
 flicker_base = 5.0
 
