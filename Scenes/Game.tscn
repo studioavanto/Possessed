@@ -34,7 +34,7 @@ script = ExtResource( 2 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 960, 540 )
 current = true
-zoom = Vector2( 0.82, 0.82 )
+zoom = Vector2( 0.85, 0.85 )
 
 [node name="MusicManager" parent="." instance=ExtResource( 6 )]
 
