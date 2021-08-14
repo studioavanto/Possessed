@@ -15,7 +15,6 @@
 [ext_resource path="res://Scenes/GameObjects/ParticleEffects/Sparks_cyan.tscn" type="PackedScene" id=13]
 
 [sub_resource type="StreamTexture" id=1]
-flags = 4
 load_path = "res://.import/texture_brickwall.png-94209fad758ee7b2b0850e14c95024d6.stex"
 
 [sub_resource type="ConvexPolygonShape2D" id=2]

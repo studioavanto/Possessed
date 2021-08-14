@@ -127,7 +127,7 @@ __meta__ = {
 }
 
 [node name="Credits" type="RichTextLabel" parent="."]
-margin_left = 184.544
+margin_left = 240.0
 margin_top = 324.828
 margin_right = 1673.54
 margin_bottom = 952.828

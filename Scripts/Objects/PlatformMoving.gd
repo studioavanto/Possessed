@@ -57,6 +57,11 @@ func _on_Button_toggle_off():
 func _on_Button_toggle_on():
 	toggle_platform()
 
+func toggle_on():
+	toggle_platform()
+
+func toggle_off():
+	toggle_platform()
 
 func _on_Button2_toggle_on():
 	pass # Replace with function body.

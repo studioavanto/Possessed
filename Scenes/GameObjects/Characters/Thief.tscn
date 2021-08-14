@@ -77,24 +77,24 @@ atlas = ExtResource( 10 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 10 )
-region = Rect2( 128, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 3 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 10 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
@@ -118,14 +118,14 @@ animations = [ {
 "name": "jump_up",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 18 ) ],
-"loop": true,
-"name": "jump_down",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
 "name": "run",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 22 ) ],
+"loop": true,
+"name": "jump_down",
 "speed": 5.0
 } ]
 
@@ -171,7 +171,7 @@ extents = Vector2( 17.3728, 6.91422 )
 extents = Vector2( 17.8377, 21.2356 )
 
 [sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 15, 34 )
+extents = Vector2( 23, 34 )
 
 [node name="Thief" type="KinematicBody2D"]
 collision_layer = 0
@@ -299,7 +299,6 @@ energy = 0.5
 flicker_base = 2.0
 
 [node name="GraveHitBox" type="CollisionShape2D" parent="."]
-visible = false
 modulate = Color( 0.470588, 0.0470588, 0.658824, 1 )
 shape = SubResource( 33 )
 disabled = true

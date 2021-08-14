@@ -744,6 +744,3 @@ color = Color( 0.976471, 0.988235, 1, 1 )
 energy = 0.7
 flicker_amount = 5.0
 flicker_base = 5.0
-
-[connection signal="toggle_off" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_off"]
-[connection signal="toggle_on" from="Button" to="PlatformHorizontal" method="_on_Button_toggle_on"]
