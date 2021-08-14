@@ -6196,7 +6196,7 @@ region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 6 )
@@ -6204,11 +6204,11 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 6 )
@@ -6216,7 +6216,7 @@ region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
@@ -6227,12 +6227,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": false,
-"name": "ouchy",
+"name": "retract",
 "speed": 8.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": false,
-"name": "retract",
+"name": "ouchy",
 "speed": 8.0
 } ]
 
@@ -6383,8 +6383,7 @@ energy = 0.4
 
 [node name="Tutorial" type="Sprite" parent="Fluff"]
 modulate = Color( 0.929412, 0.921569, 1, 1 )
-position = Vector2( 1132.68, 669.766 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 1132, 669 )
 texture = ExtResource( 17 )
 
 [node name="MapExit2" parent="." instance=ExtResource( 8 )]

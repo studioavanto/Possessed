@@ -716,8 +716,7 @@ tile_data = PoolIntArray( 1114140, 55, 0, 1114198, 55, 0, 1376284, 56, 0, 137634
 
 [node name="Tutorial" type="Sprite" parent="Fluff"]
 modulate = Color( 0.670588, 0.584314, 0.705882, 1 )
-position = Vector2( 957.313, 455.148 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 955, 455 )
 texture = ExtResource( 13 )
 
 [node name="Sparks4" parent="Fluff" instance=ExtResource( 12 )]

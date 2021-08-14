@@ -12,7 +12,9 @@ config_version=4
 
 config/name="Generations"
 run/main_scene="res://Scenes/Game.tscn"
-config/icon="res://icon.png"
+config/custom_user_dir_name="possessed"
+config/icon="res://possessed.png"
+config/windows_native_icon="res://icon.ico"
 
 [display]
 
@@ -20,6 +22,7 @@ window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
 window/size/fullscreen=true
+window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 
 [input]

@@ -38,9 +38,6 @@ func handle_inputs():
 	if Input.is_action_just_pressed("get_older"):
 		death = true
 
-	if Input.is_action_just_pressed("reset"):
-		get_parent().reset_map()
-
 	horizontal_move = Input.get_action_strength("press_right") - Input.get_action_strength("press_left")
 	
 	player_character.process_input(jump, special, horizontal_move, interact, holding_down, death)
