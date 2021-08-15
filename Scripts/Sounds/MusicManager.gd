@@ -107,27 +107,30 @@ func fade_in_out_character_track(new_active_character):
 	var active_track = current_active_track()
 	var new_active_track = current_active_track(new_active_character)
 	
-	$FadeTween.interpolate_property(
-		active_track,
-		"volume_db",
-		0.0,
-		-80.0,
-		song_fade_out_time,
-		Tween.TRANS_EXPO,
-		Tween.EASE_OUT
-	)
+	if active_track != null:
+		$FadeTween.interpolate_property(
+			active_track,
+			"volume_db",
+			0.0,
+			-80.0,
+			song_fade_out_time,
+			Tween.TRANS_EXPO,
+			Tween.EASE_OUT
+		)
+
+	if new_active_track != null:
+		$FadeTween.interpolate_property(
+			new_active_track,
+			"volume_db",
+			-80.0,
+			0.0,
+			song_fade_out_time,
+			Tween.TRANS_EXPO,
+			Tween.EASE_OUT
+		)
 	
-	$FadeTween.interpolate_property(
-		new_active_track,
-		"volume_db",
-		-80.0,
-		0.0,
-		song_fade_out_time,
-		Tween.TRANS_EXPO,
-		Tween.EASE_OUT
-	)
-	
-	$FadeTween.start()
+	if not (new_active_track == null and active_track == null):
+		$FadeTween.start()
 
 func change_song(new_song):
 	if new_song == active_song:

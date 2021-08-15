@@ -4,7 +4,7 @@ export var lifetime = 200
 export var jump_fall_reduction = 710.0
 export var jump_start_speed = 755.0
 export var run_speed = 290
-export var max_age = 600
+export var max_age = 700
 export var max_jump_time = 0.25
 export var unload_time = 1.0
 export var acceleration = 2000.0
@@ -27,6 +27,7 @@ var current_age = 0
 var unloading_timer = 0.0
 var facing = 1.0
 var air_jump = false
+var has_acted = false
 
 var blood_splatter_particles = null
 
@@ -38,6 +39,7 @@ func _ready():
 	blood_splatter_particles = preload("res://Scenes/GameObjects/ParticleEffects/BloodSplatter.tscn").instance()
 	add_child(blood_splatter_particles)
 	$Light2D.max_alpha = 0.0
+	has_acted = get_parent().get_has_act_toggle()
 
 func end_ledge_jump():
 	air_jump = false
@@ -107,6 +109,9 @@ func process_input(n_jump, n_special, n_horizontal_move, n_interact, n_holding_d
 	use_interact = n_interact
 	holding_down = n_holding_down
 	
+	if not has_acted and (jump or use_interact or use_special or x_input_dir != 0.0):
+		has_acted = true
+		
 	return true
 
 func get_id():
@@ -328,7 +333,7 @@ func process_physics(delta):
 	if is_on_floor() and abs(x_input_dir) > 0:
 		$CharacterAudio.play_footstep()
 
-	if character_stage == CharacterStage.POSSESSED:
+	if character_stage == CharacterStage.POSSESSED and has_acted:
 		current_age += 1
 		if current_age >= max_age:
 			character_state = CharacterState.DEATH
@@ -340,9 +345,15 @@ func process_physics(delta):
 	holding_down = false
 
 func _on_HurtBox_area_entered(area):	
+	if character_state == CharacterState.DEATH:
+		return
+
 	if area.get_collision_layer_bit(2):
 		blood_splatter_particles.emitting = true
 		character_state = CharacterState.DEATH
+		x_speed = 0
+		y_speed = -500
 	elif area.get_collision_mask_bit(8):
-		area.get_parent().start_destroy_projectile()
-		get_parent().teleport_character(self)
+		if not area.get_parent().has_been_used:
+			area.get_parent().start_destroy_projectile()
+			get_parent().teleport_character(self)

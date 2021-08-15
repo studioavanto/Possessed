@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var projectile_speed = 1000
+var projectile_speed = 1200
 var has_been_used = false
 var facing = 0
 
@@ -43,7 +43,7 @@ func start_destroy_projectile():
 func destroy_projectile():
 	queue_free()
 
-func _process(delta):
+func _process(_delta):
 	if get_parent().is_paused():
 		return
 		

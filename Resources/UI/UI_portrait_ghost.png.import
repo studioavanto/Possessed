@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/possessed.png-fc640a5003c17b82680d90476413b830.stex"
+path="res://.import/UI_portrait_ghost.png-a0d219c83f31fc4f6fd92a4e2bbe99a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://possessed.png"
-dest_files=[ "res://.import/possessed.png-fc640a5003c17b82680d90476413b830.stex" ]
+source_file="res://Resources/UI/UI_portrait_ghost.png"
+dest_files=[ "res://.import/UI_portrait_ghost.png-a0d219c83f31fc4f6fd92a4e2bbe99a0.stex" ]
 
 [params]
 

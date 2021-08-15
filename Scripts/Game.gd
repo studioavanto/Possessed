@@ -90,6 +90,7 @@ export (MapEnum) var map = MapEnum.START_GAME
 export (MapEnum) var last_map = MapEnum.MAP_4_6
 export (MapEnum) var saved_map = MapEnum.NO_SAVE
 export var first_song = 10
+export var can_wait = false
 
 var current_gamestate = GameState.CONTROL_CUTSCENE
 var next_gamestate = GameState.CONTROL_NULL
@@ -127,6 +128,9 @@ func _ready():
 	else:
 		current_map_id = MapEnum.MAP_1_1
 		$UIContainer.fade_in_start_screen()
+
+func get_has_act_toggle():
+	return not can_wait
 
 func start_new_game():
 	if not game_started:
@@ -175,7 +179,7 @@ func start_first_song():
 
 func go_to_next_map():
 	$UIContainer.fade_out_level_title()
-	$MusicManager.change_active_character(-1)
+	$MusicManager.change_active_character(0)
 	$AudioEffectManager.play_sound("level_transition")
 	$MusicManager.change_song(map_music[current_map_id + 1])
 

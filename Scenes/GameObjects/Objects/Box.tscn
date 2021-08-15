@@ -16,7 +16,7 @@ extents = Vector2( 28.23, 10 )
 extents = Vector2( 36.2545, 34.8985 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 14.8944, 19.6115 )
+extents = Vector2( 13.714, 17.4012 )
 
 [node name="Box" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -68,13 +68,11 @@ visible = false
 shape = SubResource( 4 )
 
 [node name="IsSpaceAbove" type="Area2D" parent="."]
-visible = false
 monitorable = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsSpaceAbove"]
-visible = false
-position = Vector2( -1.08908, -53.4506 )
+position = Vector2( 0.562699, -52.5067 )
 shape = SubResource( 5 )
 
 [node name="TeleportTimer" type="Timer" parent="."]
@@ -102,7 +100,6 @@ color = Color( 0.756863, 0.223529, 0.815686, 1 )
 [node name="TeleportTween" type="Tween" parent="."]
 
 [node name="HitBox" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PoolVector2Array( -31, -32, 31, -32, 31, 27, 28, 30, -28, 30, -31, 27 )
+polygon = PoolVector2Array( 30, -34, 30, 28, 24, 30, -24, 30, -30, 28, -30, -34 )
 
 [connection signal="area_entered" from="TeleportArea" to="." method="teleport_object"]

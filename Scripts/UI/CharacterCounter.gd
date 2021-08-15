@@ -1,13 +1,16 @@
 extends TextureRect
 
 var portraits = [
-	null,
+	preload("res://Resources/UI/UI_portrait_ghost.png"),
 	preload("res://Resources/UI/UI_portrait_barba.png"),
 	preload("res://Resources/UI/UI_portrait_thief.png"),
 	preload("res://Resources/UI/UI_portrait_wizard.png"),
 ]
 
-var current_portrait = 0
+var current_portrait = -1
+
+func _ready():
+	change_portrait(0)
 
 func change_value(value):
 	$TextureProgress.value = value

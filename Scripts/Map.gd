@@ -7,6 +7,9 @@ export(Color) var map_overlay_color
 
 var map_paused = false
 
+func get_has_act_toggle():
+	return get_parent().get_has_act_toggle()
+
 func start_map():
 	$PlayerCharacter.start_map()
 

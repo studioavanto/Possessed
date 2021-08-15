@@ -133,5 +133,6 @@ func _physics_process(delta):
 	process_physics(delta)
 
 func teleport_object(area):
-	area.get_parent().start_destroy_projectile()
-	get_parent().teleport_character(self)
+	if area.get_parent().has_been_used:
+		area.get_parent().start_destroy_projectile()
+		get_parent().teleport_character(self)

@@ -46,18 +46,15 @@ func possess_target(target):
 		get_parent().play_sound("warp_to_host")
 		can_interact = false
 		$TravelTimer.start()
-	else:
-		get_parent().change_active_character(-1)
-		get_parent().play_sound("game_over")
-		get_parent().reset_map()
 
 func stop_possession():
 	possessed = null
-	get_parent().change_active_character(-1)
+	get_parent().change_active_character(0)
 	if next_possession != null:
-		possess_target(next_possession)
+		if not next_possession.is_dead():
+			possess_target(next_possession)
 	else:
-		get_parent().change_active_character(-1)
+		get_parent().change_active_character(0)
 		get_parent().play_sound("game_over")
 		get_parent().reset_map()
 

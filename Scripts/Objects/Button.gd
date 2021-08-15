@@ -20,7 +20,7 @@ func _ready():
 		connect("toggle_on", get_node(target), "toggle_on")
 		connect("toggle_off", get_node(target), "toggle_off")
 
-func _on_CheckWeight_area_entered(area):
+func _on_CheckWeight_area_entered(_area):
 	if button_on:
 		return
 	
@@ -28,7 +28,7 @@ func _on_CheckWeight_area_entered(area):
 	emit_signal("toggle_on")
 	$ButtonSprite.animation = "pressed"
 
-func _on_CheckWeight_area_exited(area):
+func _on_CheckWeight_area_exited(_area):
 	if not get_weight_above().empty():
 		return
 	
