@@ -8,7 +8,7 @@ soft_clip_db = 0.0
 soft_clip_ratio = 12.6
 
 [resource]
-bus/0/volume_db = -80.0
+bus/0/volume_db = -0.130497
 bus/0/effect/0/effect = SubResource( 1 )
 bus/0/effect/0/enabled = true
 bus/1/name = "Music"
