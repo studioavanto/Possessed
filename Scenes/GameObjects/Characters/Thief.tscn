@@ -222,7 +222,6 @@ shape = SubResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 2 )
 frames = SubResource( 23 )
-frame = 1
 playing = true
 
 [node name="PushArea" type="Area2D" parent="."]

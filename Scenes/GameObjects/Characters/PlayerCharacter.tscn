@@ -60,10 +60,11 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="TravelTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 one_shot = true
 
 [node name="EvilHaloSpirit" parent="." instance=ExtResource( 3 )]
