@@ -13,7 +13,7 @@ extents = Vector2( 30.9084, 10 )
 extents = Vector2( 28.23, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 36.2545, 34.8985 )
+extents = Vector2( 42, 32 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 13.714, 17.4012 )
@@ -59,12 +59,10 @@ shape = SubResource( 3 )
 [node name="DropTimer" type="Timer" parent="."]
 
 [node name="TeleportArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 256
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportArea"]
-visible = false
 shape = SubResource( 4 )
 
 [node name="IsSpaceAbove" type="Area2D" parent="."]

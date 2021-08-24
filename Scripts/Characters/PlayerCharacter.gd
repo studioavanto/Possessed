@@ -53,10 +53,15 @@ func stop_possession():
 	if next_possession != null:
 		if not next_possession.is_dead():
 			possess_target(next_possession)
+		else:
+			game_over()
 	else:
-		get_parent().change_active_character(0)
-		get_parent().play_sound("game_over")
-		get_parent().reset_map()
+		game_over()
+
+func game_over():
+	get_parent().change_active_character(0)
+	get_parent().play_sound("game_over")
+	get_parent().reset_map()
 
 func compute_offset():
 	return possessed.position + Vector2(-possessed.facing * possess_offset.x, possess_offset.y)

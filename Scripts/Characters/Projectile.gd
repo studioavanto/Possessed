@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var projectile_speed = 1200
+var projectile_speed = 900
 var has_been_used = false
 var facing = 0
 
@@ -11,6 +11,10 @@ func set_facing(new_facing):
 	facing = new_facing
 	if facing == -1.0:
 		scale.x = -1.0
+
+func start_teleporting():
+	$InteractArea.monitorable = false
+	start_destroy_projectile()
 
 func start_destroy_projectile():
 	has_been_used = true
