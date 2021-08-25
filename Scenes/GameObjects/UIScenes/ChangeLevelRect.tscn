@@ -48,8 +48,6 @@ __meta__ = {
 }
 
 [node name="ScreenTexture" type="TextureRect" parent="."]
-margin_left = -0.86045
-margin_top = -0.653068
 margin_right = 1920.0
 margin_bottom = 1080.0
 texture = ExtResource( 6 )
@@ -70,5 +68,5 @@ scroll_active = false
 position = Vector2( 414.685, 643.713 )
 scale = Vector2( 15, 15 )
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
